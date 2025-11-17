@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 export default function Header() {
@@ -15,12 +16,19 @@ export default function Header() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
-      <nav className="mx-auto max-w-7xl px-6 py-4 lg:px-8">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-transparent">
+      <nav className="mx-auto max-w-7xl px-6 py-5 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="text-2xl font-bold text-gray-900">
-            S.
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/images/Seam Logo-3_white.png"
+              alt="Seam Media"
+              width={120}
+              height={40}
+              className="h-10 w-auto"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -29,7 +37,7 @@ export default function Header() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="text-gray-700 hover:text-gray-900 transition-colors duration-200 font-medium"
+                  className="text-white hover:text-white/80 transition-colors duration-200 font-medium"
                 >
                   {link.label}
                 </Link>
@@ -40,7 +48,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-gray-700"
+            className="md:hidden p-2 text-white"
             aria-label="Toggle menu"
           >
             <svg
@@ -63,13 +71,13 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4">
-            <ul className="flex flex-col gap-4">
+          <div className="md:hidden mt-6 pb-4 bg-black/80 backdrop-blur-sm rounded-lg p-4">
+            <ul className="flex flex-col gap-5">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="block text-gray-700 hover:text-gray-900 transition-colors duration-200 font-medium"
+                    className="block text-white hover:text-white/80 transition-colors duration-200 font-medium"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {link.label}

@@ -64,7 +64,7 @@ export default function ContactForm() {
 
   return (
     <Section background="pink">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative">
         {/* Decorative Squares */}
         {decorativeSquares.map((square, index) => (
           <div
@@ -91,8 +91,8 @@ export default function ContactForm() {
 
         {/* Right: Contact Form */}
         <div className="relative z-10">
-          <div className="text-center mb-8">
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
+          <div className="text-center mb-10">
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
               Want To
               <br />
               Talk With Us?
@@ -102,7 +102,7 @@ export default function ContactForm() {
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-5">
             {/* Name */}
             <div>
               <label htmlFor="name" className="block text-white mb-2">

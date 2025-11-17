@@ -22,8 +22,8 @@ export default function ClientLogos() {
 
   return (
     <Section background="white">
-      <div className="text-center mb-12">
-        <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+      <div className="text-center mb-16">
+        <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
           Our clients.
         </h2>
         <p className="text-lg text-gray-600">
@@ -32,7 +32,7 @@ export default function ClientLogos() {
       </div>
 
       {/* Logos Grid */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10 items-center">
         {clients.map((client, index) => (
           <div
             key={index}

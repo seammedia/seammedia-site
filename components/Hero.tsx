@@ -1,10 +1,7 @@
-import Link from "next/link";
-import Button from "./ui/Button";
-
 export default function Hero() {
   return (
-    <section className="relative min-h-[600px] lg:min-h-[700px] flex items-center justify-center text-white overflow-hidden">
-      {/* Background Image - Replace with actual ocean image */}
+    <section className="relative min-h-[600px] lg:min-h-[700px] flex items-center text-white overflow-hidden">
+      {/* Background Image */}
       <div
         className="absolute inset-0 z-0"
         style={{
@@ -19,28 +16,28 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 text-center">
-        <h1 className="text-5xl lg:text-7xl font-bold mb-6 drop-shadow-lg">
-          We Build
-          <br />
-          Brands.
-        </h1>
+      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 w-full">
+        <div className="max-w-3xl">
+          <h1 className="text-5xl lg:text-7xl font-bold mb-8 drop-shadow-lg text-white">
+            We Build
+            <br />
+            Brands.
+          </h1>
 
-        <div className="max-w-2xl mx-auto space-y-6 mb-8">
-          <p className="text-xl lg:text-2xl drop-shadow-md">
-            We not only create brands, we use data to ensure we get results. Every, single, time.
-          </p>
+          <div className="space-y-6">
+            <p className="text-xl lg:text-2xl drop-shadow-md text-white">
+              We not only create brands, we use data to ensure we get results.
+              <br />
+              Every, single, time.
+            </p>
 
-          <p className="text-lg lg:text-xl drop-shadow-md">
-            A digital marketing agency with a difference, working with start ups, small business and large national businesses.
-          </p>
+            <p className="text-lg lg:text-xl drop-shadow-md text-white">
+              A digital marketing agency with a difference, working with start ups,
+              <br />
+              small business and large national businesses.
+            </p>
+          </div>
         </div>
-
-        <Link href="/contact">
-          <Button size="lg" className="shadow-lg hover:shadow-xl">
-            Get Started
-          </Button>
-        </Link>
       </div>
 
       {/* Decorative Elements */}

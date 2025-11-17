@@ -41,12 +41,12 @@ export default function Footer() {
 
   return (
     <footer className="bg-white border-t border-gray-200">
-      <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="mx-auto max-w-7xl px-6 py-16 lg:py-20 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Menu Column */}
           <div>
-            <h3 className="font-bold text-gray-900 mb-4">Menu</h3>
-            <ul className="space-y-2">
+            <h3 className="font-bold text-gray-900 mb-6">Menu</h3>
+            <ul className="space-y-3">
               {menuLinks.map((link) => (
                 <li key={link.href}>
                   <Link
@@ -62,8 +62,8 @@ export default function Footer() {
 
           {/* Blog Column */}
           <div>
-            <h3 className="font-bold text-gray-900 mb-4">Blog</h3>
-            <ul className="space-y-2">
+            <h3 className="font-bold text-gray-900 mb-6">Blog</h3>
+            <ul className="space-y-3">
               {blogLinks.map((link) => (
                 <li key={link.href}>
                   <Link
@@ -79,8 +79,8 @@ export default function Footer() {
 
           {/* Follow Us Column */}
           <div>
-            <h3 className="font-bold text-gray-900 mb-4">Follow Us</h3>
-            <ul className="space-y-2">
+            <h3 className="font-bold text-gray-900 mb-6">Follow Us</h3>
+            <ul className="space-y-3">
               {socialLinks.map((link) => (
                 <li key={link.href}>
                   <a
@@ -118,7 +118,7 @@ export default function Footer() {
         </div>
 
         {/* Mountain Decoration */}
-        <div className="mt-12 relative">
+        <div className="mt-16 relative">
           <svg
             className="w-full h-32 text-[#a5d5b5]"
             viewBox="0 0 1200 150"
@@ -140,7 +140,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="mt-8 text-center text-sm text-gray-600">
-          <p>Copyright 2023 © All rights Reserved.</p>
+          <p>Copyright 2025 © All rights Reserved.</p>
         </div>
       </div>
     </footer>

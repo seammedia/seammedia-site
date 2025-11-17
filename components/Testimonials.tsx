@@ -50,7 +50,7 @@ export default function Testimonials() {
         ))}
 
         {/* Featured Quote */}
-        <div className="text-center mb-16 max-w-4xl mx-auto relative z-10">
+        <div className="text-center mb-20 max-w-4xl mx-auto relative z-10">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-8">
             "Seam Media Have Been So Helpful And Have Honestly Helped So Much
             With Getting Us On Our Feet. !"
@@ -58,22 +58,22 @@ export default function Testimonials() {
         </div>
 
         {/* Section Title */}
-        <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-12 text-center relative z-10">
+        <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-16 text-center relative z-10">
           What our clients say.
         </h3>
 
         {/* Testimonial Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto relative z-10">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-gray-50 p-8 rounded-lg shadow-sm relative"
+              className="bg-gray-50 p-10 rounded-lg shadow-sm relative"
             >
               {/* Quote Icon */}
-              <div className="text-6xl text-gray-300 mb-4 font-serif">"</div>
+              <div className="text-6xl text-gray-300 mb-6 font-serif">"</div>
 
               {/* Quote Text */}
-              <p className="text-gray-700 mb-6 leading-relaxed">
+              <p className="text-gray-700 mb-8 leading-relaxed">
                 {testimonial.quote}
               </p>
 
