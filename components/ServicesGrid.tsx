@@ -71,12 +71,16 @@ export default function ServicesGrid() {
 
   return (
     <Section background="gray" className="pt-32 pb-24">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="flex flex-wrap justify-center gap-8 lg:gap-12">
+      <div className="max-w-6xl mx-auto px-8">
+        <div
+          className="grid gap-8"
+          style={{
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 320px))',
+            justifyContent: 'center'
+          }}
+        >
           {services.map((service, index) => (
-            <div key={index} className="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(25%-2.25rem)] min-w-[280px] max-w-[320px]">
-              <ServiceCard {...service} />
-            </div>
+            <ServiceCard key={index} {...service} />
           ))}
         </div>
       </div>
