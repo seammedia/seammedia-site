@@ -70,11 +70,13 @@ export default function ServicesGrid() {
   ];
 
   return (
-    <Section background="gray" className="py-24">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 px-6 lg:px-12">
-        {services.map((service, index) => (
-          <ServiceCard key={index} {...service} />
-        ))}
+    <Section background="gray" className="mt-24 py-24">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 px-6 lg:px-12">
+          {services.map((service, index) => (
+            <ServiceCard key={index} {...service} />
+          ))}
+        </div>
       </div>
     </Section>
   );

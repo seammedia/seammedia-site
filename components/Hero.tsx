@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background Image */}
       <div
         className="absolute inset-0 z-0"
@@ -12,28 +12,28 @@ export default function Hero() {
         }}
       />
 
-      {/* Gradient Overlay - Top to Bottom (Black 70% to Transparent) */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/70 via-black/50 to-black/30" />
+      {/* Strong Gradient Overlay for Text Visibility */}
+      <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/70 via-black/30 to-transparent" />
 
-      {/* Content */}
-      <div className="relative z-20 mx-auto max-w-7xl px-6 lg:px-12 w-full py-32 lg:py-40">
+      {/* Content Container */}
+      <div className="relative z-20 mx-auto max-w-7xl px-6 lg:px-12 w-full pt-40 pb-32">
         <div className="max-w-4xl">
-          {/* Headline */}
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-8 leading-tight">
+          {/* Headline - Pure White */}
+          <h1 className="text-6xl md:text-7xl font-bold text-white mb-6 leading-tight">
             We Build
             <br />
             Brands.
           </h1>
 
-          {/* Subtext */}
-          <div className="space-y-6 max-w-2xl">
+          {/* Subtext - Pure White */}
+          <div className="space-y-6 max-w-2xl mt-6">
             <p className="text-lg md:text-xl text-white leading-relaxed">
               We not only create brands, we use data to ensure we get results.
               <br className="hidden md:block" />
               Every, single, time.
             </p>
 
-            <p className="text-base md:text-lg text-white/90 leading-relaxed">
+            <p className="text-base md:text-lg text-white leading-relaxed">
               A digital marketing agency with a difference, working with start ups,
               <br className="hidden md:block" />
               small business and large national businesses.

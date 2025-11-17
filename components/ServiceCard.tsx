@@ -16,11 +16,11 @@ export default function ServiceCard({
   link,
 }: ServiceCardProps) {
   return (
-    <div className="group bg-white p-8 rounded-lg shadow-sm hover:shadow-xl hover:scale-105 transition-all duration-300 flex flex-col h-full">
+    <div className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-transform hover:scale-[1.03] duration-300 flex flex-col h-full">
       {/* Icon - Equal Size and Centered */}
       <div className="flex justify-center mb-6">
         <div
-          className="w-20 h-20 rounded-lg flex items-center justify-center text-4xl shadow-md"
+          className="w-16 h-16 mx-auto rounded-lg flex items-center justify-center text-4xl shadow-md"
           style={{ backgroundColor: iconBgColor }}
         >
           {icon}
