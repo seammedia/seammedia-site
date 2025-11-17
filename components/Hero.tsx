@@ -43,7 +43,6 @@ export default function Hero() {
       </div>
 
       {/* Decorative Elements */}
-      <div className="absolute top-24 right-10 w-8 h-8 bg-[#f5d45d] rounded-sm opacity-80 hidden lg:block z-10" />
       <div className="absolute bottom-40 left-20 w-6 h-6 bg-[#b5a5d5] rounded-sm opacity-80 hidden lg:block z-10" />
     </section>
   );
