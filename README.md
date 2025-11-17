@@ -1,6 +1,6 @@
 # Seam Media - Digital Marketing Agency Website
 
-A modern, responsive website for Seam Media built with Next.js 14, TypeScript, and Tailwind CSS. This site recreates the original Seam Media design from archived sources with improved performance and modern web standards.
+A modern, responsive website for Seam Media built with Next.js 16, TypeScript, and Tailwind CSS v4. This site recreates the original Seam Media design from archived sources with improved performance and modern web standards.
 
 ## 🚀 Features
 
@@ -235,13 +235,124 @@ EMAIL_API_KEY=your_api_key
 - `npm start` - Start production server
 - `npm run lint` - Run ESLint
 
+## 🎓 Key Learnings & Best Practices
+
+### 1. Hero Section Alignment
+- Use `px-6 lg:px-12` on the outer `max-w-7xl` container to match navigation padding
+- This ensures hero text aligns with the logo at the same left margin
+- Pattern: Navigation and hero should share the same container padding structure
+
+### 2. CSS Specificity Issues
+Global CSS rules can override Tailwind utility classes. We fixed:
+- `h1-h6 { color: var(--foreground) }` prevented `text-white` from working
+- `a { color: inherit }` prevented navigation links from being white
+- Solution: Remove color declarations from global element selectors
+
+### 3. Deployment & Caching
+- Vercel automatically deploys on git push to main branch
+- Browser caching can show old versions - always test in incognito mode
+- Hard refresh: `Cmd + Shift + R` (Mac) or `Ctrl + F5` (Windows)
+- Check Vercel deployment logs to confirm latest commit is deployed
+
+### 4. Tailwind CSS v4 Compatibility
+- Uses `@import "tailwindcss"` instead of separate CSS files
+- Includes built-in preflight/reset - don't add your own
+- Uses `@theme inline` for custom CSS variables
+- No `tailwind.config.ts` file needed for basic setup
+
 ## 📚 Tech Stack
 
-- **Framework**: Next.js 14 (App Router)
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS 4
-- **Deployment**: Vercel (recommended)
+- **Framework**: Next.js 16.0.3 (App Router with Turbopack)
+- **Language**: TypeScript 5
+- **Styling**: Tailwind CSS v4
+- **React**: React 19.2.0
+- **Deployment**: Vercel (automatic via GitHub integration)
 - **Package Manager**: npm
+
+## ⚠️ Important Tailwind CSS v4 Considerations
+
+### CSS Reset Conflicts
+**CRITICAL**: Do NOT use aggressive CSS resets like this in `globals.css`:
+
+```css
+/* ❌ DON'T DO THIS - Conflicts with Tailwind */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+```
+
+**Why?** This universal selector strips ALL padding/margin from every element and will:
+- Break Tailwind utility classes (`py-*`, `px-*`, `justify-center`, etc.)
+- Cause spacing inconsistencies throughout the site
+- Require inline style hacks to override
+
+**Solution**: Tailwind v4 includes its own built-in preflight/reset. Let Tailwind handle it.
+
+### Global Style Overrides
+Be careful with global element selectors in `globals.css`:
+
+```css
+/* ⚠️ This can override Tailwind text color classes */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--foreground); /* Don't set color here */
+}
+
+/* ⚠️ This can override Tailwind text color on links */
+a {
+  color: inherit; /* Don't set color here */
+}
+```
+
+**Best Practice**: Only set font-weight, line-height, and font-family in global element rules. Let Tailwind classes control colors.
+
+### Flexbox Centering
+When centering with flexbox, if Tailwind classes aren't working, use inline styles as a fallback:
+
+```tsx
+<div
+  className="flex flex-wrap gap-8"
+  style={{
+    justifyContent: 'center',  // Explicit inline style
+    display: 'flex',
+    flexWrap: 'wrap'
+  }}
+>
+```
+
+### Service Card Layout Pattern
+For centered, responsive card grids:
+
+```tsx
+<section className="bg-gray-50 pt-16 pb-24 px-4">
+  <div className="max-w-7xl mx-auto w-full">
+    <div
+      className="flex flex-wrap gap-8"
+      style={{ justifyContent: 'center' }}
+    >
+      {items.map((item) => (
+        <div
+          key={item.id}
+          style={{
+            width: '280px',
+            maxWidth: '320px',
+            flexShrink: 0
+          }}
+        >
+          <Card {...item} />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+```
+
+**Key Points**:
+- Use `max-w-7xl mx-auto` for centered container
+- Inline `justifyContent: 'center'` ensures centering works
+- Fixed card widths (280px-320px) for consistency
+- `flexShrink: 0` prevents cards from shrinking
 
 ## 🐛 Troubleshooting
 

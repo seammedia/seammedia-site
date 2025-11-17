@@ -117,29 +117,8 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Mountain Decoration */}
-        <div className="mt-16 relative">
-          <svg
-            className="w-full h-32 text-[#a5d5b5]"
-            viewBox="0 0 1200 150"
-            preserveAspectRatio="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M0,100 L200,20 L400,80 L600,10 L800,60 L1000,40 L1200,90 L1200,150 L0,150 Z"
-              fill="currentColor"
-              opacity="0.3"
-            />
-            <path
-              d="M0,120 L150,60 L350,100 L550,40 L750,90 L950,70 L1200,110 L1200,150 L0,150 Z"
-              fill="currentColor"
-              opacity="0.5"
-            />
-          </svg>
-        </div>
-
         {/* Copyright */}
-        <div className="mt-8 text-center text-sm text-gray-600">
+        <div className="mt-16 text-center text-sm text-gray-600">
           <p>Copyright 2025 © All rights Reserved.</p>
         </div>
       </div>
