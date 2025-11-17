@@ -17,10 +17,12 @@ export default function Hero() {
 
       {/* Content Container */}
       <div className="relative z-20 mx-auto max-w-7xl w-full pt-40 pb-32">
-        <div className="max-w-3xl px-6 md:px-12 lg:px-20">
+        <div className="max-w-3xl px-6 md:px-12 lg:pl-24">
           {/* Headline - Pure White */}
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-            We Build Brands. (padded test)
+            We Build
+            <br />
+            Brands.
           </h1>
 
           {/* Subtext - Pure White */}
