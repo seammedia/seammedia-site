@@ -3,30 +3,16 @@ import Link from "next/link";
 interface ServiceCardProps {
   title: string;
   description: string;
-  icon: string;
-  iconBgColor: string;
   link: string;
 }
 
 export default function ServiceCard({
   title,
   description,
-  icon,
-  iconBgColor,
   link,
 }: ServiceCardProps) {
   return (
     <div className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-transform hover:scale-[1.03] duration-300 flex flex-col h-full">
-      {/* Icon - Equal Size and Centered */}
-      <div className="flex justify-center mb-6">
-        <div
-          className="w-16 h-16 mx-auto rounded-lg flex items-center justify-center text-4xl shadow-md"
-          style={{ backgroundColor: iconBgColor }}
-        >
-          {icon}
-        </div>
-      </div>
-
       {/* Title */}
       <h3 className="text-2xl font-semibold text-gray-900 mb-4 text-center">
         {title}
