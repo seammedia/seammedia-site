@@ -17,7 +17,7 @@ export default function Hero() {
 
       {/* Content Container */}
       <div className="relative z-20 mx-auto max-w-7xl px-6 lg:px-12 w-full pt-40 pb-32">
-        <div className="max-w-4xl">
+        <div className="max-w-3xl pl-8 md:pl-16">
           {/* Headline - Pure White */}
           <h1 className="text-6xl md:text-7xl font-bold text-white mb-6 leading-tight">
             We Build
@@ -26,7 +26,7 @@ export default function Hero() {
           </h1>
 
           {/* Subtext - Pure White */}
-          <div className="space-y-6 max-w-2xl mt-6">
+          <div className="space-y-6 max-w-2xl mt-8">
             <p className="text-lg md:text-xl text-white leading-relaxed">
               We not only create brands, we use data to ensure we get results.
               <br className="hidden md:block" />
