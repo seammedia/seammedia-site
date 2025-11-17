@@ -19,9 +19,19 @@ export default function Footer() {
   const menuLinks = [
     { href: "/", label: "Home" },
     { href: "/clients", label: "Clients" },
-    { href: "/services", label: "Services" },
     { href: "/contact", label: "Contact Us" },
     { href: "/blog", label: "Blog" },
+  ];
+
+  const serviceLinks = [
+    { href: "/services/social-media", label: "Social Media Management" },
+    { href: "/services/web-design", label: "Website Design" },
+    { href: "/services/seo", label: "SEO" },
+    { href: "/services/graphic-design", label: "Graphic Design" },
+    { href: "/services/branding", label: "Branding" },
+    { href: "/services/adwords", label: "Google Ads" },
+    { href: "/services/photography", label: "Photography" },
+    { href: "/services/videography", label: "Videography" },
   ];
 
   const blogLinks = [
@@ -42,7 +52,7 @@ export default function Footer() {
   return (
     <footer className="bg-white border-t border-gray-200">
       <div className="mx-auto max-w-7xl px-6 py-16 lg:py-20 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Menu Column */}
           <div>
             <h3 className="font-bold text-gray-900 mb-6">Menu</h3>
@@ -52,6 +62,23 @@ export default function Footer() {
                   <Link
                     href={link.href}
                     className="text-gray-600 hover:text-gray-900 transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Services Column */}
+          <div>
+            <h3 className="font-bold text-gray-900 mb-6">Services</h3>
+            <ul className="space-y-3">
+              {serviceLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-gray-600 hover:text-gray-900 transition-colors text-sm"
                   >
                     {link.label}
                   </Link>

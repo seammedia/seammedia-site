@@ -6,13 +6,24 @@ import { useState } from "react";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
 
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/clients", label: "Clients" },
-    { href: "/services", label: "Services" },
     { href: "/contact", label: "Contact Us" },
     { href: "/blog", label: "Blog" },
+  ];
+
+  const serviceLinks = [
+    { href: "/services/social-media", label: "Social Media Management" },
+    { href: "/services/web-design", label: "Website Design" },
+    { href: "/services/seo", label: "SEO" },
+    { href: "/services/graphic-design", label: "Graphic Design" },
+    { href: "/services/branding", label: "Branding" },
+    { href: "/services/adwords", label: "Google Ads" },
+    { href: "/services/photography", label: "Photography" },
+    { href: "/services/videography", label: "Videography" },
   ];
 
   return (
@@ -43,6 +54,42 @@ export default function Header() {
                 </Link>
               </li>
             ))}
+            {/* Services Dropdown */}
+            <li
+              className="relative"
+              onMouseEnter={() => setServicesDropdownOpen(true)}
+              onMouseLeave={() => setServicesDropdownOpen(false)}
+            >
+              <button className="text-white text-base font-medium hover:text-white/70 transition-colors duration-200 flex items-center gap-1">
+                Services
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              {servicesDropdownOpen && (
+                <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl py-2 z-50">
+                  {serviceLinks.map((service) => (
+                    <Link
+                      key={service.href}
+                      href={service.href}
+                      className="block px-6 py-3 text-gray-900 hover:bg-gray-100 transition-colors"
+                    >
+                      {service.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </li>
           </ul>
 
           {/* Mobile Menu Button */}
@@ -84,6 +131,25 @@ export default function Header() {
                   </Link>
                 </li>
               ))}
+              {/* Services in Mobile Menu */}
+              <li>
+                <div className="text-white text-lg font-medium mb-3">
+                  Services
+                </div>
+                <ul className="ml-4 space-y-3">
+                  {serviceLinks.map((service) => (
+                    <li key={service.href}>
+                      <Link
+                        href={service.href}
+                        className="block text-white/80 text-base hover:text-white transition-colors duration-200"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {service.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </li>
             </ul>
           </div>
         )}
