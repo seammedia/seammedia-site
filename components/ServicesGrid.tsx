@@ -70,7 +70,7 @@ export default function ServicesGrid() {
   ];
 
   return (
-    <section className="bg-gray-50 py-32 px-4">
+    <section className="bg-gray-50 pt-16 pb-24 px-4">
       <div className="max-w-7xl mx-auto w-full">
         <div
           className="flex flex-wrap gap-8"
