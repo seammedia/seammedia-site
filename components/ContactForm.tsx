@@ -5,47 +5,50 @@ import Section from "./ui/Section";
 import Button from "./ui/Button";
 
 export default function ContactForm() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsSubmitting(true);
+    setStatus("submitting");
+    setErrorMessage("");
 
-    // TODO: Replace with actual form submission (Formspree, serverless function, etc.)
-    // Example Formspree integration:
-    // const response = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/json" },
-    //   body: JSON.stringify(formData),
-    // });
+    const form = e.currentTarget;
+    const formData = new FormData(form);
 
-    console.log("Form submission:", formData);
+    try {
+      console.log("Submitting form to Formspree...");
 
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitStatus("success");
-      setFormData({ name: "", email: "", phone: "", message: "" });
+      const response = await fetch("https://formspree.io/f/mdkyqykl", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
 
-      // Reset success message after 5 seconds
-      setTimeout(() => setSubmitStatus("idle"), 5000);
-    }, 1000);
+      console.log("Response status:", response.status);
+      console.log("Response ok:", response.ok);
+
+      const data = await response.json();
+      console.log("Response data:", data);
+
+      if (response.ok) {
+        setStatus("success");
+        form.reset();
+        setTimeout(() => setStatus("idle"), 5000);
+      } else {
+        setStatus("error");
+        setErrorMessage(data.error || "Something went wrong");
+        console.error("Formspree error:", data);
+        setTimeout(() => setStatus("idle"), 5000);
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setStatus("error");
+      setErrorMessage(error instanceof Error ? error.message : "Network error");
+      setTimeout(() => setStatus("idle"), 5000);
+    }
   };
 
   // Decorative squares
@@ -110,8 +113,6 @@ export default function ContactForm() {
                 type="text"
                 id="name"
                 name="name"
-                value={formData.name}
-                onChange={handleChange}
                 required
                 className="w-full px-4 py-3 rounded-md border border-white/30 bg-white/90 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent"
               />
@@ -126,8 +127,6 @@ export default function ContactForm() {
                 type="email"
                 id="email"
                 name="email"
-                value={formData.email}
-                onChange={handleChange}
                 required
                 placeholder="ex: myname@example.com"
                 className="w-full px-4 py-3 rounded-md border border-white/30 bg-white/90 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent"
@@ -143,8 +142,6 @@ export default function ContactForm() {
                 type="tel"
                 id="phone"
                 name="phone"
-                value={formData.phone}
-                onChange={handleChange}
                 className="w-full px-4 py-3 rounded-md border border-white/30 bg-white/90 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent"
               />
             </div>
@@ -157,8 +154,6 @@ export default function ContactForm() {
               <textarea
                 id="message"
                 name="message"
-                value={formData.message}
-                onChange={handleChange}
                 rows={5}
                 className="w-full px-4 py-3 rounded-md border border-white/30 bg-white/90 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent resize-none"
               />
@@ -170,16 +165,32 @@ export default function ContactForm() {
               variant="secondary"
               size="lg"
               className="w-full"
-              disabled={isSubmitting}
+              disabled={status === "submitting"}
             >
-              {isSubmitting ? "Sending..." : "Send Message"}
+              {status === "submitting" ? "Sending..." : "Send Message"}
             </Button>
 
             {/* Success Message */}
-            {submitStatus === "success" && (
-              <p className="text-white text-center font-medium">
-                Thank you! We'll be in touch soon.
-              </p>
+            {status === "success" && (
+              <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded">
+                <p className="font-medium">✓ Thank you! We'll be in touch soon.</p>
+              </div>
+            )}
+
+            {/* Error Message */}
+            {status === "error" && (
+              <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+                <p className="font-medium">✗ {errorMessage || "Something went wrong. Please try again."}</p>
+                <p className="text-sm mt-1">Check the browser console for details.</p>
+              </div>
+            )}
+
+            {/* Debug info */}
+            {process.env.NODE_ENV === "development" && (
+              <div className="bg-gray-100 border border-gray-300 text-gray-700 px-4 py-3 rounded text-xs">
+                <p>Status: {status}</p>
+                <p>Endpoint: https://formspree.io/f/mdkyqykl</p>
+              </div>
             )}
           </form>
         </div>
