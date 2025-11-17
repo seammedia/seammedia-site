@@ -1,24 +1,29 @@
+"use client";
+
 import Section from "./ui/Section";
+import Image from "next/image";
 
 export default function ClientLogos() {
-  // These are placeholder names - replace with actual client logo images
   const clients = [
-    { name: "Youfoodz", logo: "/images/clients/youfoodz.png" },
-    { name: "Coles", logo: "/images/clients/coles.png" },
-    { name: "Fujifilm", logo: "/images/clients/fujifilm.png" },
-    { name: "Daniel Wellington", logo: "/images/clients/daniel-wellington.png" },
-    { name: "Vitasoy", logo: "/images/clients/vitasoy.png" },
-    { name: "Rydges", logo: "/images/clients/rydges.png" },
-    { name: "Taubmans", logo: "/images/clients/taubmans.png" },
-    { name: "First Press Coffee", logo: "/images/clients/first-press.png" },
-    { name: "The Atlantic", logo: "/images/clients/atlantic.png" },
-    { name: "PT Leo Estate", logo: "/images/clients/pt-leo.png" },
-    { name: "Tattoo Skull", logo: "/images/clients/tattoo-skull.png" },
-    { name: "Grilla", logo: "/images/clients/grilla.png" },
-    { name: "Pullman", logo: "/images/clients/pullman.png" },
-    { name: "Grange Roc", logo: "/images/clients/grange-roc.png" },
-    { name: "Stone & Wood", logo: "/images/clients/stone-wood.png" },
+    { name: "Atlantic", logo: "/images/atlantic_logo_ocean_to_plate-1024x137.png" },
+    { name: "Coles", logo: "/images/coles.png" },
+    { name: "First Press Coffee", logo: "/images/D0xwK-wH_400x400_black.png" },
+    { name: "Daniel Wellington", logo: "/images/daniel-wellington-logo_black.png" },
+    { name: "Fujifilm", logo: "/images/fujifilm-logo-black-1024x1024.png" },
+    { name: "Grange", logo: "/images/Grangeblack.png" },
+    { name: "Grilld", logo: "/images/GRILLD-LOGO-CIRCLE-HEALTHYBURGERS-Black_360x80.jpg" },
+    { name: "PT Leo Estate", logo: "/images/pt_leo_estate_black-1.png" },
+    { name: "Pullman", logo: "/images/pullman.png" },
+    { name: "Rydges", logo: "/images/rydges11_black-1024x1024.png" },
+    { name: "Taubmans", logo: "/images/Taubmans_Master_GREY_for-web.png" },
+    { name: "Tommy Ruff", logo: "/images/Tommy-Ruff-Logo-Black.png" },
+    { name: "Vitasoy", logo: "/images/Vitasoy-logoblack-1024x311.png" },
+    { name: "Youfoodz", logo: "/images/youfoodz.png" },
   ];
+
+  // Split clients into two rows
+  const row1 = clients.slice(0, 7);
+  const row2 = clients.slice(7);
 
   return (
     <Section background="white">
@@ -31,24 +36,112 @@ export default function ClientLogos() {
         </p>
       </div>
 
-      {/* Logos Grid */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10 items-center">
-        {clients.map((client, index) => (
-          <div
-            key={index}
-            className="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300"
-          >
-            {/* Placeholder - Replace with actual logo images */}
-            <div className="text-center">
-              <div className="w-32 h-20 bg-gray-200 rounded flex items-center justify-center mb-2">
-                {/* This is a placeholder. Add actual logo images to public/images/clients/ */}
-                <span className="text-xs text-gray-500">Logo</span>
+      {/* Scrolling Logo Marquee */}
+      <div className="relative overflow-hidden">
+        {/* Row 1 - Scrolling Left */}
+        <div className="flex mb-8 overflow-hidden">
+          <div className="flex animate-scroll-left hover:pause-animation">
+            {/* First set of logos */}
+            {row1.map((client, index) => (
+              <div
+                key={`row1-${index}`}
+                className="flex-shrink-0 mx-8 w-40 h-24 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300"
+              >
+                <Image
+                  src={client.logo}
+                  alt={client.name}
+                  width={160}
+                  height={96}
+                  className="max-w-full max-h-full object-contain"
+                />
               </div>
-              <p className="text-sm font-medium text-gray-700">{client.name}</p>
-            </div>
+            ))}
+            {/* Duplicate set for seamless loop */}
+            {row1.map((client, index) => (
+              <div
+                key={`row1-dup-${index}`}
+                className="flex-shrink-0 mx-8 w-40 h-24 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300"
+              >
+                <Image
+                  src={client.logo}
+                  alt={client.name}
+                  width={160}
+                  height={96}
+                  className="max-w-full max-h-full object-contain"
+                />
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
+
+        {/* Row 2 - Scrolling Right */}
+        <div className="flex overflow-hidden">
+          <div className="flex animate-scroll-right hover:pause-animation">
+            {/* First set of logos */}
+            {row2.map((client, index) => (
+              <div
+                key={`row2-${index}`}
+                className="flex-shrink-0 mx-8 w-40 h-24 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300"
+              >
+                <Image
+                  src={client.logo}
+                  alt={client.name}
+                  width={160}
+                  height={96}
+                  className="max-w-full max-h-full object-contain"
+                />
+              </div>
+            ))}
+            {/* Duplicate set for seamless loop */}
+            {row2.map((client, index) => (
+              <div
+                key={`row2-dup-${index}`}
+                className="flex-shrink-0 mx-8 w-40 h-24 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300"
+              >
+                <Image
+                  src={client.logo}
+                  alt={client.name}
+                  width={160}
+                  height={96}
+                  className="max-w-full max-h-full object-contain"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
+
+      <style jsx>{`
+        @keyframes scroll-left {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+
+        @keyframes scroll-right {
+          0% {
+            transform: translateX(-50%);
+          }
+          100% {
+            transform: translateX(0);
+          }
+        }
+
+        .animate-scroll-left {
+          animation: scroll-left 30s linear infinite;
+        }
+
+        .animate-scroll-right {
+          animation: scroll-right 30s linear infinite;
+        }
+
+        .hover\\:pause-animation:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
     </Section>
   );
 }
