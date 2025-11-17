@@ -19,8 +19,8 @@ export default function Footer() {
   const menuLinks = [
     { href: "/", label: "Home" },
     { href: "/clients", label: "Clients" },
-    { href: "/contact", label: "Contact Us" },
     { href: "/blog", label: "Blog" },
+    { href: "/contact", label: "Contact Us" },
   ];
 
   const serviceLinks = [
