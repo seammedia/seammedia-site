@@ -27,7 +27,7 @@ export default function WhyChooseUs() {
 
   return (
     <Section background="pink">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative">
         {/* Decorative Squares */}
         {decorativeSquares.map((square, index) => (
           <div
@@ -53,9 +53,9 @@ export default function WhyChooseUs() {
         </div>
 
         {/* Right: Features List */}
-        <div className="space-y-6 relative z-10">
+        <div className="space-y-8 relative z-10">
           {features.map((feature, index) => (
-            <div key={index} className="flex items-start gap-4">
+            <div key={index} className="flex items-start gap-5">
               <div className="flex-shrink-0 mt-1">
                 <svg
                   className="w-8 h-8 text-white"

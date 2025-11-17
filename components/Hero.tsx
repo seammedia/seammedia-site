@@ -16,8 +16,8 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 w-full">
-        <div className="max-w-3xl">
+      <div className="relative z-10 mx-auto max-w-7xl px-8 lg:px-16 w-full">
+        <div className="max-w-3xl pl-4 lg:pl-8">
           <h1 className="text-5xl lg:text-7xl font-bold mb-8 drop-shadow-lg text-white">
             We Build
             <br />
