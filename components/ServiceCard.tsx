@@ -16,25 +16,31 @@ export default function ServiceCard({
   link,
 }: ServiceCardProps) {
   return (
-    <div className="group bg-white p-6 rounded-lg hover:shadow-lg transition-shadow duration-200">
-      {/* Icon */}
-      <div
-        className="w-16 h-16 rounded-md mb-4 flex items-center justify-center text-3xl"
-        style={{ backgroundColor: iconBgColor }}
-      >
-        {icon}
+    <div className="group bg-white p-8 rounded-lg shadow-sm hover:shadow-xl hover:scale-105 transition-all duration-300 flex flex-col h-full">
+      {/* Icon - Equal Size and Centered */}
+      <div className="flex justify-center mb-6">
+        <div
+          className="w-20 h-20 rounded-lg flex items-center justify-center text-4xl shadow-md"
+          style={{ backgroundColor: iconBgColor }}
+        >
+          {icon}
+        </div>
       </div>
 
       {/* Title */}
-      <h3 className="text-xl font-bold text-gray-900 mb-3">{title}</h3>
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4 text-center">
+        {title}
+      </h3>
 
       {/* Description */}
-      <p className="text-gray-600 mb-4 leading-relaxed">{description}</p>
+      <p className="text-base text-gray-600 leading-relaxed mb-6 flex-grow text-center">
+        {description}
+      </p>
 
       {/* Learn More Link */}
       <Link
         href={link}
-        className="inline-flex items-center text-gray-900 font-medium group-hover:text-[#f5b5b5] transition-colors"
+        className="inline-flex items-center justify-center text-gray-900 font-medium group-hover:text-[#f5b5b5] transition-colors mt-auto"
       >
         Learn More
         <svg
