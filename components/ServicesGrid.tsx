@@ -72,14 +72,21 @@ export default function ServicesGrid() {
   return (
     <section className="bg-gray-50 py-32 px-4">
       <div className="max-w-7xl mx-auto w-full">
-        <div className="flex flex-wrap justify-center gap-8">
+        <div
+          className="flex flex-wrap gap-8"
+          style={{
+            justifyContent: 'center',
+            display: 'flex',
+            flexWrap: 'wrap'
+          }}
+        >
           {services.map((service, index) => (
             <div
               key={index}
-              className="flex-shrink-0"
               style={{
                 width: '280px',
-                maxWidth: '320px'
+                maxWidth: '320px',
+                flexShrink: 0
               }}
             >
               <ServiceCard {...service} />
