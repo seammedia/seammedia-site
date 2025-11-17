@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Section from "./ui/Section";
-import Button from "./ui/Button";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
@@ -51,145 +50,150 @@ export default function ContactForm() {
     }
   };
 
-  // Decorative squares
-  const decorativeSquares: Array<{
-    color: string;
-    top?: string;
-    bottom?: string;
-    left?: string;
-    right?: string;
-    size: string;
-  }> = [
-    { color: "#f5d45d", top: "5%", right: "10%", size: "w-8 h-8" },
-    { color: "#5865f2", top: "15%", right: "5%", size: "w-6 h-6" },
-    { color: "#f5d45d", bottom: "10%", right: "8%", size: "w-10 h-10" },
-  ];
-
   return (
-    <Section background="pink">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative">
-        {/* Decorative Squares */}
-        {decorativeSquares.map((square, index) => (
-          <div
-            key={index}
-            className={`absolute ${square.size} rounded-sm opacity-70 hidden lg:block`}
-            style={{
-              backgroundColor: square.color,
-              ...(square.top && { top: square.top }),
-              ...(square.bottom && { bottom: square.bottom }),
-              ...(square.left && { left: square.left }),
-              ...(square.right && { right: square.right }),
-            }}
-          />
-        ))}
+    <Section background="white">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        {/* Left: Contact Info */}
+        <div>
+          <h2 className="text-6xl lg:text-7xl font-bold text-gray-900 mb-16">
+            Contact us
+          </h2>
 
-        {/* Left: Image */}
-        <div className="relative z-10 hidden lg:block">
-          <img
-            src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=800&q=80"
-            alt="Contact us"
-            className="rounded-lg shadow-lg w-full"
-          />
+          <div className="space-y-8">
+            <div>
+              <a
+                href="mailto:contact@seammedia.com.au"
+                className="text-2xl font-medium text-gray-900 hover:text-gray-600 transition-colors"
+              >
+                contact@seammedia.com.au
+              </a>
+            </div>
+
+            <div>
+              <a
+                href="tel:+61402642746"
+                className="text-2xl font-medium text-gray-900 hover:text-gray-600 transition-colors"
+              >
+                0402 642 746
+              </a>
+            </div>
+          </div>
         </div>
 
         {/* Right: Contact Form */}
-        <div className="relative z-10">
-          <div className="text-center mb-10">
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-              Get In Touch
-            </h2>
-            <p className="text-white text-lg">
-              Leave your details below and one of our experts will contact you shortly!
-            </p>
-          </div>
-
-          <form onSubmit={handleSubmit} className="space-y-5">
-            {/* Name */}
-            <div>
-              <label htmlFor="name" className="block text-white mb-2">
-                Name <span className="text-white">*</span>
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                required
-                className="w-full px-4 py-3 rounded-md border border-white/30 bg-white/90 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent"
-              />
+        <div>
+          <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Name Row */}
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <label htmlFor="firstName" className="block text-sm text-gray-600 mb-2">
+                  First Name
+                </label>
+                <input
+                  type="text"
+                  id="firstName"
+                  name="firstName"
+                  required
+                  className="w-full px-0 py-3 border-0 border-b-2 border-gray-300 focus:border-gray-900 focus:outline-none focus:ring-0 bg-transparent text-gray-900 placeholder-gray-400"
+                />
+              </div>
+              <div>
+                <label htmlFor="lastName" className="block text-sm text-gray-600 mb-2">
+                  Last Name
+                </label>
+                <input
+                  type="text"
+                  id="lastName"
+                  name="lastName"
+                  required
+                  className="w-full px-0 py-3 border-0 border-b-2 border-gray-300 focus:border-gray-900 focus:outline-none focus:ring-0 bg-transparent text-gray-900 placeholder-gray-400"
+                />
+              </div>
             </div>
 
             {/* Email */}
             <div>
-              <label htmlFor="email" className="block text-white mb-2">
-                E-mail <span className="text-white">*</span>
+              <label htmlFor="email" className="block text-sm text-gray-600 mb-2">
+                Email (required)
               </label>
               <input
                 type="email"
                 id="email"
                 name="email"
                 required
-                placeholder="ex: myname@example.com"
-                className="w-full px-4 py-3 rounded-md border border-white/30 bg-white/90 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent"
+                className="w-full px-0 py-3 border-0 border-b-2 border-gray-300 focus:border-gray-900 focus:outline-none focus:ring-0 bg-transparent text-gray-900 placeholder-gray-400"
               />
             </div>
 
-            {/* Phone */}
+            {/* Service Dropdown */}
             <div>
-              <label htmlFor="phone" className="block text-white mb-2">
-                Phone
+              <label htmlFor="service" className="block text-sm text-gray-600 mb-2">
+                Service
               </label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                className="w-full px-4 py-3 rounded-md border border-white/30 bg-white/90 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent"
-              />
+              <select
+                id="service"
+                name="service"
+                className="w-full px-0 py-3 border-0 border-b-2 border-gray-300 focus:border-gray-900 focus:outline-none focus:ring-0 bg-transparent text-gray-900"
+              >
+                <option value="">Select a service</option>
+                <option value="Web Design">Web Design</option>
+                <option value="SEO">SEO</option>
+                <option value="Social Media Management">Social Media Management</option>
+                <option value="Google Ads">Google Ads</option>
+                <option value="Graphic Design">Graphic Design</option>
+                <option value="Branding">Branding</option>
+                <option value="Photography">Photography</option>
+                <option value="Videography">Videography</option>
+                <option value="Other">Other</option>
+              </select>
             </div>
 
             {/* Message */}
             <div>
-              <label htmlFor="message" className="block text-white mb-2">
-                Your Message
+              <label htmlFor="message" className="block text-sm text-gray-600 mb-2">
+                Project description
               </label>
               <textarea
                 id="message"
                 name="message"
-                rows={5}
-                className="w-full px-4 py-3 rounded-md border border-white/30 bg-white/90 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent resize-none"
+                rows={4}
+                className="w-full px-0 py-3 border-0 border-b-2 border-gray-300 focus:border-gray-900 focus:outline-none focus:ring-0 bg-transparent text-gray-900 placeholder-gray-400 resize-none"
               />
             </div>
 
+            {/* Newsletter Checkbox */}
+            <div className="flex items-start">
+              <input
+                type="checkbox"
+                id="newsletter"
+                name="newsletter"
+                className="mt-1 h-4 w-4 text-gray-900 border-gray-300 rounded focus:ring-gray-900"
+              />
+              <label htmlFor="newsletter" className="ml-2 text-sm text-gray-600">
+                Sign me up for news and updates
+              </label>
+            </div>
+
             {/* Submit Button */}
-            <Button
+            <button
               type="submit"
-              variant="secondary"
-              size="lg"
-              className="w-full"
               disabled={status === "submitting"}
+              className="px-8 py-3 bg-gray-900 text-white font-medium rounded-full hover:bg-gray-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {status === "submitting" ? "Sending..." : "Send Message"}
-            </Button>
+              {status === "submitting" ? "Sending..." : "Submit"}
+            </button>
 
             {/* Success Message */}
             {status === "success" && (
-              <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded">
+              <div className="bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded">
                 <p className="font-medium">✓ Thank you! We'll be in touch soon.</p>
               </div>
             )}
 
             {/* Error Message */}
             {status === "error" && (
-              <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+              <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded">
                 <p className="font-medium">✗ {errorMessage || "Something went wrong. Please try again."}</p>
-                <p className="text-sm mt-1">Check the browser console for details.</p>
-              </div>
-            )}
-
-            {/* Debug info */}
-            {process.env.NODE_ENV === "development" && (
-              <div className="bg-gray-100 border border-gray-300 text-gray-700 px-4 py-3 rounded text-xs">
-                <p>Status: {status}</p>
-                <p>Endpoint: https://formspree.io/f/mdkyqykl</p>
               </div>
             )}
           </form>
