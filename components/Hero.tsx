@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section className="relative min-h-[600px] lg:min-h-[700px] flex items-center text-white overflow-hidden">
+    <section className="relative min-h-[600px] lg:min-h-[700px] flex items-center text-white overflow-hidden pb-20 lg:pb-32">
       {/* Background Image */}
       <div
         className="absolute inset-0 z-0"
@@ -12,7 +12,7 @@ export default function Hero() {
         }}
       >
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black/30" />
+        <div className="absolute inset-0 bg-black/40" />
       </div>
 
       {/* Content */}
