@@ -6,6 +6,7 @@ import Testimonials from "@/components/Testimonials";
 import ClientLogos from "@/components/ClientLogos";
 import ContactForm from "@/components/ContactForm";
 
+// Cache bust - Updated 2025-11-17
 export default function Home() {
   return (
     <>
@@ -19,3 +20,4 @@ export default function Home() {
     </>
   );
 }
+
