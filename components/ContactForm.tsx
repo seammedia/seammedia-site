@@ -161,19 +161,6 @@ export default function ContactForm() {
               />
             </div>
 
-            {/* Newsletter Checkbox */}
-            <div className="flex items-start">
-              <input
-                type="checkbox"
-                id="newsletter"
-                name="newsletter"
-                className="mt-1 h-4 w-4 text-gray-900 border-gray-300 rounded focus:ring-gray-900"
-              />
-              <label htmlFor="newsletter" className="ml-2 text-sm text-gray-600">
-                Sign me up for news and updates
-              </label>
-            </div>
-
             {/* Submit Button */}
             <button
               type="submit"
