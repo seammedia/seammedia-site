@@ -16,8 +16,8 @@ export default function Hero() {
       <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/70 via-black/30 to-transparent" />
 
       {/* Content Container */}
-      <div className="relative z-20 mx-auto max-w-7xl w-full pt-40 pb-32">
-        <div className="max-w-3xl px-6 md:pl-12 lg:pl-12">
+      <div className="relative z-20 mx-auto max-w-7xl px-6 lg:px-12 w-full pt-40 pb-32">
+        <div className="max-w-3xl">
           {/* Headline - Pure White */}
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
             We Build
