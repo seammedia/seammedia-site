@@ -70,20 +70,23 @@ export default function ServicesGrid() {
   ];
 
   return (
-    <Section background="gray" className="pt-32 pb-24">
-      <div className="max-w-6xl mx-auto px-8">
-        <div
-          className="grid gap-8"
-          style={{
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 320px))',
-            justifyContent: 'center'
-          }}
-        >
+    <section className="bg-gray-50 py-32 px-4">
+      <div className="max-w-7xl mx-auto w-full">
+        <div className="flex flex-wrap justify-center gap-8">
           {services.map((service, index) => (
-            <ServiceCard key={index} {...service} />
+            <div
+              key={index}
+              className="flex-shrink-0"
+              style={{
+                width: '280px',
+                maxWidth: '320px'
+              }}
+            >
+              <ServiceCard {...service} />
+            </div>
           ))}
         </div>
       </div>
-    </Section>
+    </section>
   );
 }
