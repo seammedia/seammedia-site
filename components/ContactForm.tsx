@@ -93,9 +93,7 @@ export default function ContactForm() {
         <div className="relative z-10">
           <div className="text-center mb-10">
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-              Want To
-              <br />
-              Talk With Us?
+              Get In Touch
             </h2>
             <p className="text-white text-lg">
               Leave your details below and one of our experts will contact you shortly!
