@@ -46,10 +46,10 @@ export default function ContactPage() {
             </div>
             <h3 className="text-xl font-bold text-gray-900 mb-2">Email</h3>
             <a
-              href="mailto:info@seammedia.com.au"
+              href="mailto:contact@seammedia.com.au"
               className="text-gray-700 hover:text-[#f5b5b5] transition-colors"
             >
-              info@seammedia.com.au
+              contact@seammedia.com.au
             </a>
           </div>
 
@@ -70,12 +70,12 @@ export default function ContactPage() {
                 />
               </svg>
             </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-2">Phone</h3>
+            <h3 className="text-xl font-bold text-gray-900 mb-2">Mobile</h3>
             <a
-              href="tel:+61XXXXXXXXX"
+              href="tel:+61402642746"
               className="text-gray-700 hover:text-[#f5b5b5] transition-colors"
             >
-              +61 XXX XXX XXX
+              0402 642 746
             </a>
           </div>
 
@@ -103,7 +103,7 @@ export default function ContactPage() {
               </svg>
             </div>
             <h3 className="text-xl font-bold text-gray-900 mb-2">Location</h3>
-            <p className="text-gray-700">Melbourne, Australia</p>
+            <p className="text-gray-700">Mount Eliza, Australia</p>
           </div>
         </div>
 
