@@ -44,16 +44,15 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <ul className="hidden md:flex items-center gap-10">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className="text-white text-base font-medium hover:text-white/70 transition-colors duration-200"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
+            {/* Home */}
+            <li>
+              <Link
+                href="/"
+                className="text-white text-base font-medium hover:text-white/70 transition-colors duration-200"
+              >
+                Home
+              </Link>
+            </li>
             {/* Services Dropdown */}
             <li
               className="relative"
@@ -90,6 +89,33 @@ export default function Header() {
                 </div>
               )}
             </li>
+            {/* Clients */}
+            <li>
+              <Link
+                href="/clients"
+                className="text-white text-base font-medium hover:text-white/70 transition-colors duration-200"
+              >
+                Clients
+              </Link>
+            </li>
+            {/* Blog */}
+            <li>
+              <Link
+                href="/blog"
+                className="text-white text-base font-medium hover:text-white/70 transition-colors duration-200"
+              >
+                Blog
+              </Link>
+            </li>
+            {/* Contact Us */}
+            <li>
+              <Link
+                href="/contact"
+                className="text-white text-base font-medium hover:text-white/70 transition-colors duration-200"
+              >
+                Contact Us
+              </Link>
+            </li>
           </ul>
 
           {/* Mobile Menu Button */}
@@ -120,17 +146,16 @@ export default function Header() {
         {mobileMenuOpen && (
           <div className="md:hidden mt-6 pb-4 bg-black/90 backdrop-blur-lg rounded-lg p-6">
             <ul className="flex flex-col gap-5">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="block text-white text-lg font-medium hover:text-white/70 transition-colors duration-200"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+              {/* Home */}
+              <li>
+                <Link
+                  href="/"
+                  className="block text-white text-lg font-medium hover:text-white/70 transition-colors duration-200"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Home
+                </Link>
+              </li>
               {/* Services in Mobile Menu */}
               <li>
                 <div className="text-white text-lg font-medium mb-3">
@@ -149,6 +174,36 @@ export default function Header() {
                     </li>
                   ))}
                 </ul>
+              </li>
+              {/* Clients */}
+              <li>
+                <Link
+                  href="/clients"
+                  className="block text-white text-lg font-medium hover:text-white/70 transition-colors duration-200"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Clients
+                </Link>
+              </li>
+              {/* Blog */}
+              <li>
+                <Link
+                  href="/blog"
+                  className="block text-white text-lg font-medium hover:text-white/70 transition-colors duration-200"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Blog
+                </Link>
+              </li>
+              {/* Contact Us */}
+              <li>
+                <Link
+                  href="/contact"
+                  className="block text-white text-lg font-medium hover:text-white/70 transition-colors duration-200"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Contact Us
+                </Link>
               </li>
             </ul>
           </div>
