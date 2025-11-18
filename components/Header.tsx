@@ -2,11 +2,12 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
+  const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const navLinks = [
     { href: "/", label: "Home" },
@@ -25,6 +26,20 @@ export default function Header() {
     { href: "/services/photography", label: "Photography" },
     { href: "/services/videography", label: "Videography" },
   ];
+
+  const handleMouseEnter = () => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+    setServicesDropdownOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    closeTimeoutRef.current = setTimeout(() => {
+      setServicesDropdownOpen(false);
+    }, 500); // 500ms delay before closing
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-black backdrop-blur-md border-b border-white/10">
@@ -56,8 +71,8 @@ export default function Header() {
             {/* Services Dropdown */}
             <li
               className="relative"
-              onMouseEnter={() => setServicesDropdownOpen(true)}
-              onMouseLeave={() => setServicesDropdownOpen(false)}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
             >
               <button className="text-white text-base font-medium hover:text-white/70 transition-colors duration-200 flex items-center gap-1">
                 Services
@@ -76,7 +91,7 @@ export default function Header() {
                 </svg>
               </button>
               {servicesDropdownOpen && (
-                <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl py-2 z-50">
+                <div className="absolute top-full left-0 mt-0 pt-2 w-64 bg-white rounded-lg shadow-xl py-2 z-50">
                   {serviceLinks.map((service) => (
                     <Link
                       key={service.href}

@@ -4,6 +4,7 @@ import DataDriven from "@/components/DataDriven";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import Testimonials from "@/components/Testimonials";
 import ClientLogos from "@/components/ClientLogos";
+import FAQ from "@/components/FAQ";
 import ContactForm from "@/components/ContactForm";
 
 // Cache bust - Updated 2025-11-17
@@ -16,6 +17,7 @@ export default function Home() {
       <WhyChooseUs />
       <Testimonials />
       <ClientLogos />
+      <FAQ />
       <ContactForm />
     </>
   );
