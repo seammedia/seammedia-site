@@ -16,6 +16,9 @@ export const metadata: Metadata = {
     "Google Ads",
     "Melbourne",
   ],
+  icons: {
+    icon: "/icon.png",
+  },
 };
 
 export default function RootLayout({
