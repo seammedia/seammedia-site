@@ -42,7 +42,7 @@ export default function FAQ() {
   return (
     <Section background="white">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-center mb-4" style={{ fontFamily: 'Poppins, sans-serif' }}>
+        <h2 className="text-4xl lg:text-5xl font-bold text-center mb-4" style={{ fontFamily: 'Poppins, sans-serif' }}>
           Frequently Asked Questions
         </h2>
 
