@@ -65,6 +65,17 @@ export default function Footer() {
     { href: "/blog/ranking-locally-google", label: "Ranking your business locally on Google" },
   ];
 
+  const locationLinks = [
+    { href: "/brighton", label: "Brighton" },
+    { href: "/chelsea", label: "Chelsea" },
+    { href: "/cranbourne", label: "Cranbourne" },
+    { href: "/dandenong", label: "Dandenong" },
+    { href: "/frankston", label: "Frankston" },
+    { href: "/hampton", label: "Hampton" },
+    { href: "/mornington", label: "Mornington" },
+    { href: "/mount-eliza", label: "Mount Eliza" },
+  ];
+
   const socialLinks = [
     { href: "https://www.facebook.com/seammediaaus/", label: "Facebook", icon: "facebook" },
     { href: "https://www.instagram.com/seammedia/?hl=en", label: "Instagram", icon: "instagram" },
@@ -75,7 +86,7 @@ export default function Footer() {
   return (
     <footer style={{ backgroundColor: '#5e7986' }}>
       <div className="mx-auto max-w-7xl px-6 py-16 lg:py-20 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12">
           {/* Menu Column */}
           <div>
             <h3 className="font-bold text-white mb-6">Menu</h3>
@@ -115,6 +126,23 @@ export default function Footer() {
             <h3 className="font-bold text-white mb-6">Blog</h3>
             <ul className="space-y-3">
               {blogLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-white hover:text-gray-200 transition-colors text-sm"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Locations Column */}
+          <div>
+            <h3 className="font-bold text-white mb-6">Locations</h3>
+            <ul className="space-y-3">
+              {locationLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
