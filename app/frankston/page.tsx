@@ -76,6 +76,36 @@ export default function FrankstonPage() {
         </div>
       </Section>
 
+      {/* Map Section */}
+      <Section background="white">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-12 text-center">
+            Find{' '}
+            <span className="relative inline-block px-4">
+              <span className="relative z-10 text-white">Us</span>
+              <span
+                className="absolute inset-0 -inset-x-1 top-[15%] h-[75%] rounded-sm opacity-90"
+                style={{
+                  backgroundColor: '#5e7986',
+                  transform: 'skewX(-5deg)'
+                }}
+              ></span>
+            </span>
+          </h2>
+          <div className="w-full aspect-[4/3] lg:aspect-[16/9] rounded-lg overflow-hidden shadow-lg">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25100.32405903817!2d145.12077927722586!3d-38.15087609362117!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad60b2a48d44683%3A0x5045675218ce240!2sFrankston%20VIC%203199!5e0!3m2!1sen!2sau!4v1763507513247!5m2!1sen!2sau"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen={true}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+        </div>
+      </Section>
+
       {/* Contact Section */}
       <ContactForm />
     </>
