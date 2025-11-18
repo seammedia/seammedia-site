@@ -27,17 +27,20 @@ export default function ClientLogos() {
 
   return (
     <Section background="white">
-      <div className="text-center mb-16">
-        <div className="inline-block relative">
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-2">
-            Some of our clients
-          </h2>
-          <div className="dash-line"></div>
+      <section className="text-center mb-16">
+        <h2 className="text-[44px] font-bold text-gray-900 mb-3" style={{ letterSpacing: '-0.5px' }}>
+          Some of our clients
+        </h2>
+        <div className="flex justify-center mb-3">
+          <div
+            className="border-b-2 border-dashed w-[60%] max-w-md"
+            style={{ borderColor: '#5e7986' }}
+          ></div>
         </div>
-        <p className="text-lg text-gray-600 mt-6">
+        <p className="text-base font-normal" style={{ color: '#555' }}>
           Driving technology for leading brands
         </p>
-      </div>
+      </section>
 
       {/* Scrolling Logo Marquee */}
       <div className="relative overflow-hidden">
@@ -133,15 +136,6 @@ export default function ClientLogos() {
           }
         }
 
-        @keyframes dashSlide {
-          0% {
-            width: 0;
-          }
-          100% {
-            width: 100%;
-          }
-        }
-
         .animate-scroll-left {
           animation: scroll-left 30s linear infinite;
         }
@@ -152,32 +146,6 @@ export default function ClientLogos() {
 
         .hover\\:pause-animation:hover {
           animation-play-state: paused;
-        }
-
-        .dash-line {
-          position: relative;
-          height: 4px;
-          width: 100%;
-          margin-top: 12px;
-          overflow: hidden;
-        }
-
-        .dash-line::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          height: 100%;
-          width: 0;
-          background-image: repeating-linear-gradient(
-            to right,
-            #5e7986 0px,
-            #5e7986 12px,
-            transparent 12px,
-            transparent 24px
-          );
-          animation: dashSlide 1s ease-out forwards;
-          animation-delay: 0.3s;
         }
       `}</style>
     </Section>
