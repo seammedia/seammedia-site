@@ -73,18 +73,18 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-white border-t border-gray-200">
+    <footer style={{ backgroundColor: '#5e7986' }}>
       <div className="mx-auto max-w-7xl px-6 py-16 lg:py-20 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Menu Column */}
           <div>
-            <h3 className="font-bold text-gray-900 mb-6">Menu</h3>
+            <h3 className="font-bold text-white mb-6">Menu</h3>
             <ul className="space-y-3">
               {menuLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-gray-600 hover:text-gray-900 transition-colors"
+                    className="text-white hover:text-gray-200 transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -95,13 +95,13 @@ export default function Footer() {
 
           {/* Services Column */}
           <div>
-            <h3 className="font-bold text-gray-900 mb-6">Services</h3>
+            <h3 className="font-bold text-white mb-6">Services</h3>
             <ul className="space-y-3">
               {serviceLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-gray-600 hover:text-gray-900 transition-colors text-sm"
+                    className="text-white hover:text-gray-200 transition-colors text-sm"
                   >
                     {link.label}
                   </Link>
@@ -112,13 +112,13 @@ export default function Footer() {
 
           {/* Blog Column */}
           <div>
-            <h3 className="font-bold text-gray-900 mb-6">Blog</h3>
+            <h3 className="font-bold text-white mb-6">Blog</h3>
             <ul className="space-y-3">
               {blogLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-gray-600 hover:text-gray-900 transition-colors text-sm"
+                    className="text-white hover:text-gray-200 transition-colors text-sm"
                   >
                     {link.label}
                   </Link>
@@ -129,7 +129,7 @@ export default function Footer() {
 
           {/* Follow Us Column */}
           <div>
-            <h3 className="font-bold text-gray-900 mb-6">Follow Us</h3>
+            <h3 className="font-bold text-white mb-6">Follow Us</h3>
             <ul className="space-y-3">
               {socialLinks.map((link) => (
                 <li key={link.href}>
@@ -137,7 +137,7 @@ export default function Footer() {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-gray-900 transition-colors flex items-center gap-2"
+                    className="text-white hover:text-gray-200 transition-colors flex items-center gap-2"
                   >
                     <span>{link.label}</span>
                   </a>
@@ -161,10 +161,7 @@ export default function Footer() {
               <button
                 type="submit"
                 disabled={newsletterStatus === "submitting"}
-                className="w-full px-6 py-2 text-white font-medium rounded-md transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                style={{ backgroundColor: '#5e7986' }}
-                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#4d6570'}
-                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#5e7986'}
+                className="w-full px-6 py-2 bg-black hover:bg-gray-900 text-white font-medium rounded-md transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {newsletterStatus === "submitting"
                   ? "SUBSCRIBING..."
@@ -180,7 +177,7 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="mt-16 text-center text-sm text-gray-600">
+        <div className="mt-16 text-center text-sm text-white">
           <p>Copyright 2025 © All rights Reserved.</p>
         </div>
       </div>
