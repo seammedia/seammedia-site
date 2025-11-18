@@ -42,8 +42,18 @@ export default function FAQ() {
   return (
     <Section background="white">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl lg:text-5xl font-bold text-center mb-4" style={{ fontFamily: 'Poppins, sans-serif' }}>
-          Frequently Asked Questions
+        <h2 className="text-[44px] font-bold text-gray-900 text-center mb-4" style={{ fontFamily: 'Poppins, sans-serif', letterSpacing: '-0.5px' }}>
+          Frequently Asked{' '}
+          <span className="relative inline-block px-4">
+            <span className="relative z-10 text-white">Questions</span>
+            <span
+              className="absolute inset-0 -inset-x-1 top-[15%] h-[75%] rounded-sm opacity-90"
+              style={{
+                backgroundColor: '#5e7986',
+                transform: 'skewX(-5deg)'
+              }}
+            ></span>
+          </span>
         </h2>
 
         <div className="mt-16 space-y-4">
