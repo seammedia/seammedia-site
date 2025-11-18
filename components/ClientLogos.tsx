@@ -28,15 +28,16 @@ export default function ClientLogos() {
   return (
     <Section background="white">
       <section className="text-center mb-16">
-        <h2 className="text-[44px] font-bold text-gray-900 mb-3" style={{ letterSpacing: '-0.5px' }}>
-          Some of our clients
+        <h2 className="text-[44px] font-bold text-gray-900 mb-8" style={{ letterSpacing: '-0.5px' }}>
+          Some of{' '}
+          <span className="relative inline-block px-3">
+            <span className="relative z-10">our clients</span>
+            <span
+              className="absolute inset-0 -inset-x-2 top-[40%] h-[60%] rounded-sm opacity-80"
+              style={{ backgroundColor: '#5e7986' }}
+            ></span>
+          </span>
         </h2>
-        <div className="flex justify-center mb-3">
-          <div
-            className="border-b-2 border-dashed w-[60%] max-w-md"
-            style={{ borderColor: '#5e7986' }}
-          ></div>
-        </div>
         <p className="text-base font-normal" style={{ color: '#555' }}>
           Driving technology for leading brands
         </p>
