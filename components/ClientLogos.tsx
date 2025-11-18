@@ -28,10 +28,13 @@ export default function ClientLogos() {
   return (
     <Section background="white">
       <div className="text-center mb-16">
-        <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-          Our clients.
-        </h2>
-        <p className="text-lg text-gray-600">
+        <div className="inline-block relative">
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-2">
+            Some of our clients
+          </h2>
+          <div className="dash-line"></div>
+        </div>
+        <p className="text-lg text-gray-600 mt-6">
           Driving technology for leading brands
         </p>
       </div>
@@ -130,6 +133,15 @@ export default function ClientLogos() {
           }
         }
 
+        @keyframes dashSlide {
+          0% {
+            width: 0;
+          }
+          100% {
+            width: 100%;
+          }
+        }
+
         .animate-scroll-left {
           animation: scroll-left 30s linear infinite;
         }
@@ -140,6 +152,32 @@ export default function ClientLogos() {
 
         .hover\\:pause-animation:hover {
           animation-play-state: paused;
+        }
+
+        .dash-line {
+          position: relative;
+          height: 3px;
+          width: 100%;
+          margin-top: 8px;
+          overflow: hidden;
+        }
+
+        .dash-line::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 0;
+          background-image: repeating-linear-gradient(
+            to right,
+            #5e7986 0px,
+            #5e7986 8px,
+            transparent 8px,
+            transparent 16px
+          );
+          animation: dashSlide 1s ease-out forwards;
+          animation-delay: 0.3s;
         }
       `}</style>
     </Section>
