@@ -55,13 +55,13 @@ export async function GET() {
     .map(
       (post) => `
     <item>
-      <title><![CDATA[${post.title}]]></title>
+      <title>${post.title}</title>
       <link>${baseUrl}/blog/${post.slug}</link>
-      <guid isPermaLink="true">${baseUrl}/blog/${post.slug}</guid>
-      <description><![CDATA[<img src="${post.image}" alt="${post.title}" /><br/><br/>${post.description}<br/><br/>${post.content}]]></description>
+      <guid>${baseUrl}/blog/${post.slug}</guid>
+      <description>${post.description}</description>
       <category>${post.category}</category>
       <pubDate>${post.pubDate}</pubDate>
-      <enclosure url="${post.image}" type="image/jpeg" length="0" />
+      <enclosure url="${post.image}" type="image/jpeg" length="0"/>
     </item>`
     )
     .join('');
