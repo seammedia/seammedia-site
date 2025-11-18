@@ -61,9 +61,7 @@ export async function GET() {
       <description><![CDATA[${post.description}]]></description>
       <category>${post.category}</category>
       <pubDate>${post.pubDate}</pubDate>
-      <enclosure url="${post.image}" type="image/jpeg" />
-      <media:content url="${post.image}" medium="image" />
-      <media:thumbnail url="${post.image}" />
+      <enclosure url="${post.image}" type="image/jpeg" length="0" />
       <content:encoded><![CDATA[<img src="${post.image}" alt="${post.title}" /><br/><br/>${post.content}]]></content:encoded>
     </item>`
     )
