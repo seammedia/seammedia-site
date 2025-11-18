@@ -14,40 +14,9 @@ export default function Testimonials() {
     },
   ];
 
-  // Decorative squares for visual interest
-  const decorativeSquares: Array<{
-    color: string;
-    top?: string;
-    bottom?: string;
-    left?: string;
-    right?: string;
-    size: string;
-  }> = [
-    { color: "#f5b5b5", top: "10%", left: "5%", size: "w-4 h-4" },
-    { color: "#f5d45d", top: "15%", left: "10%", size: "w-5 h-5" },
-    { color: "#b5a5d5", bottom: "15%", left: "8%", size: "w-6 h-6" },
-    { color: "#f5b5b5", bottom: "20%", right: "10%", size: "w-5 h-5" },
-    { color: "#f5d45d", top: "12%", right: "15%", size: "w-4 h-4" },
-    { color: "#5865f2", top: "25%", right: "8%", size: "w-6 h-6" },
-  ];
-
   return (
     <Section background="white">
       <div className="relative">
-        {/* Decorative Squares */}
-        {decorativeSquares.map((square, index) => (
-          <div
-            key={index}
-            className={`absolute ${square.size} rounded-sm opacity-60 hidden lg:block`}
-            style={{
-              backgroundColor: square.color,
-              ...(square.top && { top: square.top }),
-              ...(square.bottom && { bottom: square.bottom }),
-              ...(square.left && { left: square.left }),
-              ...(square.right && { right: square.right }),
-            }}
-          />
-        ))}
 
         {/* Featured Quote */}
         <div className="text-center mb-20 max-w-4xl mx-auto relative z-10">
