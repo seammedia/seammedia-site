@@ -156,9 +156,9 @@ export default function ClientLogos() {
 
         .dash-line {
           position: relative;
-          height: 3px;
+          height: 4px;
           width: 100%;
-          margin-top: 8px;
+          margin-top: 12px;
           overflow: hidden;
         }
 
@@ -172,9 +172,9 @@ export default function ClientLogos() {
           background-image: repeating-linear-gradient(
             to right,
             #5e7986 0px,
-            #5e7986 8px,
-            transparent 8px,
-            transparent 16px
+            #5e7986 12px,
+            transparent 12px,
+            transparent 24px
           );
           animation: dashSlide 1s ease-out forwards;
           animation-delay: 0.3s;
