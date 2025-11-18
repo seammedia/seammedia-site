@@ -30,11 +30,14 @@ export default function ClientLogos() {
       <section className="text-center mb-16">
         <h2 className="text-[44px] font-bold text-gray-900 mb-8" style={{ letterSpacing: '-0.5px' }}>
           Some of{' '}
-          <span className="relative inline-block px-3">
+          <span className="relative inline-block px-4">
             <span className="relative z-10">our clients</span>
             <span
-              className="absolute inset-0 -inset-x-2 top-[40%] h-[60%] rounded-sm opacity-80"
-              style={{ backgroundColor: '#5e7986' }}
+              className="absolute inset-0 -inset-x-1 top-[15%] h-[75%] rounded-sm opacity-90"
+              style={{
+                backgroundColor: '#5e7986',
+                transform: 'skewX(-5deg)'
+              }}
             ></span>
           </span>
         </h2>
