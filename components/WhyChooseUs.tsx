@@ -8,40 +8,9 @@ export default function WhyChooseUs() {
     "A Small Team You Can Trust.",
   ];
 
-  // Decorative squares positioned around the content
-  const decorativeSquares: Array<{
-    color: string;
-    top?: string;
-    bottom?: string;
-    left?: string;
-    right?: string;
-    size: string;
-  }> = [
-    { color: "#f5b5b5", top: "10%", left: "5%", size: "w-4 h-4" },
-    { color: "#f5d45d", top: "15%", left: "10%", size: "w-5 h-5" },
-    { color: "#b5a5d5", bottom: "20%", left: "8%", size: "w-6 h-6" },
-    { color: "#f5b5b5", bottom: "25%", right: "12%", size: "w-4 h-4" },
-    { color: "#f5d45d", top: "8%", right: "15%", size: "w-8 h-8" },
-    { color: "#5865f2", top: "30%", right: "5%", size: "w-5 h-5" },
-  ];
-
   return (
-    <Section background="pink">
+    <Section background="white">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative">
-        {/* Decorative Squares */}
-        {decorativeSquares.map((square, index) => (
-          <div
-            key={index}
-            className={`absolute ${square.size} rounded-sm opacity-70 hidden lg:block`}
-            style={{
-              backgroundColor: square.color,
-              ...(square.top && { top: square.top }),
-              ...(square.bottom && { bottom: square.bottom }),
-              ...(square.left && { left: square.left }),
-              ...(square.right && { right: square.right }),
-            }}
-          />
-        ))}
 
         {/* Left: Image */}
         <div className="relative z-10">
@@ -58,7 +27,7 @@ export default function WhyChooseUs() {
             <div key={index} className="flex items-start gap-5">
               <div className="flex-shrink-0 mt-1">
                 <svg
-                  className="w-8 h-8 text-white"
+                  className="w-8 h-8 text-gray-900"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -69,7 +38,7 @@ export default function WhyChooseUs() {
                   />
                 </svg>
               </div>
-              <p className="text-xl lg:text-2xl font-medium text-white">
+              <p className="text-xl lg:text-2xl font-medium text-gray-900">
                 {feature}
               </p>
             </div>
