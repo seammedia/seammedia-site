@@ -17,14 +17,14 @@ export default function Header() {
   ];
 
   const serviceLinks = [
-    { href: "/services/social-media", label: "Social Media Management" },
-    { href: "/services/web-design", label: "Website Design" },
-    { href: "/services/seo", label: "SEO" },
-    { href: "/services/graphic-design", label: "Graphic Design" },
-    { href: "/services/branding", label: "Branding" },
-    { href: "/services/adwords", label: "Google Ads" },
-    { href: "/services/photography", label: "Photography" },
-    { href: "/services/videography", label: "Videography" },
+    { href: "/social-media", label: "Social Media Management" },
+    { href: "/web-design", label: "Website Design" },
+    { href: "/seo", label: "SEO" },
+    { href: "/graphic-design", label: "Graphic Design" },
+    { href: "/branding", label: "Branding" },
+    { href: "/adwords", label: "Google Ads" },
+    { href: "/photography", label: "Photography" },
+    { href: "/videography", label: "Videography" },
   ];
 
   const handleMouseEnter = () => {
