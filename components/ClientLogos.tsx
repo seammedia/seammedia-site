@@ -31,7 +31,7 @@ export default function ClientLogos() {
         <h2 className="text-[44px] font-bold text-gray-900 mb-8" style={{ letterSpacing: '-0.5px' }}>
           Some of{' '}
           <span className="relative inline-block px-4">
-            <span className="relative z-10">our clients</span>
+            <span className="relative z-10 text-white">our clients</span>
             <span
               className="absolute inset-0 -inset-x-1 top-[15%] h-[75%] rounded-sm opacity-90"
               style={{
