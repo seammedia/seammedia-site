@@ -161,7 +161,10 @@ export default function Footer() {
               <button
                 type="submit"
                 disabled={newsletterStatus === "submitting"}
-                className="w-full px-6 py-2 bg-[#f5b5b5] hover:bg-[#e8a5a5] text-white font-medium rounded-md transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full px-6 py-2 text-white font-medium rounded-md transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                style={{ backgroundColor: '#5e7986' }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#4d6570'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#5e7986'}
               >
                 {newsletterStatus === "submitting"
                   ? "SUBSCRIBING..."

@@ -56,7 +56,17 @@ export default function ContactForm() {
         {/* Left: Contact Info */}
         <div>
           <h2 className="text-6xl lg:text-7xl font-bold text-gray-900 mb-16">
-            Contact us
+            <span className="relative inline-block px-4">
+              <span className="relative z-10 text-white">Contact</span>
+              <span
+                className="absolute inset-0 -inset-x-1 top-[15%] h-[75%] rounded-sm opacity-90"
+                style={{
+                  backgroundColor: '#5e7986',
+                  transform: 'skewX(-5deg)'
+                }}
+              ></span>
+            </span>{' '}
+            us
           </h2>
 
           <div className="space-y-8">
