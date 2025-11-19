@@ -90,14 +90,16 @@ export default function BlogPage() {
               className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
             >
               {/* Featured Image */}
-              <div className="relative h-48 w-full overflow-hidden bg-gray-100">
-                <Image
-                  src={post.image}
-                  alt={post.title}
-                  fill
-                  className="object-cover"
-                />
-              </div>
+              <Link href={`/blog/${post.slug}`}>
+                <div className="relative h-48 w-full overflow-hidden bg-gray-100">
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    className="object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+              </Link>
 
               <div className="p-6">
                 {/* Category */}
