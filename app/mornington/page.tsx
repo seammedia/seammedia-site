@@ -9,10 +9,10 @@ export const metadata = {
 
 export default function MorningtonPage() {
   const services = [
-    { href: "/social-media", label: "Social Media Management", description: "Grow your online presence with strategic social media campaigns tailored for Mornington businesses." },
-    { href: "/web-design", label: "Website Design", description: "Custom, responsive websites designed to convert visitors into customers." },
-    { href: "/seo", label: "SEO", description: "Rank higher in search results and attract more local Mornington customers." },
-    { href: "/graphic-design", label: "Graphic Design", description: "Professional design services for all your branding and marketing materials." },
+    { href: "/mornington/social-media", label: "Social Media Management", description: "Grow your online presence with strategic social media campaigns tailored for Mornington businesses." },
+    { href: "/mornington/web-design", label: "Website Design", description: "Custom, responsive websites designed to convert visitors into customers." },
+    { href: "/mornington/seo", label: "SEO", description: "Rank higher in search results and attract more local Mornington customers." },
+    { href: "/mornington/graphic-design", label: "Graphic Design", description: "Professional design services for all your branding and marketing materials." },
     { href: "/branding", label: "Branding", description: "Build a memorable brand identity that resonates with your target audience." },
     { href: "/adwords", label: "Google Ads", description: "Drive immediate results with targeted Google Ads campaigns." },
     { href: "/photography", label: "Photography", description: "Professional photography to showcase your business in the best light." },
