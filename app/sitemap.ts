@@ -141,6 +141,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     // Blog posts
     {
+      url: `${baseUrl}/blog/social-media-handle`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
       url: `${baseUrl}/blog/website-design-tips`,
       lastModified: new Date(),
       changeFrequency: 'monthly',

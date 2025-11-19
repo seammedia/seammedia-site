@@ -11,6 +11,14 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   const blogPosts = [
     {
+      title: "What is a Handle on Social Media?",
+      excerpt:
+        "Understand what a social media handle is, why it matters for your brand, and best practices for creating memorable handles.",
+      slug: "social-media-handle",
+      date: "November 19, 2024",
+      category: "Social Media",
+    },
+    {
       title: "Top 5 Website Design Tips",
       excerpt:
         "Learn the essential principles of effective website design that will help your site stand out and convert visitors.",

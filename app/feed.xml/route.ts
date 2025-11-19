@@ -5,6 +5,15 @@ export async function GET() {
 
   const blogPosts = [
     {
+      title: 'What is a Handle on Social Media?',
+      slug: 'social-media-handle',
+      description: 'Understand what a social media handle is, why it matters for your brand, and best practices for creating memorable handles across platforms.',
+      category: 'Social Media',
+      pubDate: 'Tue, 19 Nov 2024 00:00:00 GMT',
+      image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=1200&h=630&fit=crop',
+      content: 'If you\'re navigating the world of social media for your business, you\'ve likely heard the term "handle" thrown around. But what exactly is a social media handle, and why does it matter?'
+    },
+    {
       title: 'Top 5 Website Design Tips',
       slug: 'website-design-tips',
       description: 'Learn the essential principles of effective website design that will help your site stand out and convert visitors.',
