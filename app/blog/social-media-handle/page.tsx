@@ -36,7 +36,7 @@ export default function SocialMediaHandlePage() {
         <div className="max-w-4xl mx-auto">
           <div className="relative w-full aspect-[16/10] mb-12 rounded-lg overflow-hidden">
             <Image
-              src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=1200&h=750&fit=crop"
+              src="/images/what-is-a-handle-on-social-media.png"
               alt="Instagram and Facebook social media icons"
               fill
               className="object-cover"

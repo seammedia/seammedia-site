@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Section from "@/components/ui/Section";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Blog | Seam Media",
@@ -17,6 +18,7 @@ export default function BlogPage() {
       slug: "social-media-handle",
       date: "November 19, 2024",
       category: "Social Media",
+      image: "/images/what-is-a-handle-on-social-media.png",
     },
     {
       title: "Top 5 Website Design Tips",
@@ -25,6 +27,7 @@ export default function BlogPage() {
       slug: "website-design-tips",
       date: "March 15, 2024",
       category: "Web Design",
+      image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=400&fit=crop",
     },
     {
       title: "Top 5 Benefits of Leasing A Website",
@@ -33,6 +36,7 @@ export default function BlogPage() {
       slug: "leasing-website-benefits",
       date: "March 10, 2024",
       category: "Web Design",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop",
     },
     {
       title: "SEO Melbourne – Small Business Top 5 Tips",
@@ -41,6 +45,7 @@ export default function BlogPage() {
       slug: "seo-melbourne-tips",
       date: "March 5, 2024",
       category: "SEO",
+      image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&h=400&fit=crop",
     },
     {
       title: "The Benefits of Setting Up Google Business",
@@ -49,6 +54,7 @@ export default function BlogPage() {
       slug: "google-business-benefits",
       date: "February 28, 2024",
       category: "SEO",
+      image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=800&h=400&fit=crop",
     },
     {
       title: "Ranking your business locally on Google",
@@ -57,6 +63,7 @@ export default function BlogPage() {
       slug: "ranking-locally-google",
       date: "February 20, 2024",
       category: "SEO",
+      image: "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=800&h=400&fit=crop",
     },
   ];
 
@@ -82,8 +89,15 @@ export default function BlogPage() {
               key={index}
               className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
             >
-              {/* Placeholder Image */}
-              <div className="h-48 bg-gradient-to-br from-[#f5b5b5] to-[#b5a5d5]" />
+              {/* Featured Image */}
+              <div className="relative h-48 w-full overflow-hidden bg-gray-100">
+                <Image
+                  src={post.image}
+                  alt={post.title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
 
               <div className="p-6">
                 {/* Category */}
