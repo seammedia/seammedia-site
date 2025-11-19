@@ -72,10 +72,20 @@ export default function BlogPage() {
       {/* Hero Section */}
       <Section background="gray">
         <div className="text-center max-w-3xl mx-auto">
-          <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-            Our Blog
+          <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6">
+            Our{' '}
+            <span className="relative inline-block px-4">
+              <span className="relative z-10 text-white">Blog</span>
+              <span
+                className="absolute inset-0 -inset-x-1 top-[15%] h-[75%] rounded-sm opacity-90"
+                style={{
+                  backgroundColor: '#5e7986',
+                  transform: 'skewX(-5deg)'
+                }}
+              ></span>
+            </span>
           </h1>
-          <p className="text-xl text-gray-700 leading-relaxed">
+          <p className="text-xl text-white leading-relaxed">
             Digital marketing tips, insights, and industry news
           </p>
         </div>
