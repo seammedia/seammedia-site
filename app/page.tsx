@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import ServicesGrid from "@/components/ServicesGrid";
+import MetricsCards from "@/components/MetricsCards";
 import DataDriven from "@/components/DataDriven";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import AudioQuote from "@/components/AudioQuote";
@@ -13,6 +14,7 @@ export default function Home() {
     <>
       <Hero />
       <ServicesGrid />
+      <MetricsCards />
       <DataDriven />
       <WhyChooseUs />
       <AudioQuote />
