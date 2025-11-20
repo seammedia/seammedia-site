@@ -1,15 +1,22 @@
 import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
 
-// Initialize Stripe
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: '2025-11-17.clover',
-});
-
 // Disable body parsing for webhook signature verification
 export const dynamic = 'force-dynamic';
 
 export async function POST(req: NextRequest) {
+  // Initialize Stripe inside the function to avoid build-time errors
+  if (!process.env.STRIPE_SECRET_KEY) {
+    return NextResponse.json(
+      { error: 'Stripe configuration missing' },
+      { status: 500 }
+    );
+  }
+
+  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
+    apiVersion: '2025-11-17.clover',
+  });
+
   const body = await req.text();
   const signature = req.headers.get('stripe-signature');
 
