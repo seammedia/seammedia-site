@@ -40,9 +40,9 @@ export default function AudioQuote() {
             {/* Tech Footer */}
             <div className="flex items-center gap-3 font-mono text-[10px] text-[#005f6b] tracking-widest uppercase">
               <span className="w-1.5 h-1.5 bg-[#00f0ff] rounded-full shadow-[0_0_8px_#00f0ff]" />
-              <span>Audio Transcript Verified</span>
+              <span>Margison</span>
               <span className="text-[#00f0ff]">|</span>
-              <span>Confidence: 99.9%</span>
+              <span>Google Reviews</span>
             </div>
           </div>
         </div>
