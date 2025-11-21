@@ -1,8 +1,7 @@
 "use client";
 
-import ContactForm from "@/components/ContactForm";
 import { useEffect, useRef, useState } from "react";
-import { ArrowRight, ShoppingBag, FileText, Code, Briefcase, Search, PenTool, Code2, Rocket, ArrowUpRight } from "lucide-react";
+import { ArrowRight, ShoppingBag, FileText, Code, Briefcase, Search, PenTool, Code2, Rocket, ArrowUpRight, Send } from "lucide-react";
 
 export default function WebDesignPage() {
   return (
@@ -12,7 +11,7 @@ export default function WebDesignPage() {
       <HowWeWork />
       <Testimonial />
       <ReadyToScale />
-      <ContactForm />
+      <ContactSection />
     </>
   );
 }
@@ -419,6 +418,194 @@ const ReadyToScale = () => {
             Get In Touch
             <ArrowUpRight size={20} />
         </a>
+      </div>
+    </section>
+  );
+};
+
+// Contact Section
+const ContactSection = () => {
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus("submitting");
+    setErrorMessage("");
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("https://formspree.io/f/mdkyqykl", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        form.reset();
+        setTimeout(() => setStatus("idle"), 5000);
+      } else {
+        const data = await response.json();
+        setStatus("error");
+        setErrorMessage(data.error || "Something went wrong");
+        setTimeout(() => setStatus("idle"), 5000);
+      }
+    } catch (error) {
+      setStatus("error");
+      setErrorMessage(error instanceof Error ? error.message : "Network error");
+      setTimeout(() => setStatus("idle"), 5000);
+    }
+  };
+
+  return (
+    <section className="py-24 px-6 bg-[#09090b]" id="contact">
+      <div className="max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          {/* Left: Contact Info */}
+          <div>
+            <h2 className="text-5xl md:text-6xl font-bold mb-12">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-zinc-500">Contact</span>
+              {' '}
+              <span className="text-white">us</span>
+            </h2>
+
+            <div className="space-y-8">
+              <div className="group">
+                <p className="text-xs font-mono text-zinc-600 uppercase tracking-widest mb-2">Email Us</p>
+                <a
+                  href="mailto:contact@seammedia.com.au"
+                  className="text-xl md:text-2xl font-medium text-zinc-300 hover:text-white transition-colors flex items-center gap-2"
+                >
+                  contact@seammedia.com.au
+                </a>
+              </div>
+
+              <div className="group">
+                <p className="text-xs font-mono text-zinc-600 uppercase tracking-widest mb-2">Call Us</p>
+                <a
+                  href="tel:+61402642746"
+                  className="text-xl md:text-2xl font-medium text-zinc-300 hover:text-white transition-colors flex items-center gap-2"
+                >
+                  0402 642 746
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Right: Contact Form */}
+          <div>
+            <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Name Row */}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <label htmlFor="firstName" className="block text-xs font-mono text-zinc-500 uppercase tracking-wide">
+                    First Name
+                  </label>
+                  <input
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    required
+                    className="w-full bg-zinc-900/30 border border-white/10 rounded-lg px-4 py-3 text-zinc-100 placeholder-zinc-600 focus:outline-none focus:border-green-500/50 focus:ring-1 focus:ring-green-500/50 transition-all hover:border-white/20"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label htmlFor="lastName" className="block text-xs font-mono text-zinc-500 uppercase tracking-wide">
+                    Last Name
+                  </label>
+                  <input
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    required
+                    className="w-full bg-zinc-900/30 border border-white/10 rounded-lg px-4 py-3 text-zinc-100 placeholder-zinc-600 focus:outline-none focus:border-green-500/50 focus:ring-1 focus:ring-green-500/50 transition-all hover:border-white/20"
+                  />
+                </div>
+              </div>
+
+              {/* Email */}
+              <div className="space-y-2">
+                <label htmlFor="email" className="block text-xs font-mono text-zinc-500 uppercase tracking-wide">
+                  Email (required)
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  placeholder="john@example.com"
+                  className="w-full bg-zinc-900/30 border border-white/10 rounded-lg px-4 py-3 text-zinc-100 placeholder-zinc-600 focus:outline-none focus:border-green-500/50 focus:ring-1 focus:ring-green-500/50 transition-all hover:border-white/20"
+                />
+              </div>
+
+              {/* Service Dropdown */}
+              <div className="space-y-2">
+                <label htmlFor="service" className="block text-xs font-mono text-zinc-500 uppercase tracking-wide">
+                  Service
+                </label>
+                <select
+                  id="service"
+                  name="service"
+                  className="w-full bg-zinc-900/30 border border-white/10 rounded-lg px-4 py-3 text-zinc-100 focus:outline-none focus:border-green-500/50 focus:ring-1 focus:ring-green-500/50 transition-all hover:border-white/20"
+                >
+                  <option value="">Select a service</option>
+                  <option value="Web Design">Web Design</option>
+                  <option value="SEO">SEO</option>
+                  <option value="Social Media Management">Social Media Management</option>
+                  <option value="Google Ads">Google Ads</option>
+                  <option value="Graphic Design">Graphic Design</option>
+                  <option value="Branding">Branding</option>
+                  <option value="Photography">Photography</option>
+                  <option value="Videography">Videography</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+
+              {/* Message */}
+              <div className="space-y-2">
+                <label htmlFor="message" className="block text-xs font-mono text-zinc-500 uppercase tracking-wide">
+                  Project Description
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={4}
+                  placeholder="Tell us a little bit about your project goals and requirements..."
+                  className="w-full bg-zinc-900/30 border border-white/10 rounded-lg px-4 py-3 text-zinc-100 placeholder-zinc-600 focus:outline-none focus:border-green-500/50 focus:ring-1 focus:ring-green-500/50 transition-all hover:border-white/20 resize-y min-h-[120px]"
+                />
+              </div>
+
+              {/* Submit Button */}
+              <button
+                type="submit"
+                disabled={status === "submitting"}
+                className="w-full px-8 py-4 bg-white text-black font-bold rounded-xl hover:bg-zinc-200 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 group"
+              >
+                {status === "submitting" ? "Sending..." : "Submit Inquiry"}
+                <Send size={18} className="group-hover:translate-x-1 transition-transform" />
+              </button>
+
+              {/* Success Message */}
+              {status === "success" && (
+                <div className="bg-green-500/10 border border-green-500/20 text-green-400 px-4 py-3 rounded-lg">
+                  <p className="font-medium">✓ Thank you! We'll be in touch soon.</p>
+                </div>
+              )}
+
+              {/* Error Message */}
+              {status === "error" && (
+                <div className="bg-red-500/10 border border-red-500/20 text-red-400 px-4 py-3 rounded-lg">
+                  <p className="font-medium">✗ {errorMessage || "Something went wrong. Please try again."}</p>
+                </div>
+              )}
+            </form>
+          </div>
+        </div>
       </div>
     </section>
   );
