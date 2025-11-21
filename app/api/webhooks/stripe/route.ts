@@ -4,11 +4,25 @@ import Stripe from 'stripe';
 // Disable body parsing for webhook signature verification
 export const dynamic = 'force-dynamic';
 
+// This is critical for Stripe webhooks to work properly
+export const runtime = 'nodejs';
+
 export async function POST(req: NextRequest) {
+  console.log('Webhook endpoint hit!');
+
   // Initialize Stripe inside the function to avoid build-time errors
   if (!process.env.STRIPE_SECRET_KEY) {
+    console.error('STRIPE_SECRET_KEY is missing');
     return NextResponse.json(
       { error: 'Stripe configuration missing' },
+      { status: 500 }
+    );
+  }
+
+  if (!process.env.STRIPE_WEBHOOK_SECRET) {
+    console.error('STRIPE_WEBHOOK_SECRET is missing');
+    return NextResponse.json(
+      { error: 'Stripe webhook secret missing' },
       { status: 500 }
     );
   }
