@@ -82,8 +82,7 @@ export default function WebDesignPage() {
           <div className="absolute w-full h-px bg-gradient-to-r from-transparent via-green-500/50 to-transparent animate-scan" />
         </div>
 
-        <Section background="transparent">
-          <div className="relative z-10 max-w-5xl mx-auto">
+        <div className="relative z-10 max-w-5xl mx-auto px-6 py-24">
             {/* Terminal Header */}
             <div className="mb-8 font-mono text-sm">
               <span className="text-green-500">seam-media@web-design</span>
@@ -141,7 +140,7 @@ export default function WebDesignPage() {
               </div>
             </div>
           </div>
-        </Section>
+        </div>
 
         <style jsx>{`
           @keyframes scan {
