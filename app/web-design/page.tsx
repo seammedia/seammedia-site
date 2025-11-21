@@ -411,7 +411,7 @@ const ReadyToScale = () => {
           href="#contact"
           className="inline-flex px-10 py-5 bg-white text-black font-bold text-lg rounded-xl hover:scale-105 transition-transform duration-200 items-center gap-2"
         >
-            INITIATE SEQUENCE
+            Get In Touch
             <ArrowUpRight size={20} />
         </a>
       </div>

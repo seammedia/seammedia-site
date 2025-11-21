@@ -1,44 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { Instagram, Linkedin, Twitter } from "lucide-react";
 
 export default function Footer() {
-  const [newsletterStatus, setNewsletterStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
-
-  const handleNewsletterSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setNewsletterStatus("submitting");
-
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-
-    try {
-      const response = await fetch("https://formspree.io/f/mdkyqykl", {
-        method: "POST",
-        body: formData,
-        headers: {
-          Accept: "application/json",
-        },
-      });
-
-      if (response.ok) {
-        setNewsletterStatus("success");
-        form.reset();
-        setTimeout(() => setNewsletterStatus("idle"), 3000);
-      } else {
-        const data = await response.json();
-        console.error("Formspree error:", data);
-        setNewsletterStatus("error");
-        setTimeout(() => setNewsletterStatus("idle"), 3000);
-      }
-    } catch (error) {
-      console.error("Newsletter subscription error:", error);
-      setNewsletterStatus("error");
-      setTimeout(() => setNewsletterStatus("idle"), 3000);
-    }
-  };
-
   const menuLinks = [
     { href: "/", label: "Home" },
     { href: "/clients", label: "Clients" },
@@ -47,14 +12,11 @@ export default function Footer() {
   ];
 
   const serviceLinks = [
-    { href: "/social-media", label: "Social Media Management" },
-    { href: "/web-design", label: "Website Design" },
-    { href: "/seo", label: "SEO" },
-    { href: "/graphic-design", label: "Graphic Design" },
-    { href: "/branding", label: "Branding" },
-    { href: "/adwords", label: "Google Ads" },
-    { href: "/photography", label: "Photography" },
-    { href: "/videography", label: "Videography" },
+    { href: "/web-design", label: "Web Design" },
+    { href: "/ecommerce", label: "E-Commerce" },
+    { href: "/seo", label: "SEO Services" },
+    { href: "/adwords", label: "PPC Management" },
+    { href: "/social-media", label: "Social Media" },
   ];
 
   const blogLinks = [
@@ -76,43 +38,60 @@ export default function Footer() {
     { href: "/mount-eliza", label: "Mount Eliza" },
   ];
 
-  const socialLinks = [
-    { href: "https://www.facebook.com/seammediaaus/", label: "Facebook", icon: "facebook" },
-    { href: "https://www.instagram.com/seammedia/?hl=en", label: "Instagram", icon: "instagram" },
-    { href: "https://www.youtube.com/channel/UC62wYiZCDqhzGSHUliZcNSQ", label: "YouTube", icon: "youtube" },
-    { href: "https://www.linkedin.com/company/seam-media-agency/", label: "LinkedIn", icon: "linkedin" },
-  ];
-
   return (
-    <footer style={{ backgroundColor: '#5e7986' }}>
-      <div className="mx-auto max-w-7xl px-6 py-16 lg:py-20 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12">
-          {/* Menu Column */}
-          <div>
-            <h3 className="font-bold text-white mb-6">Menu</h3>
-            <ul className="space-y-3">
-              {menuLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-white hover:text-gray-200 transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+    <footer className="bg-[#0a0a0a] border-t border-[#1a1a1a]">
+      {/* Main Footer Content */}
+      <div className="mx-auto max-w-7xl px-6 py-16 lg:py-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+          {/* Brand Column */}
+          <div className="lg:col-span-1">
+            <h2 className="text-2xl font-bold mb-4">
+              <span className="text-white">SEAM</span>
+              <span className="text-gray-500">MEDIA</span>
+            </h2>
+            <p className="text-gray-400 text-sm leading-relaxed mb-6">
+              Helping Australian businesses grow through strategic web design, SEO, and digital marketing solutions.
+            </p>
+            <div className="flex gap-4">
+              <a
+                href="https://www.instagram.com/seammedia/?hl=en"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram size={20} />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/seam-media-agency/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin size={20} />
+              </a>
+              <a
+                href="https://twitter.com/seammedia"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors"
+                aria-label="Twitter"
+              >
+                <Twitter size={20} />
+              </a>
+            </div>
           </div>
 
           {/* Services Column */}
           <div>
-            <h3 className="font-bold text-white mb-6">Services</h3>
+            <h3 className="font-semibold text-white mb-6">Services</h3>
             <ul className="space-y-3">
               {serviceLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-white hover:text-gray-200 transition-colors text-sm"
+                    className="text-gray-400 hover:text-white transition-colors text-sm"
                   >
                     {link.label}
                   </Link>
@@ -121,15 +100,15 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Blog Column */}
+          {/* Company Column */}
           <div>
-            <h3 className="font-bold text-white mb-6">Blog</h3>
+            <h3 className="font-semibold text-white mb-6">Company</h3>
             <ul className="space-y-3">
-              {blogLinks.map((link) => (
+              {menuLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-white hover:text-gray-200 transition-colors text-sm"
+                    className="text-gray-400 hover:text-white transition-colors text-sm"
                   >
                     {link.label}
                   </Link>
@@ -140,13 +119,13 @@ export default function Footer() {
 
           {/* Locations Column */}
           <div>
-            <h3 className="font-bold text-white mb-6">Locations</h3>
+            <h3 className="font-semibold text-white mb-6">Locations</h3>
             <ul className="space-y-3">
               {locationLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-white hover:text-gray-200 transition-colors text-sm"
+                    className="text-gray-400 hover:text-white transition-colors text-sm"
                   >
                     {link.label}
                   </Link>
@@ -155,58 +134,74 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Follow Us Column */}
+          {/* Contact Column */}
           <div>
-            <h3 className="font-bold text-white mb-6">Follow Us</h3>
-            <ul className="space-y-3">
-              {socialLinks.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white hover:text-gray-200 transition-colors flex items-center gap-2"
+            <h3 className="font-semibold text-white mb-6">Contact</h3>
+            <ul className="space-y-4">
+              <li>
+                <a
+                  href="mailto:contact@seammedia.com.au"
+                  className="text-gray-400 hover:text-white transition-colors text-sm"
+                >
+                  contact@seammedia.com.au
+                </a>
+              </li>
+              <li>
+                <a
+                  href="tel:+61402642746"
+                  className="text-gray-400 hover:text-white transition-colors text-sm flex items-center gap-2"
+                >
+                  <svg
+                    className="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
                   >
-                    <span>{link.label}</span>
-                  </a>
-                </li>
-              ))}
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                    />
+                  </svg>
+                  0402 642 746
+                </a>
+              </li>
+              <li>
+                <div className="text-gray-400 text-sm flex items-start gap-2">
+                  <svg
+                    className="w-4 h-4 mt-0.5 flex-shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                  </svg>
+                  <span>Melbourne, Australia</span>
+                </div>
+              </li>
             </ul>
           </div>
-
-          {/* Newsletter Column */}
-          <div>
-            <form onSubmit={handleNewsletterSubmit} className="space-y-4">
-              <input
-                type="email"
-                name="email"
-                placeholder="Email"
-                required
-                disabled={newsletterStatus === "submitting"}
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#f5b5b5] focus:border-transparent disabled:opacity-50"
-              />
-              <input type="hidden" name="_subject" value="Newsletter Subscription" />
-              <button
-                type="submit"
-                disabled={newsletterStatus === "submitting"}
-                className="w-full px-6 py-2 bg-black hover:bg-gray-900 text-white font-medium rounded-md transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {newsletterStatus === "submitting"
-                  ? "SUBSCRIBING..."
-                  : newsletterStatus === "success"
-                  ? "SUBSCRIBED!"
-                  : "SUBSCRIBE"}
-              </button>
-              {newsletterStatus === "error" && (
-                <p className="text-red-600 text-sm">Failed to subscribe. Please try again.</p>
-              )}
-            </form>
-          </div>
         </div>
+      </div>
 
-        {/* Copyright */}
-        <div className="mt-16 text-center text-sm text-white">
-          <p>Copyright 2025 © All rights Reserved.</p>
+      {/* Bottom Bar */}
+      <div className="border-t border-[#1a1a1a]">
+        <div className="mx-auto max-w-7xl px-6 py-6">
+          <p className="text-center text-sm text-gray-500">
+            Copyright 2025 © All rights Reserved.
+          </p>
         </div>
       </div>
     </footer>
