@@ -141,29 +141,29 @@ export default function WebDesignPage() {
             </div>
           </div>
         </div>
-
-        <style jsx>{`
-          @keyframes scan {
-            0% { top: 0%; opacity: 0; }
-            15% { opacity: 1; }
-            85% { opacity: 1; }
-            100% { top: 100%; opacity: 0; }
-          }
-
-          @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-          }
-
-          .animate-scan {
-            animation: scan 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-          }
-
-          .animate-blink {
-            animation: blink 1s step-end infinite;
-          }
-        `}</style>
       </div>
+
+      <style jsx>{`
+        @keyframes scan {
+          0% { top: 0%; opacity: 0; }
+          15% { opacity: 1; }
+          85% { opacity: 1; }
+          100% { top: 100%; opacity: 0; }
+        }
+
+        @keyframes blink {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0; }
+        }
+
+        .animate-scan {
+          animation: scan 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
+
+        .animate-blink {
+          animation: blink 1s step-end infinite;
+        }
+      `}</style>
 
       {/* Services Grid */}
       <Section background="white" id="services">
