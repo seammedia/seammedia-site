@@ -64,14 +64,18 @@ const Hero = () => {
           IDENTITY: SEAM MEDIA
         </div>
 
-        <h1 className="text-6xl md:text-8xl font-bold text-white leading-[0.95] tracking-tight mb-8 max-w-5xl">
-          <ScrambleText text="Building Digital" />
+        <h1 className="text-6xl md:text-8xl font-bold leading-[0.95] tracking-tight mb-8 max-w-5xl">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-zinc-400">
+            <ScrambleText text="Building Digital" />
+          </span>
           <br />
-          <span className="text-zinc-500">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-500 to-zinc-700">
             <ScrambleText text="Products That" />
           </span>
           <br />
-          <ScrambleText text="Drive Growth" />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-zinc-400">
+            <ScrambleText text="Drive Growth" />
+          </span>
         </h1>
 
         <p className="text-lg md:text-xl text-zinc-400 max-w-2xl leading-relaxed mb-12">

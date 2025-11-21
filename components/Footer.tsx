@@ -12,11 +12,14 @@ export default function Footer() {
   ];
 
   const serviceLinks = [
-    { href: "/web-design", label: "Web Design" },
-    { href: "/ecommerce", label: "E-Commerce" },
-    { href: "/seo", label: "SEO Services" },
-    { href: "/adwords", label: "PPC Management" },
-    { href: "/social-media", label: "Social Media" },
+    { href: "/social-media", label: "Social Media Management" },
+    { href: "/web-design", label: "Website Design" },
+    { href: "/seo", label: "SEO" },
+    { href: "/graphic-design", label: "Graphic Design" },
+    { href: "/branding", label: "Branding" },
+    { href: "/adwords", label: "Google Ads" },
+    { href: "/photography", label: "Photography" },
+    { href: "/videography", label: "Videography" },
   ];
 
   const blogLinks = [
