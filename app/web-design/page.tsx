@@ -139,7 +139,6 @@ export default function WebDesignPage() {
                 ))}
               </div>
             </div>
-          </div>
         </div>
       </div>
 
