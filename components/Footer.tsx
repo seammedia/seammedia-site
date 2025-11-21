@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Instagram, Linkedin, Twitter } from "lucide-react";
+import { Instagram, Linkedin, Facebook, Youtube } from "lucide-react";
 
 export default function Footer() {
   const menuLinks = [
@@ -63,6 +63,15 @@ export default function Footer() {
                 <Instagram size={20} />
               </a>
               <a
+                href="https://www.facebook.com/seammediaaus/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors"
+                aria-label="Facebook"
+              >
+                <Facebook size={20} />
+              </a>
+              <a
                 href="https://www.linkedin.com/company/seam-media-agency/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -72,13 +81,13 @@ export default function Footer() {
                 <Linkedin size={20} />
               </a>
               <a
-                href="https://twitter.com/seammedia"
+                href="https://www.youtube.com/channel/UC62wYiZCDqhzGSHUliZcNSQ"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
-                aria-label="Twitter"
+                aria-label="YouTube"
               >
-                <Twitter size={20} />
+                <Youtube size={20} />
               </a>
             </div>
           </div>

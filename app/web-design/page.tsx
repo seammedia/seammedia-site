@@ -2,7 +2,7 @@
 
 import ContactForm from "@/components/ContactForm";
 import { useEffect, useRef, useState } from "react";
-import { ArrowRight, Globe, ShoppingBag, FileText, Code, Briefcase, Search, PenTool, Code2, Rocket, ArrowUpRight } from "lucide-react";
+import { ArrowRight, ShoppingBag, FileText, Code, Briefcase, Search, PenTool, Code2, Rocket, ArrowUpRight } from "lucide-react";
 
 export default function WebDesignPage() {
   return (
@@ -86,13 +86,6 @@ const Hero = () => {
             Start a Project
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform"/>
           </a>
-          <a
-            href="#services"
-            className="px-8 py-4 bg-zinc-900 text-white border border-zinc-800 font-medium rounded-full hover:bg-zinc-800 transition-all flex items-center gap-2"
-          >
-            View Portfolio
-            <Globe size={18} className="text-zinc-500"/>
-          </a>
         </div>
       </div>
 
@@ -168,8 +161,12 @@ const WhatWeBuild = () => {
     <section className="py-24 px-6 bg-zinc-950" id="services">
       <div className="max-w-6xl mx-auto">
         <div className="mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            What We Build<span className="inline-block w-3 h-8 bg-green-600 ml-2 align-middle"></span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-zinc-500">What We Build</span>
+            <span className="relative inline-flex ml-2 align-middle">
+              <span className="animate-ping absolute inline-flex h-3 w-3 rounded-sm bg-green-400 opacity-75"></span>
+              <span className="relative inline-flex h-3 w-3 rounded-sm bg-green-500"></span>
+            </span>
           </h2>
           <p className="text-zinc-500 text-lg max-w-2xl">
             Visualizing the architecture of high-impact digital deployments and strategic outcomes.
@@ -277,8 +274,12 @@ const HowWeWork = () => {
     <section className="py-24 px-6 bg-[#09090b]" ref={containerRef}>
       <div className="max-w-4xl mx-auto">
         <div className="flex items-center justify-between mb-20">
-          <h2 className="text-4xl font-bold text-white">
-            How We Work <span className="inline-block w-3 h-8 bg-green-600 ml-2 align-middle"></span>
+          <h2 className="text-4xl font-bold">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-zinc-500">How We Work</span>
+            <span className="relative inline-flex ml-2 align-middle">
+              <span className="animate-ping absolute inline-flex h-3 w-3 rounded-sm bg-green-400 opacity-75"></span>
+              <span className="relative inline-flex h-3 w-3 rounded-sm bg-green-500"></span>
+            </span>
           </h2>
           <div className="text-xs font-mono text-zinc-600 animate-pulse">SCANNING SECTOR...</div>
         </div>
@@ -288,11 +289,11 @@ const HowWeWork = () => {
         </p>
 
         <div className="relative">
-          <div className="absolute left-1/2 top-0 bottom-0 w-px bg-zinc-800 transform -translate-x-1/2 hidden md:block"></div>
+          <div className="absolute left-1/2 top-0 w-px bg-zinc-800 transform -translate-x-1/2 hidden md:block" style={{ height: 'calc(100% - 6rem)' }}></div>
 
           <div
             className="absolute left-1/2 top-0 w-px bg-green-500 transform -translate-x-1/2 hidden md:block transition-all duration-[2000ms] ease-linear shadow-[0_0_10px_rgba(34,197,94,0.5)]"
-            style={{ height: `${(visibleSteps.length / steps.length) * 100}%` }}
+            style={{ height: visibleSteps.length === steps.length ? 'calc(100% - 6rem)' : `${(visibleSteps.length / steps.length) * (100 - 15)}%` }}
           ></div>
 
           <div className="space-y-12 md:space-y-24 relative">
