@@ -8,7 +8,7 @@ import ClientLogos from "@/components/ClientLogos";
 import FAQ from "@/components/FAQ";
 import ContactForm from "@/components/ContactForm";
 
-// Cache bust - Updated 2025-11-20
+// Cache bust - Updated 2025-11-21
 export default function Home() {
   return (
     <>
