@@ -123,12 +123,16 @@ export default function Header() {
               </Link>
             </li>
             {/* Contact Us */}
-            <li className="border-beam-wrapper">
+            <li className="relative inline-block group">
+              <div className="absolute -bottom-2 left-1/2 -z-10 h-8 w-3/4 -translate-x-1/2 bg-white/20 blur-xl opacity-0 transition-opacity duration-500 group-hover:opacity-40" />
               <Link
                 href="/contact"
-                className="border-beam-button relative inline-flex items-center px-6 py-2.5 text-sm font-medium text-white bg-black rounded-full"
+                className="relative block overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-950"
               >
-                CONTACT US
+                <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#00000000_0%,#ffffff_10%,#00000000_50%)] opacity-0 transition-opacity duration-100 group-hover:opacity-100" />
+                <span className="relative flex h-full w-full items-center justify-center space-x-2 rounded-full bg-slate-950 px-5 py-2 text-sm font-medium text-white ring-1 ring-white/10 transition-colors duration-300 group-hover:bg-slate-900/80 group-hover:ring-transparent">
+                  <span className="tracking-widest uppercase text-[11px] font-semibold">CONTACT US</span>
+                </span>
               </Link>
             </li>
           </ul>
@@ -211,13 +215,17 @@ export default function Header() {
                 </Link>
               </li>
               {/* Contact Us */}
-              <li className="border-beam-wrapper">
+              <li className="relative inline-block group w-full">
+                <div className="absolute -bottom-2 left-1/2 -z-10 h-8 w-3/4 -translate-x-1/2 bg-white/20 blur-xl opacity-0 transition-opacity duration-500 group-hover:opacity-40" />
                 <Link
                   href="/contact"
-                  className="border-beam-button relative inline-flex items-center justify-center w-full px-6 py-2.5 text-sm font-medium text-white bg-black rounded-full"
+                  className="relative block overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-950"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  CONTACT US
+                  <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#00000000_0%,#ffffff_10%,#00000000_50%)] opacity-0 transition-opacity duration-100 group-hover:opacity-100" />
+                  <span className="relative flex h-full w-full items-center justify-center space-x-2 rounded-full bg-slate-950 px-6 py-2.5 text-sm font-medium text-white ring-1 ring-white/10 transition-colors duration-300 group-hover:bg-slate-900/80 group-hover:ring-transparent">
+                    <span className="tracking-widest uppercase text-[11px] font-semibold">CONTACT US</span>
+                  </span>
                 </Link>
               </li>
             </ul>
