@@ -172,13 +172,19 @@ export default function ContactForm() {
             </div>
 
             {/* Submit Button */}
-            <button
-              type="submit"
-              disabled={status === "submitting"}
-              className="px-8 py-3 bg-gray-900 text-white font-medium rounded-full hover:bg-gray-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {status === "submitting" ? "Sending..." : "Submit"}
-            </button>
+            <div className="relative inline-block group">
+              <div className="absolute -bottom-2 left-1/2 -z-10 h-8 w-3/4 -translate-x-1/2 bg-white/20 blur-xl opacity-0 transition-opacity duration-500 group-hover:opacity-40" />
+              <button
+                type="submit"
+                disabled={status === "submitting"}
+                className="relative block overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-950 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#00000000_0%,#ffffff_10%,#00000000_50%)] opacity-0 transition-opacity duration-100 group-hover:opacity-100" />
+                <span className="relative flex h-full w-full items-center justify-center rounded-full bg-gray-900 px-8 py-3 font-medium text-white ring-1 ring-white/10 transition-colors duration-300 group-hover:bg-gray-800">
+                  <span>{status === "submitting" ? "Sending..." : "Submit"}</span>
+                </span>
+              </button>
+            </div>
 
             {/* Success Message */}
             {status === "success" && (
