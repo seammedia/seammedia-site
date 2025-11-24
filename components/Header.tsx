@@ -124,12 +124,25 @@ export default function Header() {
             </li>
             {/* Contact Us */}
             <li>
-              <Link
-                href="/contact"
-                className="text-white text-base font-medium hover:text-white/70 transition-colors duration-200"
-              >
-                Contact Us
-              </Link>
+              <div className="relative inline-flex group">
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-white via-zinc-500 to-white rounded-full opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-500 group-hover:animate-border-beam"></div>
+                <Link
+                  href="/contact"
+                  className="relative inline-flex items-center px-6 py-2.5 text-sm font-medium text-white bg-black rounded-full border border-white/10 transition-all duration-300 hover:bg-zinc-900"
+                >
+                  REQUEST DEMO
+                </Link>
+              </div>
+              <style jsx>{`
+                @keyframes border-beam {
+                  0% {
+                    transform: rotate(0deg);
+                  }
+                  100% {
+                    transform: rotate(360deg);
+                  }
+                }
+              `}</style>
             </li>
           </ul>
 
@@ -212,13 +225,16 @@ export default function Header() {
               </li>
               {/* Contact Us */}
               <li>
-                <Link
-                  href="/contact"
-                  className="block text-white text-lg font-medium hover:text-white/70 transition-colors duration-200"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Contact Us
-                </Link>
+                <div className="relative inline-flex group w-full">
+                  <div className="absolute -inset-0.5 bg-gradient-to-r from-white via-zinc-500 to-white rounded-full opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-500 group-hover:animate-border-beam"></div>
+                  <Link
+                    href="/contact"
+                    className="relative inline-flex items-center justify-center w-full px-6 py-2.5 text-sm font-medium text-white bg-black rounded-full border border-white/10 transition-all duration-300 hover:bg-zinc-900"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    REQUEST DEMO
+                  </Link>
+                </div>
               </li>
             </ul>
           </div>
