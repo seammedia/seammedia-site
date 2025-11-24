@@ -367,7 +367,7 @@ const Testimonial = () => {
   const [direction, setDirection] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
 
-  const reviews = [
+  const featuredReviews = [
     {
       id: 1,
       highlight: "He's a man of his words.",
@@ -377,17 +377,53 @@ const Testimonial = () => {
     },
     {
       id: 2,
-      highlight: "Seam Media Have Been So Helpful",
-      content: "Seam Media Have Been So Helpful And Have Honestly Helped So Much With Getting Us On Our Feet!",
-      author: "Margison",
+      highlight: "Turned out even better than I imagined.",
+      content: "Heath is nothing but amazing to work with! His communication was clear and he kept me well updated throughout the whole process of building our website. It turned out even better than I imagined, he really listened and saw our vision. He is responsive to any updates that need to be made.",
+      author: "Lacey Thorn",
       role: "Google Review",
+    }
+  ];
+
+  const allReviews = [
+    {
+      id: 1,
+      author: "Calvin Yung",
+      role: "1 review • 0 photos",
+      date: "4 weeks ago",
+      rating: 5,
+      content: "Highly recommend Heath, very happy and grateful for his service so far. He's been helping us manage our website SEO and restructuring, he's a man of his words, and he'll do exactly what he says. Easy to communicate, very professional, very knowledgeable and I can tell he actually cares about helping your business grow."
+    },
+    {
+      id: 2,
+      author: "Lacey Thorn",
+      role: "Local Guide • 20 reviews",
+      date: "21 May 2024",
+      rating: 5,
+      content: "Heath is nothing but amazing to work with! His communication was clear and he kept me well updated throughout the whole process of building our website. It turned out even better than I imagined, he really listened and saw our vision. He is responsive to any updates that need to be made."
     },
     {
       id: 3,
-      highlight: "Outstanding results and professionalism",
-      content: "Our organic traffic increased by 340% in 6 months. Seam Media's technical SEO expertise and strategic approach delivered results we didn't think were possible.",
-      author: "BuildCo Melbourne",
-      role: "Verified Client",
+      author: "Brodie Threlfall",
+      role: "1 review • 0 photos",
+      date: "2 May 2024",
+      rating: 5,
+      content: "Seam Media exceeded our expectations with their stellar work on our new website design. After searching for a web designer in Frankston for quite some time, we're thrilled to have found Seam Media. Their exceptional performance speaks volumes, and we wholeheartedly endorse their services."
+    },
+    {
+      id: 4,
+      author: "Rossy Pest Services",
+      role: "Local Guide • 21 reviews",
+      date: "7 Jul 2023",
+      rating: 5,
+      content: "If you're looking for a company to help with your social media, google reviews, website etc.... Look no further, these guys are the ones!!! They do plenty of research on the industry you're in, and post quality educated and engaging imaging and text. Great company to work with."
+    },
+    {
+      id: 5,
+      author: "Estela Aiello",
+      role: "Local Guide • 15 reviews",
+      date: "5 Jul 2023",
+      rating: 5,
+      content: "I am delighted to praise Sean Media services for their exceptional communication skills and outstanding customer service. The results achieved through their strategies have been truly fantastic, exceeding my expectations. I am extremely satisfied and wholeheartedly recommend their services."
     }
   ];
 
@@ -395,22 +431,22 @@ const Testimonial = () => {
     if (isHovered) return;
     const interval = setInterval(() => {
       setDirection(1);
-      setActiveIndex((prev) => (prev + 1) % reviews.length);
+      setActiveIndex((prev) => (prev + 1) % featuredReviews.length);
     }, 6000);
     return () => clearInterval(interval);
-  }, [activeIndex, isHovered, reviews.length]);
+  }, [activeIndex, isHovered, featuredReviews.length]);
 
   const handleNext = () => {
     setDirection(1);
-    setActiveIndex((prev) => (prev + 1) % reviews.length);
+    setActiveIndex((prev) => (prev + 1) % featuredReviews.length);
   };
 
   const handlePrev = () => {
     setDirection(-1);
-    setActiveIndex((prev) => (prev - 1 + reviews.length) % reviews.length);
+    setActiveIndex((prev) => (prev - 1 + featuredReviews.length) % featuredReviews.length);
   };
 
-  const activeReview = reviews[activeIndex];
+  const activeReview = featuredReviews[activeIndex];
 
   return (
     <section className="py-24 px-6 bg-black">
@@ -540,7 +576,58 @@ const Testimonial = () => {
           </div>
 
         </div>
+
+        {/* Marquee Reviews */}
+        <div className="pt-12 relative w-full overflow-hidden">
+          {/* Fade masks */}
+          <div className="absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-r from-black to-transparent pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-l from-black to-transparent pointer-events-none" />
+
+          {/* Scrolling container */}
+          <div className="flex animate-marquee">
+            {/* Duplicate reviews 3 times for seamless loop */}
+            {[...allReviews, ...allReviews, ...allReviews].map((review, idx) => (
+              <div
+                key={`${review.id}-${idx}`}
+                className="w-[350px] md:w-[400px] flex-shrink-0 bg-zinc-900/50 backdrop-blur-sm border border-zinc-800 rounded-2xl p-6 mr-6 hover:bg-zinc-800 transition-colors duration-300"
+              >
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-3.5 h-3.5 fill-yellow-500 text-yellow-500" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                  <span className="text-zinc-600 text-xs ml-2">{review.date}</span>
+                </div>
+
+                <p className="text-zinc-300 text-sm leading-relaxed mb-6 line-clamp-3">
+                  "{review.content}"
+                </p>
+
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-full bg-zinc-700 flex items-center justify-center text-xs text-zinc-300 font-bold">
+                    {review.author.charAt(0)}
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-zinc-200 text-xs font-semibold">{review.author}</span>
+                    <span className="text-zinc-600 text-[10px]">{review.role}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
+
+      <style jsx>{`
+        @keyframes marquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+          animation: marquee 40s linear infinite;
+        }
+      `}</style>
     </section>
   );
 };
