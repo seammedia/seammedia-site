@@ -94,7 +94,7 @@ const Hero = () => {
               className="relative block overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-950"
             >
               <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#00000000_0%,#ffffff_10%,#00000000_50%)] opacity-0 transition-opacity duration-100 group-hover:opacity-100" />
-              <span className="relative flex h-full w-full items-center justify-center gap-2 rounded-full bg-white px-8 py-4 text-base font-medium text-black ring-1 ring-white/10 transition-colors duration-300 group-hover:bg-zinc-200">
+              <span className="relative flex h-full w-full items-center justify-center gap-2 rounded-full bg-slate-950 px-8 py-4 text-base font-medium text-white ring-1 ring-white/10 transition-colors duration-300 group-hover:bg-slate-900/80 group-hover:ring-transparent">
                 <span>Start a Project</span>
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform"/>
               </span>
@@ -429,7 +429,7 @@ const ReadyToScale = () => {
             className="relative block overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-950"
           >
             <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#00000000_0%,#ffffff_10%,#00000000_50%)] opacity-0 transition-opacity duration-100 group-hover:opacity-100" />
-            <span className="relative flex h-full w-full items-center justify-center gap-2 rounded-full bg-white px-10 py-5 text-lg font-bold text-black ring-1 ring-white/10 transition-colors duration-300 group-hover:bg-zinc-200">
+            <span className="relative flex h-full w-full items-center justify-center gap-2 rounded-full bg-slate-950 px-10 py-5 text-lg font-bold text-white ring-1 ring-white/10 transition-colors duration-300 group-hover:bg-slate-900/80 group-hover:ring-transparent">
               <span>Get In Touch</span>
               <ArrowUpRight size={20} />
             </span>
@@ -606,7 +606,7 @@ const ContactSection = () => {
                   className="relative block overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-950 w-full disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#00000000_0%,#ffffff_10%,#00000000_50%)] opacity-0 transition-opacity duration-100 group-hover:opacity-100" />
-                  <span className="relative flex h-full w-full items-center justify-center gap-2 rounded-full bg-white px-8 py-4 font-bold text-black ring-1 ring-white/10 transition-colors duration-300 group-hover:bg-zinc-200">
+                  <span className="relative flex h-full w-full items-center justify-center gap-2 rounded-full bg-slate-950 px-8 py-4 font-bold text-white ring-1 ring-white/10 transition-colors duration-300 group-hover:bg-slate-900/80 group-hover:ring-transparent">
                     <span>{status === "submitting" ? "Sending..." : "Submit Inquiry"}</span>
                     <Send size={18} className="group-hover:translate-x-1 transition-transform" />
                   </span>
