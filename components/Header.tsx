@@ -123,61 +123,13 @@ export default function Header() {
               </Link>
             </li>
             {/* Contact Us */}
-            <li>
+            <li className="border-beam-wrapper">
               <Link
                 href="/contact"
-                className="contact-button relative inline-flex items-center px-6 py-2.5 text-sm font-medium text-white bg-black rounded-full overflow-hidden"
+                className="border-beam-button relative inline-flex items-center px-6 py-2.5 text-sm font-medium text-white bg-black rounded-full"
               >
-                <span className="relative z-10">CONTACT US</span>
+                CONTACT US
               </Link>
-              <style jsx>{`
-                .contact-button {
-                  background:
-                    linear-gradient(#000, #000) padding-box,
-                    linear-gradient(90deg, transparent 0%, white 50%, transparent 100%) border-box;
-                  border: 1px solid transparent;
-                  background-size: 100% 100%, 200% 100%;
-                  background-position: 0 0, 100% 0;
-                  transition: background-position 0s;
-                }
-
-                .contact-button::before {
-                  content: '';
-                  position: absolute;
-                  inset: -1px;
-                  border-radius: 9999px;
-                  padding: 1px;
-                  background: conic-gradient(
-                    from 0deg,
-                    transparent 0deg,
-                    transparent 270deg,
-                    white 280deg,
-                    white 350deg,
-                    transparent 360deg
-                  );
-                  -webkit-mask:
-                    linear-gradient(#fff 0 0) content-box,
-                    linear-gradient(#fff 0 0);
-                  -webkit-mask-composite: xor;
-                  mask-composite: exclude;
-                  opacity: 0;
-                  transition: opacity 0.3s;
-                }
-
-                .contact-button:hover::before {
-                  opacity: 1;
-                  animation: rotate-beam 1.5s linear infinite;
-                }
-
-                @keyframes rotate-beam {
-                  0% {
-                    transform: rotate(0deg);
-                  }
-                  100% {
-                    transform: rotate(360deg);
-                  }
-                }
-              `}</style>
             </li>
           </ul>
 
@@ -259,62 +211,14 @@ export default function Header() {
                 </Link>
               </li>
               {/* Contact Us */}
-              <li>
+              <li className="border-beam-wrapper">
                 <Link
                   href="/contact"
-                  className="contact-button-mobile relative inline-flex items-center justify-center w-full px-6 py-2.5 text-sm font-medium text-white bg-black rounded-full overflow-hidden"
+                  className="border-beam-button relative inline-flex items-center justify-center w-full px-6 py-2.5 text-sm font-medium text-white bg-black rounded-full"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  <span className="relative z-10">CONTACT US</span>
+                  CONTACT US
                 </Link>
-                <style jsx>{`
-                  .contact-button-mobile {
-                    background:
-                      linear-gradient(#000, #000) padding-box,
-                      linear-gradient(90deg, transparent 0%, white 50%, transparent 100%) border-box;
-                    border: 1px solid transparent;
-                    background-size: 100% 100%, 200% 100%;
-                    background-position: 0 0, 100% 0;
-                    transition: background-position 0s;
-                  }
-
-                  .contact-button-mobile::before {
-                    content: '';
-                    position: absolute;
-                    inset: -1px;
-                    border-radius: 9999px;
-                    padding: 1px;
-                    background: conic-gradient(
-                      from 0deg,
-                      transparent 0deg,
-                      transparent 270deg,
-                      white 280deg,
-                      white 350deg,
-                      transparent 360deg
-                    );
-                    -webkit-mask:
-                      linear-gradient(#fff 0 0) content-box,
-                      linear-gradient(#fff 0 0);
-                    -webkit-mask-composite: xor;
-                    mask-composite: exclude;
-                    opacity: 0;
-                    transition: opacity 0.3s;
-                  }
-
-                  .contact-button-mobile:hover::before {
-                    opacity: 1;
-                    animation: rotate-beam-mobile 1.5s linear infinite;
-                  }
-
-                  @keyframes rotate-beam-mobile {
-                    0% {
-                      transform: rotate(0deg);
-                    }
-                    100% {
-                      transform: rotate(360deg);
-                    }
-                  }
-                `}</style>
               </li>
             </ul>
           </div>
