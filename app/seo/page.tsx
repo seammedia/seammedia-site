@@ -349,20 +349,19 @@ const Testimonial = () => {
                   </svg>
                 ))}
               </div>
-              <span className="text-xs font-mono text-zinc-500 tracking-widest">VERIFIED_CLIENT</span>
+              <span className="text-xs font-mono text-zinc-500 tracking-widest">GOOGLE REVIEW</span>
             </div>
 
             <blockquote className="text-xl md:text-2xl text-white font-medium mb-8 leading-relaxed">
-              "Our organic traffic increased by 340% in 6 months. Seam Media's technical SEO expertise and strategic approach delivered results we didn't think were possible."
+              "Highly recommend Heath, very happy and grateful for his service so far. He's been helping us manage our website SEO and restructuring, he's a man of his words, and he'll do exactly what he says. Easy to communicate, very professional, very knowledgeable and I can tell he actually cares about helping your business grow."
             </blockquote>
 
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-full bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center text-white font-bold">
-                JM
+                C
               </div>
               <div>
-                <div className="text-white font-semibold">James Morrison</div>
-                <div className="text-zinc-500 text-sm">Director, BuildCo Melbourne</div>
+                <div className="text-white font-semibold">Calvin Yung</div>
               </div>
             </div>
           </div>
