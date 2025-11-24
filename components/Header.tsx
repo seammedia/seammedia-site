@@ -124,17 +124,52 @@ export default function Header() {
             </li>
             {/* Contact Us */}
             <li>
-              <div className="relative inline-flex group">
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-white via-zinc-500 to-white rounded-full opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-500 group-hover:animate-border-beam"></div>
-                <Link
-                  href="/contact"
-                  className="relative inline-flex items-center px-6 py-2.5 text-sm font-medium text-white bg-black rounded-full border border-white/10 transition-all duration-300 hover:bg-zinc-900"
-                >
-                  REQUEST DEMO
-                </Link>
-              </div>
+              <Link
+                href="/contact"
+                className="contact-button relative inline-flex items-center px-6 py-2.5 text-sm font-medium text-white bg-black rounded-full overflow-hidden"
+              >
+                <span className="relative z-10">CONTACT US</span>
+              </Link>
               <style jsx>{`
-                @keyframes border-beam {
+                .contact-button {
+                  background:
+                    linear-gradient(#000, #000) padding-box,
+                    linear-gradient(90deg, transparent 0%, white 50%, transparent 100%) border-box;
+                  border: 1px solid transparent;
+                  background-size: 100% 100%, 200% 100%;
+                  background-position: 0 0, 100% 0;
+                  transition: background-position 0s;
+                }
+
+                .contact-button::before {
+                  content: '';
+                  position: absolute;
+                  inset: -1px;
+                  border-radius: 9999px;
+                  padding: 1px;
+                  background: conic-gradient(
+                    from 0deg,
+                    transparent 0deg,
+                    transparent 270deg,
+                    white 280deg,
+                    white 350deg,
+                    transparent 360deg
+                  );
+                  -webkit-mask:
+                    linear-gradient(#fff 0 0) content-box,
+                    linear-gradient(#fff 0 0);
+                  -webkit-mask-composite: xor;
+                  mask-composite: exclude;
+                  opacity: 0;
+                  transition: opacity 0.3s;
+                }
+
+                .contact-button:hover::before {
+                  opacity: 1;
+                  animation: rotate-beam 1.5s linear infinite;
+                }
+
+                @keyframes rotate-beam {
                   0% {
                     transform: rotate(0deg);
                   }
@@ -225,16 +260,61 @@ export default function Header() {
               </li>
               {/* Contact Us */}
               <li>
-                <div className="relative inline-flex group w-full">
-                  <div className="absolute -inset-0.5 bg-gradient-to-r from-white via-zinc-500 to-white rounded-full opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-500 group-hover:animate-border-beam"></div>
-                  <Link
-                    href="/contact"
-                    className="relative inline-flex items-center justify-center w-full px-6 py-2.5 text-sm font-medium text-white bg-black rounded-full border border-white/10 transition-all duration-300 hover:bg-zinc-900"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    REQUEST DEMO
-                  </Link>
-                </div>
+                <Link
+                  href="/contact"
+                  className="contact-button-mobile relative inline-flex items-center justify-center w-full px-6 py-2.5 text-sm font-medium text-white bg-black rounded-full overflow-hidden"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <span className="relative z-10">CONTACT US</span>
+                </Link>
+                <style jsx>{`
+                  .contact-button-mobile {
+                    background:
+                      linear-gradient(#000, #000) padding-box,
+                      linear-gradient(90deg, transparent 0%, white 50%, transparent 100%) border-box;
+                    border: 1px solid transparent;
+                    background-size: 100% 100%, 200% 100%;
+                    background-position: 0 0, 100% 0;
+                    transition: background-position 0s;
+                  }
+
+                  .contact-button-mobile::before {
+                    content: '';
+                    position: absolute;
+                    inset: -1px;
+                    border-radius: 9999px;
+                    padding: 1px;
+                    background: conic-gradient(
+                      from 0deg,
+                      transparent 0deg,
+                      transparent 270deg,
+                      white 280deg,
+                      white 350deg,
+                      transparent 360deg
+                    );
+                    -webkit-mask:
+                      linear-gradient(#fff 0 0) content-box,
+                      linear-gradient(#fff 0 0);
+                    -webkit-mask-composite: xor;
+                    mask-composite: exclude;
+                    opacity: 0;
+                    transition: opacity 0.3s;
+                  }
+
+                  .contact-button-mobile:hover::before {
+                    opacity: 1;
+                    animation: rotate-beam-mobile 1.5s linear infinite;
+                  }
+
+                  @keyframes rotate-beam-mobile {
+                    0% {
+                      transform: rotate(0deg);
+                    }
+                    100% {
+                      transform: rotate(360deg);
+                    }
+                  }
+                `}</style>
               </li>
             </ul>
           </div>
