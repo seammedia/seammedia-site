@@ -361,39 +361,184 @@ const HowWeWork = () => {
   );
 };
 
-// Testimonial Section
+// Testimonial Section with Review Rotator
 const Testimonial = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [direction, setDirection] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+
+  const reviews = [
+    {
+      id: 1,
+      highlight: "He's a man of his words.",
+      content: "Highly recommend Heath, very happy and grateful for his service so far. He's been helping us manage our website SEO and restructuring, he's a man of his words, and he'll do exactly what he says. Easy to communicate, very professional, very knowledgeable and I can tell he actually cares about helping your business grow.",
+      author: "Calvin Yung",
+      role: "Google Review",
+    },
+    {
+      id: 2,
+      highlight: "Seam Media Have Been So Helpful",
+      content: "Seam Media Have Been So Helpful And Have Honestly Helped So Much With Getting Us On Our Feet!",
+      author: "Margison",
+      role: "Google Review",
+    },
+    {
+      id: 3,
+      highlight: "Outstanding results and professionalism",
+      content: "Our organic traffic increased by 340% in 6 months. Seam Media's technical SEO expertise and strategic approach delivered results we didn't think were possible.",
+      author: "BuildCo Melbourne",
+      role: "Verified Client",
+    }
+  ];
+
+  useEffect(() => {
+    if (isHovered) return;
+    const interval = setInterval(() => {
+      setDirection(1);
+      setActiveIndex((prev) => (prev + 1) % reviews.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, [activeIndex, isHovered, reviews.length]);
+
+  const handleNext = () => {
+    setDirection(1);
+    setActiveIndex((prev) => (prev + 1) % reviews.length);
+  };
+
+  const handlePrev = () => {
+    setDirection(-1);
+    setActiveIndex((prev) => (prev - 1 + reviews.length) % reviews.length);
+  };
+
+  const activeReview = reviews[activeIndex];
+
   return (
-    <section className="py-24 px-6 bg-zinc-950">
-      <div className="max-w-4xl mx-auto">
-        <div className="bg-zinc-900/20 border border-white/5 rounded-3xl p-12 md:p-20 relative overflow-hidden text-center">
-            <div className="flex justify-center mb-12 text-zinc-600">
-                <div className="flex items-end gap-1 h-8">
-                    {[...Array(15)].map((_, i) => (
-                        <div
-                            key={i}
-                            className="w-1 bg-zinc-600 rounded-full animate-pulse"
-                            style={{
-                                height: `${Math.random() * 100}%`,
-                                animationDelay: `${i * 0.1}s`
-                            }}
-                        ></div>
-                    ))}
+    <section className="py-24 px-6 bg-black">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="mb-12">
+          <h2 className="text-sm font-semibold text-zinc-500 uppercase tracking-wider mb-2">Testimonials</h2>
+          <h1 className="text-4xl md:text-5xl font-bold">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-zinc-500">
+              Loved by fast-growing<br/>teams everywhere.
+            </span>
+          </h1>
+        </div>
+
+        {/* Bento Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 h-auto lg:h-[500px]">
+
+          {/* Featured Review Rotator */}
+          <div
+            className="lg:col-span-7 h-[400px] lg:h-full relative bg-zinc-900 rounded-[2.5rem] overflow-hidden border border-zinc-800 p-8 md:p-12 flex flex-col justify-between"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            {/* Background Decor */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-zinc-800/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+
+            {/* Navigation */}
+            <div className="absolute top-8 right-8 flex space-x-2 z-20">
+              <button
+                onClick={handlePrev}
+                className="w-10 h-10 rounded-full bg-zinc-800 hover:bg-zinc-700 flex items-center justify-center transition-colors text-white"
+                aria-label="Previous review"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <button
+                onClick={handleNext}
+                className="w-10 h-10 rounded-full bg-zinc-800 hover:bg-zinc-700 flex items-center justify-center transition-colors text-white"
+                aria-label="Next review"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+
+            {/* Content */}
+            <div className="relative flex-1 flex items-center">
+              <div
+                key={activeIndex}
+                className="w-full transition-all duration-500"
+                style={{
+                  opacity: 1,
+                  transform: 'translateX(0)',
+                }}
+              >
+                <div className="mb-6">
+                  <span className="inline-block p-3 rounded-2xl bg-zinc-800/50 text-orange-400 mb-6">
+                    <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                      <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                    </svg>
+                  </span>
+                  <h2 className="text-2xl md:text-4xl font-medium leading-tight text-white mb-4">
+                    "{activeReview.highlight}"
+                  </h2>
+                  <p className="text-zinc-400 text-lg leading-relaxed">
+                    {activeReview.content}
+                  </p>
                 </div>
+              </div>
             </div>
 
-            <h2 className="text-3xl md:text-4xl font-medium text-white leading-relaxed mb-12">
-                <span className="text-zinc-500">"</span>
-                Seam Media Have Been So Helpful And Have Honestly Helped So Much With Getting Us On Our Feet!
-                <span className="text-zinc-500">"</span>
-            </h2>
-
-            <div className="flex items-center justify-center gap-3 text-xs font-mono tracking-widest uppercase">
-                <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></div>
-                <span className="text-zinc-500">Margison</span>
-                <span className="text-zinc-700">|</span>
-                <span className="text-zinc-500">Google Reviews</span>
+            {/* Footer */}
+            <div className="relative z-10 pt-6 border-t border-zinc-800/50 flex items-center gap-4">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center text-lg font-bold text-white">
+                {activeReview.author.charAt(0)}
+              </div>
+              <div>
+                <div className="text-white font-medium">{activeReview.author}</div>
+                <div className="text-zinc-500 text-sm">{activeReview.role}</div>
+              </div>
+              <div className="ml-auto flex gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
+              </div>
             </div>
+          </div>
+
+          {/* Stat Card */}
+          <div className="lg:col-span-5 h-[300px] lg:h-full bg-zinc-950 rounded-[2.5rem] border border-zinc-800 p-8 md:p-12 flex flex-col justify-center relative overflow-hidden group">
+            <div className="absolute -top-24 -right-24 w-64 h-64 bg-orange-600/10 rounded-full blur-[80px] group-hover:bg-orange-600/20 transition-all duration-700" />
+
+            <div className="relative z-10">
+              <div className="flex items-baseline gap-1 mb-6">
+                <span className="text-7xl md:text-8xl font-bold tracking-tighter text-white">5.0</span>
+                <span className="text-4xl md:text-5xl font-bold text-orange-500">/5</span>
+              </div>
+
+              <div className="space-y-4">
+                <div className="h-12 w-1 bg-orange-500 rounded-full mb-6" />
+
+                <h3 className="text-xl md:text-2xl font-medium text-zinc-200">
+                  Perfect rating across all platforms.
+                </h3>
+
+                <p className="text-zinc-500 leading-relaxed">
+                  "We pride ourselves on delivery. From SEO restructuring to full-stack web development, our clients trust us to deliver pixel-perfect results on time, every time."
+                </p>
+              </div>
+
+              <div className="mt-8 pt-8 border-t border-zinc-900 flex items-center gap-4">
+                <div className="flex -space-x-3">
+                  {[1,2,3].map((i) => (
+                    <div key={i} className="w-10 h-10 rounded-full border-2 border-black bg-zinc-800 flex items-center justify-center text-xs text-zinc-400">
+                      User
+                    </div>
+                  ))}
+                </div>
+                <span className="text-sm text-zinc-500">Trusted by 50+ local businesses</span>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
