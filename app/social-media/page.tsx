@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, Instagram, Users, BarChart3, Calendar, Search, Target, Zap, Rocket, ArrowUpRight, Send } from "lucide-react";
+import DotScreenShader from "@/components/DotShader";
 
 export default function SocialMediaPage() {
   return (
@@ -53,8 +54,13 @@ const ScrambleText = ({ text, className = "" }: { text: string; className?: stri
 // Hero Section
 const Hero = () => {
   return (
-    <section className="pt-40 pb-24 px-6 min-h-[80vh] flex flex-col justify-center bg-[#09090b]">
-      <div className="max-w-6xl mx-auto w-full">
+    <section className="pt-40 pb-24 px-6 min-h-[80vh] flex flex-col justify-center bg-[#09090b] relative overflow-hidden">
+      {/* Dot Shader Background */}
+      <div className="absolute inset-0 z-0">
+        <DotScreenShader />
+      </div>
+
+      <div className="max-w-6xl mx-auto w-full relative z-10">
         <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-zinc-900/80 border border-zinc-800 mb-8 font-mono text-xs tracking-widest text-zinc-400">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-75"></span>
@@ -223,8 +229,8 @@ const HowWeWork = () => {
     },
     {
       id: 4,
-      title: "Optimize",
-      description: "Analyzing performance and refining strategy. Continuous improvement based on data and insights.",
+      title: "Optimise",
+      description: "Analysing performance and refining strategy. Continuous improvement based on data and insights.",
       icon: <Rocket className="text-orange-400" size={24} />,
     }
   ];
