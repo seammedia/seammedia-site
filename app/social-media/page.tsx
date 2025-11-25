@@ -3,13 +3,11 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, Instagram, Users, BarChart3, Calendar, Search, Target, Zap, Rocket, ArrowUpRight, Send } from "lucide-react";
 import DotScreenShader from "@/components/DotShader";
-import Image from "next/image";
 
 export default function SocialMediaPage() {
   return (
     <>
       <Hero />
-      <ClientSlider />
       <WhatWeOffer />
       <HowWeWork />
       <Testimonial />
@@ -112,55 +110,6 @@ const Hero = () => {
         @keyframes blink {
           0%, 100% { opacity: 1; }
           50% { opacity: 0; }
-        }
-      `}</style>
-    </section>
-  );
-};
-
-// Client Logo Slider
-const ClientSlider = () => {
-  const clients = [
-    { name: "Coles", logo: "/images/Cole_white.png" },
-    { name: "Fujifilm", logo: "/images/fujifilm_white.png" },
-    { name: "Taubmans", logo: "/images/taubmans_white.png" },
-    { name: "Youfoodz", logo: "/images/youfoodz_white.png" },
-  ];
-
-  return (
-    <section className="py-10 bg-[#09090b] overflow-hidden">
-      <div className="relative">
-        {/* Fade masks */}
-        <div className="absolute left-0 top-0 bottom-0 w-32 z-10 bg-gradient-to-r from-[#09090b] to-transparent pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-32 z-10 bg-gradient-to-l from-[#09090b] to-transparent pointer-events-none" />
-
-        {/* Scrolling container */}
-        <div className="flex animate-client-scroll">
-          {/* Triple the logos for seamless loop */}
-          {[...clients, ...clients, ...clients].map((client, idx) => (
-            <div
-              key={`${client.name}-${idx}`}
-              className="flex-shrink-0 mx-12 md:mx-20 w-28 md:w-32 h-10 flex items-center justify-center opacity-40 hover:opacity-80 transition-opacity duration-300"
-            >
-              <Image
-                src={client.logo}
-                alt={client.name}
-                width={128}
-                height={40}
-                className="max-w-full max-h-full object-contain mix-blend-lighten"
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <style jsx>{`
-        @keyframes client-scroll {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-33.333%); }
-        }
-        .animate-client-scroll {
-          animation: client-scroll 20s linear infinite;
         }
       `}</style>
     </section>
