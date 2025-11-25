@@ -123,18 +123,16 @@ const ClientSlider = () => {
   const clients = [
     { name: "Coles", logo: "/images/Cole_white.png" },
     { name: "Fujifilm", logo: "/images/fujifilm_white.png" },
-    { name: "PT Leo Estate", logo: "/images/ptleoestate_white.png" },
     { name: "Taubmans", logo: "/images/taubmans_white.png" },
     { name: "Youfoodz", logo: "/images/youfoodz_white.png" },
-    { name: "Grilld", logo: "/images/GRILLD-LOGO-CIRCLE-HEALTHYBURGERS-Black_360x80.jpg" },
   ];
 
   return (
-    <section className="py-12 bg-zinc-950 border-t border-b border-zinc-800/50 overflow-hidden">
+    <section className="py-10 bg-[#09090b] overflow-hidden">
       <div className="relative">
         {/* Fade masks */}
-        <div className="absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-r from-zinc-950 to-transparent pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-l from-zinc-950 to-transparent pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-32 z-10 bg-gradient-to-r from-[#09090b] to-transparent pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-32 z-10 bg-gradient-to-l from-[#09090b] to-transparent pointer-events-none" />
 
         {/* Scrolling container */}
         <div className="flex animate-client-scroll">
@@ -142,14 +140,14 @@ const ClientSlider = () => {
           {[...clients, ...clients, ...clients].map((client, idx) => (
             <div
               key={`${client.name}-${idx}`}
-              className="flex-shrink-0 mx-10 md:mx-16 w-28 md:w-36 h-16 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity duration-300"
+              className="flex-shrink-0 mx-12 md:mx-20 w-28 md:w-32 h-10 flex items-center justify-center opacity-40 hover:opacity-80 transition-opacity duration-300"
             >
               <Image
                 src={client.logo}
                 alt={client.name}
-                width={144}
-                height={64}
-                className="max-w-full max-h-full object-contain brightness-0 invert"
+                width={128}
+                height={40}
+                className="max-w-full max-h-full object-contain mix-blend-lighten"
               />
             </div>
           ))}
@@ -162,7 +160,7 @@ const ClientSlider = () => {
           100% { transform: translateX(-33.333%); }
         }
         .animate-client-scroll {
-          animation: client-scroll 25s linear infinite;
+          animation: client-scroll 20s linear infinite;
         }
       `}</style>
     </section>
