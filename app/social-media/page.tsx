@@ -219,7 +219,7 @@ const OurWork = () => {
     {
       id: 2,
       title: "Clamroc Seafood",
-      tag: "Restaurant",
+      tag: "Construction",
       image: "/images/clamroc01.png",
     },
     {
@@ -246,12 +246,13 @@ const OurWork = () => {
     <section className="py-24 px-6 bg-black overflow-hidden">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-bold mb-4">
-            <span className="text-white">Showcase </span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-400 to-zinc-600 italic">your work to</span>
-            <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-500 to-zinc-700 italic">the world.</span>
+        <div className="mb-16">
+          <h2 className="text-4xl font-bold">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-zinc-500">Our Work</span>
+            <span className="relative inline-flex ml-2 align-middle">
+              <span className="animate-ping absolute inline-flex h-3 w-3 rounded-sm bg-pink-400 opacity-75"></span>
+              <span className="relative inline-flex h-3 w-3 rounded-sm bg-pink-500"></span>
+            </span>
           </h2>
         </div>
 
@@ -298,20 +299,13 @@ const OurWork = () => {
                     />
 
                     {/* Gradient overlay */}
-                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
                     {/* Tag pill */}
                     <div className="absolute left-3 top-3">
                       <span className="inline-flex items-center rounded-full bg-black/60 px-3 py-1 text-[10px] font-medium uppercase tracking-widest text-white backdrop-blur">
                         {card.tag}
                       </span>
-                    </div>
-
-                    {/* Bottom content */}
-                    <div className="absolute inset-x-3 bottom-3">
-                      <h3 className="text-sm font-semibold text-white">
-                        {card.title}
-                      </h3>
                     </div>
                   </div>
                 </button>
