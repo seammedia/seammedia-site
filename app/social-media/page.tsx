@@ -3,12 +3,14 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, Instagram, Users, BarChart3, Calendar, Search, Target, Zap, Rocket, ArrowUpRight, Send } from "lucide-react";
 import DotScreenShader from "@/components/DotShader";
+import Image from "next/image";
 
 export default function SocialMediaPage() {
   return (
     <>
       <Hero />
       <WhatWeOffer />
+      <OurWork />
       <HowWeWork />
       <Testimonial />
       <ReadyToGrow />
@@ -197,6 +199,142 @@ const WhatWeOffer = () => {
               </div>
             </div>
           ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// Our Work Gallery
+const OurWork = () => {
+  const [activeId, setActiveId] = useState(2); // middle card active by default
+
+  const cards = [
+    {
+      id: 1,
+      title: "BLVD Drinks",
+      tag: "Lifestyle Brand",
+      image: "/images/blvd_drinks.png",
+    },
+    {
+      id: 2,
+      title: "Clamroc Seafood",
+      tag: "Restaurant",
+      image: "/images/clamroc01.png",
+    },
+    {
+      id: 3,
+      title: "Coffee Culture",
+      tag: "Cafe",
+      image: "/images/coffee01.png",
+    },
+    {
+      id: 4,
+      title: "Vitasoy",
+      tag: "Consumer Brand",
+      image: "/images/vitasoy1.png",
+    },
+    {
+      id: 5,
+      title: "Gobble Up",
+      tag: "Food & Beverage",
+      image: "/images/gobbleupmelbourne01.png",
+    },
+  ];
+
+  return (
+    <section className="py-24 px-6 bg-black overflow-hidden">
+      <div className="max-w-6xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-6xl font-bold mb-4">
+            <span className="text-white">Showcase </span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-400 to-zinc-600 italic">your work to</span>
+            <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-500 to-zinc-700 italic">the world.</span>
+          </h2>
+        </div>
+
+        {/* Image Gallery */}
+        <div className="relative">
+          <div className="relative mx-auto flex h-[480px] items-center justify-center">
+            {cards.map((card, index) => {
+              const isActive = card.id === activeId;
+              const totalCards = cards.length;
+              const middleIndex = Math.floor(totalCards / 2);
+              const relativePosition = index - middleIndex;
+
+              // Calculate horizontal offset based on position
+              const baseOffset = 140;
+              const translateX = relativePosition * baseOffset;
+
+              // Stagger vertically
+              const translateY = Math.abs(relativePosition) === 2 ? 20 : Math.abs(relativePosition) === 1 ? 10 : 0;
+
+              // Slight rotation for outer cards
+              const rotation = relativePosition * -3;
+
+              return (
+                <button
+                  key={card.id}
+                  type="button"
+                  onClick={() => setActiveId(card.id)}
+                  aria-pressed={isActive}
+                  className={`
+                    group absolute w-48 md:w-56 cursor-pointer overflow-hidden rounded-3xl border border-zinc-700/70 bg-zinc-900/70 shadow-xl backdrop-blur-sm transition-all duration-500 ease-out
+                    ${isActive ? 'z-30 scale-105 shadow-2xl shadow-pink-500/20' : 'z-10 scale-90 opacity-60 hover:opacity-90 hover:scale-95'}
+                  `}
+                  style={{
+                    transform: `translateX(${translateX}px) translateY(${translateY}px) rotate(${isActive ? 0 : rotation}deg)`,
+                    transformOrigin: 'center center',
+                  }}
+                >
+                  <div className="relative h-72 md:h-80 w-full overflow-hidden">
+                    <Image
+                      src={card.image}
+                      alt={card.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+
+                    {/* Gradient overlay */}
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+
+                    {/* Tag pill */}
+                    <div className="absolute left-3 top-3">
+                      <span className="inline-flex items-center rounded-full bg-black/60 px-3 py-1 text-[10px] font-medium uppercase tracking-widest text-white backdrop-blur">
+                        {card.tag}
+                      </span>
+                    </div>
+
+                    {/* Bottom content */}
+                    <div className="absolute inset-x-3 bottom-3">
+                      <h3 className="text-sm font-semibold text-white">
+                        {card.title}
+                      </h3>
+                    </div>
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Floating labels */}
+          <div className="absolute left-1/4 top-1/4 -translate-x-1/2 hidden md:block">
+            <span className="inline-flex items-center gap-2 rounded-full bg-blue-500 px-4 py-2 text-sm font-medium text-white shadow-lg">
+              designer
+              <ArrowUpRight size={14} />
+            </span>
+          </div>
+          <div className="absolute right-1/4 top-1/3 translate-x-1/2 hidden md:block">
+            <span className="inline-flex items-center gap-2 rounded-full bg-orange-500 px-4 py-2 text-sm font-medium text-white shadow-lg">
+              artist
+              <ArrowUpRight size={14} />
+            </span>
+          </div>
+
+          {/* Soft glow behind cards */}
+          <div className="pointer-events-none absolute inset-x-10 bottom-4 -z-10 h-40 rounded-full bg-pink-500/20 blur-3xl" />
         </div>
       </div>
     </section>
