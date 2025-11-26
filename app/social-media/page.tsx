@@ -265,15 +265,15 @@ const OurWork = () => {
               const middleIndex = Math.floor(totalCards / 2);
               const relativePosition = index - middleIndex;
 
-              // Calculate horizontal offset based on position
-              const baseOffset = 140;
+              // Calculate horizontal offset based on position - wider spacing
+              const baseOffset = 200;
               const translateX = relativePosition * baseOffset;
 
-              // Stagger vertically
-              const translateY = Math.abs(relativePosition) === 2 ? 20 : Math.abs(relativePosition) === 1 ? 10 : 0;
+              // Stagger vertically - more pronounced
+              const translateY = Math.abs(relativePosition) === 2 ? 30 : Math.abs(relativePosition) === 1 ? 15 : 0;
 
               // Slight rotation for outer cards
-              const rotation = relativePosition * -3;
+              const rotation = relativePosition * -5;
 
               return (
                 <button
