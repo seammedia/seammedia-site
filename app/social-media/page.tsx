@@ -313,20 +313,6 @@ const OurWork = () => {
             })}
           </div>
 
-          {/* Floating labels */}
-          <div className="absolute left-1/4 top-1/4 -translate-x-1/2 hidden md:block">
-            <span className="inline-flex items-center gap-2 rounded-full bg-blue-500 px-4 py-2 text-sm font-medium text-white shadow-lg">
-              designer
-              <ArrowUpRight size={14} />
-            </span>
-          </div>
-          <div className="absolute right-1/4 top-1/3 translate-x-1/2 hidden md:block">
-            <span className="inline-flex items-center gap-2 rounded-full bg-orange-500 px-4 py-2 text-sm font-medium text-white shadow-lg">
-              artist
-              <ArrowUpRight size={14} />
-            </span>
-          </div>
-
           {/* Soft glow behind cards */}
           <div className="pointer-events-none absolute inset-x-10 bottom-4 -z-10 h-40 rounded-full bg-pink-500/20 blur-3xl" />
         </div>
