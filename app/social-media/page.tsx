@@ -330,7 +330,7 @@ const HowWeWork = () => {
     {
       id: 1,
       title: "Audit",
-      description: "Analyzing your current social presence. Understanding your audience, competitors, and opportunities for growth.",
+      description: "Analysing your current social presence. Understanding your audience, competitors, and opportunities for growth.",
       icon: <Search className="text-blue-400" size={24} />,
     },
     {
@@ -391,7 +391,7 @@ const HowWeWork = () => {
         </div>
 
         <p className="text-zinc-400 mb-16 text-center max-w-lg mx-auto">
-          From audit to optimization. A systematic approach to social media success.
+          From audit to optimisation. A systematic approach to social media success.
         </p>
 
         <div className="relative">
