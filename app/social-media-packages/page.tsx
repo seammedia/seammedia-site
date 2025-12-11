@@ -166,7 +166,7 @@ const Packages = () => {
       ],
       popular: false,
       cta: "Get Started",
-      link: "https://buy.stripe.com/4gweVe6R73cceHh29O",
+      link: "https://buy.stripe.com/cNi14o3EV00056H3hV0Fj0A",
     },
   ];
 
