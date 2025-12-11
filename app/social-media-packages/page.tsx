@@ -129,9 +129,9 @@ const Packages = () => {
       description: "Perfect for small businesses just getting started with social media.",
       features: [
         "1-2 posts per week",
+        "No contracts",
         "Basic graphic design",
         "Weekly content calendar",
-        "Email support",
       ],
       popular: false,
       cta: "Get Started",
@@ -143,9 +143,9 @@ const Packages = () => {
       description: "Ideal for growing businesses ready to scale their social presence.",
       features: [
         "2-3 posts per week",
+        "No contracts",
         "Custom graphic design",
         "Weekly content calendar",
-        "Priority email & phone support",
       ],
       popular: true,
       cta: "Get Started",
@@ -157,6 +157,7 @@ const Packages = () => {
       description: "Full-service management for businesses serious about social growth.",
       features: [
         "3-4 posts per week",
+        "No contracts",
         "Premium graphic design",
         "Paid ad management",
         "Weekly content calendar",
