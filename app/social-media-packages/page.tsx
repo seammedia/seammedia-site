@@ -135,6 +135,7 @@ const Packages = () => {
       ],
       popular: false,
       cta: "Get Started",
+      link: "https://buy.stripe.com/6oU4gA1wN3cc0Qr05J0Fj0y",
     },
     {
       name: "Pro",
@@ -149,6 +150,7 @@ const Packages = () => {
       ],
       popular: true,
       cta: "Get Started",
+      link: "https://buy.stripe.com/9B6cN6a3j000eHh4lZ0Fj0z",
     },
     {
       name: "Max",
@@ -164,6 +166,7 @@ const Packages = () => {
       ],
       popular: false,
       cta: "Get Started",
+      link: "https://buy.stripe.com/4gweVe6R73cceHh29O",
     },
   ];
 
@@ -223,7 +226,7 @@ const Packages = () => {
               </ul>
 
               <a
-                href="#contact"
+                href={pkg.link}
                 className={`block text-center py-4 px-6 rounded-full font-medium transition-all duration-300 ${
                   pkg.popular
                     ? "bg-pink-500 text-white hover:bg-pink-600"
