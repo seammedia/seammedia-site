@@ -378,6 +378,77 @@ For questions or issues:
 - Check the [Tailwind CSS documentation](https://tailwindcss.com/docs)
 - Review the [Vercel deployment docs](https://vercel.com/docs)
 
+## 🔒 Hidden/Unlisted Pages
+
+### Social Media Packages (`/social-media-packages`)
+A pricing page for social media management packages, not linked in the navigation menu. Used for sending directly to leads.
+
+**URL**: `https://www.seammedia.com.au/social-media-packages`
+
+**Packages**:
+- **Basic** ($199/month): 1-2 posts per week, no contracts, basic graphic design, weekly content calendar
+- **Pro** ($399/month): 2-3 posts per week, no contracts, custom graphic design, weekly content calendar
+- **Max** ($599/month): 3-4 posts per week, no contracts, premium graphic design, paid ad management, weekly content calendar
+
+**Stripe Integration**:
+Each package "Get Started" button links to a Stripe payment link:
+- Basic: `https://buy.stripe.com/6oU4gA1wN3cc0Qr05J0Fj0y`
+- Pro: `https://buy.stripe.com/9B6cN6a3j000eHh4lZ0Fj0z`
+- Max: `https://buy.stripe.com/cNi14o3EV00056H3hV0Fj0A`
+
+**Creating New Hidden Pages**:
+1. Create a new folder in `app/` (e.g., `app/your-hidden-page/`)
+2. Add a `page.tsx` file with your content
+3. Do NOT add links to the page in `Header.tsx` or navigation
+4. Share the direct URL with intended recipients
+
+**Page Structure**:
+The social media packages page reuses components from `/social-media` with additions:
+- Custom `Packages` component with pricing cards
+- Package data includes: name, price, period, description, features array, popular flag, CTA text, and Stripe link
+- Contact form dropdown updated to show package options
+
+### Key Implementation Details
+
+**Adding Stripe Payment Links to Pricing Cards**:
+```tsx
+const packages = [
+  {
+    name: "Basic",
+    price: "$199",
+    period: "/month",
+    description: "Description here",
+    features: ["Feature 1", "Feature 2"],
+    popular: false,
+    cta: "Get Started",
+    link: "https://buy.stripe.com/YOUR_LINK_ID",
+  },
+  // ... more packages
+];
+
+// In the JSX:
+<a href={pkg.link} className="...">
+  {pkg.cta}
+</a>
+```
+
+**Styling the "Most Popular" Package**:
+```tsx
+{pkg.popular && (
+  <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+    <span className="bg-pink-500 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider">
+      Most Popular
+    </span>
+  </div>
+)}
+```
+
+The popular package also gets enhanced styling:
+- `scale-105` for slight enlargement
+- `shadow-2xl shadow-pink-500/10` for glow effect
+- `border-pink-500/30` for accent border
+- Pink gradient background
+
 ## 📄 License
 
 This project is for Seam Media. All rights reserved.
