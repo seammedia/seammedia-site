@@ -124,12 +124,11 @@ const Packages = () => {
   const packages = [
     {
       name: "Basic",
-      price: "$499",
+      price: "$199",
       period: "/month",
       description: "Perfect for small businesses just getting started with social media.",
       features: [
-        "2 social platforms",
-        "8 posts per month",
+        "1-2 posts per week",
         "Basic graphic design",
         "Monthly content calendar",
         "Monthly performance report",
@@ -140,12 +139,11 @@ const Packages = () => {
     },
     {
       name: "Pro",
-      price: "$999",
+      price: "$399",
       period: "/month",
       description: "Ideal for growing businesses ready to scale their social presence.",
       features: [
-        "3 social platforms",
-        "16 posts per month",
+        "2-3 posts per week",
         "Custom graphic design",
         "Story content (8/month)",
         "Community management",
@@ -158,12 +156,11 @@ const Packages = () => {
     },
     {
       name: "Max",
-      price: "$1,999",
+      price: "$599",
       period: "/month",
       description: "Full-service management for businesses serious about social growth.",
       features: [
-        "4+ social platforms",
-        "30 posts per month",
+        "3-4 posts per week",
         "Premium graphic design",
         "Daily story content",
         "Full community management",
@@ -249,7 +246,7 @@ const Packages = () => {
         </div>
 
         <p className="text-center text-zinc-600 text-sm mt-12">
-          All packages include a 30-day satisfaction guarantee. Need something custom? <a href="#contact" className="text-pink-400 hover:text-pink-300 underline">Contact us</a>.
+          Need something custom? <a href="#contact" className="text-pink-400 hover:text-pink-300 underline">Contact us</a>.
         </p>
       </div>
     </section>
@@ -1033,9 +1030,9 @@ const ContactSection = () => {
                   className="w-full bg-zinc-900/30 border border-white/10 rounded-lg px-4 py-3 text-zinc-100 focus:outline-none focus:border-pink-500/50 focus:ring-1 focus:ring-pink-500/50 transition-all hover:border-white/20"
                 >
                   <option value="">Select a package</option>
-                  <option value="Basic - $499/month">Basic - $499/month</option>
-                  <option value="Pro - $999/month">Pro - $999/month</option>
-                  <option value="Max - $1,999/month">Max - $1,999/month</option>
+                  <option value="Basic - $199/month">Basic - $199/month</option>
+                  <option value="Pro - $399/month">Pro - $399/month</option>
+                  <option value="Max - $599/month">Max - $599/month</option>
                   <option value="Custom">Custom Package</option>
                 </select>
               </div>
