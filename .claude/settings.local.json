@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run build:*)",
+      "Bash(vercel:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push)",
+      "Bash(git remote add:*)",
+      "Bash(git push:*)",
+      "Bash(git remote set-url:*)",
+      "Bash(curl:*)",
+      "Bash(cat:*)",
+      "Bash(npm run dev:*)",
+      "Bash(lsof:*)",
+      "Bash(xargs:*)",
+      "Bash(npx vercel:*)",
+      "Bash(npm install:*)",
+      "Bash(timeout 10 npm run dev:*)",
+      "Bash(npx fix-react2shell-next)",
+      "Bash(npx fix-react2shell-next:*)",
+      "Bash(mkdir:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
