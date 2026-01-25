@@ -19,6 +19,7 @@ export default function Header() {
   const serviceLinks = [
     { href: "/social-media", label: "Social Media Management" },
     { href: "/web-design", label: "Website Design" },
+    { href: "/website-maintenance", label: "Website Maintenance" },
     { href: "/seo", label: "SEO" },
     { href: "/graphic-design", label: "Graphic Design" },
     { href: "/branding", label: "Branding" },
