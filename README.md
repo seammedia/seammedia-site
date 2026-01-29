@@ -386,9 +386,9 @@ A pricing page for social media management packages, not linked in the navigatio
 **URL**: `https://www.seammedia.com.au/social-media-packages`
 
 **Packages**:
-- **Basic** ($199/month): 1-2 posts per week, no contracts, basic graphic design, weekly content calendar
-- **Pro** ($399/month): 2-3 posts per week, no contracts, custom graphic design, weekly content calendar
-- **Max** ($599/month): 3-4 posts per week, no contracts, premium graphic design, paid ad management, weekly content calendar
+- **Basic** ($199/month): 1-2 posts per week, no contracts, basic graphic design, weekly content calendar, email support
+- **Pro** ($399/month): 2-3 posts per week, no contracts, custom graphic design, weekly content calendar, priority email support
+- **Max** ($599/month): 3-4 posts per week, no contracts, premium graphic design, paid ad management, weekly content calendar, phone & email support
 
 **Stripe Integration**:
 Each package "Get Started" button links to a Stripe payment link:
@@ -448,6 +448,18 @@ The popular package also gets enhanced styling:
 - `shadow-2xl shadow-pink-500/10` for glow effect
 - `border-pink-500/30` for accent border
 - Pink gradient background
+
+### Support Tier Pattern
+
+All package pages (social media, website maintenance, etc.) follow a consistent support tier structure:
+
+| Tier | Support Level | Description |
+|------|---------------|-------------|
+| Basic/Essential | Email support | Standard email response times |
+| Pro/Professional | Priority email support | Faster email response, higher priority |
+| Max/Business | Phone & email support | Direct phone access plus priority email |
+
+This pattern ensures consistency across all service offerings and clear value progression between tiers.
 
 ## 📄 License
 
