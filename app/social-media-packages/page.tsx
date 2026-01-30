@@ -163,7 +163,7 @@ const Packages = () => {
         "3-4 posts per week",
         "No contracts",
         "Premium graphic design",
-        "Paid ad management",
+        "Monthly performance report",
         "Weekly content calendar",
         "Phone & email support",
       ],
