@@ -388,7 +388,9 @@ A pricing page for social media management packages, not linked in the navigatio
 **Packages**:
 - **Basic** ($199/month): 1-2 posts per week, no contracts, basic graphic design, weekly content calendar, email support
 - **Pro** ($399/month): 2-3 posts per week, no contracts, custom graphic design, weekly content calendar, priority email support
-- **Max** ($599/month): 3-4 posts per week, no contracts, premium graphic design, paid ad management, weekly content calendar, phone & email support
+- **Max** ($599/month): 3-4 posts per week, no contracts, premium graphic design, monthly performance report, weekly content calendar, phone & email support
+
+**Package Philosophy**: These packages focus on **organic social media growth** only. Paid advertising/ad management is intentionally excluded to keep the offering simple and focused on content creation and community building.
 
 **Stripe Integration**:
 Each package "Get Started" button links to a Stripe payment link:
@@ -460,6 +462,24 @@ All package pages (social media, website maintenance, etc.) follow a consistent 
 | Max/Business | Phone & email support | Direct phone access plus priority email |
 
 This pattern ensures consistency across all service offerings and clear value progression between tiers.
+
+### Competitor Research for Social Media Packages
+
+When updating package features, these Australian competitors provide useful benchmarks:
+
+| Competitor | URL | Key Insights |
+|------------|-----|--------------|
+| SOUP Agency | soupagency.com.au/social-media/social-media-packages/ | Monthly performance reports, content strategy, video editing |
+| The Visual Collective | thevisualcollective.com.au/shop/p/the-social-butterfly | Canva templates, platform-specific training |
+| Social Tap | socialtap.com.au/packages/social-media-package/ | Community management, strategic planning |
+| Quantum Web | quantumweb.com.au/social-media-packages | Engagement monitoring, hashtag strategy, growth metrics |
+
+**Common organic features across competitors:**
+- Monthly performance reports with growth metrics
+- Hashtag strategy and optimization
+- Community engagement and response management
+- Content scheduling and calendar planning
+- Platform-specific content optimization
 
 ## 📄 License
 
