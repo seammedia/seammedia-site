@@ -138,9 +138,9 @@ const Packages = () => {
       ],
       popular: false,
       exclusiveOffers: null,
-      cta: "Get Started",
+      cta: "Select Plan",
       monthlyLink: "https://buy.stripe.com/6oU4gA1wN3cc0Qr05J0Fj0y",
-      annualLink: "#", // TODO: Add annual Stripe link
+      annualLink: "https://buy.stripe.com/eVq8wQcbr8ww7eP9Gj0Fj0I",
     },
     {
       name: "Pro",
@@ -158,9 +158,9 @@ const Packages = () => {
       ],
       popular: true,
       exclusiveOffers: ["IG Reels", "TikTok Reels"],
-      cta: "Get Started",
+      cta: "Select Plan",
       monthlyLink: "https://buy.stripe.com/9B6cN6a3j000eHh4lZ0Fj0z",
-      annualLink: "#", // TODO: Add annual Stripe link
+      annualLink: "https://buy.stripe.com/9B6eVea3jaEE42DdWz0Fj0J",
     },
     {
       name: "Max",
@@ -179,9 +179,9 @@ const Packages = () => {
       ],
       popular: false,
       exclusiveOffers: ["IG Reels", "TikTok Reels"],
-      cta: "Get Started",
+      cta: "Select Plan",
       monthlyLink: "https://buy.stripe.com/cNi14o3EV00056H3hV0Fj0A",
-      annualLink: "#", // TODO: Add annual Stripe link
+      annualLink: "https://dashboard.stripe.com/acct_1FWXebKLZoWMOR2a/payment-links/plink_1Szop6KLZoWMOR2alPcqYOz8",
     },
   ];
 
