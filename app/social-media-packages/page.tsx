@@ -121,55 +121,67 @@ const Hero = () => {
 
 // Packages/Pricing Section
 const Packages = () => {
+  const [isAnnual, setIsAnnual] = useState(false);
+
   const packages = [
     {
       name: "Basic",
-      price: "$199",
-      period: "/month",
+      monthlyPrice: 199,
+      annualPrice: 179,
       description: "Perfect for small businesses just getting started with social media.",
       features: [
         "1-2 posts per week",
         "No contracts",
-        "Basic graphic design",
+        "Graphic design",
         "Weekly content calendar",
         "Email support",
       ],
       popular: false,
+      exclusiveOffers: null,
       cta: "Get Started",
-      link: "https://buy.stripe.com/6oU4gA1wN3cc0Qr05J0Fj0y",
+      monthlyLink: "https://buy.stripe.com/6oU4gA1wN3cc0Qr05J0Fj0y",
+      annualLink: "#", // TODO: Add annual Stripe link
     },
     {
       name: "Pro",
-      price: "$399",
-      period: "/month",
+      monthlyPrice: 399,
+      annualPrice: 359,
       description: "Ideal for growing businesses ready to scale their social presence.",
       features: [
         "2-3 posts per week",
         "No contracts",
-        "Custom graphic design",
+        "Graphic design",
+        "Content creation",
+        "IG Reels",
         "Weekly content calendar",
         "Priority email support",
       ],
       popular: true,
+      exclusiveOffers: ["IG Reels", "TikTok Reels"],
       cta: "Get Started",
-      link: "https://buy.stripe.com/9B6cN6a3j000eHh4lZ0Fj0z",
+      monthlyLink: "https://buy.stripe.com/9B6cN6a3j000eHh4lZ0Fj0z",
+      annualLink: "#", // TODO: Add annual Stripe link
     },
     {
       name: "Max",
-      price: "$599",
-      period: "/month",
+      monthlyPrice: 599,
+      annualPrice: 539,
       description: "Full-service management for businesses serious about social growth.",
       features: [
         "3-4 posts per week",
         "No contracts",
         "Premium graphic design",
+        "Content creation",
+        "IG Reels",
         "Monthly performance report",
         "Weekly content calendar",
         "Phone & email support",
       ],
       popular: false,
+      exclusiveOffers: ["IG Reels", "TikTok Reels"],
       cta: "Get Started",
-      link: "https://buy.stripe.com/cNi14o3EV00056H3hV0Fj0A",
+      monthlyLink: "https://buy.stripe.com/cNi14o3EV00056H3hV0Fj0A",
+      annualLink: "#", // TODO: Add annual Stripe link
     },
   ];
 
@@ -187,59 +199,121 @@ const Packages = () => {
           <p className="text-zinc-500 text-lg max-w-2xl mx-auto">
             Flexible packages designed to meet your business needs and budget.
           </p>
+
+          {/* Monthly / Annual Toggle */}
+          <div className="flex items-center justify-center gap-3 mt-8">
+            <span className={`text-sm font-semibold transition-colors duration-300 ${!isAnnual ? "text-white" : "text-zinc-500"}`}>
+              Monthly
+            </span>
+            <button
+              onClick={() => setIsAnnual(!isAnnual)}
+              className="relative w-[44px] h-[24px] rounded-full bg-zinc-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-pink-500/50"
+              aria-label="Toggle annual billing"
+            >
+              <span
+                className={`absolute top-[3px] left-[3px] w-[18px] h-[18px] rounded-full bg-white shadow-md transition-transform duration-300 ease-in-out ${
+                  isAnnual ? "translate-x-[20px]" : "translate-x-0"
+                }`}
+              />
+            </button>
+            <span className={`text-sm font-semibold transition-colors duration-300 ${isAnnual ? "text-white" : "text-zinc-500"}`}>
+              Annual
+            </span>
+            <span className="bg-pink-500/20 text-pink-400 border border-pink-500/30 rounded-full px-3 py-0.5 text-xs font-bold">
+              SAVE 10%
+            </span>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {packages.map((pkg, index) => (
-            <div
-              key={index}
-              className={`relative p-8 rounded-3xl border transition-all duration-300 flex flex-col ${
-                pkg.popular
-                  ? "bg-gradient-to-b from-pink-500/10 to-zinc-900/50 border-pink-500/30 scale-105 shadow-2xl shadow-pink-500/10"
-                  : "bg-zinc-900/30 border-white/5 hover:border-white/10 hover:bg-zinc-900/50"
-              }`}
-            >
-              {pkg.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                  <span className="bg-pink-500 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider">
-                    Most Popular
-                  </span>
-                </div>
-              )}
+          {packages.map((pkg, index) => {
+            const displayPrice = isAnnual ? pkg.annualPrice : pkg.monthlyPrice;
+            const link = isAnnual ? pkg.annualLink : pkg.monthlyLink;
 
-              <div className="mb-8">
-                <h3 className={`text-2xl font-bold mb-2 ${pkg.popular ? "text-pink-400" : "text-white"}`}>
-                  {pkg.name}
-                </h3>
-                <p className="text-zinc-500 text-sm">{pkg.description}</p>
-              </div>
-
-              <div className="mb-8">
-                <span className="text-5xl font-bold text-white">{pkg.price}</span>
-                <span className="text-zinc-500">{pkg.period}</span>
-              </div>
-
-              <ul className="space-y-4 mb-8 flex-grow">
-                {pkg.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-start gap-3">
-                    <Check className={`w-5 h-5 mt-0.5 flex-shrink-0 ${pkg.popular ? "text-pink-400" : "text-zinc-500"}`} />
-                    <span className="text-zinc-300 text-sm">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <a
-                href={pkg.link}
-                className={`block text-center py-4 px-6 rounded-full font-medium transition-all duration-300 ${
+            return (
+              <div
+                key={index}
+                className={`relative p-8 rounded-3xl border transition-all duration-300 flex flex-col ${
                   pkg.popular
-                    ? "bg-pink-500 text-white hover:bg-pink-600"
-                    : "bg-zinc-800 text-white hover:bg-zinc-700 border border-zinc-700"
+                    ? "bg-gradient-to-b from-pink-500/10 to-zinc-900/50 border-pink-500/30 scale-105 shadow-2xl shadow-pink-500/10"
+                    : "bg-zinc-900/30 border-white/5 hover:border-white/10 hover:bg-zinc-900/50"
                 }`}
               >
-                {pkg.cta}
-              </a>
-            </div>
-          ))}
+                {pkg.popular && (
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                    <span className="bg-pink-500 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider">
+                      Most Popular
+                    </span>
+                  </div>
+                )}
+
+                <div className="mb-6">
+                  <h3 className={`text-2xl font-bold mb-2 ${pkg.popular ? "text-pink-400" : "text-white"}`}>
+                    {pkg.name}
+                  </h3>
+                  <p className="text-zinc-500 text-sm">{pkg.description}</p>
+                </div>
+
+                <div className="mb-6">
+                  {isAnnual && (
+                    <span className="text-2xl font-bold text-pink-500 line-through mr-2">
+                      ${pkg.monthlyPrice}
+                    </span>
+                  )}
+                  <span className="text-5xl font-bold text-white">${displayPrice}</span>
+                  <span className="text-zinc-500">/month</span>
+                  {isAnnual && (
+                    <p className="text-zinc-600 text-xs mt-1">Billed annually at ${displayPrice * 12}/yr</p>
+                  )}
+                  {!isAnnual && (
+                    <p className="text-zinc-600 text-xs mt-1">Billed monthly</p>
+                  )}
+                </div>
+
+                {/* Exclusive Offer Box */}
+                {pkg.exclusiveOffers && (
+                  <div className="mb-6 rounded-xl border border-zinc-700/50 bg-zinc-800/50 p-4">
+                    <div className="flex items-center gap-2 mb-3">
+                      <svg className="w-4 h-4 text-pink-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
+                      </svg>
+                      <span className="text-xs font-bold text-zinc-300 uppercase tracking-wider">Exclusive Offer</span>
+                    </div>
+                    <div className="space-y-2">
+                      {pkg.exclusiveOffers.map((offer, i) => (
+                        <div key={i} className="flex items-center justify-between">
+                          <span className="text-sm text-zinc-300">{offer}</span>
+                          <span className="bg-pink-500 text-white text-[10px] font-bold px-2 py-0.5 rounded">
+                            ACCESS
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                <ul className="space-y-4 mb-8 flex-grow">
+                  {pkg.features.map((feature, featureIndex) => (
+                    <li key={featureIndex} className="flex items-start gap-3">
+                      <Check className={`w-5 h-5 mt-0.5 flex-shrink-0 ${pkg.popular ? "text-pink-400" : "text-zinc-500"}`} />
+                      <span className="text-zinc-300 text-sm">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <a
+                  href={link}
+                  className={`block text-center py-4 px-6 rounded-full font-medium transition-all duration-300 ${
+                    pkg.popular
+                      ? "bg-pink-500 text-white hover:bg-pink-600"
+                      : "bg-zinc-800 text-white hover:bg-zinc-700 border border-zinc-700"
+                  }`}
+                >
+                  {pkg.cta}
+                </a>
+              </div>
+            );
+          })}
         </div>
 
         <p className="text-center text-zinc-600 text-sm mt-12">
@@ -1027,9 +1101,12 @@ const ContactSection = () => {
                   className="w-full bg-zinc-900/30 border border-white/10 rounded-lg px-4 py-3 text-zinc-100 focus:outline-none focus:border-pink-500/50 focus:ring-1 focus:ring-pink-500/50 transition-all hover:border-white/20"
                 >
                   <option value="">Select a package</option>
-                  <option value="Basic - $199/month">Basic - $199/month</option>
-                  <option value="Pro - $399/month">Pro - $399/month</option>
-                  <option value="Max - $599/month">Max - $599/month</option>
+                  <option value="Basic - $199/month (Monthly)">Basic - $199/month (Monthly)</option>
+                  <option value="Basic - $179/month (Annual)">Basic - $179/month (Annual)</option>
+                  <option value="Pro - $399/month (Monthly)">Pro - $399/month (Monthly)</option>
+                  <option value="Pro - $359/month (Annual)">Pro - $359/month (Annual)</option>
+                  <option value="Max - $599/month (Monthly)">Max - $599/month (Monthly)</option>
+                  <option value="Max - $539/month (Annual)">Max - $539/month (Annual)</option>
                   <option value="Custom">Custom Package</option>
                 </select>
               </div>
