@@ -181,7 +181,7 @@ const Packages = () => {
       exclusiveOffers: ["IG Reels", "TikTok Reels"],
       cta: "Select Plan",
       monthlyLink: "https://buy.stripe.com/cNi14o3EV00056H3hV0Fj0A",
-      annualLink: "https://dashboard.stripe.com/acct_1FWXebKLZoWMOR2a/payment-links/plink_1Szop6KLZoWMOR2alPcqYOz8",
+      annualLink: "https://buy.stripe.com/aFaaEYa3j7ssgPp4lZ0Fj0K",
     },
   ];
 
