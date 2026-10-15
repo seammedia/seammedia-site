@@ -1,5 +1,3 @@
-import Section from "./ui/Section";
-
 export default function Testimonials() {
   const testimonials = [
     {
@@ -20,8 +18,8 @@ export default function Testimonials() {
         {/* Featured Quote */}
         <div className="text-center mb-20 max-w-4xl mx-auto">
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-8">
-            "Seam Media Have Been So Helpful And Have Honestly Helped So Much
-            With Getting Us On Our Feet. !"
+          “Seam Media have been so helpful and have honestly helped so much
+            with getting us on our feet!”
           </h2>
         </div>
 

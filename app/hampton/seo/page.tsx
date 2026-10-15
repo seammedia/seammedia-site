@@ -1,11 +1,13 @@
+import { createMetadata } from "@/lib/seo";
 import Section from "@/components/ui/Section";
 import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
 
-export const metadata = {
+export const metadata = createMetadata({
   title: "SEO Services Hampton | Seam Media",
   description: "Professional SEO services in Hampton. Improve your local search rankings, attract more customers, and grow your business with our proven SEO strategies.",
-};
+  path: "/hampton/seo",
+});
 
 export default function HamptonSEOPage() {
   return (
@@ -108,7 +110,7 @@ export default function HamptonSEOPage() {
             <div>
               <h3 className="text-2xl font-bold text-gray-900 mb-3">Proven Track Record</h3>
               <p className="text-gray-700 leading-relaxed">
-                We've helped countless Hampton businesses improve their search rankings and drive more organic traffic. Our SEO strategies deliver measurable, long-term results.
+                We&apos;ve helped countless Hampton businesses improve their search rankings and drive more organic traffic. Our SEO strategies deliver measurable, long-term results.
               </p>
             </div>
 
@@ -129,7 +131,7 @@ export default function HamptonSEOPage() {
             <div>
               <h3 className="text-2xl font-bold text-gray-900 mb-3">Regular Reporting</h3>
               <p className="text-gray-700 leading-relaxed">
-                Track your progress with detailed monthly reports. We show you exactly where you rank, how much traffic you're getting, and the ROI from your SEO investment.
+                Track your progress with detailed monthly reports. We show you exactly where you rank, how much traffic you&apos;re getting, and the ROI from your SEO investment.
               </p>
             </div>
           </div>

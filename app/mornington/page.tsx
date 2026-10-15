@@ -1,11 +1,16 @@
+import LocalMarketingDetails from "@/components/LocalMarketingDetails";
 import Section from "@/components/ui/Section";
 import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
+import LocationInsights from "@/components/LocationInsights";
+import { locationProfiles } from "@/lib/locations";
+import { createMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = createMetadata({
   title: "Digital Marketing Agency Mornington | Seam Media",
-  description: "Professional digital marketing services in Mornington. We offer social media management, web design, SEO, Google Ads, and more to help your business grow.",
-};
+  description: "Digital marketing for Mornington and peninsula businesses. Local SEO, website design, social content and Google Ads with clear packages and scope.",
+  path: "/mornington",
+});
 
 export default function MorningtonPage() {
   const services = [
@@ -43,6 +48,8 @@ export default function MorningtonPage() {
           </p>
         </div>
       </Section>
+
+      <LocationInsights profile={locationProfiles.mornington} />
 
       {/* Services Section */}
       <Section background="gray">
@@ -105,6 +112,8 @@ export default function MorningtonPage() {
           </div>
         </div>
       </Section>
+
+      <LocalMarketingDetails slug="mornington" />
 
       {/* Contact Section */}
       <ContactForm />

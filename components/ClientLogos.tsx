@@ -1,5 +1,3 @@
-"use client";
-
 import Section from "./ui/Section";
 import Image from "next/image";
 
@@ -50,7 +48,7 @@ export default function ClientLogos() {
       <div className="relative overflow-hidden">
         {/* Row 1 - Scrolling Left */}
         <div className="flex mb-8 overflow-hidden">
-          <div className="flex animate-scroll-left hover:pause-animation">
+          <div className="flex animate-scroll-left hover-pause-animation">
             {/* First set of logos */}
             {row1.map((client, index) => (
               <div
@@ -86,7 +84,7 @@ export default function ClientLogos() {
 
         {/* Row 2 - Scrolling Right */}
         <div className="flex overflow-hidden">
-          <div className="flex animate-scroll-right hover:pause-animation">
+          <div className="flex animate-scroll-right hover-pause-animation">
             {/* First set of logos */}
             {row2.map((client, index) => (
               <div
@@ -121,37 +119,6 @@ export default function ClientLogos() {
         </div>
       </div>
 
-      <style jsx>{`
-        @keyframes scroll-left {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-
-        @keyframes scroll-right {
-          0% {
-            transform: translateX(-50%);
-          }
-          100% {
-            transform: translateX(0);
-          }
-        }
-
-        .animate-scroll-left {
-          animation: scroll-left 30s linear infinite;
-        }
-
-        .animate-scroll-right {
-          animation: scroll-right 30s linear infinite;
-        }
-
-        .hover\\:pause-animation:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
     </Section>
   );
 }

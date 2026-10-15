@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useRef } from "react";
+import { Phone } from "lucide-react";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -12,11 +13,13 @@ export default function Header() {
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/clients", label: "Clients" },
+    { href: "/case-studies", label: "Case Studies" },
     { href: "/blog", label: "Blog" },
     { href: "/contact", label: "Contact Us" },
   ];
 
   const serviceLinks = [
+    { href: "/marketing-packages", label: "Marketing Packages" },
     { href: "/social-media", label: "Social Media Management" },
     { href: "/web-design", label: "Website Design" },
     { href: "/website-maintenance", label: "Website Maintenance" },
@@ -59,7 +62,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <ul className="hidden md:flex items-center gap-10">
+          <ul className="hidden xl:flex items-center gap-6">
             {/* Home */}
             <li>
               <Link
@@ -114,6 +117,7 @@ export default function Header() {
                 Clients
               </Link>
             </li>
+            <li><Link href="/case-studies" className="text-white text-base font-medium hover:text-white/70 transition-colors">Case Studies</Link></li>
             {/* Blog */}
             <li>
               <Link
@@ -123,26 +127,37 @@ export default function Header() {
                 Blog
               </Link>
             </li>
-            {/* Contact Us */}
+            <li>
+              <a
+                href="https://seam-media-content-manager.vercel.app/login"
+                className="text-white text-base font-medium hover:text-white/70 transition-colors duration-200"
+              >
+                Client Login
+              </a>
+            </li>
+            {/* Call button */}
             <li className="relative inline-block group">
-              <div className="absolute -bottom-2 left-1/2 -z-10 h-8 w-3/4 -translate-x-1/2 bg-white/20 blur-xl opacity-0 transition-opacity duration-500 group-hover:opacity-40" />
-              <Link
-                href="/contact"
+              <div className="absolute -bottom-2 left-1/2 -z-10 h-8 w-3/4 -translate-x-1/2 bg-white/20 blur-xl opacity-20 transition-opacity duration-500 group-hover:opacity-50" />
+              <a
+                href="tel:0402642746"
+                aria-label="Call Seam Media on 0402 642 746"
                 className="relative block overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-950"
               >
-                <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#00000000_0%,#ffffff_10%,#00000000_50%)] opacity-0 transition-opacity duration-100 group-hover:opacity-100" />
+                <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#00000000_0%,#ffffff_10%,#00000000_50%)] opacity-60 transition-opacity duration-300 group-hover:opacity-100" />
                 <span className="relative flex h-full w-full items-center justify-center space-x-2 rounded-full bg-slate-950 px-5 py-2 text-sm font-medium text-white ring-1 ring-white/10 transition-colors duration-300 group-hover:bg-slate-900/80 group-hover:ring-transparent">
-                  <span className="tracking-widest uppercase text-[11px] font-semibold">CONTACT US</span>
+                  <Phone className="h-3.5 w-3.5" aria-hidden="true" />
+                  <span className="tracking-widest text-[12px] font-semibold">0402 642 746</span>
                 </span>
-              </Link>
+              </a>
             </li>
           </ul>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-white hover:bg-white/10 rounded-md transition-colors"
+            className="xl:hidden p-2 text-white hover:bg-white/10 rounded-md transition-colors"
             aria-label="Toggle menu"
+            aria-expanded={mobileMenuOpen}
           >
             <svg
               className="w-7 h-7"
@@ -164,7 +179,7 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-6 pb-4 bg-black/90 backdrop-blur-lg rounded-lg p-6">
+          <div className="xl:hidden max-h-[calc(100dvh-140px)] overflow-y-auto mt-6 pb-4 bg-black/90 backdrop-blur-lg rounded-lg p-6">
             <ul className="flex flex-col gap-5">
               {/* Home */}
               <li>
@@ -205,6 +220,7 @@ export default function Header() {
                   Clients
                 </Link>
               </li>
+              <li><Link href="/case-studies" onClick={() => setMobileMenuOpen(false)} className="block text-white text-lg font-medium hover:text-white/70 transition-colors">Case Studies</Link></li>
               {/* Blog */}
               <li>
                 <Link
@@ -215,19 +231,30 @@ export default function Header() {
                   Blog
                 </Link>
               </li>
-              {/* Contact Us */}
+              <li>
+                <a
+                  href="https://seam-media-content-manager.vercel.app/login"
+                  className="block text-white text-lg font-medium hover:text-white/70 transition-colors duration-200"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Client Login
+                </a>
+              </li>
+              {/* Call button */}
               <li className="relative inline-block group w-full">
-                <div className="absolute -bottom-2 left-1/2 -z-10 h-8 w-3/4 -translate-x-1/2 bg-white/20 blur-xl opacity-0 transition-opacity duration-500 group-hover:opacity-40" />
-                <Link
-                  href="/contact"
+                <div className="absolute -bottom-2 left-1/2 -z-10 h-8 w-3/4 -translate-x-1/2 bg-white/20 blur-xl opacity-20 transition-opacity duration-500 group-hover:opacity-50" />
+                <a
+                  href="tel:0402642746"
+                  aria-label="Call Seam Media on 0402 642 746"
                   className="relative block overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-950"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#00000000_0%,#ffffff_10%,#00000000_50%)] opacity-0 transition-opacity duration-100 group-hover:opacity-100" />
+                  <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#00000000_0%,#ffffff_10%,#00000000_50%)] opacity-60 transition-opacity duration-300 group-hover:opacity-100" />
                   <span className="relative flex h-full w-full items-center justify-center space-x-2 rounded-full bg-slate-950 px-6 py-2.5 text-sm font-medium text-white ring-1 ring-white/10 transition-colors duration-300 group-hover:bg-slate-900/80 group-hover:ring-transparent">
-                    <span className="tracking-widest uppercase text-[11px] font-semibold">CONTACT US</span>
+                    <Phone className="h-3.5 w-3.5" aria-hidden="true" />
+                    <span className="tracking-widest text-[12px] font-semibold">0402 642 746</span>
                   </span>
-                </Link>
+                </a>
               </li>
             </ul>
           </div>

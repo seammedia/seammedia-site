@@ -1,16 +1,25 @@
-import { Metadata } from "next";
 import Section from "@/components/ui/Section";
 import Link from "next/link";
+import { createMetadata } from "@/lib/seo";
+import { BlogPostingStructuredData } from "@/components/StructuredData";
 
-export const metadata: Metadata = {
+export const metadata = createMetadata({
   title: "The Benefits of Setting Up Google Business | Seam Media Blog",
   description:
     "Learn how a Google Business Profile can boost your local visibility and attract more customers to your business.",
-};
+  path: "/blog/google-business-benefits",
+  type: "article",
+});
 
 export default function GoogleBusinessBenefitsPage() {
   return (
     <>
+      <BlogPostingStructuredData
+        title="The Benefits of Setting Up Google Business"
+        description="Learn how a Google Business Profile can boost your local visibility and attract more customers to your business."
+        path="/blog/google-business-benefits"
+        datePublished="2024-02-28"
+      />
       {/* Blog Post Header */}
       <Section background="gray">
         <div className="max-w-4xl mx-auto">

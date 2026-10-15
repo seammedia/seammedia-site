@@ -2,16 +2,24 @@ import { Metadata } from "next";
 import Section from "@/components/ui/Section";
 import ContactForm from "@/components/ContactForm";
 import Link from "next/link";
+import { ServiceStructuredData } from "@/components/StructuredData";
+import { createMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Brand Strategy & Development | Seam Media",
-  description:
-    "Build a powerful brand identity that resonates with your audience. Professional branding services in Melbourne for businesses of all sizes.",
-};
+const title = "Brand Strategy & Development | Seam Media";
+const description =
+  "Build a powerful brand identity that resonates with your audience. Professional branding services in Melbourne for businesses of all sizes.";
+const path = "/branding";
+
+export const metadata: Metadata = createMetadata({
+  title,
+  description,
+  path,
+});
 
 export default function BrandingPage() {
   return (
     <>
+      <ServiceStructuredData name="Brand Strategy & Development" description={description} path={path} />
       {/* Hero Section */}
       <Section background="gray">
         <div className="text-center max-w-4xl mx-auto">

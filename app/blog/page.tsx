@@ -1,16 +1,24 @@
-import { Metadata } from "next";
 import Section from "@/components/ui/Section";
 import Link from "next/link";
 import Image from "next/image";
+import { createMetadata } from "@/lib/seo";
+import { releasedGuides, slugOf } from "@/lib/scheduled-guides";
 
-export const metadata: Metadata = {
+// Refresh so each scheduled guide appears here soon after its 8 am release.
+export const revalidate = 600;
+
+export const metadata = createMetadata({
   title: "Blog | Seam Media",
   description:
     "Digital marketing tips, insights, and industry news from the Seam Media team.",
-};
+  path: "/blog",
+});
 
 export default function BlogPage() {
+  const scheduledPosts = releasedGuides().map((g) => ({ title: g.guide.title, excerpt: g.excerpt, slug: slugOf(g), date: new Date(`${g.date}T12:00:00Z`).toLocaleDateString("en-AU", { day: "numeric", month: "long", year: "numeric", timeZone: "Australia/Melbourne" }), category: g.category, image: "/images/seam-media-hero-image.png" }));
   const blogPosts = [
+    ...scheduledPosts,
+    { title: "Local SEO costs in Australia: compare the scope before the price", excerpt: "Compare local SEO deliverables, reporting and extra costs, with clear weekly package scope and practical questions for your proposal.", slug: "local-seo-cost-australia", date: "6 October 2026", category: "SEO", image: "/images/seam-media-hero-image.png" },
     {
       title: "What is a Handle on Social Media?",
       excerpt:
@@ -39,11 +47,11 @@ export default function BlogPage() {
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop",
     },
     {
-      title: "SEO Melbourne – Small Business Top 5 Tips",
+      title: "Small business SEO in Melbourne: five practical priorities",
       excerpt:
         "Practical SEO strategies that Melbourne small businesses can implement today to improve their local search rankings.",
       slug: "seo-melbourne-tips",
-      date: "March 5, 2024",
+      date: "Updated 6 October 2026",
       category: "SEO",
       image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&h=400&fit=crop",
     },

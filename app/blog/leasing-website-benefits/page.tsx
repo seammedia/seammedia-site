@@ -1,16 +1,25 @@
-import { Metadata } from "next";
 import Section from "@/components/ui/Section";
 import Link from "next/link";
+import { createMetadata } from "@/lib/seo";
+import { BlogPostingStructuredData } from "@/components/StructuredData";
 
-export const metadata: Metadata = {
+export const metadata = createMetadata({
   title: "Top 5 Benefits of Leasing A Website | Seam Media Blog",
   description:
     "Discover why leasing a website might be the perfect solution for your business, from cost savings to flexibility.",
-};
+  path: "/blog/leasing-website-benefits",
+  type: "article",
+});
 
 export default function LeasingWebsiteBenefitsPage() {
   return (
     <>
+      <BlogPostingStructuredData
+        title="Top 5 Benefits of Leasing A Website"
+        description="Discover why leasing a website might be the perfect solution for your business, from cost savings to flexibility."
+        path="/blog/leasing-website-benefits"
+        datePublished="2024-03-10"
+      />
       {/* Blog Post Header */}
       <Section background="gray">
         <div className="max-w-4xl mx-auto">

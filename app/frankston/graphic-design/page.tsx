@@ -1,11 +1,13 @@
+import { createMetadata } from "@/lib/seo";
 import Section from "@/components/ui/Section";
 import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
 
-export const metadata = {
+export const metadata = createMetadata({
   title: "Graphic Design Frankston | Seam Media",
   description: "Professional graphic design services in Frankston. From logos to marketing materials, we create stunning designs that make your business stand out.",
-};
+  path: "/frankston/graphic-design",
+});
 
 export default function FrankstonGraphicDesignPage() {
   return (

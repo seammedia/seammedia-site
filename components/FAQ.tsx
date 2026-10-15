@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Section from "./ui/Section";
+import { Plus } from "lucide-react";
+import DarkSection, { SectionIntro } from "./home/DarkSection";
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -25,7 +26,7 @@ export default function FAQ() {
     {
       question: "How do I know that I will get a return on my investment?",
       answer:
-        "We use data to ensure we get results. Every single time. We track key metrics, provide transparent reporting, and continually optimize our strategies based on performance. Our focus is on delivering measurable ROI for your business.",
+        "We use data to ensure we get results. Every single time. We track key metrics, provide transparent reporting, and continually optimise our strategies based on performance. Our focus is on delivering measurable ROI for your business.",
     },
     {
       question: "Do you work with big or small companies?",
@@ -35,67 +36,42 @@ export default function FAQ() {
     {
       question: "What's involved with digital marketing?",
       answer:
-        "Digital marketing encompasses everything from social media management and content creation to SEO, paid advertising, website development, and brand strategy. We assess your business goals and create a customized plan that combines the right services to achieve maximum impact.",
+        "Digital marketing encompasses everything from social media management and content creation to SEO, paid advertising, website development, and brand strategy. We assess your business goals and create a customised plan that combines the right services to achieve maximum impact.",
     },
   ];
 
   return (
-    <Section background="white">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-[44px] font-bold text-gray-900 text-center mb-4" style={{ fontFamily: 'Poppins, sans-serif', letterSpacing: '-0.5px' }}>
-          Frequently Asked{' '}
-          <span className="relative inline-block px-4">
-            <span className="relative z-10 text-white">Questions</span>
-            <span
-              className="absolute inset-0 -inset-x-1 top-[15%] h-[75%] rounded-sm opacity-90"
-              style={{
-                backgroundColor: '#5e7986',
-                transform: 'skewX(-5deg)'
-              }}
-            ></span>
-          </span>
-        </h2>
-
-        <div className="mt-16 space-y-4">
-          {faqs.map((faq, index) => (
-            <div
-              key={index}
-              className="bg-gray-50 rounded-lg overflow-hidden transition-all duration-200"
-            >
-              <button
-                onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-gray-100 transition-colors"
-              >
-                <span className="text-xl md:text-2xl font-bold text-gray-900 pr-8">
-                  {faq.question}
-                </span>
-                <svg
-                  className={`w-6 h-6 flex-shrink-0 transition-transform duration-200 ${
-                    openIndex === index ? "transform rotate-180" : ""
-                  }`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </button>
-              {openIndex === index && (
-                <div className="px-8 pb-6">
-                  <p className="text-lg text-gray-700 leading-relaxed">
-                    {faq.answer}
-                  </p>
-                </div>
-              )}
-            </div>
-          ))}
+    <DarkSection className="border-t border-white/5">
+      <div className="mx-auto max-w-4xl">
+        <SectionIntro eyebrow="FAQ" title="Frequently asked questions" align="centre" />
+        <div className="space-y-3">
+          {faqs.map((faq, index) => {
+            const open = openIndex === index;
+            return (
+              <div key={index} className={`overflow-hidden rounded-2xl border transition-colors duration-200 ${open ? "border-[#00c2d1]/40 bg-[#111111]" : "border-[#262626] bg-[#0f0f0f] hover:border-[#3a3a3a]"}`}>
+                <h3>
+                  <button
+                    onClick={() => setOpenIndex(open ? null : index)}
+                    aria-expanded={open}
+                    aria-controls={`faq-${index}`}
+                    className="flex w-full items-center justify-between gap-6 px-6 py-5 text-left sm:px-8 sm:py-6"
+                  >
+                    <span className="text-lg font-semibold text-white sm:text-xl">{faq.question}</span>
+                    <span className={`grid h-9 w-9 shrink-0 place-items-center rounded-full border transition-all duration-200 ${open ? "rotate-45 border-[#00c2d1] text-[#00e1f0]" : "border-white/20 text-white"}`} aria-hidden="true">
+                      <Plus size={18} />
+                    </span>
+                  </button>
+                </h3>
+                {open && (
+                  <div id={`faq-${index}`} className="px-6 pb-6 sm:px-8">
+                    <p className="text-base leading-relaxed text-gray-400 sm:text-lg">{faq.answer}</p>
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
-    </Section>
+    </DarkSection>
   );
 }

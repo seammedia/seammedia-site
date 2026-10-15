@@ -1,11 +1,13 @@
+import { createMetadata } from "@/lib/seo";
 import Section from "@/components/ui/Section";
 import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
 
-export const metadata = {
+export const metadata = createMetadata({
   title: "Website Design Hampton | Seam Media",
   description: "Professional website design services in Hampton. We create custom, responsive websites that convert visitors into customers and grow your business.",
-};
+  path: "/hampton/web-design",
+});
 
 export default function HamptonWebDesignPage() {
   return (
@@ -115,7 +117,7 @@ export default function HamptonWebDesignPage() {
             <div>
               <h3 className="text-2xl font-bold text-gray-900 mb-3">Ongoing Support</h3>
               <p className="text-gray-700 leading-relaxed">
-                We're here for you after launch. From content updates to technical support, we provide ongoing maintenance to keep your website running smoothly and securely.
+                We&apos;re here for you after launch. From content updates to technical support, we provide ongoing maintenance to keep your website running smoothly and securely.
               </p>
             </div>
 
@@ -129,7 +131,7 @@ export default function HamptonWebDesignPage() {
             <div>
               <h3 className="text-2xl font-bold text-gray-900 mb-3">Affordable Pricing</h3>
               <p className="text-gray-700 leading-relaxed">
-                Professional websites don't have to break the bank. We offer competitive pricing and flexible payment options, including website leasing, to fit your budget.
+                Professional websites don&apos;t have to break the bank. We offer competitive pricing and flexible payment options, including website leasing, to fit your budget.
               </p>
             </div>
           </div>

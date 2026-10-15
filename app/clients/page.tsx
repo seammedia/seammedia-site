@@ -1,13 +1,14 @@
-import { Metadata } from "next";
 import Section from "@/components/ui/Section";
 import ClientLogos from "@/components/ClientLogos";
 import Testimonials from "@/components/Testimonials";
+import { createMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = createMetadata({
   title: "Clients | Seam Media",
   description:
     "See who we've worked with. Seam Media has helped businesses of all sizes achieve their digital marketing goals.",
-};
+  path: "/clients",
+});
 
 export default function ClientsPage() {
   return (

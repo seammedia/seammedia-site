@@ -1,16 +1,25 @@
-import { Metadata } from "next";
 import Section from "@/components/ui/Section";
 import Link from "next/link";
+import { createMetadata } from "@/lib/seo";
+import { BlogPostingStructuredData } from "@/components/StructuredData";
 
-export const metadata: Metadata = {
+export const metadata = createMetadata({
   title: "Top 5 Website Design Tips | Seam Media Blog",
   description:
     "Learn the essential principles of effective website design that will help your site stand out and convert visitors.",
-};
+  path: "/blog/website-design-tips",
+  type: "article",
+});
 
 export default function WebsiteDesignTipsPage() {
   return (
     <>
+      <BlogPostingStructuredData
+        title="Top 5 Website Design Tips"
+        description="Learn the essential principles of effective website design that will help your site stand out and convert visitors."
+        path="/blog/website-design-tips"
+        datePublished="2024-03-15"
+      />
       {/* Blog Post Header */}
       <Section background="gray">
         <div className="max-w-4xl mx-auto">

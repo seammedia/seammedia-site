@@ -1,5 +1,7 @@
 "use client";
 
+import { trackLead } from "@/lib/ads";
+
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, Search, MousePointerClick, BarChart3, RefreshCw, Target, Zap, TrendingUp, Rocket, ArrowUpRight, Send } from "lucide-react";
 
@@ -16,39 +18,10 @@ export default function AdwordsPage() {
   );
 }
 
-// Scramble Text Effect Component
-const ScrambleText = ({ text, className = "" }: { text: string; className?: string }) => {
-  const [displayText, setDisplayText] = useState('');
-  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&";
-
-  useEffect(() => {
-    let iteration = 0;
-    let interval: any;
-
-    const startScramble = () => {
-        clearInterval(interval);
-        interval = setInterval(() => {
-          setDisplayText(text.split("").map((letter, index) => {
-            if (index < iteration) {
-              return text[index];
-            }
-            return chars[Math.floor(Math.random() * chars.length)];
-          }).join(""));
-
-          if (iteration >= text.length) {
-            clearInterval(interval);
-          }
-
-          iteration += 1 / 3;
-        }, 30);
-    };
-
-    setTimeout(startScramble, 500);
-    return () => clearInterval(interval);
-  }, [text]);
-
-  return <span className={className}>{displayText}</span>;
-};
+// Keep the primary heading stable for search engines, screen readers and fast loads.
+const ScrambleText = ({ text, className = "" }: { text: string; className?: string }) => (
+  <span className={className}>{text}</span>
+);
 
 // Hero Section
 const Hero = () => {
@@ -85,12 +58,12 @@ const Hero = () => {
 
         <div className="flex flex-wrap gap-4">
           <div className="relative inline-block group">
-            <div className="absolute -bottom-2 left-1/2 -z-10 h-8 w-3/4 -translate-x-1/2 bg-white/20 blur-xl opacity-0 transition-opacity duration-500 group-hover:opacity-40" />
+            <div className="absolute -bottom-2 left-1/2 -z-10 h-8 w-3/4 -translate-x-1/2 bg-white/20 blur-xl opacity-20 transition-opacity duration-500 group-hover:opacity-50" />
             <a
               href="#contact"
               className="relative block overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-950"
             >
-              <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#00000000_0%,#ffffff_10%,#00000000_50%)] opacity-0 transition-opacity duration-100 group-hover:opacity-100" />
+              <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#00000000_0%,#ffffff_10%,#00000000_50%)] opacity-60 transition-opacity duration-300 group-hover:opacity-100" />
               <span className="relative flex h-full w-full items-center justify-center gap-2 rounded-full bg-slate-950 px-8 py-4 text-base font-medium text-white ring-1 ring-white/10 transition-colors duration-300 group-hover:bg-slate-900/80 group-hover:ring-transparent">
                 <span>Start Advertising</span>
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform"/>
@@ -356,7 +329,7 @@ const Testimonial = () => {
       id: 1,
       author: "Calvin Yung",
       role: "1 review • 0 photos",
-      date: "4 weeks ago",
+      date: "Recent Google review",
       rating: 5,
       content: "Highly recommend Heath, very happy and grateful for his service so far. He's been helping us manage our website SEO and restructuring, he's a man of his words, and he'll do exactly what he says. Easy to communicate, very professional, very knowledgeable and I can tell he actually cares about helping your business grow."
     },
@@ -390,7 +363,7 @@ const Testimonial = () => {
       role: "Local Guide • 15 reviews",
       date: "5 Jul 2023",
       rating: 5,
-      content: "I am delighted to praise Sean Media services for their exceptional communication skills and outstanding customer service. The results achieved through their strategies have been truly fantastic, exceeding my expectations. I am extremely satisfied and wholeheartedly recommend their services."
+      content: "I am delighted to praise Seam Media for their exceptional communication skills and outstanding customer service. The results achieved through their strategies have been truly fantastic, exceeding my expectations. I am extremely satisfied and wholeheartedly recommend their services."
     }
   ];
 
@@ -418,11 +391,11 @@ const Testimonial = () => {
         {/* Header */}
         <div className="mb-12">
           <h2 className="text-sm font-semibold text-zinc-500 uppercase tracking-wider mb-2">Testimonials</h2>
-          <h1 className="text-4xl md:text-5xl font-bold">
+          <h2 className="text-4xl md:text-5xl font-bold">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-zinc-500">
               Trusted by businesses<br/>across Melbourne.
             </span>
-          </h1>
+          </h2>
         </div>
 
         {/* Bento Grid */}
@@ -510,15 +483,15 @@ const Testimonial = () => {
 
             <div className="relative z-10">
               <div className="flex items-baseline gap-1 mb-6">
-                <span className="text-7xl md:text-8xl font-bold tracking-tighter text-white">5.0</span>
-                <span className="text-4xl md:text-5xl font-bold text-cyan-500">/5</span>
+                <span className="text-5xl md:text-6xl font-bold tracking-tighter text-white">Client</span>
+                <span className="text-3xl md:text-4xl font-bold text-cyan-500">feedback</span>
               </div>
 
               <div className="space-y-4">
                 <div className="h-12 w-1 bg-cyan-500 rounded-full mb-6" />
 
                 <h3 className="text-xl md:text-2xl font-medium text-zinc-200">
-                  Perfect rating across all platforms.
+                  Selected client feedback.
                 </h3>
 
                 <p className="text-zinc-500 leading-relaxed">
@@ -530,11 +503,11 @@ const Testimonial = () => {
                 <div className="flex -space-x-3">
                   {[1,2,3].map((i) => (
                     <div key={i} className="w-10 h-10 rounded-full border-2 border-black bg-zinc-800 flex items-center justify-center text-xs text-zinc-400">
-                      User
+                      {['C', 'L', 'B'][i - 1]}
                     </div>
                   ))}
                 </div>
-                <span className="text-sm text-zinc-500">Trusted by 50+ local businesses</span>
+                <span className="text-sm text-zinc-500">Named Google Reviews</span>
               </div>
             </div>
           </div>
@@ -619,12 +592,12 @@ const ReadyToGrow = () => {
         <p className="text-zinc-500 mb-12">Data-driven campaigns that deliver real ROI.</p>
 
         <div className="relative inline-block group">
-          <div className="absolute -bottom-2 left-1/2 -z-10 h-8 w-3/4 -translate-x-1/2 bg-white/20 blur-xl opacity-0 transition-opacity duration-500 group-hover:opacity-40" />
+          <div className="absolute -bottom-2 left-1/2 -z-10 h-8 w-3/4 -translate-x-1/2 bg-white/20 blur-xl opacity-20 transition-opacity duration-500 group-hover:opacity-50" />
           <a
             href="#contact"
             className="relative block overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-950"
           >
-            <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#00000000_0%,#ffffff_10%,#00000000_50%)] opacity-0 transition-opacity duration-100 group-hover:opacity-100" />
+            <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#00000000_0%,#ffffff_10%,#00000000_50%)] opacity-60 transition-opacity duration-300 group-hover:opacity-100" />
             <span className="relative flex h-full w-full items-center justify-center gap-2 rounded-full bg-slate-950 px-10 py-5 text-lg font-bold text-white ring-1 ring-white/10 transition-colors duration-300 group-hover:bg-slate-900/80 group-hover:ring-transparent">
               <span>Get In Touch</span>
               <ArrowUpRight size={20} />
@@ -650,7 +623,7 @@ const ContactSection = () => {
     const formData = new FormData(form);
 
     try {
-      const response = await fetch("https://formspree.io/f/mdkyqykl", {
+      const response = await fetch("/api/enquiry", {
         method: "POST",
         body: formData,
         headers: {
@@ -659,6 +632,7 @@ const ContactSection = () => {
       });
 
       if (response.ok) {
+        trackLead("google-ads");
         setStatus("success");
         form.reset();
         setTimeout(() => setStatus("idle"), 5000);
@@ -713,6 +687,7 @@ const ContactSection = () => {
           {/* Right: Contact Form */}
           <div>
             <form onSubmit={handleSubmit} className="space-y-6">
+                <input type="text" name="fax_number" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
               {/* Name Row */}
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
@@ -792,13 +767,13 @@ const ContactSection = () => {
 
               {/* Submit Button */}
               <div className="relative inline-block group w-full">
-                <div className="absolute -bottom-2 left-1/2 -z-10 h-8 w-3/4 -translate-x-1/2 bg-white/20 blur-xl opacity-0 transition-opacity duration-500 group-hover:opacity-40" />
+                <div className="absolute -bottom-2 left-1/2 -z-10 h-8 w-3/4 -translate-x-1/2 bg-white/20 blur-xl opacity-20 transition-opacity duration-500 group-hover:opacity-50" />
                 <button
                   type="submit"
                   disabled={status === "submitting"}
                   className="relative block overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-950 w-full disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#00000000_0%,#ffffff_10%,#00000000_50%)] opacity-0 transition-opacity duration-100 group-hover:opacity-100" />
+                  <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#00000000_0%,#ffffff_10%,#00000000_50%)] opacity-60 transition-opacity duration-300 group-hover:opacity-100" />
                   <span className="relative flex h-full w-full items-center justify-center gap-2 rounded-full bg-slate-950 px-8 py-4 font-bold text-white ring-1 ring-white/10 transition-colors duration-300 group-hover:bg-slate-900/80 group-hover:ring-transparent">
                     <span>{status === "submitting" ? "Sending..." : "Submit Inquiry"}</span>
                     <Send size={18} className="group-hover:translate-x-1 transition-transform" />

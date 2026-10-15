@@ -2,16 +2,20 @@ import { Metadata } from "next";
 import Section from "@/components/ui/Section";
 import ContactForm from "@/components/ContactForm";
 import Link from "next/link";
+import { ServiceStructuredData } from "@/components/StructuredData";
+import { createMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Professional Videography Services | Seam Media",
-  description:
-    "Professional video production services in Melbourne. Corporate videos, promotional content, and social media videos for your business.",
-};
+const title = "Professional Videography Services | Seam Media";
+const description =
+  "Professional video production services in Melbourne. Corporate videos, promotional content, and social media videos for your business.";
+const path = "/videography";
+
+export const metadata: Metadata = createMetadata({ title, description, path });
 
 export default function VideographyPage() {
   return (
     <>
+      <ServiceStructuredData name="Professional Videography" description={description} path={path} />
       {/* Hero Section */}
       <Section background="gray">
         <div className="text-center max-w-4xl mx-auto">

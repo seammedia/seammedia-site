@@ -1,11 +1,16 @@
+import LocalMarketingDetails from "@/components/LocalMarketingDetails";
 import Section from "@/components/ui/Section";
 import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
+import LocationInsights from "@/components/LocationInsights";
+import { locationProfiles } from "@/lib/locations";
+import { createMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = createMetadata({
   title: "Digital Marketing Agency Dandenong | Seam Media",
-  description: "Professional digital marketing services in Dandenong. We offer social media management, web design, SEO, Google Ads, and more to help your business grow.",
-};
+  description: "Digital marketing for Dandenong businesses: local SEO, websites, social content and Google Ads. Clear scope for local and commercial enquiries.",
+  path: "/dandenong",
+});
 
 export default function DandenongPage() {
   const services = [
@@ -43,6 +48,8 @@ export default function DandenongPage() {
           </p>
         </div>
       </Section>
+
+      <LocationInsights profile={locationProfiles.dandenong} />
 
       {/* Services Section */}
       <Section background="gray">
@@ -105,6 +112,8 @@ export default function DandenongPage() {
           </div>
         </div>
       </Section>
+
+      <LocalMarketingDetails slug="dandenong" />
 
       {/* Contact Section */}
       <ContactForm />

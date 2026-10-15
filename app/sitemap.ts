@@ -1,180 +1,83 @@
-import { MetadataRoute } from 'next'
+import type { MetadataRoute } from "next";
+import { siteUrl } from "@/lib/seo";
+import { releasedGuides } from "@/lib/scheduled-guides";
+
+// Refresh so each scheduled guide is listed soon after its 8 am release.
+export const revalidate = 600;
+
+const routes = [
+  "",
+  "about",
+  "services",
+  "clients",
+  "case-studies",
+  "case-studies/an-ecommerce-business",
+  // "case-studies/a-finance-client", // hidden 12 Oct 2026 (see lib/case-studies.ts)
+  "case-studies/the-south-east-fencer",
+  "case-studies/a-florist",
+  "blog",
+  "contact",
+  "terms-and-conditions",
+  "why-seam",
+  "marketing-packages",
+  "social-media",
+  "web-design",
+  "seo",
+  "graphic-design",
+  "branding",
+  "adwords",
+  "photography",
+  "videography",
+  "website-maintenance",
+  "brighton",
+  "chelsea",
+  "cranbourne",
+  "dandenong",
+  "frankston",
+  "hampton",
+  "mornington",
+  "mount-eliza",
+  "construction-marketing",
+  "accountant-marketing",
+  "tradie-marketing",
+  "ndis-marketing",
+  "google-ads-management",
+  "allied-health-marketing",
+  "plumber-marketing",
+  "builder-marketing",
+  "electrician-marketing",
+  "landscaper-marketing",
+  "roofer-marketing",
+  "tradie-websites",
+  "frankston/seo",
+  "frankston/web-design",
+  "frankston/social-media",
+  "frankston/graphic-design",
+  "hampton/seo",
+  "hampton/web-design",
+  "hampton/social-media",
+  "hampton/graphic-design",
+  "mornington/seo",
+  "mornington/web-design",
+  "mornington/social-media",
+  "mornington/graphic-design",
+  "mount-eliza/seo",
+  "mount-eliza/web-design",
+  "mount-eliza/social-media",
+  "mount-eliza/graphic-design",
+  "dandenong/seo",
+  "blog/social-media-handle",
+  "blog/website-design-tips",
+  "blog/leasing-website-benefits",
+  "blog/seo-melbourne-tips",
+  "blog/google-business-benefits",
+  "blog/ranking-locally-google",
+  "blog/local-seo-cost-australia"
+];
+const updated = new Set(["about", "website-maintenance", "services", "frankston", "dandenong", "mornington", "mount-eliza", "construction-marketing", "seo", "dandenong/seo", "blog", "blog/local-seo-cost-australia", "blog/seo-melbourne-tips", "frankston/seo", "frankston/web-design", "frankston/social-media", "frankston/graphic-design", "hampton/seo", "hampton/web-design", "hampton/social-media", "hampton/graphic-design", "mornington/seo", "mornington/web-design", "mornington/social-media", "mornington/graphic-design", "mount-eliza/seo", "mount-eliza/web-design", "mount-eliza/social-media", "mount-eliza/graphic-design"]);
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.seammedia.com.au'
-
-  return [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/clients`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/blog`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    // Services
-    {
-      url: `${baseUrl}/social-media`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/web-design`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/seo`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/graphic-design`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/branding`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/adwords`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/photography`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/videography`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    // Location pages
-    {
-      url: `${baseUrl}/brighton`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/chelsea`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/cranbourne`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/dandenong`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/frankston`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/hampton`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/mornington`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/mount-eliza`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    // Industry pages
-    {
-      url: `${baseUrl}/construction-marketing`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/accountant-marketing`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    // Blog posts
-    {
-      url: `${baseUrl}/blog/social-media-handle`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/blog/website-design-tips`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/blog/leasing-website-benefits`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/blog/seo-melbourne-tips`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/blog/google-business-benefits`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/blog/ranking-locally-google`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-  ]
+  const guides: MetadataRoute.Sitemap = releasedGuides().map((g) => ({ url: `${siteUrl}${g.guide.path}`, lastModified: new Date(`${g.guide.modified}T00:00:00Z`), changeFrequency: "monthly", priority: 0.6 }));
+  const pages: MetadataRoute.Sitemap = routes.map(path => ({ url: path ? `${siteUrl}/${path}` : siteUrl, ...(updated.has(path) ? {lastModified: new Date("2026-10-06T00:00:00Z")} : {}), changeFrequency: path === "blog" ? "weekly" : "monthly", priority: path === "" ? 1 : path.startsWith("blog/") ? 0.6 : 0.8 }));
+  return [...pages, ...guides];
 }

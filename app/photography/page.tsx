@@ -2,16 +2,20 @@ import { Metadata } from "next";
 import Section from "@/components/ui/Section";
 import ContactForm from "@/components/ContactForm";
 import Link from "next/link";
+import { ServiceStructuredData } from "@/components/StructuredData";
+import { createMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Professional Photography Services | Seam Media",
-  description:
-    "Professional photography services in Melbourne. Product photography, corporate headshots, and commercial photography for your business.",
-};
+const title = "Professional Photography Services | Seam Media";
+const description =
+  "Professional photography services in Melbourne. Product photography, corporate headshots, and commercial photography for your business.";
+const path = "/photography";
+
+export const metadata: Metadata = createMetadata({ title, description, path });
 
 export default function PhotographyPage() {
   return (
     <>
+      <ServiceStructuredData name="Professional Photography" description={description} path={path} />
       {/* Hero Section */}
       <Section background="gray">
         <div className="text-center max-w-4xl mx-auto">

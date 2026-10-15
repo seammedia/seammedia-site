@@ -1,17 +1,26 @@
-import { Metadata } from "next";
 import Section from "@/components/ui/Section";
 import Link from "next/link";
 import Image from "next/image";
+import { createMetadata } from "@/lib/seo";
+import { BlogPostingStructuredData } from "@/components/StructuredData";
 
-export const metadata: Metadata = {
+export const metadata = createMetadata({
   title: "What is a Handle on Social Media? | Seam Media Blog",
   description:
     "Understand what a social media handle is, why it matters for your brand, and best practices for creating memorable handles across platforms.",
-};
+  path: "/blog/social-media-handle",
+  type: "article",
+});
 
 export default function SocialMediaHandlePage() {
   return (
     <>
+      <BlogPostingStructuredData
+        title="What is a Handle on Social Media?"
+        description="Understand what a social media handle is, why it matters for your brand, and best practices for creating memorable handles across platforms."
+        path="/blog/social-media-handle"
+        datePublished="2024-11-19"
+      />
       {/* Blog Post Header */}
       <Section background="gray">
         <div className="max-w-4xl mx-auto">

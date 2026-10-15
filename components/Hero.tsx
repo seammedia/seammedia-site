@@ -1,3 +1,7 @@
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import GoogleRating from "@/components/GoogleRating";
+
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
@@ -28,17 +32,35 @@ export default function Hero() {
           {/* Subtext - Pure White */}
           <div className="space-y-6 max-w-2xl mt-6">
             <p className="text-lg text-white/90 leading-relaxed">
-              We not only create brands, we use data to ensure we get results.
+              We not only create brands, we use data to ensure we get results.{" "}
               <br className="hidden md:block" />
               Every, single, time.
             </p>
 
             <p className="text-lg text-white/90 leading-relaxed">
-              A digital marketing agency with a difference, working with start ups,
+              A digital marketing agency with a difference, working with start ups,{" "}
               <br className="hidden md:block" />
               small business and large national businesses.
             </p>
           </div>
+
+          <div className="mt-10 flex flex-wrap gap-4">
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-4 font-semibold text-black transition-transform hover:-translate-y-0.5"
+            >
+              Get a free quote
+              <ArrowRight size={18} aria-hidden="true" />
+            </a>
+            <Link
+              href="/case-studies"
+              className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/10 px-7 py-4 font-semibold text-white backdrop-blur transition-colors hover:bg-white/20"
+            >
+              See our results
+            </Link>
+          </div>
+
+          <GoogleRating className="mt-8" />
         </div>
       </div>
     </section>

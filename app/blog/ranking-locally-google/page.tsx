@@ -1,16 +1,25 @@
-import { Metadata } from "next";
 import Section from "@/components/ui/Section";
 import Link from "next/link";
+import { createMetadata } from "@/lib/seo";
+import { BlogPostingStructuredData } from "@/components/StructuredData";
 
-export const metadata: Metadata = {
+export const metadata = createMetadata({
   title: "Ranking Your Business Locally on Google | Seam Media Blog",
   description:
     "A comprehensive guide to improving your local Google rankings and getting found by customers in your area.",
-};
+  path: "/blog/ranking-locally-google",
+  type: "article",
+});
 
 export default function RankingLocallyGooglePage() {
   return (
     <>
+      <BlogPostingStructuredData
+        title="Ranking Your Business Locally on Google"
+        description="A comprehensive guide to improving your local Google rankings and getting found by customers in your area."
+        path="/blog/ranking-locally-google"
+        datePublished="2024-02-20"
+      />
       {/* Blog Post Header */}
       <Section background="gray">
         <div className="max-w-4xl mx-auto">

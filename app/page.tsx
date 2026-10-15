@@ -1,27 +1,45 @@
+import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import Hero from "@/components/Hero";
-import ServicesGrid from "@/components/ServicesGrid";
-import MetricsCards from "@/components/MetricsCards";
-import DataDriven from "@/components/DataDriven";
-import WhyChooseUs from "@/components/WhyChooseUs";
-import AudioQuote from "@/components/AudioQuote";
 import ClientLogos from "@/components/ClientLogos";
-import FAQ from "@/components/FAQ";
-import ContactForm from "@/components/ContactForm";
+import StatsBand from "@/components/home/StatsBand";
+import FeaturedWork from "@/components/home/FeaturedWork";
+import Services from "@/components/home/Services";
+import WhySeam from "@/components/home/WhySeam";
+import LocalAreas from "@/components/home/LocalAreas";
+import AudioQuote from "@/components/AudioQuote";
+import { createMetadata } from "@/lib/seo";
 
-// Cache bust - Updated 2025-11-21
+const FAQ = dynamic(() => import("@/components/FAQ"));
+const ContactForm = dynamic(() => import("@/components/ContactForm"));
+
+export const metadata: Metadata = createMetadata({
+  title: "Digital Marketing Agency Melbourne | Seam Media",
+  description:
+    "Seam Media helps Australian businesses grow with social media management, SEO, web design, Google Ads, branding and content services.",
+  path: "/",
+  keywords: [
+    "digital marketing agency Melbourne",
+    "social media management Australia",
+    "SEO services Melbourne",
+    "web design Melbourne",
+  ],
+});
+
+// Home page, redesigned 7 October 2026: water hero, white logo band, then dark sections to the footer.
 export default function Home() {
   return (
     <>
       <Hero />
-      <ServicesGrid />
-      <MetricsCards />
-      <DataDriven />
-      <WhyChooseUs />
-      <AudioQuote />
       <ClientLogos />
+      <StatsBand />
+      <FeaturedWork />
+      <Services />
+      <WhySeam />
+      <LocalAreas />
+      <AudioQuote />
       <FAQ />
-      <ContactForm />
+      <ContactForm variant="dark" />
     </>
   );
 }
-

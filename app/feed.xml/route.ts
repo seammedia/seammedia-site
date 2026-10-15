@@ -4,6 +4,7 @@ export async function GET() {
   const baseUrl = 'https://www.seammedia.com.au';
 
   const blogPosts = [
+    { title: "Local SEO costs in Australia: compare the scope before the price", slug: "local-seo-cost-australia", description: "Compare local SEO scope, reporting, extra costs and current Seam Media weekly packages.", category: "SEO", pubDate: "Tue, 06 Oct 2026 00:00:00 GMT", image: "https://www.seammedia.com.au/images/seam-media-hero-image.png", content: "A practical guide to comparing local SEO deliverables and choosing a useful first step." },
     {
       title: 'What is a Handle on Social Media?',
       slug: 'social-media-handle',

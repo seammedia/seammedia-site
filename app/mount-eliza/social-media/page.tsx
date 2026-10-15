@@ -1,11 +1,13 @@
+import { createMetadata } from "@/lib/seo";
 import Section from "@/components/ui/Section";
 import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
 
-export const metadata = {
+export const metadata = createMetadata({
   title: "Social Media Management Mount Eliza | Seam Media",
   description: "Expert social media management services in Mount Eliza. We help local businesses grow their online presence with strategic social media campaigns across all platforms.",
-};
+  path: "/mount-eliza/social-media",
+});
 
 export default function MountElizaSocialMediaPage() {
   return (
@@ -129,7 +131,7 @@ export default function MountElizaSocialMediaPage() {
             <div>
               <h3 className="text-2xl font-bold text-gray-900 mb-3">Transparent Reporting</h3>
               <p className="text-gray-700 leading-relaxed">
-                Stay informed with detailed monthly reports showing exactly how your social media is performing and the ROI you're getting from our services.
+                Stay informed with detailed monthly reports showing exactly how your social media is performing and the ROI you&apos;re getting from our services.
               </p>
             </div>
           </div>

@@ -1,11 +1,13 @@
+import { createMetadata } from "@/lib/seo";
 import Section from "@/components/ui/Section";
 import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
 
-export const metadata = {
+export const metadata = createMetadata({
   title: "Graphic Design Mount Eliza | Seam Media",
   description: "Professional graphic design services in Mount Eliza. From logos to marketing materials, we create stunning designs that make your business stand out.",
-};
+  path: "/mount-eliza/graphic-design",
+});
 
 export default function MountElizaGraphicDesignPage() {
   return (

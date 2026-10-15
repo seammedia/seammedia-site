@@ -1,13 +1,14 @@
-import { Metadata } from "next";
+import { createMetadata } from "@/lib/seo";
 import Section from "@/components/ui/Section";
 import Button from "@/components/ui/Button";
 import Link from "next/link";
 
-export const metadata: Metadata = {
+export const metadata = createMetadata({
   title: "About | Seam Media",
   description:
     "Learn about Seam Media, a digital marketing agency dedicated to building brands through data-driven strategies and creative excellence.",
-};
+  path: "/about",
+});
 
 export default function AboutPage() {
   const values = [

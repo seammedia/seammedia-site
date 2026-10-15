@@ -1,11 +1,15 @@
 import Section from "@/components/ui/Section";
 import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
+import LocationInsights from "@/components/LocationInsights";
+import { locationProfiles } from "@/lib/locations";
+import { createMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = createMetadata({
   title: "Digital Marketing Agency Chelsea | Seam Media",
   description: "Professional digital marketing services in Chelsea. We offer social media management, web design, SEO, Google Ads, and more to help your business grow.",
-};
+  path: "/chelsea",
+});
 
 export default function ChelseaPage() {
   const services = [
@@ -43,6 +47,8 @@ export default function ChelseaPage() {
           </p>
         </div>
       </Section>
+
+      <LocationInsights profile={locationProfiles.chelsea} />
 
       {/* Services Section */}
       <Section background="gray">

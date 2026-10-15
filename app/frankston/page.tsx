@@ -1,11 +1,17 @@
+import LocalMarketingDetails from "@/components/LocalMarketingDetails";
+import LocalAgencyIntro from "@/components/LocalAgencyIntro";
 import Section from "@/components/ui/Section";
 import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
+import LocationInsights from "@/components/LocationInsights";
+import { locationProfiles } from "@/lib/locations";
+import { createMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Digital Marketing Agency Frankston | Seam Media",
-  description: "Professional digital marketing services in Frankston. We offer social media management, web design, SEO, Google Ads, and more to help your business grow.",
-};
+export const metadata = createMetadata({
+  title: "Digital Marketing & SEO Agency Frankston | Seam Media",
+  description: "Digital marketing and SEO agency for Frankston businesses: local SEO, Google Maps, Google Ads, websites and social content from Seam Media.",
+  path: "/frankston",
+});
 
 export default function FrankstonPage() {
   const services = [
@@ -25,7 +31,7 @@ export default function FrankstonPage() {
       <Section background="white">
         <div className="text-center max-w-4xl mx-auto">
           <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 mb-8">
-            Digital Marketing Agency{' '}
+            Digital Marketing &amp; SEO Agency{' '}
             <span className="relative inline-block px-4">
               <span className="relative z-10 text-white">Frankston</span>
               <span
@@ -38,11 +44,15 @@ export default function FrankstonPage() {
             </span>
           </h1>
           <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed mb-8">
-            Seam Media provides comprehensive digital marketing services to businesses in Frankston and surrounding areas.
-            From social media management to web design and SEO, we help local businesses grow their online presence and achieve measurable results.
+            Seam Media is a digital marketing and SEO agency working with Frankston businesses from nearby Mount Eliza.
+            We help you get found on Google, win more calls and enquiries, and turn your website into your best salesperson.
           </p>
         </div>
       </Section>
+
+      <LocalAgencyIntro slug="frankston" />
+
+      <LocationInsights profile={locationProfiles.frankston} />
 
       {/* Services Section */}
       <Section background="gray">
@@ -105,6 +115,8 @@ export default function FrankstonPage() {
           </div>
         </div>
       </Section>
+
+      <LocalMarketingDetails slug="frankston" />
 
       {/* Contact Section */}
       <ContactForm />

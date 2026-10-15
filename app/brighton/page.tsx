@@ -1,11 +1,15 @@
 import Section from "@/components/ui/Section";
 import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
+import LocationInsights from "@/components/LocationInsights";
+import { locationProfiles } from "@/lib/locations";
+import { createMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = createMetadata({
   title: "Digital Marketing Agency Brighton | Seam Media",
   description: "Professional digital marketing services in Brighton. We offer social media management, web design, SEO, Google Ads, and more to help your business grow.",
-};
+  path: "/brighton",
+});
 
 export default function BrightonPage() {
   const services = [
@@ -43,6 +47,8 @@ export default function BrightonPage() {
           </p>
         </div>
       </Section>
+
+      <LocationInsights profile={locationProfiles.brighton} />
 
       {/* Services Section */}
       <Section background="gray">

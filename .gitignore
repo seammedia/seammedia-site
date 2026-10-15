@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Kept out of this public repo (see .vercelignore): a separate private project with a plaintext
+# password file, and internal client and SEO notes.
+/pipeline-dashboard/
+/CASE-STUDIES-HANDOFF.md
+/seo/

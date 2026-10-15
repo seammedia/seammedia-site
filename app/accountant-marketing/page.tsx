@@ -1,13 +1,14 @@
-import { Metadata } from "next";
 import Section from "@/components/ui/Section";
 import ContactForm from "@/components/ContactForm";
 import Link from "next/link";
+import { createMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = createMetadata({
   title: "Accountant Marketing Services | Seam Media",
   description:
     "Specialized digital marketing services for accountants and accounting firms. Attract new clients, build your reputation, and grow your practice with proven strategies.",
-};
+  path: "/accountant-marketing",
+});
 
 export default function AccountantMarketingPage() {
   return (

@@ -1,11 +1,17 @@
+import LocalMarketingDetails from "@/components/LocalMarketingDetails";
+import LocalAgencyIntro from "@/components/LocalAgencyIntro";
 import Section from "@/components/ui/Section";
 import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
+import LocationInsights from "@/components/LocationInsights";
+import { locationProfiles } from "@/lib/locations";
+import { createMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Digital Marketing Agency Mount Eliza | Seam Media",
-  description: "Professional digital marketing services in Mount Eliza. We offer social media management, web design, SEO, Google Ads, and more to help your business grow.",
-};
+export const metadata = createMetadata({
+  title: "SEO & Digital Marketing Agency Mount Eliza | Seam Media",
+  description: "Seam Media is an SEO and digital marketing agency based in Mount Eliza: local SEO, Google Maps, Google Ads and websites for Peninsula businesses.",
+  path: "/mount-eliza",
+});
 
 export default function MountElizaPage() {
   const services = [
@@ -25,7 +31,7 @@ export default function MountElizaPage() {
       <Section background="white">
         <div className="text-center max-w-4xl mx-auto">
           <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 mb-8">
-            Digital Marketing Agency{' '}
+            SEO &amp; Digital Marketing Agency{' '}
             <span className="relative inline-block px-4">
               <span className="relative z-10 text-white">Mount Eliza</span>
               <span
@@ -38,11 +44,15 @@ export default function MountElizaPage() {
             </span>
           </h1>
           <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed mb-8">
-            Seam Media provides comprehensive digital marketing services to businesses in Mount Eliza and surrounding areas.
-            From social media management to web design and SEO, we help local businesses grow their online presence and achieve measurable results.
+            Seam Media is an SEO and digital marketing agency based in Mount Eliza, helping local businesses get found on Google and turn searches into enquiries.
+            From local SEO and Google Maps to Google Ads, websites and social media, everything is planned around the work you want more of.
           </p>
         </div>
       </Section>
+
+      <LocalAgencyIntro slug="mount-eliza" />
+
+      <LocationInsights profile={locationProfiles["mount-eliza"]} />
 
       {/* Services Section */}
       <Section background="gray">
@@ -105,6 +115,8 @@ export default function MountElizaPage() {
           </div>
         </div>
       </Section>
+
+      <LocalMarketingDetails slug="mount-eliza" />
 
       {/* Contact Section */}
       <ContactForm />
