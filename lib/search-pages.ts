@@ -10,6 +10,8 @@ export type SearchPage = {
   proof: string; proofPath: string; pricing: string;
   faqTitle: string; faqs: { q: string; a: string }[]; relatedTitle: string; links: { label: string; href: string }[];
   reviews?: Review[]; // Google reviews about this service and area (lib/reviews.ts), shown under the hero
+  // Optional "where we work" section with a Google Map of the area (not an office location).
+  serviceArea?: { mapQuery: string; suburbs: string[]; copy: string };
 };
 
 const seoProcess = [
@@ -17,7 +19,7 @@ const seoProcess = [
   { title: "Improve the pages with existing demand", copy: "Fix crawl and page issues, make service information useful, connect related pages and improve titles and search snippets. Build content around distinct customer questions rather than repeating a suburb name." },
   { title: "Review what produces useful visits", copy: "Check which changes Google has crawled, compare the same queries and pages over time, and use enquiry quality to choose the next improvements. Search positions vary by location, device and competition." },
 ];
-const proof = "The South East Fencer case study includes a supplied Search Console report with 5.38k clicks and 437k impressions. The chart starts in August 2025 and extends into September 2026; its exact selected date range is not displayed. These figures show search visibility, not confirmed enquiries or a promise of the same outcome for your business.";
+const proof = "A nearby example: The South East Fencer serves the Mornington Peninsula and south-east Melbourne. Its case study includes a supplied Search Console report with 5.38k clicks and 437k impressions. The chart starts in August 2025 and extends into September 2026; its exact selected date range is not displayed. These figures show search visibility, not confirmed enquiries or a promise of the same outcome for your business.";
 const seoPricing = "Growth includes local SEO, Google Business Profile support, website care and one advertising platform from $235 a week plus GST. Complete Growth is $350 a week plus GST and includes both advertising platforms. The $140 Foundation package covers basic website and social support; it does not include ongoing local SEO. Local search packages include five tracked terms and one prioritised website or SEO improvement monthly. Larger content projects need an agreed scope.";
 const commonSeoFaqs = [
   { q: "How long does SEO take?", a: "Technical fixes and page improvements can be completed early, but Google needs time to crawl and reassess them. We use the first 90 days to establish the baseline, improve important pages and review the response. Competitive searches may take longer; first-page positions and enquiry numbers cannot be guaranteed." },
@@ -77,8 +79,27 @@ const localSeoReviews: Record<string, Review[]> = {
   frankston: [reviews.albert],
 };
 
+// Where we work: map of the area plus the neighbouring suburbs. Seam is based on the Mornington Peninsula
+// (no office in these suburbs), so the copy describes service coverage, never a local office.
+const localServiceAreas: Record<string, SearchPage["serviceArea"]> = {
+  frankston: {
+    mapQuery: "Frankston VIC 3199",
+    suburbs: ["Frankston", "Frankston South", "Frankston North", "Seaford", "Carrum Downs", "Langwarrin", "Karingal", "Skye", "Mount Eliza"],
+    copy: "Seam Media is based on the Mornington Peninsula, so Frankston is local for us. Heath does the work himself, here in Australia, and we work with businesses across Frankston and the surrounding suburbs.",
+  },
+};
+
+// Other pages for the same suburb, linked from the related section.
+const localSiblingLinks: Record<string, { label: string; href: string }[]> = {
+  frankston: [
+    { label: "Website design in Frankston", href: "/frankston/web-design" },
+    { label: "Social media in Frankston", href: "/frankston/social-media" },
+  ],
+};
+
 export const seoPages: Record<string, SearchPage> = Object.fromEntries(Object.entries(localSeo).map(([slug, local]) => [slug, {
   reviews: localSeoReviews[slug],
+  serviceArea: localServiceAreas[slug],
   path: `/${slug}/seo`, title: `SEO ${local.name} | Local Search & Google Maps | Seam Media`, description: `SEO for ${local.name} businesses: useful service pages, Google Maps, technical fixes and clear reporting. Discuss local SEO with Seam Media.`, h1: `SEO services for ${local.name} businesses`, service: "SEO", area: local.name,
   ...localResources[slug],
   intro: `Get found for the work you want in ${local.name}. We improve your website, local search presence and service content, then track relevant search clicks and enquiries so the next step is based on evidence.`, checks: ["Which services and searches could bring suitable customers?", "Can Google find, read and index the important pages?", "Does a visitor have enough information to make an enquiry?"], sectionTitle: `What local SEO in ${local.name} should improve`, context: local.context,
@@ -87,7 +108,7 @@ export const seoPages: Record<string, SearchPage> = Object.fromEntries(Object.en
     { title: "Google Business Profile and Maps", copy: "Review your business details, appropriate categories, actual service area and useful service information. Set up a practical process for requesting genuine customer reviews. Location and competition affect Maps visibility; a website page does not create a local office." },
     { title: "Useful pages Google can understand", copy: "Check indexing access, page titles, the preferred page URL, links between pages and duplicate content. Improve the service page before adding supporting guides. Each new guide should solve a real customer question and have a clear connection to your offer.", href: "/blog/local-seo-cost-australia", linkLabel: "What to include in a local SEO budget" },
     { title: "Reporting that connects to your business", copy: "Track relevant queries, impressions, clicks and website enquiries. Check whether visitors are asking about the right services. Report Google Business Profile actions separately and avoid treating a rise in impressions as proof of sales." },
-  ], process: seoProcess, proof, proofPath: "/case-studies/the-south-east-fencer", pricing: seoPricing, faqTitle: `${local.name} SEO questions`, faqs: [{q: local.q, a: local.a}, ...commonSeoFaqs], relatedTitle: "Explore related services and guidance", links: [{label: `SEO and digital marketing agency in ${local.name}`, href: `/${slug}`}, {label: "SEO services", href: "/seo"}, {label: "Local SEO costs", href: "/blog/local-seo-cost-australia"}, {label: "Small business SEO in Melbourne", href: "/blog/seo-melbourne-tips"}],
+  ], process: seoProcess, proof, proofPath: "/case-studies/the-south-east-fencer", pricing: seoPricing, faqTitle: `${local.name} SEO questions`, faqs: [{q: local.q, a: local.a}, ...commonSeoFaqs], relatedTitle: "Explore related services and guidance", links: [{label: `SEO and digital marketing agency in ${local.name}`, href: `/${slug}`}, ...(localSiblingLinks[slug] ?? []), {label: "SEO services", href: "/seo"}, {label: "Local SEO costs", href: "/blog/local-seo-cost-australia"}, {label: "Small business SEO in Melbourne", href: "/blog/seo-melbourne-tips"}],
 }]));
 
 export const constructionPage: SearchPage = {
@@ -107,6 +128,7 @@ export const constructionPage: SearchPage = {
 };
 
 export const frankstonWebPage: SearchPage = {
+  reviews: [reviews.brodie],
   path:"/frankston/web-design",title:"Website Design Frankston | Clear, Fast Business Websites",description:"Website design for Frankston businesses. Clear service content, mobile layouts, enquiry forms and SEO foundations. Discuss your website with Seam Media.",h1:"Website design for Frankston businesses",service:"Website design",area:"Frankston",intro:"Give a potential customer a clear picture of what you do and an easy way to get in touch. We design business websites around useful service information, mobile usability and a reliable enquiry journey.",checks:["Make your main service and customer fit clear immediately","Show credible work and answer pre-enquiry questions","Connect search visibility with a straightforward enquiry form"],sectionTitle:"What your Frankston business website needs",context:"Someone comparing businesses on a phone should be able to understand the service, the area you cover and the next step without hunting through the site. Design, content and SEO need to work together. We agree the required pages and features before the build, so ownership, ongoing care and larger extras are clear.",sections:[
     {title:"Service pages with a clear purpose",copy:"Give each core service enough detail to help a customer decide. Explain the scope, suitability and quote or booking process, then connect relevant project examples. Use one strong page per intent rather than many near-identical suburb pages."},
     {title:"Mobile design and working forms",copy:"Use readable text, accessible controls and layouts that suit smaller screens. Test the contact journey, validation and actual message delivery. A visual success message alone does not prove an enquiry reached the inbox."},

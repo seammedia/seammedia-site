@@ -10,6 +10,9 @@ function Stars() {
   return <span className="flex gap-0.5" aria-label="5 out of 5 stars">{Array.from({ length: 5 }, (_, i) => <svg key={i} viewBox="0 0 20 20" className="h-5 w-5 fill-[#FBBF24]" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z" /></svg>)}</span>;
 }
 
+// Lower-case the service for the button, but keep acronyms such as SEO.
+const serviceLabel = (service: string) => service.split(" ").map(word => /^[A-Z]{2,}$/.test(word) ? word : word.toLowerCase()).join(" ");
+
 export default function SearchLanding({ page }: { page: SearchPage }) {
   return <>
     <StructuredData data={{ "@context": "https://schema.org", "@type": "Service", "@id": `${siteUrl}${page.path}#service`, name: page.h1, description: page.description, url: `${siteUrl}${page.path}`, serviceType: page.service, provider: { "@type": "Organization", "@id": `${siteUrl}/#organization`, name: "Seam Media", url: siteUrl }, areaServed: { "@type": "Place", name: page.area } }} />
@@ -20,7 +23,8 @@ export default function SearchLanding({ page }: { page: SearchPage }) {
           <Link href="/services" className="text-sm text-[#4a6370] underline underline-offset-4">Seam Media services</Link>
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight mt-6 mb-6">{page.h1}</h1>
           <p className="text-xl text-gray-700 leading-relaxed">{page.intro}</p>
-          <div className="flex flex-wrap gap-4 mt-8"><Link href="#enquire" className="bg-gray-900 text-white rounded-full px-7 py-4 font-semibold">Discuss your {page.service.toLowerCase()}</Link><Link href="/marketing-packages" className="rounded-full border border-gray-400 px-7 py-4 text-gray-900 font-semibold">See packages and scope</Link></div>
+          <div className="flex flex-wrap gap-4 mt-8"><Link href="#enquire" className="bg-gray-900 text-white rounded-full px-7 py-4 font-semibold">Discuss your {serviceLabel(page.service)}</Link><Link href="/marketing-packages" className="rounded-full border border-gray-400 px-7 py-4 text-gray-900 font-semibold">See packages and scope</Link></div>
+          <p className="mt-5 text-gray-700">Or call Heath on <a href="tel:+61402642746" className="font-semibold text-gray-900 underline underline-offset-4">0402 642 746</a></p>
         </div>
         <aside className="rounded-2xl bg-white border border-gray-200 p-8">
           <h2 className="text-xl font-bold text-gray-900 mb-4">Start with the right priorities</h2>
@@ -46,6 +50,18 @@ export default function SearchLanding({ page }: { page: SearchPage }) {
       <p className="text-lg text-gray-700 max-w-3xl mb-10 leading-relaxed">{page.context}</p>
       <div className="grid md:grid-cols-2 gap-7">{page.sections.map(section => <div key={section.title} className="rounded-2xl bg-gray-50 border border-gray-200 p-8"><h3 className="text-xl font-bold text-gray-900 mb-4">{section.title}</h3><p className="text-gray-700 leading-relaxed">{section.copy}</p>{section.href && <Link href={section.href} className="inline-block mt-5 text-[#405e6b] font-semibold underline underline-offset-4">{section.linkLabel}</Link>}</div>)}</div>
     </div></section>
+    {page.serviceArea && <section className="px-6 py-20 bg-[#f4f7f8] border-t border-gray-200" aria-labelledby="service-area-heading"><div className="max-w-6xl mx-auto grid lg:grid-cols-[1fr_1.3fr] gap-10 items-center">
+      <div>
+        <p className="text-sm font-semibold uppercase tracking-widest text-[#4a6370]">Where we work</p>
+        <h2 id="service-area-heading" className="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-5">{page.area} and nearby suburbs</h2>
+        <p className="text-lg text-gray-700 leading-relaxed">{page.serviceArea.copy}</p>
+        <ul className="flex flex-wrap gap-2 mt-6">{page.serviceArea.suburbs.map(suburb => <li key={suburb} className="rounded-full border border-gray-300 bg-white px-4 py-2 text-sm text-gray-800">{suburb}</li>)}</ul>
+        <p className="mt-6 text-gray-700">Call <a href="tel:+61402642746" className="font-semibold text-gray-900 underline underline-offset-4">0402 642 746</a> or <Link href="#enquire" className="font-semibold text-gray-900 underline underline-offset-4">send an enquiry</Link>.</p>
+      </div>
+      <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white">
+        <iframe title={`Map of ${page.area} and surrounding suburbs`} src={`https://maps.google.com/maps?q=${encodeURIComponent(page.serviceArea.mapQuery)}&z=12&output=embed`} className="h-80 w-full lg:h-[420px]" loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
+      </div>
+    </div></section>}
     {page.resource && <section className="px-6 py-20 bg-white border-t border-gray-200"><div className="max-w-6xl mx-auto"><h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-5">{page.resourceTitle}</h2><p className="text-gray-700 leading-relaxed max-w-4xl mb-10">{page.resourceIntro}</p><div className="grid lg:grid-cols-3 gap-7">{page.resource.map(item => <div key={item.title} className="rounded-2xl border border-gray-200 p-8"><h3 className="text-xl font-bold text-gray-900 mb-4">{item.title}</h3><p className="text-gray-700 leading-relaxed mb-5">{item.copy}</p><ul className="list-disc pl-5 space-y-3 text-gray-700">{item.questions.map(q => <li key={q}>{q}</li>)}</ul></div>)}</div></div></section>}
     <section className="px-6 py-20 bg-[#f4f7f8]"><div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12">
       <div><h2 className="text-3xl font-bold text-gray-900 mb-6">A practical first 90 days</h2><ol className="space-y-5">{page.process.map((step, i) => <li key={step.title} className="text-gray-700"><h3 className="text-xl font-semibold text-gray-900 mb-2">{i + 1}. {step.title}</h3><p className="leading-relaxed">{step.copy}</p></li>)}</ol></div>
