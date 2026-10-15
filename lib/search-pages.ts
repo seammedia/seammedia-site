@@ -87,6 +87,21 @@ const localServiceAreas: Record<string, SearchPage["serviceArea"]> = {
     suburbs: ["Frankston", "Frankston South", "Frankston North", "Seaford", "Carrum Downs", "Langwarrin", "Karingal", "Skye", "Mount Eliza"],
     copy: "Seam Media is based on the Mornington Peninsula, so Frankston is local for us. Heath does the work himself, here in Australia, and we work with businesses across Frankston and the surrounding suburbs.",
   },
+  dandenong: {
+    mapQuery: "Dandenong VIC 3175",
+    suburbs: ["Dandenong", "Dandenong South", "Dandenong North", "Doveton", "Noble Park", "Keysborough", "Hallam", "Lyndhurst", "Springvale"],
+    copy: "Seam Media is based on the Mornington Peninsula and works with businesses across Dandenong and south-east Melbourne, from local services to commercial and industrial suppliers in Dandenong South. Heath does the work himself, here in Australia.",
+  },
+  "mount-eliza": {
+    mapQuery: "Mount Eliza VIC 3930",
+    suburbs: ["Mount Eliza", "Frankston South", "Mornington", "Moorooduc", "Baxter"],
+    copy: "Seam Media is based on the Mornington Peninsula, so Mount Eliza is local for us. Heath does the work himself, here in Australia, and we work with businesses across Mount Eliza and the neighbouring suburbs.",
+  },
+  mornington: {
+    mapQuery: "Mornington VIC 3931",
+    suburbs: ["Mornington", "Mount Martha", "Mount Eliza", "Moorooduc", "Tuerong"],
+    copy: "Seam Media is based on the Mornington Peninsula, so Mornington is local for us. Heath does the work himself, here in Australia, and we work with businesses across Mornington and the surrounding peninsula.",
+  },
 };
 
 // Other pages for the same suburb, linked from the related section.
@@ -94,6 +109,14 @@ const localSiblingLinks: Record<string, { label: string; href: string }[]> = {
   frankston: [
     { label: "Website design in Frankston", href: "/frankston/web-design" },
     { label: "Social media in Frankston", href: "/frankston/social-media" },
+  ],
+  "mount-eliza": [
+    { label: "Website design in Mount Eliza", href: "/mount-eliza/web-design" },
+    { label: "Social media in Mount Eliza", href: "/mount-eliza/social-media" },
+  ],
+  mornington: [
+    { label: "Website design in Mornington", href: "/mornington/web-design" },
+    { label: "Social media in Mornington", href: "/mornington/social-media" },
   ],
 };
 
