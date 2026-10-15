@@ -762,7 +762,7 @@ const ContactSection = () => {
       });
 
       if (response.ok) {
-        trackLead("social-media");
+        await trackLead("social-media");
         setStatus("success");
         form.reset();
         setTimeout(() => setStatus("idle"), 5000);

@@ -639,7 +639,7 @@ const ContactSection = () => {
       });
 
       if (response.ok) {
-        trackLead("graphic-design");
+        await trackLead("graphic-design");
         setStatus("success");
         form.reset();
         setTimeout(() => setStatus("idle"), 5000);

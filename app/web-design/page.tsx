@@ -668,7 +668,7 @@ const ContactSection = () => {
       });
 
       if (response.ok) {
-        trackLead("web-design");
+        await trackLead("web-design");
         setStatus("success");
         form.reset();
         setTimeout(() => setStatus("idle"), 5000);

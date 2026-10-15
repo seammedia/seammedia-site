@@ -406,7 +406,7 @@ const ContactSection = () => {
       });
 
       if (response.ok) {
-        trackLead("seo");
+        await trackLead("seo");
         setStatus("success");
         form.reset();
         setTimeout(() => setStatus("idle"), 5000);

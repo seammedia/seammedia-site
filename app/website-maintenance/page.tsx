@@ -849,7 +849,7 @@ const ContactSection = () => {
       });
 
       if (response.ok) {
-        trackLead("website-maintenance");
+        await trackLead("website-maintenance");
         setStatus("success");
         form.reset();
         setTimeout(() => setStatus("idle"), 5000);

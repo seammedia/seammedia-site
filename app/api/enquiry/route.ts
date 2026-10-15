@@ -4,7 +4,7 @@ export const runtime = "nodejs";
 export const maxDuration = 30;
 
 const origins = new Set(["https://www.seammedia.com.au", "https://seammedia.com.au"]);
-const fields = new Set(["firstName", "lastName", "name", "email", "phone", "service", "message", "form", "business", "trade", "area", "website", "package", "goal", "weeklyMarketingInvestment", "recommendedPackage", "fax_number", "_gotcha"]);
+const fields = new Set(["firstName", "lastName", "name", "email", "phone", "service", "message", "form", "business", "trade", "area", "website", "package", "goal", "weeklyMarketingInvestment", "recommendedPackage", "heardAbout", "fax_number", "_gotcha"]);
 const reply = (status: number, body: object) => NextResponse.json(body, { status, headers: { "Cache-Control": "no-store" } });
 
 export async function POST(request: NextRequest) {

@@ -204,7 +204,7 @@ export default function MarketingPackagesClient() {
         headers: { Accept: "application/json" },
         body: formData,
       });
-      if (response.ok) trackLead("marketing-packages");
+      if (response.ok) await trackLead("marketing-packages");
       setStatus(response.ok ? "success" : "error");
     } catch {
       setStatus("error");

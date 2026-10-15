@@ -632,7 +632,7 @@ const ContactSection = () => {
       });
 
       if (response.ok) {
-        trackLead("google-ads");
+        await trackLead("google-ads");
         setStatus("success");
         form.reset();
         setTimeout(() => setStatus("idle"), 5000);

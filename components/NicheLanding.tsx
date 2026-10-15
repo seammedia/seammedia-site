@@ -4,7 +4,7 @@ import Link from "next/link";
 import GoogleRating from "@/components/GoogleRating";
 import { FormEvent, useState } from "react";
 import { ArrowRight, ArrowUpRight, Check, CheckCircle2, MapPinned, Phone, PlayCircle, Quote, Search, ShieldCheck, Star } from "lucide-react";
-import { trackLead } from "@/lib/ads";
+import { HEARD_ABOUT_OPTIONS, trackLead } from "@/lib/ads";
 import type { NicheConfig } from "@/lib/niche-pages";
 import { GOOGLE_BUSINESS_URL } from "@/lib/reviews";
 import { GOOGLE_RATING } from "@/components/GoogleRating";
@@ -65,7 +65,7 @@ export default function NicheLanding({ config }: { config: NicheConfig }) {
         headers: { Accept: "application/json" },
         body: formData,
       });
-      if (response.ok) trackLead(config.slug);
+      if (response.ok) await trackLead(config.slug);
       setStatus(response.ok ? "success" : "error");
     } catch {
       setStatus("error");
@@ -143,6 +143,10 @@ export default function NicheLanding({ config }: { config: NicheConfig }) {
                 <input name="phone" type="tel" required placeholder="Mobile" className={field} />
                 <input name="email" type="email" required placeholder="Email" className={field} />
                 <input name="website" placeholder="Website (optional)" className={field} />
+                <select name="heardAbout" defaultValue="" aria-label="How did you hear about us?" className={field}>
+                  <option value="">How did you hear about us? (optional)</option>
+                  {HEARD_ABOUT_OPTIONS.map((o) => <option key={o}>{o}</option>)}
+                </select>
                 {config.budgetOptions && (
                   <select name="weeklyMarketingInvestment" defaultValue="" className={field}>
                     <option value="">Monthly marketing budget, incl. ads (optional)</option>

@@ -1,6 +1,6 @@
 "use client";
 
-import { trackLead } from "@/lib/ads";
+import { HEARD_ABOUT_OPTIONS, trackLead } from "@/lib/ads";
 
 import { useState } from "react";
 import Section from "./ui/Section";
@@ -38,7 +38,7 @@ export default function ContactForm({ variant = "light" }: { variant?: "light" |
       
 
       if (response.ok) {
-        trackLead("contact");
+        await trackLead("contact");
         setStatus("success");
         form.reset();
         setTimeout(() => setStatus("idle"), 5000);
@@ -175,6 +175,24 @@ export default function ContactForm({ variant = "light" }: { variant?: "light" |
                 <option value="Photography">Photography</option>
                 <option value="Videography">Videography</option>
                 <option value="Other">Other</option>
+              </select>
+            </div>
+
+            {/* How they found Seam */}
+            <div>
+              <label htmlFor="heardAbout" className={label}>
+                How did you hear about us?
+              </label>
+              <select
+                id="heardAbout"
+                name="heardAbout"
+                defaultValue=""
+                className={dark ? `${field} [&>option]:bg-[#111111]` : field}
+              >
+                <option value="">Select one (optional)</option>
+                {HEARD_ABOUT_OPTIONS.map((o) => (
+                  <option key={o} value={o}>{o}</option>
+                ))}
               </select>
             </div>
 
