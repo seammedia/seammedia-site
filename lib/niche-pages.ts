@@ -52,6 +52,9 @@ export type NicheConfig = {
   featuredPlan?: string;
   // Google reviews that match this page's service (lib/reviews.ts). The first one is also quoted in the hero.
   reviews?: Review[];
+  // Optional: a section about this trade's own jobs, so each trade page says something the others don't
+  // (17 Oct 2026; Google rated every page's landing page experience below average while they were near copies).
+  tradeSection?: { heading: string; intro: string; items: { title: string; copy: string }[] };
 };
 
 // Enquiry guarantee and month-to-month terms (approved by Heath, 9 Oct 2026). The number is set per industry:
@@ -125,8 +128,18 @@ export const tradies: NicheConfig = {
   headline: "Good at the job.",
   headlineAccent: "Easy to find on Google.",
   intro:
-    "Most tradies lose jobs to businesses that aren't better, just easier to find. We handle your Google Maps profile, website, local SEO and ads, so the phone keeps ringing while you're on the tools.",
+    "Most tradies lose jobs to businesses that aren't better, just easier to find. Our tradie marketing covers your Google Maps profile, website, local SEO and ads, so the phone keeps ringing while you're on the tools.",
   audience: "tradies",
+  tradeSection: {
+    heading: "Tradie marketing, built around the jobs you want.",
+    intro: "Every trade is different, so we start with the jobs that pay best and the suburbs you want to work in, then build your Google presence around them.",
+    items: [
+      { title: "Google Maps profile", copy: "Every service, category and service area filled in, real job photos added, and a review request after each job, so you can climb into the top three on the map." },
+      { title: "A page for each job and suburb", copy: "Google ranks pages, not businesses. We build a fast page for each service and the suburbs you cover, with your number one tap away." },
+      { title: "Google Ads grouped by job", copy: "Separate ad groups for each type of job, bids set by what the job is worth, and negative keywords that keep out DIY and job-seeker searches." },
+      { title: "Tracking on calls and forms", copy: "Every call from your ads and every enquiry form is counted in your own Google Ads account, so you can see what each enquiry cost." },
+    ],
+  },
   heroPoints: [
     "Google Maps profile and reviews",
     "A fast website with a page for every suburb you work in",
@@ -548,6 +561,7 @@ function tradePage(o: {
   slug: string; trade: string; plural: string; eyebrow: string; title: string; description: string; keywords: string[];
   headline: string; headlineAccent: string; intro: string; problems: { title: string; copy: string }[];
   heroPoints: string[]; guarantee: ReturnType<typeof enquiryGuarantee>; extraFaqs: { q: string; a: string }[];
+  tradeSection: NonNullable<NicheConfig["tradeSection"]>;
 }): NicheConfig {
   return {
     ...tradies,
@@ -564,6 +578,7 @@ function tradePage(o: {
     problems: o.problems,
     guarantee: o.guarantee.guarantee,
     faqs: [...o.guarantee.faqs, ...o.extraFaqs, ...tradies.faqs.filter((f) => !/lock-in|guarantee/i.test(f.q))],
+    tradeSection: o.tradeSection,
   };
 }
 
@@ -597,6 +612,16 @@ export const plumbers: NicheConfig = tradePage({
   extraFaqs: [
     { q: "Which plumbing jobs are worth advertising on Google?", a: "Urgent, high-value ones: blocked drains, hot water, burst pipes, gas and leak detection. People searching those call straight away, so we bid more for them than for small jobs like a dripping tap, and build the ads and tracking around calls, not clicks." },
   ],
+  tradeSection: {
+    heading: "How we'd set up Google for a plumbing business.",
+    intro: "Plumbing jobs aren't worth the same, and people search for each one differently. So each type of job gets its own ads, page and bid.",
+    items: [
+      { title: "Hot water", copy: "Repairs, replacements and heat pump installs get their own ads and page, with higher bids because each job is worth more." },
+      { title: "Blocked drains", copy: "Drain clearing, CCTV inspections and jetting, with ads and a page that answer what people want to know before they book." },
+      { title: "Burst pipes and leaks", copy: "Urgent searches on a phone, so the ads and page lead with your number. These customers call the first plumber they trust." },
+      { title: "Gas fitting", copy: "Gas appliance installs and leak checks, with your gas licence shown on the page and the reasons to choose you up front." },
+    ],
+  },
 });
 
 export const builders: NicheConfig = tradePage({
@@ -627,6 +652,16 @@ export const builders: NicheConfig = tradePage({
   extraFaqs: [
     { q: "Why is the guarantee 10 enquiries for builders?", a: "Building and renovation enquiries are fewer and bigger than, say, plumbing call-outs, and each one is worth far more. Ten genuine enquiries in 60 days is the number we're confident of for a builder on at least $50 a day in ads." },
   ],
+  tradeSection: {
+    heading: "How we'd set up Google for a building business.",
+    intro: "Building work is researched for weeks and compared on Google before anyone calls. So the ads, pages and profile are built around proof, project by project.",
+    items: [
+      { title: "Extensions and renovations", copy: "The biggest searches for most builders, each with a page showing finished projects in the areas you build." },
+      { title: "New homes and knockdown rebuilds", copy: "Long, researched decisions, so the page covers what homeowners compare: your process, timeline and past builds." },
+      { title: "Decks, pergolas and smaller jobs", copy: "Lower bids, or left to your Google profile and SEO, so the ad budget goes to the jobs you want most." },
+      { title: "Tracking every enquiry", copy: "We track which search, ad and page brought each enquiry, so you know what each one cost and where the next dollar should go." },
+    ],
+  },
 });
 
 export const electricians: NicheConfig = tradePage({
@@ -657,6 +692,16 @@ export const electricians: NicheConfig = tradePage({
   extraFaqs: [
     { q: "Which electrical jobs are worth advertising on Google?", a: "Urgent and higher-value ones: switchboard upgrades, rewires, EV charger installs, emergency call-outs and commercial work. We bid more for those than for small call-outs, build the ads and tracking around them, and keep the small jobs for your Google profile and SEO." },
   ],
+  tradeSection: {
+    heading: "How we'd set up Google for an electrical business.",
+    intro: "A switchboard upgrade and a light fitting aren't worth the same, so each type of job gets its own ads, page and bid.",
+    items: [
+      { title: "Switchboard upgrades", copy: "Their own ad group and page, with higher bids, because one switchboard job is worth many small call-outs." },
+      { title: "EV chargers", copy: "Charger installs for homes and businesses, a growing search we target by suburb with a page of its own." },
+      { title: "Rewires and renovations", copy: "Bigger planned jobs that people research for days, so the page shows your licence, reviews and past work." },
+      { title: "Emergency call-outs", copy: "Power outages and tripped safety switches, with ads and a page that lead with your phone number." },
+    ],
+  },
 });
 
 // Pages matched to the "Landscapers, roofers, concreters" and "Tradie websites" ad groups (15 Oct 2026), so each
@@ -690,6 +735,16 @@ export const landscapers: NicheConfig = tradePage({
   extraFaqs: [
     { q: "Which landscaping jobs are worth advertising on Google?", a: "The bigger ones: backyard makeovers, paving, decking, retaining walls and garden design. We bid more for those than for small maintenance jobs, and build the ads and tracking around calls and quote requests." },
   ],
+  tradeSection: {
+    heading: "How we'd set up Google for a landscaping business.",
+    intro: "People search for each landscaping job by name, and the big ones are worth far more. So each job gets its own ads, page and bid.",
+    items: [
+      { title: "Backyard makeovers and garden design", copy: "The highest-value searches, with a page of finished projects and higher bids." },
+      { title: "Paving, decking and retaining walls", copy: "Their own ads and pages, because people search for each job by name and compare photos before asking for a quote." },
+      { title: "Turf and maintenance", copy: "Lower bids, or left to your Google profile, so the ad budget follows the bigger jobs." },
+      { title: "Photos everywhere", copy: "Project photos on your Google profile and on every page, because landscaping sells on what people can see." },
+    ],
+  },
 });
 
 export const roofers: NicheConfig = tradePage({
@@ -720,6 +775,16 @@ export const roofers: NicheConfig = tradePage({
   extraFaqs: [
     { q: "Which roofing jobs are worth advertising on Google?", a: "Re-roofs, restorations, storm damage and leak repairs. People searching those are ready to get quotes, so we bid more for them than for small repairs, and build the ads and tracking around calls and quote requests." },
   ],
+  tradeSection: {
+    heading: "How we'd set up Google for a roofing business.",
+    intro: "A leak call and a full re-roof are very different searches. So each type of job gets its own ads, page and bid.",
+    items: [
+      { title: "Re-roofs and restorations", copy: "The biggest jobs, researched for weeks, so the page shows finished roofs, reviews and how you work." },
+      { title: "Storm damage and leak repairs", copy: "Urgent searches on a phone, with ads and a page that lead with your number." },
+      { title: "Gutters and small repairs", copy: "Lower bids, or left to your Google profile, so the budget goes to the jobs that pay best." },
+      { title: "Suburb pages", copy: "A page for each area you cover, so you show up when people search for a roofer in their suburb." },
+    ],
+  },
 });
 
 export const tradieWebsites: NicheConfig = {
@@ -751,7 +816,65 @@ export const tradieWebsites: NicheConfig = {
     extraFaqs: [
       { q: "What makes a tradie website get calls?", a: "Speed on a phone, your number at the top, a page for each service and suburb, real photos of your work, reviews and a simple quote form. We build all of that in from the start." },
     ],
+    tradeSection: {
+      heading: "What goes into a Seam tradie website.",
+      intro: "A tradie website has one job: turn a search into a call or a quote request. Everything on it is there for that.",
+      items: [
+        { title: "Your number one tap away", copy: "A call button at the top of every page on a phone, tracked, so you know which pages bring calls." },
+        { title: "Service and suburb pages", copy: "A page for each job and area you want work in, written so Google can rank each one." },
+        { title: "Photos and reviews", copy: "Your real job photos and Google reviews on the pages people look at before they call." },
+        { title: "Looked after for you", copy: "Set up and looked after as part of your weekly package, with no big upfront cost." },
+      ],
+    },
   }),
   problemsHeading: "Why most tradie websites don't get calls",
   reviews: [reviews.brodie, reviews.lacey, reviews.rod],
+};
+
+// Matched to the "Tradie SEO" ad group (17 Oct 2026). SEO searches had been landing on the general tradie page
+// through an ad about Google Maps and ads. Local SEO is part of Growth ($235) and Complete Growth ($350), checked
+// against /marketing-packages on 17 Oct; Foundation ($140) is a website and socials only.
+export const tradieSeo: NicheConfig = {
+  ...tradePage({
+    slug: "tradie-seo",
+    trade: "Plumber",
+    plural: "tradies",
+    eyebrow: "SEO FOR TRADIES",
+    title: "SEO for Tradies | Local SEO & Google Maps | Seam Media",
+    description:
+      "SEO for tradies: rank on Google Maps and local search with a managed Google profile, a page for every service and suburb, and review requests. Local SEO from $235 a week plus GST. Free Google Maps check-up.",
+    keywords: ["seo for tradies", "tradie seo", "local seo for tradies", "seo for tradesmen", "tradie google ranking"],
+    headline: "Rank where the jobs are.",
+    headlineAccent: "Local SEO for tradies.",
+    intro:
+      "Most local jobs start with a Google Maps or Google search. Our SEO for tradies covers your Google profile, a page for every service and suburb, and a steady flow of reviews, so you rank where customers are looking.",
+    heroPoints: [
+      "Google Business Profile posts and management, so you can climb the map pack",
+      "A fast page for every service and suburb you want work in",
+      "Review requests after each job, with help replying",
+      "Weekly map-pack scans, so you can see your rankings move",
+    ],
+    problems: [
+      { title: "You're not in the map pack", copy: "\"Plumber near me\" or \"electrician near me\" shows three businesses on the map first. If your Google profile is thin on services, photos or reviews, you're not one of them." },
+      { title: "One page can't rank for everything", copy: "Google ranks pages, not businesses. A single \"services\" page can't rank for every job in every suburb you cover, so those searches go to competitors." },
+      { title: "Reviews decide who gets the call", copy: "People compare the top three on the map and pick the one with more, newer reviews. Without a steady way to ask for them, you fall behind." },
+    ],
+    guarantee: tradieGuarantee,
+    extraFaqs: [
+      { q: "How long does SEO take for a tradie?", a: "Google profile improvements often show within a few weeks once it's complete and reviews start coming in. New service and suburb pages usually take a few months to rank well. The weekly map-pack scans show you the movement as it happens." },
+      { q: "Which package includes SEO?", a: "Local SEO is part of Growth ($235 a week plus GST) and Complete Growth ($350 a week plus GST). Foundation ($140 a week plus GST) covers a website and socials only." },
+    ],
+    tradeSection: {
+      heading: "What our SEO for tradies covers.",
+      intro: "Local SEO for a trade business is mostly three things: a complete Google profile, a page for each job and suburb, and a steady flow of reviews. We handle all three and show you the rankings every week.",
+      items: [
+        { title: "Google Business Profile", copy: "Services, categories, service areas and photos filled in, with regular posts, so Google has everything it needs to show you." },
+        { title: "Service and suburb pages", copy: "A fast page for each job and area you want, written to rank and to get the call." },
+        { title: "Reviews", copy: "Review requests after each job and help replying, because the number and freshness of reviews help decide who ranks on the map." },
+        { title: "Weekly map-pack scans", copy: "We check where you rank on the map across your area every week, so you can see the movement." },
+      ],
+    },
+  }),
+  featuredPlan: "Growth",
+  reviews: [reviews.leiarnah, reviews.rossyPest, reviews.ryan],
 };

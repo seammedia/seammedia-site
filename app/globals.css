@@ -159,3 +159,11 @@ button {
 .animate-wave {
   animation: wave 1s ease-in-out infinite;
 }
+
+/* Landing pages show a fixed call bar on phones and small tablets (components/NicheLanding.tsx);
+   pad the page bottom so it never covers the footer. */
+@media (max-width: 1023px) {
+  body:has([data-mobile-call-bar]) {
+    padding-bottom: calc(4.5rem + env(safe-area-inset-bottom));
+  }
+}

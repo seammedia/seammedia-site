@@ -81,13 +81,16 @@ export default function NicheLanding({ config }: { config: NicheConfig }) {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(236,72,153,0.16),transparent_40%)]" />
         <div className="relative z-10 mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
           <div>
-            <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-zinc-800 bg-zinc-900/80 px-4 py-1.5 font-mono text-xs tracking-widest text-zinc-400">
-              <span className="h-2 w-2 rounded-full bg-pink-500" /> {config.eyebrow}
-            </div>
-            <h1 className="text-4xl font-bold leading-[0.95] tracking-tight sm:text-5xl md:text-7xl">
-              {config.headline}
-              <br />
-              <span className="bg-gradient-to-r from-zinc-300 via-white to-pink-400 bg-clip-text text-transparent">{config.headlineAccent}</span>
+            {/* The eyebrow is part of the H1 so the heading says what people searched ("Marketing for tradies"). */}
+            <h1>
+              <span className="mb-7 flex w-fit items-center gap-3 rounded-full border border-zinc-800 bg-zinc-900/80 px-4 py-1.5 font-mono text-xs font-normal tracking-widest text-zinc-400">
+                <span className="h-2 w-2 rounded-full bg-pink-500" aria-hidden="true" /> {config.eyebrow}
+              </span>
+              <span className="block text-4xl font-bold leading-[0.95] tracking-tight sm:text-5xl md:text-7xl">
+                {config.headline}
+                <br />
+                <span className="bg-gradient-to-r from-zinc-300 via-white to-pink-400 bg-clip-text text-transparent">{config.headlineAccent}</span>
+              </span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-zinc-400 md:text-xl">{config.intro}</p>
             <ul className="mt-6 space-y-3">
@@ -131,29 +134,35 @@ export default function NicheLanding({ config }: { config: NicheConfig }) {
                 <input type="text" name="fax_number" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
                 <div className="flex items-center gap-3"><PlayCircle className="h-7 w-7 text-pink-400" /><h2 className="text-2xl font-bold">{offer?.name ?? "Free Google Maps check-up"}</h2></div>
                 <p className="text-sm leading-relaxed text-zinc-400">{offer?.formIntro ?? "A short video showing where your business shows up on Google Maps across your area, and what's holding it back. Free, no obligation."}</p>
-                <input name="name" required placeholder="Your name" className={field} />
-                <input name="business" required placeholder="Business name" className={field} />
-                <div className="grid grid-cols-2 gap-3">
-                  <select name="trade" defaultValue="" className={field}>
-                    <option value="">{config.businessLabel} (optional)</option>
-                    {config.businessOptions.map((o) => <option key={o}>{o}</option>)}
-                  </select>
-                  <input name="area" placeholder="Main suburb (optional)" className={field} />
-                </div>
-                <input name="phone" type="tel" required placeholder="Mobile" className={field} />
-                <input name="email" type="email" required placeholder="Email" className={field} />
-                <input name="website" placeholder="Website (optional)" className={field} />
+                {/* Short form (17 Oct 2026): only a name and mobile are required; the rest is optional or tucked away. */}
+                <input name="name" required autoComplete="name" placeholder="Your name" className={field} />
+                <input name="phone" type="tel" required autoComplete="tel" placeholder="Mobile" className={field} />
+                <input name="email" type="email" autoComplete="email" placeholder="Email (optional)" className={field} />
+                <input name="business" autoComplete="organization" placeholder="Business name (optional)" className={field} />
                 <select name="heardAbout" defaultValue="" aria-label="How did you hear about us?" className={field}>
                   <option value="">How did you hear about us? (optional)</option>
                   {HEARD_ABOUT_OPTIONS.map((o) => <option key={o}>{o}</option>)}
                 </select>
-                {config.budgetOptions && (
-                  <select name="weeklyMarketingInvestment" defaultValue="" className={field}>
-                    <option value="">Monthly marketing budget, incl. ads (optional)</option>
-                    {config.budgetOptions.map((o) => <option key={o}>{o}</option>)}
-                  </select>
-                )}
                 {offer?.messagePlaceholder && <textarea name="message" rows={2} placeholder={offer.messagePlaceholder} className={field} />}
+                <details className="group">
+                  <summary className="cursor-pointer list-none text-sm text-zinc-400 hover:text-zinc-200"><span className="text-pink-400 transition group-open:rotate-45 inline-block">+</span> Add more details (optional)</summary>
+                  <div className="mt-4 space-y-4">
+                    <div className="grid grid-cols-2 gap-3">
+                      <select name="trade" defaultValue="" className={field}>
+                        <option value="">{config.businessLabel} (optional)</option>
+                        {config.businessOptions.map((o) => <option key={o}>{o}</option>)}
+                      </select>
+                      <input name="area" placeholder="Main suburb (optional)" className={field} />
+                    </div>
+                    <input name="website" placeholder="Website (optional)" className={field} />
+                    {config.budgetOptions && (
+                      <select name="weeklyMarketingInvestment" defaultValue="" className={field}>
+                        <option value="">Monthly marketing budget, incl. ads (optional)</option>
+                        {config.budgetOptions.map((o) => <option key={o}>{o}</option>)}
+                      </select>
+                    )}
+                  </div>
+                </details>
                 <button type="submit" disabled={status === "submitting"} className="flex w-full items-center justify-center gap-2 rounded-full bg-pink-500 px-6 py-4 font-semibold transition hover:bg-pink-600 disabled:opacity-60">
                   {status === "submitting" ? "Sending..." : <>{cta} <ArrowRight size={18} /></>}
                 </button>
@@ -192,6 +201,25 @@ export default function NicheLanding({ config }: { config: NicheConfig }) {
           </div>
         </div>
       </section>
+
+      {/* What we'd set up for this trade (unique per trade page) */}
+      {config.tradeSection && (
+        <section className="border-t border-white/10 px-6 py-24">
+          <div className="mx-auto max-w-7xl">
+            <p className="font-mono text-xs tracking-[0.25em] text-pink-400">HOW WE&apos;D SET IT UP</p>
+            <h2 className="mt-4 max-w-3xl text-4xl font-bold md:text-5xl">{config.tradeSection.heading}</h2>
+            <p className="mt-5 max-w-3xl text-lg text-zinc-400">{config.tradeSection.intro}</p>
+            <div className="mt-12 grid gap-5 md:grid-cols-2">
+              {config.tradeSection.items.map((item) => (
+                <article key={item.title} className="rounded-3xl border border-white/10 bg-zinc-950 p-7">
+                  <h3 className="text-2xl font-semibold">{item.title}</h3>
+                  <p className="mt-3 leading-relaxed text-zinc-400">{item.copy}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Check-up explainer */}
       <section className="border-y border-white/10 bg-zinc-950 px-6 py-24">
@@ -340,6 +368,13 @@ export default function NicheLanding({ config }: { config: NicheConfig }) {
           </div>
         </div>
       </section>
+
+      {/* Mobile call bar (17 Oct 2026): the header's call button sits inside the menu below xl, so on a phone the
+          number was only in the hero. globals.css pads the page bottom while this bar is on the page. */}
+      <div data-mobile-call-bar className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 gap-3 border-t border-white/10 bg-black/95 px-4 pb-[calc(0.75rem+env(safe-area-inset-bottom))] pt-3 backdrop-blur lg:hidden">
+        <a href="tel:+61402642746" className="flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 py-3 text-sm font-semibold"><Phone size={16} /> Call Heath</a>
+        <a href="#check-up" className="flex items-center justify-center gap-2 rounded-full bg-pink-500 py-3 text-sm font-semibold">{offer ? "Free audit" : "Free check-up"} <ArrowRight size={16} /></a>
+      </div>
     </div>
   );
 }

@@ -49,6 +49,7 @@ const routes = [
   "landscaper-marketing",
   "roofer-marketing",
   "tradie-websites",
+  "tradie-seo",
   "frankston/seo",
   "frankston/web-design",
   "frankston/social-media",

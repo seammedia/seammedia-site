@@ -35,7 +35,10 @@ export async function POST(request: NextRequest) {
       payload[key] = value.trim();
     }
     if (payload.fax_number || payload._gotcha) return reply(200, { ok: true });
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(payload.email || "") || payload.email.length > 160) return reply(400, { error: "Please enter a valid email address." });
+    // Email or mobile (17 Oct 2026: the landing page form needs only a name and mobile). An email, if given, must be valid.
+    const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(payload.email || "") && payload.email.length <= 160;
+    if (payload.email && !validEmail) return reply(400, { error: "Please enter a valid email address." });
+    if (!validEmail && !/^\+?\d{8,15}$/.test((payload.phone || "").replace(/[\s()-]/g, ""))) return reply(400, { error: "Please enter a mobile number or an email address." });
     const referrer = request.headers.get("referer");
     const page = referrer ? new URL(referrer) : null;
     payload.page = page && origins.has(page.origin) ? page.origin + page.pathname : "https://www.seammedia.com.au/";
