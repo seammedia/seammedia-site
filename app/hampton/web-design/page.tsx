@@ -2,10 +2,11 @@ import { createMetadata } from "@/lib/seo";
 import Section from "@/components/ui/Section";
 import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
+import LocalWebDesignDetails from "@/components/LocalWebDesignDetails";
 
 export const metadata = createMetadata({
-  title: "Website Design Hampton | Seam Media",
-  description: "Professional website design services in Hampton. We create custom, responsive websites that convert visitors into customers and grow your business.",
+  title: "Web Design Hampton | Websites for Local Businesses",
+  description: "Web design for Hampton businesses: clear service pages, mobile layouts, working enquiry forms and search basics built in. Talk to Seam Media today.",
   path: "/hampton/web-design",
 });
 
@@ -22,7 +23,7 @@ export default function HamptonWebDesignPage() {
             ← Back to Hampton Services
           </Link>
           <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 mb-8">
-            Website Design{' '}
+            Web Design{' '}
             <span className="relative inline-block px-4">
               <span className="relative z-10 text-white">Hampton</span>
               <span
@@ -35,10 +36,12 @@ export default function HamptonWebDesignPage() {
             </span>
           </h1>
           <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed mb-8">
-            Transform your online presence with a professionally designed website that attracts customers and drives results for your Hampton business.
+            Website design for Hampton businesses that want to be found on Google and turn visits into calls, bookings and enquiries.
           </p>
         </div>
       </Section>
+
+      <LocalWebDesignDetails slug="hampton" />
 
       {/* What We Offer */}
       <Section background="gray">
@@ -124,7 +127,7 @@ export default function HamptonWebDesignPage() {
             <div>
               <h3 className="text-2xl font-bold text-gray-900 mb-3">Local Expertise</h3>
               <p className="text-gray-700 leading-relaxed">
-                As a Hampton-based agency, we understand local businesses and their unique needs. We create websites that resonate with your target audience in the area.
+                Based in Mount Eliza, we work with businesses across Melbourne&apos;s bayside and south-east, including Hampton. We create websites that speak to the customers you want in the area.
               </p>
             </div>
 

@@ -37,6 +37,10 @@ export default function HamptonSEOPage() {
           <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed mb-8">
             Rank higher in Google search results and attract more local customers in Hampton with our comprehensive SEO services.
           </p>
+          <p className="text-lg text-gray-700 leading-relaxed mb-8">
+            Need a new website first? See our{' '}
+            <Link href="/hampton/web-design" className="font-semibold text-[#405e6b] underline">web design for Hampton businesses</Link>.
+          </p>
         </div>
       </Section>
 

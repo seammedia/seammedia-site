@@ -7,7 +7,7 @@ import DarkSection, { SectionIntro } from "./DarkSection";
 const areas = [
   { href: "/mount-eliza", label: "SEO and digital marketing agency in Mount Eliza" },
   { href: "/frankston", label: "Digital marketing and SEO agency in Frankston" },
-  { href: "/mornington", label: "Digital marketing in Mornington" },
+  { href: "/mornington", label: "Digital marketing agency in Mornington" },
   { href: "/dandenong", label: "Digital marketing in Dandenong" },
   { href: "/cranbourne", label: "SEO and marketing agency in Cranbourne" },
   { href: "/chelsea", label: "Digital marketing in Chelsea" },

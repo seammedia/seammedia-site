@@ -1,4 +1,5 @@
 import LocalMarketingDetails from "@/components/LocalMarketingDetails";
+import LocalAgencyIntro from "@/components/LocalAgencyIntro";
 import Section from "@/components/ui/Section";
 import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
@@ -48,6 +49,8 @@ export default function MorningtonPage() {
           </p>
         </div>
       </Section>
+
+      <LocalAgencyIntro slug="mornington" />
 
       <LocationInsights profile={locationProfiles.mornington} />
 

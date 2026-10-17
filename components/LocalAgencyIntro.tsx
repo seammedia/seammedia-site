@@ -43,7 +43,26 @@ const areas: Record<string, {
       "Social media content that keeps your business visible between jobs",
     ],
     nearby: "We also work across Seaford, Carrum Downs, Langwarrin, Karingal and the wider Mornington Peninsula.",
-    seoLabel: "SEO services in Frankston",
+    seoLabel: "SEO services in Frankston and Carrum Downs",
+  },
+  // Added 15 Oct 2026 (seo-loop-seam): /mornington ranked 24.8 for "digital marketing agency mornington".
+  mornington: {
+    heading: "A digital marketing agency for Mornington businesses",
+    intro: "Seam Media is based next door in Mount Eliza, so Mornington is local for us. Mornington businesses often serve the township and the wider peninsula, so our digital marketing in Mornington starts with the work you want more of and the areas you genuinely serve, then makes that clear across your website, Google Business Profile and ads.",
+    detail: "Customers comparing Mornington providers usually search by service and suburb on their phones, often on Google Maps. We plan local SEO, Google Ads, your website and social content together, so each one supports the others, and you work directly with the person doing the work.",
+    listTitle: "What our digital marketing in Mornington covers",
+    list: [
+      "Local SEO and Google Maps: your Business Profile, categories, service areas and reviews",
+      "Google Ads with call and form tracking for the jobs you want more of now",
+      "Websites with clear service pages and an easy enquiry step on mobile",
+      "Social media content that keeps your business visible on the peninsula",
+    ],
+    nearby: "We also work with businesses in Mount Martha, Mount Eliza, Moorooduc, Frankston and across the Mornington Peninsula.",
+    seoLabel: "SEO services in Mornington",
+    faqs: [
+      { q: "Do you only work with businesses in Mornington township?", a: "No. We work across the Mornington Peninsula and Melbourne's south-east. Your marketing should reflect the areas you genuinely serve, including any travel, delivery or booking limits, rather than claiming every suburb." },
+      { q: "What do your digital marketing packages include?", a: "Foundation is $140 a week plus GST for basic website and social support. Growth is $235 a week plus GST with local SEO and one ad platform. Complete Growth is $350 a week plus GST with both ad platforms. Ad spend, filming and larger builds are scoped separately." },
+    ],
   },
   // Added 15 Oct 2026: /cranbourne ranked 19.4 for "seo cranbourne" and 6.3 for "cranbourne marketing agency".
   cranbourne: {

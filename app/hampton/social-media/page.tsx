@@ -37,6 +37,10 @@ export default function HamptonSocialMediaPage() {
           <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed mb-8">
             Grow your Hampton business with strategic social media management that drives engagement, builds community, and generates real results.
           </p>
+          <p className="text-lg text-gray-700 leading-relaxed mb-8">
+            Pair your social content with a website that turns followers into enquiries: see our{' '}
+            <Link href="/hampton/web-design" className="font-semibold text-[#405e6b] underline">web design in Hampton</Link>.
+          </p>
         </div>
       </Section>
 

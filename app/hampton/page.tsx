@@ -14,7 +14,7 @@ export const metadata = createMetadata({
 export default function HamptonPage() {
   const services = [
     { href: "/hampton/social-media", label: "Social Media Management", description: "Grow your online presence with strategic social media campaigns tailored for Hampton businesses." },
-    { href: "/hampton/web-design", label: "Website Design", description: "Custom, responsive websites designed to convert visitors into customers." },
+    { href: "/hampton/web-design", label: "Web Design in Hampton", description: "Websites for Hampton businesses with clear service pages, mobile enquiry forms and search basics built in." },
     { href: "/hampton/seo", label: "SEO", description: "Rank higher in search results and attract more local Hampton customers." },
     { href: "/hampton/graphic-design", label: "Graphic Design", description: "Professional design services for all your branding and marketing materials." },
     { href: "/branding", label: "Branding", description: "Build a memorable brand identity that resonates with your target audience." },
@@ -43,7 +43,9 @@ export default function HamptonPage() {
           </h1>
           <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed mb-8">
             Seam Media provides comprehensive digital marketing services to businesses in Hampton and surrounding areas.
-            From social media management to web design and SEO, we help local businesses grow their online presence and achieve measurable results.
+            From social media management to{' '}
+            <Link href="/hampton/web-design" className="font-semibold text-[#405e6b] underline">web design in Hampton</Link>{' '}
+            and SEO, we help local businesses grow their online presence and achieve measurable results.
           </p>
         </div>
       </Section>
