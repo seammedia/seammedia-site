@@ -7,9 +7,13 @@ import LocationInsights from "@/components/LocationInsights";
 import { locationProfiles } from "@/lib/locations";
 import { createMetadata } from "@/lib/seo";
 
+// 22 Oct 2026 (Heath): "SEO" left this hub's title, H1 and intro. Since the 15 Oct "Digital Marketing & SEO Agency"
+// retitle, Google split the Frankston SEO searches between this hub and /frankston/seo, and /frankston/seo fell
+// (e.g. "frankston seo" 33 to 47-65). /frankston/seo now owns every "seo ... frankston" search; this hub owns
+// "digital marketing (agency) frankston" and links to the SEO page with "SEO agency in Frankston".
 export const metadata = createMetadata({
-  title: "Digital Marketing & SEO Agency Frankston | Seam Media",
-  description: "Digital marketing and SEO agency for Frankston businesses: local SEO, Google Maps, Google Ads, websites and social content from Seam Media.",
+  title: "Digital Marketing Agency Frankston | Seam Media",
+  description: "Digital marketing agency for Frankston businesses: Google Ads, websites, social content and Google Maps from Seam Media, just down the road in Mount Eliza.",
   path: "/frankston",
 });
 
@@ -31,7 +35,7 @@ export default function FrankstonPage() {
       <Section background="white">
         <div className="text-center max-w-4xl mx-auto">
           <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 mb-8">
-            Digital Marketing &amp; SEO Agency{' '}
+            Digital Marketing Agency{' '}
             <span className="relative inline-block px-4">
               <span className="relative z-10 text-white">Frankston</span>
               <span
@@ -44,7 +48,7 @@ export default function FrankstonPage() {
             </span>
           </h1>
           <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed mb-8">
-            Seam Media is a digital marketing and SEO agency working with Frankston businesses from nearby Mount Eliza.
+            Seam Media is a digital marketing agency working with Frankston businesses from nearby Mount Eliza.
             We help you get found on Google, win more calls and enquiries, and turn your website into your best salesperson.
           </p>
         </div>

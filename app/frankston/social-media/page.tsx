@@ -2,6 +2,7 @@ import { createMetadata } from "@/lib/seo";
 import Section from "@/components/ui/Section";
 import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
+import SocialMediaGuides from "@/components/SocialMediaGuides";
 
 export const metadata = createMetadata({
   title: "Social Media Management Frankston | Seam Media",
@@ -137,6 +138,8 @@ export default function FrankstonSocialMediaPage() {
           </div>
         </div>
       </Section>
+
+      <SocialMediaGuides area="Frankston" />
 
       {/* Map Section */}
       <Section background="gray">

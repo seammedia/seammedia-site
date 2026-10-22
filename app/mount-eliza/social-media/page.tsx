@@ -2,6 +2,7 @@ import { createMetadata } from "@/lib/seo";
 import Section from "@/components/ui/Section";
 import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
+import SocialMediaGuides from "@/components/SocialMediaGuides";
 
 export const metadata = createMetadata({
   title: "Social Media Management Mount Eliza | Seam Media",
@@ -124,7 +125,8 @@ export default function MountElizaSocialMediaPage() {
             <div>
               <h3 className="text-2xl font-bold text-gray-900 mb-3">Full-Service Management</h3>
               <p className="text-gray-700 leading-relaxed">
-                From strategy to content creation to community management, we handle every aspect of your social media presence so you can focus on running your business.
+                From strategy to content creation to community management, we handle every aspect of your social media presence so you can focus on running your business. For customers who search Google rather than scroll, pair it with{' '}
+                <Link href="/mount-eliza/seo" className="font-semibold text-[#405e6b] underline">SEO in Mount Eliza</Link>.
               </p>
             </div>
 
@@ -137,6 +139,8 @@ export default function MountElizaSocialMediaPage() {
           </div>
         </div>
       </Section>
+
+      <SocialMediaGuides area="Mount Eliza" />
 
       {/* Map Section */}
       <Section background="gray">

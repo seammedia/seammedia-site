@@ -82,7 +82,8 @@ export default function MountElizaWebDesignPage() {
             <div className="bg-white p-8 rounded-lg shadow-sm">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">SEO Optimized</h3>
               <p className="text-gray-700 leading-relaxed">
-                Built for search engines from the ground up. Your new website will be structured and coded to help you rank higher in Google search results for Mount Eliza-area searches.
+                Built for search engines from the ground up. Your new website will be structured and coded to help you rank higher in Google search results for Mount Eliza-area searches. To keep improving after launch, see our{' '}
+                <Link href="/mount-eliza/seo" className="font-semibold text-[#405e6b] underline">SEO services in Mount Eliza</Link>.
               </p>
             </div>
           </div>

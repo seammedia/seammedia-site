@@ -20,6 +20,17 @@ const googleReviews = { title: "Google: tips to get more reviews", url: "https:/
 const googleSeoStarter = { title: "Google: SEO starter guide", url: "https://developers.google.com/search/docs/fundamentals/seo-starter-guide" };
 const googleTitleLinks = { title: "Google: influencing your title links in search results", url: "https://developers.google.com/search/docs/appearance/title-link" };
 const wcag = { title: "W3C: Web Content Accessibility Guidelines (WCAG) overview", url: "https://www.w3.org/WAI/standards-guidelines/wcag/" };
+const googleReviewPolicy = { title: "Google: prohibited and restricted content for reviews (incentives and selective requests)", url: "https://support.google.com/contributionpolicy/answer/7400114" };
+const googleNegatives = { title: "Google Ads: about negative keywords", url: "https://support.google.com/google-ads/answer/2453972" };
+const googleMatchTypes = { title: "Google Ads: about keyword matching options", url: "https://support.google.com/google-ads/answer/7478529" };
+const googleSearchTerms = { title: "Google Ads: about the search terms report", url: "https://support.google.com/google-ads/answer/2472708" };
+const googleLocationTargeting = { title: "Google Ads: about targeting geographic locations", url: "https://support.google.com/google-ads/answer/2453995" };
+const googleAdSchedule = { title: "Google Ads: about ad scheduling", url: "https://support.google.com/google-ads/answer/2404244" };
+const googleHealthAds = { title: "Google Ads: healthcare and medicines policy", url: "https://support.google.com/adspolicy/answer/176031" };
+const googlePersonalisedAds = { title: "Google Ads: personalised advertising policy", url: "https://support.google.com/adspolicy/answer/143465" };
+const ahpraBoards = { title: "Ahpra: who we are and the 15 National Boards", url: "https://www.ahpra.gov.au/About-Ahpra/Who-We-Are.aspx" };
+const nasrhpMembers = { title: "National Alliance of Self Regulating Health Professions: members", url: "https://nasrhp.org.au/members-of-nasrhp/" };
+const speechPathologyAustralia = { title: "Speech Pathology Australia", url: "https://www.speechpathologyaustralia.org.au/" };
 
 export const guideQueue: ScheduledGuide[] = [
   {
@@ -594,6 +605,324 @@ export const guideQueue: ScheduledGuide[] = [
       ],
       sources: [googleSeoStarter, googleTitleLinks, googleHelpful, googleServiceArea],
       links: [{ title: "Websites for tradies", path: "/tradie-websites" }, { title: "Marketing for tradies", path: "/tradie-marketing" }, fencerLink],
+    },
+  },
+  {
+    date: "2026-10-27",
+    category: "NDIS & allied health",
+    excerpt: "How mobile physios, OTs and other allied health providers should set up a Google Business Profile: service-area or hybrid, real service areas, practitioner profiles, hours and reviews.",
+    guide: {
+      title: "Google Business Profile for mobile physios and allied health providers",
+      path: "/blog/google-business-profile-mobile-allied-health",
+      description: "Google Business Profile for mobile physio, OT and allied health: service-area or hybrid setup, service areas, practitioner profiles, hours and reviews.",
+      published: "2026-10-27", modified: "2026-10-27",
+      intro: [
+        "When a family member searches for a mobile physio or an OT who does home visits, Google often shows a map with a few local providers before any websites. Mobile providers can appear there too, but only if the Business Profile is set up the way Google expects for a business that travels to its clients. Get it wrong and the profile can be hard to find, show the wrong address or be suspended.",
+        "This guide covers how mobile and part-mobile allied health providers should set up and look after their profile, using Google's own guidelines.",
+      ],
+      sections: [
+        { title: "Decide whether you are service-area or hybrid", paragraphs: [
+          "Google treats a business that visits or delivers to clients, but does not see them at its own address, as a service-area business. If that is you, Google says to remove your address from the profile and set a service area instead. That also keeps a home address off the map.",
+          "If you also see clients at a clinic, you may be a hybrid business: you can show the clinic address and a service area. Google's guidelines say the location should be staffed by your team and able to receive clients during its stated hours, and that a business without permanent signage at its address should be listed as service-area instead. A virtual office or mail address is not eligible, and a co-working desk only qualifies if it has clear signage and is staffed and open to clients during business hours.",
+        ], checklist: ["Home visits only: hide the address and set a service area.", "Clinic plus home visits: show the clinic, add a service area.", "No virtual offices or mailbox addresses."] },
+        { title: "Set the service areas you really cover", paragraphs: [
+          "Google lets you set up to 20 service areas, based on cities, postcodes or other areas. Its guidelines say the overall area should not usually extend farther than about two hours' driving time from where the business is based. Choose the suburbs and regions your clinicians actually travel to, and keep them consistent with the areas named on your website.",
+          "Setting a service area does not guarantee you will show in every suburb listed. Distance still matters, so a provider based in one part of a city will usually appear more often nearby than at the far edge of its list. Listing areas you rarely visit tends to bring enquiries you have to turn away, which wastes time for families and support coordinators.",
+          "Google notes that approved service area changes can take up to 48 hours to show, so change areas deliberately rather than every week.",
+        ] },
+        { title: "Choose a practice profile, practitioner profiles or both", paragraphs: [
+          "Google says a service-area business should have one profile for its central office or location with a service area. For most mobile practices, that means one profile for the practice. Do not create extra profiles for each suburb you visit, as duplicates break Google's rules and can be removed.",
+          "Google does allow individual practitioners to have their own profile when they are public-facing and can be contacted directly at the verified location during stated hours. A practitioner should not have several profiles for different specialties. If a solo practitioner is the only public-facing clinician of a branded practice, Google suggests sharing one profile named in the format brand: practitioner name. For a mobile team, one well-run practice profile is usually simpler and stronger than several thin ones.",
+        ] },
+        { title: "Get the name, categories, services and hours right", paragraphs: [
+          "Use your business name as it appears on your signage, invoices and branding, with no added suburbs or keywords such as \"Mobile Physio Melbourne\". Pick the primary category that best describes the main service, such as Physiotherapist or Occupational therapist, and add secondary categories only for services you genuinely provide.",
+          "List your services in plain language, including home visits, aged care visits, NDIS supports or telehealth if you offer them, and explain in the description who you see and where. Google's guidelines say businesses that operate only by appointment generally should not list opening hours, so check the current guidance against how you work before adding hours. If you add a booking or referral link, make sure it goes to a page that works on a phone.",
+        ], checklist: ["Business name with no extra keywords.", "The most accurate primary category.", "Services, funding and visit types described clearly."] },
+        { title: "Handle reviews within the rules", paragraphs: [
+          "Reviews help with prominence, which Google lists alongside relevance and distance as a main factor in local results. Make asking for a review a routine step at the end of an episode of care, for every client or family, without offering anything in return. Google's review policy does not allow incentives such as discounts or free sessions, and does not allow businesses to selectively ask only happy clients for reviews.",
+          "Reply politely and never confirm that the reviewer is a client or mention their treatment. Physiotherapists, occupational therapists and psychologists are registered with Ahpra, so the advertising guidelines on testimonials apply to how a practice uses reviews in its own advertising. Ahpra's guidance says practitioners are not responsible for reviews on platforms they do not control, but republishing reviews about clinical outcomes on your website or social media can breach the rules. Speech pathologists and exercise physiologists are not Ahpra-registered, but making careful, accurate claims is still the safe approach.",
+        ] },
+        { title: "Connect the profile to your website and measure it", paragraphs: [
+          "Link the profile to a website page that confirms your service areas, visit types, funding options and how to refer, so a family or support coordinator who taps through finds the same information. The profile's performance screen shows calls, website clicks and direction requests; record new clients by source too, so you can see whether the profile brings the referrals you want.",
+          "Google Business Profile management and weekly map-pack visibility scans are part of Seam Media's Growth and Complete Growth packages. Our allied health page explains how we look after Google profiles, websites and Google Ads for mobile physio, OT, speech and NDIS providers.",
+        ] },
+      ],
+      sources: [googleServiceArea, googleProfileRules, googleLocal, googleReviewPolicy, ahpraGuidelines],
+      links: [{ title: "Allied health and NDIS Google Ads", path: "/allied-health-marketing" }, { title: "Marketing for NDIS providers", path: "/ndis-marketing" }, packagesLink],
+    },
+  },
+  {
+    date: "2026-10-28",
+    category: "Trades",
+    excerpt: "Marketing for landscapers: show finished projects, win the Google comparison, qualify enquiries before you drive out to quote, and plan for busy and quiet seasons.",
+    guide: {
+      title: "Marketing for landscapers: more of the projects you want to quote",
+      path: "/blog/marketing-for-landscapers",
+      description: "Marketing for landscapers: project photos, a strong Google profile, service pages, better enquiry forms, seasonal planning and tracking what pays.",
+      published: "2026-10-28", modified: "2026-10-28",
+      intro: [
+        "Landscaping is sold on pictures. A homeowner planning a backyard makeover, new paving or a retaining wall wants to see work like theirs, done nearby, by someone who will turn up and answer the phone. The landscapers who win those jobs usually make it easy to see their work, easy to enquire and easy to trust.",
+        "This guide covers practical marketing for landscaping businesses, from photos and Google to enquiry forms, seasonal planning and measurement.",
+      ],
+      sections: [
+        { title: "Decide which jobs you want more of", paragraphs: [
+          "Landscaping covers very different work: full design and construct projects, paving and retaining walls, turf and garden makeovers, and ongoing maintenance. Each attracts different customers with different budgets. Before spending on marketing, decide which two or three types of job you want more of, and build your website, Google profile and any ads around those.",
+          "If maintenance contracts keep the business steady and projects bring the margin, say both clearly, but give the projects the most space. A homepage that tries to be everything to everyone usually ends up telling nobody much.",
+        ], checklist: ["Pick two or three priority job types.", "Give each one its own website page.", "Match your Google profile services to the same list."] },
+        { title: "Make your project photos do the selling", paragraphs: [
+          "Take good photos of every finished job, ideally with a before shot from the same angle. Group them by job type, with the suburb and a line about what was done, and link each service page to relevant projects. Ask the customer's permission before publishing photos of their property.",
+          "Use the same photos on your Google Business Profile and social media. Real photos of your own work, crew and equipment build more trust than stock images of perfect gardens you did not build. Short videos walking through a finished project also work well on Instagram and Facebook.",
+          "Write a few sentences with each project: what the customer wanted, any site challenges such as slope, drainage or access, the materials used and how long it took. That detail helps a homeowner picture their own job, answers questions before they ask them and gives Google more to understand about the work you do and where you do it.",
+        ] },
+        { title: "Win the comparison on Google", paragraphs: [
+          "Choose the Google Business Profile category that best fits your main work, such as Landscaper or Landscape designer, and add secondary categories only for services you genuinely provide. If customers do not visit you, set up as a service-area business, hide your address and list the areas you actually travel to.",
+          "Google says local results depend mainly on relevance, distance and prominence. Accurate services, regular photos and a steady flow of genuine reviews all help. Ask every customer for a review when the job is finished, and never offer a discount or extra work in return, as Google's policies do not allow incentives.",
+          "On your website, give each priority job its own page with photos, what affects the price, typical timeframes and a clear way to enquire. Someone searching for retaining walls or paving in their suburb is more likely to find and trust a page about exactly that than a general services list.",
+        ] },
+        { title: "Qualify enquiries before you drive out", paragraphs: [
+          "Measuring and quoting takes time, so your enquiry form should collect what you need to decide whether a job is a fit. Ask for the suburb, the type of work, a rough timeframe, a budget range and an option to upload a photo of the area. Keep it short: name, phone, suburb, job type and budget range are usually enough to start.",
+          "A budget range on the form saves both sides time. It is easier to explain on the phone that a full makeover usually needs a bigger budget than to discover it on site after an hour's drive. Reply quickly, even if only to book a call, because many people contact two or three businesses at once.",
+        ], checklist: ["Suburb, job type, timeframe and budget range.", "Optional photo upload.", "A stated reply time, and a test enquiry after every website change."] },
+        { title: "Plan for busy and quiet seasons", paragraphs: [
+          "If your enquiries are seasonal, plan for it. Use the quieter months to update your website, add finished projects to your portfolio and collect reviews, so you are ready when demand picks up. If you run ads, raise budgets ahead of your busy periods and pull back when you are booked out, rather than paying for enquiries you cannot take on.",
+          "Maintenance work can smooth out the quieter months. If you offer it, give it its own page and ask project customers whether they would like ongoing care once their job is done.",
+        ] },
+        { title: "Follow up quotes and track what pays", paragraphs: [
+          "Bigger landscaping jobs often take weeks to decide. A polite follow-up a few days after the quote, and again later, wins work that would otherwise drift to whoever called last. Keep a simple list of open quotes so none are forgotten.",
+          "Record where each enquiry came from and which ones became jobs: Google Maps, search, ads, referrals or social media. Over a season this shows which channels bring the projects you want. Seam Media's landscaper marketing page explains how we run Google profiles, websites and Google Ads for landscaping businesses, and our tradie marketing page covers the wider approach.",
+        ] },
+      ],
+      sources: [googleLocal, googleServiceArea, googleProfileRules, googleReviewPolicy],
+      links: [{ title: "Marketing for landscapers", path: "/landscaper-marketing" }, { title: "Marketing for tradies", path: "/tradie-marketing" }, fencerLink],
+    },
+  },
+  {
+    date: "2026-10-29",
+    category: "NDIS & allied health",
+    excerpt: "Ahpra's advertising guidelines in plain English for allied health practices: who they cover, the five rules, testimonials and reviews, offers, penalties and a practical checklist.",
+    guide: {
+      title: "Ahpra advertising guidelines: a plain-English guide for allied health practices",
+      path: "/blog/ahpra-advertising-rules-allied-health",
+      description: "Ahpra advertising guidelines in plain English for physio, OT and psychology practices: who they cover, testimonials, offers, penalties and a checklist.",
+      published: "2026-10-29", modified: "2026-10-29",
+      intro: [
+        "If your practice offers physiotherapy, occupational therapy, psychology or another registered health profession, every ad, web page and social post that promotes those services has to meet the advertising rules in the National Law. Ahpra and the National Boards publish guidelines explaining those rules. They are not long, but they catch out many practices, usually through testimonials and claims about results.",
+        "This guide summarises the rules in plain English and turns them into a checklist. It is not legal advice; Ahpra says it cannot approve advertising and recommends advertisers get their own advice, such as from a legal adviser or indemnity insurer.",
+      ],
+      sections: [
+        { title: "Check whether the rules apply to you", paragraphs: [
+          "The guidelines apply to anyone advertising a regulated health service, not just registered practitioners. That includes practice owners who are not clinicians and companies that own clinics. A regulated health service is one provided by a profession regulated by one of the 15 National Boards, which include occupational therapy, physiotherapy, psychology, podiatry, chiropractic, osteopathy, optometry, nursing and midwifery, and medicine.",
+          "Some allied health professions are not regulated under the National Law. Speech pathology, exercise physiology and dietetics are self-regulated through their professional bodies, which are members of the National Alliance of Self Regulating Health Professions. If your practice offers both kinds of service, the Ahpra rules apply to how you advertise the regulated ones, and general consumer law on misleading claims applies to everything.",
+        ] },
+        { title: "Know the five core rules", paragraphs: [
+          "Under the National Law, advertising for a regulated health service must not be false, misleading or deceptive, or likely to be. It must not offer a gift, discount or other inducement unless the terms and conditions of the offer are also stated. It must not use testimonials or purported testimonials about the service or business. It must not create an unreasonable expectation of beneficial treatment. And it must not directly or indirectly encourage the indiscriminate or unnecessary use of regulated health services.",
+          "The guidelines also say claims about how well a treatment works need acceptable evidence, and that listing conditions a treatment can help with, without qualification, can be misleading. Titles matter too: using a protected title, or suggesting registration, specialist registration or qualifications someone does not hold, is an offence.",
+        ], checklist: ["No false or misleading claims.", "Terms stated with any gift, discount or offer.", "No testimonials, no unreasonable expectations, no encouraging unnecessary use."] },
+        { title: "Understand testimonials and reviews", paragraphs: [
+          "The guidelines treat a testimonial as a recommendation or positive statement about the clinical aspects of a service used in advertising. A clinical aspect is a symptom or reason for seeking treatment, a diagnosis or treatment, or an outcome. Comments about customer service or communication style that do not mention clinical aspects are not treated as testimonials.",
+          "Who is responsible depends on control. If you control a website or business social media page, you are responsible for reviews that appear or are republished there, which may mean turning off review features you cannot moderate. Ahpra says you are not responsible for removing reviews on platforms you do not control, such as Google reviews, but you should take care when engaging with them, as that may count as using a testimonial. Never quote patient success stories in ads, on your website or in social posts.",
+        ] },
+        { title: "Know the penalties", paragraphs: [
+          "Breaching the advertising requirements is a criminal offence. Ahpra's advertising guidelines page says the maximum penalty per offence rose in 2022 to $60,000 for an individual and $120,000 for a body corporate, and that since July 2024 these higher penalties apply in all jurisdictions, including Western Australia. Registered practitioners can also face disciplinary action.",
+          "Ahpra says it is a risk-based regulator that only takes regulatory action where there is a risk to the public, and it publishes an advertising compliance and enforcement strategy. That is not a reason to be casual: fixing a non-compliant website, ads and social posts after a complaint takes far more time than getting them right first.",
+        ] },
+        { title: "Run a checklist over every channel", paragraphs: [
+          "Apply the same checks to your website, Google Business Profile, social media, Google Ads, flyers and emails. Ads and social posts are where problems usually creep in, because they are written quickly and aim to persuade.",
+        ], checklist: [
+          "Website: no patient stories or quotes about results; service pages describe what you do, not guaranteed outcomes.",
+          "Offers: any discounted first appointment or free assessment states its terms clearly.",
+          "Titles: only titles each clinician is entitled to use; no implied specialist status.",
+          "Social media: review features you cannot moderate turned off; no shared posts praising clinical results.",
+          "Google Ads: no testimonials or outcome promises in ad text; claims match the landing page.",
+          "Before and after images: avoid them where they imply a typical or guaranteed result.",
+        ] },
+        { title: "Remember Google's health ad rules too", paragraphs: [
+          "Google has its own healthcare and medicines advertising policy, and its personalised advertising policy restricts targeting people based on health. In practice, that means no remarketing lists built from health information and no uploading patient lists to ad platforms. Some health-related ads may also have limited reach, so check the status of your ads after changes.",
+          "Seam Media manages Google Ads for NDIS and allied health providers with these rules built in from the start. Our allied health page explains how we work, and the packages page sets out what each package includes.",
+        ] },
+      ],
+      sources: [ahpraGuidelines, ahpraAdvertising, ahpraBoards, nasrhpMembers, googleHealthAds, googlePersonalisedAds],
+      links: [{ title: "Allied health and NDIS Google Ads", path: "/allied-health-marketing" }, { title: "Marketing for NDIS providers", path: "/ndis-marketing" }, packagesLink],
+    },
+  },
+  {
+    date: "2026-10-30",
+    category: "Trades",
+    excerpt: "SEO for tradies, explained simply: how trade searches work, the Google profile, service and area pages, technical basics, reviews and local links, and how long results take.",
+    guide: {
+      title: "SEO for tradies: how to show up when locals search for your trade",
+      path: "/blog/seo-for-tradies",
+      description: "SEO for tradies in plain English: the map pack, Google profile, service and area pages, site basics, reviews, local links and realistic timeframes.",
+      published: "2026-10-30", modified: "2026-10-30",
+      intro: [
+        "SEO for a trade business is not about tricking Google. It is about making it obvious to Google, and to the customer, which jobs you do, where you do them and why you are a safe choice. Most of the work is practical, and most of it also makes your website better at turning visitors into calls.",
+        "This guide explains how local trade searches work and what to do, in order of impact, to show up more often for the jobs you want.",
+      ],
+      sections: [
+        { title: "Know the two places you can appear", paragraphs: [
+          "Search for a trade in your area and Google usually shows a map with a few businesses, then the ordinary website results. The map results come from Google Business Profiles; the results below come from websites. A good trade SEO plan works on both, because many customers call straight from the map and many others click through to compare websites.",
+          "Google says local results are based mainly on relevance, distance and prominence. You cannot change where a customer is searching from, but you can make your profile and website clearly relevant to the job and build prominence through reviews, mentions and a well-known local presence.",
+        ] },
+        { title: "Start with your Google Business Profile", paragraphs: [
+          "Set up as a service-area business if customers do not come to you, hide your address and list the areas you really cover. Choose the primary category that matches your main trade, add your services in the words customers use and upload real photos of your work. Keep the business name exactly as it appears on your van and invoices; adding keywords or suburbs to it breaks Google's guidelines.",
+          "Ask every customer for a review, ideally by text the day the job is done, and reply to reviews politely. Do not offer discounts or anything else in return, or ask only the customers you expect to be happy, as Google's policies do not allow either.",
+        ], checklist: ["Service-area setup with real areas.", "Accurate primary category and services.", "A steady flow of genuine reviews."] },
+        { title: "Build a page for each job worth ranking for", paragraphs: [
+          "Google ranks pages, not businesses. If you want to show up for switchboard upgrades, blocked drains or colorbond fencing, you need a page about that job: what it involves, common problems, what affects the price, how quickly you can attend and photos of jobs you have done. Give each page a clear title and one main heading that says what it is about.",
+          "Google's guidance is to write content for people, not search engines. A page that genuinely answers a customer's questions about a job is what tends to rank, and it is also what convinces the customer to call.",
+          "Link each service page from your menu or homepage, and link related pages to each other, such as a hot water repairs page linking to hot water replacement. Internal links help Google find and understand your pages, and they help a customer who lands on the wrong page get to the right one quickly.",
+        ] },
+        { title: "Cover your areas with real local detail", paragraphs: [
+          "Area pages can help you appear for searches in the suburbs and regions you cover, but only if each page is genuinely useful. Mention the jobs you commonly do there, local conditions, and projects completed nearby. Dozens of copies of the same page with the suburb name swapped do little and can look like spam.",
+          "Keep the areas on your website consistent with your Google Business Profile service areas, and link area pages to the relevant service pages and back.",
+          "Start with the areas where you most want work and where you can genuinely show local projects. A handful of strong area pages, each with real photos and jobs from that area, is a better starting point than a long list you cannot keep up to date. Add more only when you have something specific to say about each place.",
+        ] },
+        { title: "Fix the technical basics and earn local mentions", paragraphs: [
+          "Your site should load quickly on a phone, work on mobile without anything covering the content and have important pages linked from the menu or homepage. Set up Google Search Console so you can see which searches and pages bring visitors and whether Google has found your pages.",
+          "Prominence also comes from being mentioned elsewhere. Local suppliers you buy from, builders you work with, industry associations, sponsorships of local clubs and genuine local directories can all mention or link to your business. Aim for a handful of real, relevant mentions rather than buying bulk links, which Google treats as spam.",
+        ], checklist: ["Fast, mobile-friendly pages.", "Search Console set up and checked monthly.", "Real local mentions, never bought links."] },
+        { title: "Be patient and measure calls", paragraphs: [
+          "SEO builds over months, not days. The South East Fencer case study shows a trade website going from about 3 clicks a day from Google in August 2025 to more than 20 a day by mid-2026, with normal ups and downs along the way. Results vary by trade, area and competition, so judge progress over several months.",
+          "Measure the outcome that matters: calls and quote requests from search and Maps, not just rankings. Seam Media's tradie SEO page explains how we approach local SEO for trade businesses, and the case study shows what that visibility looked like for one of them.",
+        ] },
+      ],
+      sources: [googleLocal, googleSeoStarter, googleHelpful, googleProfileRules, googleReviewPolicy],
+      links: [{ title: "SEO for tradies", path: "/tradie-seo" }, { title: "Marketing for tradies", path: "/tradie-marketing" }, fencerLink],
+    },
+  },
+  {
+    date: "2026-10-31",
+    category: "NDIS & allied health",
+    excerpt: "Marketing for speech pathologists: pages built around what families and adults are dealing with, honest waitlists, easy referrals, a strong Google profile and careful claims.",
+    guide: {
+      title: "Marketing for speech pathologists: reaching families, adults and referrers",
+      path: "/blog/marketing-for-speech-pathologists",
+      description: "Marketing for speech pathology practices: service pages, honest waitlists, referrers, Google Business Profile, careful claims and tracked Google Ads.",
+      published: "2026-10-31", modified: "2026-10-31",
+      intro: [
+        "Most people who contact a speech pathologist are worried about someone: a parent whose toddler is not talking yet, an adult child whose parent has had a stroke, or a teacher who has noticed a student struggling. They want to know quickly whether you can help with that problem, whether you can see them soon and how to get started.",
+        "This guide covers practical marketing for speech pathology practices, from website pages and waitlists to referrers, Google and the rules that shape how you advertise.",
+      ],
+      sections: [
+        { title: "Know which rules apply to you", paragraphs: [
+          "Speech pathologists are not registered with Ahpra. Speech pathology is a self-regulated profession, and Speech Pathology Australia, the peak body, is a member of the National Alliance of Self Regulating Health Professions. That means the National Law's advertising rules do not apply to speech pathology services on their own, but consumer law on false or misleading claims still does.",
+          "If your practice also offers registered services, such as occupational therapy, physiotherapy or psychology, Ahpra's advertising guidelines apply to how you promote those. Many practices find it simplest to follow the same careful approach across everything: no promised outcomes, no patient success stories in ads and clear terms on any offer.",
+        ] },
+        { title: "Build pages around what people are dealing with", paragraphs: [
+          "Families and adults search for the problem, not the clinical term. Give your main areas their own pages, such as late talking and speech delay, stuttering, literacy support, feeding, or communication and swallowing after a stroke, depending on what you offer. On each page, explain who it suits, what a first appointment involves, who should come along and what happens next.",
+          "Say clearly whether you see children, adults or both, whether you work in a clinic, at home, at school or kindergarten, or by telehealth, and which areas you cover.",
+          "Write in plain language that a worried parent can follow, and explain clinical terms when you use them. Describe what you do and how you work rather than promising results, such as a set number of sessions to fix a problem. Real photos of your clinic and therapy rooms help families picture the first visit, which matters a lot for young children.",
+        ], checklist: ["A page for each main area of practice.", "Who you see, where and how.", "What the first appointment involves."] },
+        { title: "Be honest about waitlists and funding", paragraphs: [
+          "Waitlists are a common frustration for families. If you have one, say roughly how long it is and keep it up to date. Families and referrers appreciate a clear answer, even when it is not the answer they hoped for, and it saves your admin team from repeating it on the phone.",
+          "Explain how fees and funding work with you, such as private fees, NDIS funding arrangements you accept, health fund rebates or Medicare referrals where they apply, and what paperwork you need. Keep it accurate and current; this is one of the first things families and support coordinators check.",
+        ] },
+        { title: "Make referring easy", paragraphs: [
+          "GPs, paediatricians, maternal and child health nurses, teachers, early childhood educators and support coordinators can all send families your way. Give them a simple referral form, a named contact and a quick acknowledgement. Tell them what information helps, such as reports or plan details, and how soon you can usually see new clients.",
+          "Make sure the form works and that referrals, which often contain personal and health information, go to a secure inbox only the right people can access.",
+          "Keep referrers informed in the way the client or family agrees, such as a short note after the assessment. Referrers send more clients to practices that communicate clearly and do what they say, and a quick update costs very little time.",
+        ] },
+        { title: "Get found on Google", paragraphs: [
+          "Set up your Google Business Profile with the most accurate primary category, your services and real photos of your clinic and team. If you visit clients rather than seeing them at your address, set up as a service-area business and list the areas you actually travel to. Google says local results depend mainly on relevance, distance and prominence, so accurate details and genuine reviews both help.",
+          "Reply to reviews politely without confirming that the reviewer is a client or mentioning their therapy, and never offer anything in return for a review.",
+          "Keep your website and profile consistent: the same name, phone number, services and areas. Link the profile to a page that explains how to get started, so a parent who taps through from Google Maps can see the next step without hunting for it.",
+        ] },
+        { title: "Advertise carefully and measure enquiries", paragraphs: [
+          "Google Ads can put you in front of families searching for help in your area right now. Build campaigns around the services you have capacity for, count real calls and completed enquiry forms as conversions and keep health information out of tracking. Google's personalised advertising policy restricts targeting people based on health, so do not upload client lists or build remarketing audiences from health information.",
+          "Record where each new client came from, so you know which channels bring the clients you can help. Seam Media's allied health page explains how we run Google Ads, websites and Google profiles for speech, OT, physio and NDIS providers.",
+        ] },
+      ],
+      sources: [ahpraBoards, nasrhpMembers, speechPathologyAustralia, googleLocal, googlePersonalisedAds],
+      links: [{ title: "Allied health and NDIS Google Ads", path: "/allied-health-marketing" }, { title: "Marketing for NDIS providers", path: "/ndis-marketing" }, packagesLink],
+    },
+  },
+  {
+    date: "2026-11-01",
+    category: "Trades",
+    excerpt: "Google Ads for electricians: separate campaigns for emergency and planned work, the right match types and negatives, location and schedule settings, and tracking real calls.",
+    guide: {
+      title: "Google Ads for electricians: campaigns built around the jobs you want",
+      path: "/blog/google-ads-for-electricians",
+      description: "Google Ads for electricians: campaigns by job type, match types, negative keywords, location and schedule settings, landing pages and call tracking.",
+      published: "2026-11-01", modified: "2026-11-01",
+      intro: [
+        "Google Ads can put an electrician at the top of the page the moment someone searches for an urgent call-out or a switchboard upgrade. It can also burn through a budget on apprentices looking for work and people trying to fix a light fitting themselves. The difference is in how the account is set up.",
+        "This guide walks through a practical setup for an electrical business, using Google's own guidance on keywords, targeting and conversion tracking.",
+      ],
+      sections: [
+        { title: "Split campaigns by type of job", paragraphs: [
+          "Emergency call-outs, switchboard upgrades, rewires and EV charger installs are different searches from different customers, with different value to your business. Put urgent work and planned work in separate campaigns or ad groups so you can set budgets, bids, ad text and schedules for each. An emergency campaign might run whenever you can answer the phone, while a switchboard campaign can focus on the hours people plan home projects.",
+          "Write ads that match each job. Someone searching for an emergency electrician wants to know how quickly you can come; someone looking at EV chargers wants to know you install and certify them properly.",
+        ], checklist: ["Separate campaigns or ad groups for urgent and planned work.", "Budgets set by the value of each job type.", "Ad text written for each job."] },
+        { title: "Choose match types and keywords deliberately", paragraphs: [
+          "Google says broad match is the default and reaches the widest range of related searches, and that it should be used with Smart Bidding. Phrase and exact match give more control and reach fewer searches. Many electrical accounts start with phrase and exact match on their main jobs and areas, then widen once tracking shows which searches bring real enquiries.",
+          "Use keywords built around the job and the place, such as switchboard upgrade plus your main suburbs, rather than single words like electrician on their own, which attract a wide mix of searches.",
+        ] },
+        { title: "Block the searches you do not want", paragraphs: [
+          "Negative keywords stop ads showing on searches that will never become paid work. Common examples for electricians are searches about jobs, apprenticeships, courses, wages, licences, wholesalers, parts and DIY how-to questions. Google notes that negative keywords do not match close variants, so add singular, plural and similar forms where needed. An account-level negative list can apply your core exclusions across every search campaign.",
+          "Check the search terms report every week at first, then regularly once the account settles. It shows the actual searches that triggered your ads, which is where most wasted spend is found.",
+          "Do not over-block. Words such as cost or price often appear in searches from customers comparing quotes for real work, so review them in context before excluding them. The aim is to remove searches that will never become jobs, not to shrink the account until it barely spends.",
+        ], checklist: ["Jobs, apprenticeships, courses and wages.", "Wholesale, parts and DIY searches.", "Search terms reviewed weekly at first."] },
+        { title: "Target the right places and times", paragraphs: [
+          "Google lets you target people by physical location, by locations they have shown interest in, or both. For a local electrician, targeting people in or regularly in your service area usually avoids paying for searches from people far away who are simply reading about your suburb. Keep the targeted area to where you are happy to travel.",
+          "By default, campaigns can show ads all day. Use the ad schedule to run ads when someone can answer or quickly return calls, and pull back when you cannot. Paying for a call nobody answers is one of the most common and avoidable wastes in trade accounts.",
+        ] },
+        { title: "Send clicks to the right page", paragraphs: [
+          "Each campaign should land on a page about that job, not the homepage. A switchboard ad should lead to a switchboard page with what the job involves, photos of your work, licence details and a clear call button and short quote form. If the page and the ad say different things, people leave and you pay for the click anyway.",
+          "For urgent work, the page should load quickly on a phone and put the phone number at the top, with a line on how fast you can usually attend and your service area. For planned work such as EV chargers or rewires, add more detail: what the customer needs to know before booking, what affects the price and examples of similar jobs you have completed.",
+        ] },
+        { title: "Track real calls and forms", paragraphs: [
+          "Count calls from ads and completed quote forms as conversions. Google Ads can measure calls from ads and lets you set a minimum call length before a call counts. Clicks on a phone number are a weaker signal and should not be your main conversion. Smart Bidding learns from whatever you count, so counting the wrong thing teaches it to find the wrong people.",
+          "Then compare cost per enquiry by job type and shift budget toward the work that pays best. Seam Media's electrician marketing page explains how we run Google Ads for electrical businesses, including our enquiry guarantee for new Google Ads clients, with the full terms on that page.",
+        ] },
+      ],
+      sources: [googleMatchTypes, googleNegatives, googleSearchTerms, googleLocationTargeting, googleAdSchedule, googleCalls],
+      links: [{ title: "Marketing for electricians", path: "/electrician-marketing" }, { title: "Google Ads management", path: "/google-ads-management" }, packagesLink],
+    },
+  },
+  {
+    date: "2026-11-02",
+    category: "NDIS & allied health",
+    excerpt: "NDIS Google Ads keywords: build keywords around supports and areas, block participant admin and job searches, review search terms and stay inside Google's health ad rules.",
+    guide: {
+      title: "NDIS Google Ads keywords: what to target and what to block",
+      path: "/blog/ndis-google-ads-keywords-negatives",
+      description: "NDIS Google Ads keywords: target supports and service areas, block portal, login and job searches, review search terms and follow health ad rules.",
+      published: "2026-11-02", modified: "2026-11-02",
+      intro: [
+        "Many NDIS providers try Google Ads and find the budget goes quickly while enquiries stay flat. A common reason is the search terms. Searches containing NDIS include participants looking for providers, but also people trying to log in to the portal, check a payment, find a job or study a course. Without careful keywords and negatives, ads end up paying for all of them.",
+        "This guide explains how to choose keywords that bring participant and referrer enquiries, and how to block the searches that never will.",
+      ],
+      sections: [
+        { title: "Build keywords around supports and places", paragraphs: [
+          "Start with the supports you have capacity for and the areas you cover. Searches that combine a support with a place or with NDIS, such as an NDIS occupational therapist in a named suburb, or mobile physio NDIS, usually show stronger intent than broad terms like NDIS provider or disability services on their own.",
+          "Group keywords by support type so each ad group has ads and a landing page about that support. If you offer supports to children and adults, consider separate groups, since families and adults often search differently.",
+          "Support coordinators and plan managers search too, often with more specific terms, such as a support type with the area and current availability. Make sure your landing pages answer their questions as well as participants' questions: capacity, areas covered, funding arrangements you accept and how to make a referral.",
+        ], checklist: ["One ad group per support type.", "Support plus suburb, region or NDIS.", "Only supports you currently have capacity for."] },
+        { title: "Use match types with care", paragraphs: [
+          "Google says broad match is the default match type and can show ads on searches related to your keyword, including ones that do not contain its exact words, and that it should be used with Smart Bidding. That can work once tracking is reliable, but in NDIS accounts it can also pull in many admin and information searches. Phrase and exact match give more control while you learn which searches bring enquiries.",
+        ] },
+        { title: "Block admin, job and study searches", paragraphs: [
+          "Negative keywords stop ads showing on searches you do not want. In NDIS accounts the usual candidates are searches about logging in or using the portal, myGov, contacting the agency, payments and claims, provider registration, worker screening checks, jobs and careers, courses and training, and free resources. Review each one against your own search terms before adding it, since some words can appear in genuine searches too.",
+          "Google notes that negative keywords do not automatically cover close variants, so add plurals and common alternatives. An account-level negative list is a simple way to keep the core exclusions across every search campaign.",
+        ], checklist: ["Portal, login, myGov and payment searches.", "Jobs, careers, courses and worker screening.", "Provider registration and pricing research."] },
+        { title: "Read the search terms report every week", paragraphs: [
+          "The search terms report shows the actual searches that triggered your ads. In the first months, read it weekly and sort searches into three groups: good searches to add as keywords, searches to block and unclear searches to watch. Google omits some low-volume searches for privacy, so the report will not show everything, but it shows enough to find most wasted spend.",
+          "Look at searches that brought calls and forms too, not just the poor ones. They often reveal how participants and coordinators describe a support, which helps with ad text and landing pages.",
+          "Keep a simple record of what you blocked and when. If enquiries drop after a round of changes, you can see what changed and undo it, rather than guessing. This also helps anyone else who works on the account understand why each negative is there.",
+        ] },
+        { title: "Stay inside Google's health ad rules", paragraphs: [
+          "Google's personalised advertising policy restricts targeting people based on health, so remarketing lists built from health information and uploads of participant lists are not allowed. Google also has a healthcare and medicines advertising policy that can limit some health-related ads, so check ad and keyword status after changes.",
+          "If your team includes Ahpra-registered practitioners, such as occupational therapists, physiotherapists or psychologists, Ahpra's advertising guidelines also apply to your ad text: no testimonials, no promised outcomes and clear terms on any offer.",
+          "Write ad text in the same plain, respectful language you would use on the phone. Say which supports you offer, the areas you cover and whether you have current capacity, and send each ad to a page about that support rather than the homepage.",
+        ] },
+        { title: "Measure enquiries, then tune keywords", paragraphs: [
+          "Keyword decisions are only as good as your tracking. Count calls from ads with a minimum call length and completed enquiry or referral forms, not taps on a phone number. In one allied health account Seam Media audited, taps made up 97% of the reported conversions, so the ads were optimising for the wrong result.",
+          "Once tracking is right, compare cost per enquiry by ad group and move budget to the supports and areas that bring participants you can help. Seam Media's allied health page explains how we run Google Ads for NDIS and allied health providers, including our enquiry guarantee for new Google Ads clients, with the full terms on that page.",
+        ] },
+      ],
+      sources: [googleNegatives, googleMatchTypes, googleSearchTerms, googlePersonalisedAds, googleHealthAds, googleCalls],
+      links: [{ title: "Allied health and NDIS Google Ads", path: "/allied-health-marketing" }, { title: "Marketing for NDIS providers", path: "/ndis-marketing" }, { title: "Google Ads management", path: "/google-ads-management" }],
     },
   },
 ];

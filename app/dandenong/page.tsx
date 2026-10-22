@@ -1,3 +1,4 @@
+import LocalAgencyIntro from "@/components/LocalAgencyIntro";
 import LocalMarketingDetails from "@/components/LocalMarketingDetails";
 import Section from "@/components/ui/Section";
 import Link from "next/link";
@@ -7,8 +8,8 @@ import { locationProfiles } from "@/lib/locations";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
-  title: "Digital Marketing Agency Dandenong | Seam Media",
-  description: "Digital marketing for Dandenong businesses: local SEO, websites, social content and Google Ads. Clear scope for local and commercial enquiries.",
+  title: "Marketing Agency Dandenong | SEO & Google Ads | Seam Media",
+  description: "Seam Media is a marketing agency for Dandenong businesses: local SEO, Google Ads, websites and social content for local and commercial enquiries.",
   path: "/dandenong",
 });
 
@@ -30,7 +31,7 @@ export default function DandenongPage() {
       <Section background="white">
         <div className="text-center max-w-4xl mx-auto">
           <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 mb-8">
-            Digital Marketing Agency{' '}
+            Marketing Agency{' '}
             <span className="relative inline-block px-4">
               <span className="relative z-10 text-white">Dandenong</span>
               <span
@@ -43,11 +44,13 @@ export default function DandenongPage() {
             </span>
           </h1>
           <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed mb-8">
-            Seam Media provides comprehensive digital marketing services to businesses in Dandenong and surrounding areas.
-            From social media management to web design and SEO, we help local businesses grow their online presence and achieve measurable results.
+            Seam Media is a marketing agency for Dandenong businesses, from local services in central Dandenong to commercial and industrial suppliers in Dandenong South.
+            Local SEO, Google Ads, websites and social media are planned together around the enquiries you want more of.
           </p>
         </div>
       </Section>
+
+      <LocalAgencyIntro slug="dandenong" />
 
       <LocationInsights profile={locationProfiles.dandenong} />
 

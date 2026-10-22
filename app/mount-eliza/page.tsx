@@ -17,7 +17,7 @@ export default function MountElizaPage() {
   const services = [
     { href: "/mount-eliza/social-media", label: "Social Media Management", description: "Grow your online presence with strategic social media campaigns tailored for Mount Eliza businesses." },
     { href: "/mount-eliza/web-design", label: "Website Design", description: "Custom, responsive websites designed to convert visitors into customers." },
-    { href: "/mount-eliza/seo", label: "SEO", description: "Rank higher in search results and attract more local Mount Eliza customers." },
+    { href: "/mount-eliza/seo", label: "SEO in Mount Eliza", description: "SEO services for Mount Eliza businesses: rank higher in local search and Google Maps and attract more local customers." },
     { href: "/mount-eliza/graphic-design", label: "Graphic Design", description: "Professional design services for all your branding and marketing materials." },
     { href: "/branding", label: "Branding", description: "Build a memorable brand identity that resonates with your target audience." },
     { href: "/adwords", label: "Google Ads", description: "Drive immediate results with targeted Google Ads campaigns." },

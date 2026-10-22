@@ -2,12 +2,31 @@ import Section from "@/components/ui/Section";
 import Link from "next/link";
 import Image from "next/image";
 import { createMetadata } from "@/lib/seo";
-import { BlogPostingStructuredData } from "@/components/StructuredData";
+import { BlogPostingStructuredData, StructuredData } from "@/components/StructuredData";
+
+const faqs = [
+  {
+    q: "Is a handle the same as a username?",
+    a: "Yes. Handle and username mean the same thing: the unique name after the @ symbol that identifies your account. Your display name is separate and is the name shown in bold on your profile.",
+  },
+  {
+    q: "How do I find my social media handle?",
+    a: "Open your own profile on the app. On Instagram, TikTok and X, the handle is the @ name shown on your profile and in your profile link. On Facebook and LinkedIn business pages, look at the end of your page's web address.",
+  },
+  {
+    q: "Can I change my handle?",
+    a: "Most platforms let you change it in your profile or account settings, as long as the new name is not already taken. Changing it breaks old tags and printed references, so update your website, signage and email signature at the same time.",
+  },
+  {
+    q: "What if the handle I want is taken?",
+    a: "Add something that still describes your business, such as your trade, your suburb or region, or a word like \"official\". Use the same variation on every platform so customers only have to remember one name.",
+  },
+];
 
 export const metadata = createMetadata({
-  title: "What is a Handle on Social Media? | Seam Media Blog",
+  title: "What Is a Social Media Handle? Meaning and Examples",
   description:
-    "Understand what a social media handle is, why it matters for your brand, and best practices for creating memorable handles across platforms.",
+    "A social media handle is your @ username on a platform. What it means, how it differs from a display name, examples and tips for a business handle.",
   path: "/blog/social-media-handle",
   type: "article",
 });
@@ -16,10 +35,21 @@ export default function SocialMediaHandlePage() {
   return (
     <>
       <BlogPostingStructuredData
-        title="What is a Handle on Social Media?"
-        description="Understand what a social media handle is, why it matters for your brand, and best practices for creating memorable handles across platforms."
+        title="What Is a Social Media Handle? Meaning and Examples"
+        description="A social media handle is your @ username on a platform. What it means, how it differs from a display name, examples and tips for a business handle."
         path="/blog/social-media-handle"
         datePublished="2024-11-19"
+      />
+      <StructuredData
+        data={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((faq) => ({
+            "@type": "Question",
+            name: faq.q,
+            acceptedAnswer: { "@type": "Answer", text: faq.a },
+          })),
+        }}
       />
       {/* Blog Post Header */}
       <Section background="gray">
@@ -34,7 +64,7 @@ export default function SocialMediaHandlePage() {
             Social Media
           </span>
           <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mt-2 mb-4">
-            What is a Handle on Social Media?
+            What Is a Social Media Handle?
           </h1>
           <p className="text-gray-600">Published on November 19, 2024</p>
         </div>
@@ -63,6 +93,16 @@ export default function SocialMediaHandlePage() {
               of your online presence.
             </p>
 
+            <div className="rounded-lg border-l-4 border-[#5e7986] bg-gray-50 p-6 mb-8">
+              <p className="text-gray-800 leading-relaxed m-0">
+                <strong>Quick answer:</strong> a social media handle is the
+                unique username that starts with @ on platforms like
+                Instagram, TikTok and X, for example @seammedia. People use it
+                to find, tag and mention your account. It is different from
+                your display name, which does not need to be unique.
+              </p>
+            </div>
+
             <h2 className="text-3xl font-bold text-gray-900 mt-12 mb-4">
               What is a Social Media Handle?
             </h2>
@@ -85,13 +125,13 @@ export default function SocialMediaHandlePage() {
               Why Your Handle Matters
             </h2>
             <p className="text-gray-700 leading-relaxed mb-6">
-              Your social media handle is more than just a username – it's a
+              Your social media handle is more than just a username, it's a
               vital part of your brand identity. Here's why it's so important:
             </p>
             <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
               <li>
                 <strong>Brand Recognition:</strong> A consistent handle across
-                platforms makes it easier for customers to find and recognize
+                platforms makes it easier for customers to find and recognise
                 your business
               </li>
               <li>
@@ -124,7 +164,7 @@ export default function SocialMediaHandlePage() {
               Try to use the same handle across all social media platforms. This
               makes it easier for customers to find you and helps build brand
               recognition. If your preferred handle is taken on one platform,
-              consider variations that are still recognizable (like adding
+              consider variations that are still recognisable (like adding
               "official," your location, or industry).
             </p>
 
@@ -199,7 +239,7 @@ export default function SocialMediaHandlePage() {
             </p>
             <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
               <li>
-                <strong>Instagram & Twitter/X:</strong> Handles are preceded by
+                <strong>Instagram and X (formerly Twitter):</strong> Handles are preceded by
                 @ and are used for tagging and mentions
               </li>
               <li>
@@ -217,6 +257,47 @@ export default function SocialMediaHandlePage() {
             </ul>
 
             <h2 className="text-3xl font-bold text-gray-900 mt-12 mb-4">
+              Handle, Username or Display Name?
+            </h2>
+            <p className="text-gray-700 leading-relaxed mb-6">
+              These terms get mixed up, so here is how they fit together for a
+              business account:
+            </p>
+            <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+              <li>
+                <strong>Handle or username:</strong> the unique @ name, such as
+                @seammedia. Only one account can have it on each platform.
+              </li>
+              <li>
+                <strong>Display name:</strong> the readable name shown on your
+                profile, such as &quot;Seam Media&quot;. Many accounts can share
+                the same display name.
+              </li>
+              <li>
+                <strong>Profile link:</strong> the web address built from your
+                handle, which is what you put on your website, quotes and
+                email signature.
+              </li>
+            </ul>
+            <p className="text-gray-700 leading-relaxed mb-6">
+              For a local business, a made-up handle such as @smithplumbing or
+              @smithplumbingfrankston is easier to find than a nickname or a
+              string of numbers. Pick one version and use it everywhere, so a
+              customer who sees your van, a post or your Google Business
+              Profile can search the same name and land on your account.
+            </p>
+
+            <h2 className="text-3xl font-bold text-gray-900 mt-12 mb-4">
+              Social Media Handle FAQs
+            </h2>
+            {faqs.map((faq) => (
+              <div key={faq.q} className="mb-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{faq.q}</h3>
+                <p className="text-gray-700 leading-relaxed">{faq.a}</p>
+              </div>
+            ))}
+
+            <h2 className="text-3xl font-bold text-gray-900 mt-12 mb-4">
               Ready to Build Your Social Media Presence?
             </h2>
             <p className="text-gray-700 leading-relaxed mb-6">
@@ -228,12 +309,26 @@ export default function SocialMediaHandlePage() {
             <p className="text-gray-700 leading-relaxed mb-8">
               From setting up your social media accounts with the perfect
               handles to managing your ongoing content and engagement, we're
-              here to help your business thrive online.{" "}
+              here to help your business thrive online. See how our{" "}
+              <Link
+                href="/social-media"
+                className="text-[#5e7986] hover:text-[#405e6b] font-medium underline transition-colors"
+              >
+                social media management
+              </Link>{" "}
+              works, compare the{" "}
+              <Link
+                href="/social-media-packages"
+                className="text-[#5e7986] hover:text-[#405e6b] font-medium underline transition-colors"
+              >
+                social media packages
+              </Link>
+              , or{" "}
               <Link
                 href="/contact"
                 className="text-[#f5b5b5] hover:text-[#e8a5a5] font-medium transition-colors"
               >
-                Contact us today
+                contact us
               </Link>{" "}
               to discuss how we can help grow your social media presence.
             </p>

@@ -15,6 +15,8 @@ const areas: Record<string, {
   seoLabel: string;
   // Hubs without a /<suburb>/seo sub-page point at the main SEO page instead.
   seoHref?: string;
+  // Optional descriptive link to a neighbouring hub (added 17 Oct 2026).
+  nearbyLink?: { href: string; label: string };
   faqs?: { q: string; a: string }[];
 }> = {
   "mount-eliza": {
@@ -30,9 +32,12 @@ const areas: Record<string, {
     ],
     nearby: "We also work with businesses in Mornington, Mount Martha, Frankston South, Langwarrin and across the Mornington Peninsula.",
     seoLabel: "SEO services in Mount Eliza",
+    // 20 Oct 2026: links the "seo mornington" owner page.
+    nearbyLink: { href: "/mornington/seo", label: "SEO in nearby Mornington" },
   },
   frankston: {
-    heading: "A digital marketing and SEO agency for Frankston businesses",
+    // 22 Oct 2026: no "SEO" in this heading; /frankston/seo owns the Frankston SEO searches (see app/frankston/page.tsx).
+    heading: "A digital marketing agency for Frankston businesses",
     intro: "Seam Media works with Frankston businesses from just down the road in Mount Eliza. Frankston customers compare options quickly on their phones, so we focus on being found for the searches that lead to calls: your service plus Frankston, Frankston South, Seaford, Carrum Downs or Langwarrin.",
     detail: "Our digital marketing in Frankston combines local SEO, Google Ads, your website and social content, planned around the jobs you want more of. You work directly with the people doing the work, with up-to-date reporting on what changed and what it brought in.",
     listTitle: "What our digital marketing in Frankston covers",
@@ -43,7 +48,7 @@ const areas: Record<string, {
       "Social media content that keeps your business visible between jobs",
     ],
     nearby: "We also work across Seaford, Carrum Downs, Langwarrin, Karingal and the wider Mornington Peninsula.",
-    seoLabel: "SEO services in Frankston and Carrum Downs",
+    seoLabel: "SEO agency in Frankston",
   },
   // Added 15 Oct 2026 (seo-loop-seam): /mornington ranked 24.8 for "digital marketing agency mornington".
   mornington: {
@@ -58,7 +63,9 @@ const areas: Record<string, {
       "Social media content that keeps your business visible on the peninsula",
     ],
     nearby: "We also work with businesses in Mount Martha, Mount Eliza, Moorooduc, Frankston and across the Mornington Peninsula.",
-    seoLabel: "SEO services in Mornington",
+    seoLabel: "SEO in Mornington and the Mornington Peninsula",
+    // 22 Oct 2026: links the "seo mount eliza" owner page.
+    nearbyLink: { href: "/mount-eliza/seo", label: "SEO in nearby Mount Eliza" },
     faqs: [
       { q: "Do you only work with businesses in Mornington township?", a: "No. We work across the Mornington Peninsula and Melbourne's south-east. Your marketing should reflect the areas you genuinely serve, including any travel, delivery or booking limits, rather than claiming every suburb." },
       { q: "What do your digital marketing packages include?", a: "Foundation is $140 a week plus GST for basic website and social support. Growth is $235 a week plus GST with local SEO and one ad platform. Complete Growth is $350 a week plus GST with both ad platforms. Ad spend, filming and larger builds are scoped separately." },
@@ -79,10 +86,32 @@ const areas: Record<string, {
     nearby: "We also work with businesses in Berwick, Lyndhurst, Hampton Park, Dandenong and across Melbourne's south-east.",
     seoLabel: "Explore our SEO services",
     seoHref: "/seo",
+    nearbyLink: { href: "/dandenong", label: "Marketing agency in nearby Dandenong" },
     faqs: [
       { q: "Do you need to be based in Cranbourne to do SEO for my business?", a: "No. Local rankings come from your business details, your Google Business Profile and pages that answer what Cranbourne customers search for. We are based in Mount Eliza and work with businesses across the south-east, and we only target the areas you genuinely serve." },
       { q: "Should I start with SEO or Google Ads in Cranbourne?", a: "SEO builds visibility over time, while Google Ads can bring enquiries sooner with a separate ad budget. We look at your current visibility, your Business Profile and the jobs you want more of, then suggest where to start. Our Growth and Complete Growth packages combine local SEO with advertising." },
       { q: "How do you measure SEO results for a Cranbourne business?", a: "Our local search plans include five tracked terms and one prioritised website or SEO improvement each month. We report search impressions and clicks separately from confirmed enquiries, so you can see what changed and what it brought in." },
+    ],
+  },
+  // Added 17 Oct 2026 (seo-loop-seam): /dandenong ranked 10.7 for "dandenong marketing agency" (also the homepage).
+  dandenong: {
+    heading: "A marketing agency for Dandenong businesses",
+    intro: "Seam Media works with businesses across Dandenong and Melbourne's south-east from our base on the Mornington Peninsula. Dandenong covers very different buyers: a household booking a local service in central Dandenong, and a purchaser comparing commercial or industrial suppliers in Dandenong South. As your marketing agency, we start by working out which of those customers you want more of, then build your website, Google Business Profile and ads around them.",
+    detail: "For local services, that means clear service pages, the areas you genuinely cover, such as Dandenong North, Doveton, Noble Park, Keysborough or Hallam, and an easy enquiry step on a phone. For commercial suppliers, it means capability pages, service boundaries and the details a buyer needs before asking for a quote. We plan SEO, Google Ads, your website and social content together, so each one supports the others.",
+    listTitle: "What our marketing in Dandenong covers",
+    list: [
+      "Local SEO and Google Maps: your Business Profile, categories, service areas and reviews",
+      "Service and capability pages for both local and commercial enquiries",
+      "Google Ads with call and form tracking for the jobs or orders you want more of",
+      "Websites and social content that show your real work and make it easy to get in touch",
+    ],
+    nearby: "We also work with businesses in Dandenong South, Keysborough, Lyndhurst, Cranbourne and across Melbourne's south-east.",
+    seoLabel: "SEO services in Dandenong and Dandenong South",
+    nearbyLink: { href: "/cranbourne", label: "SEO and marketing agency in nearby Cranbourne" },
+    faqs: [
+      { q: "Can you market a commercial or industrial business in Dandenong South?", a: "Yes, where that is part of your real service. We build capability and service pages around what you can substantiate, target the searches purchasers use, and measure quote enquiries separately from general visits. We do not add a local office or customer claims your business cannot back up." },
+      { q: "What do your marketing packages include?", a: "Foundation is $140 a week plus GST for basic website and social support. Growth is $235 a week plus GST with local SEO and one ad platform. Complete Growth is $350 a week plus GST with both ad platforms. Ad spend, filming and larger builds are scoped separately." },
+      { q: "Should a Dandenong business start with SEO or Google Ads?", a: "SEO builds visibility over time, while Google Ads can bring enquiries sooner with a separate ad budget. We look at your current visibility, your Business Profile and the work you want more of, then suggest where to start. Our Growth and Complete Growth packages combine local SEO with advertising." },
     ],
   },
 };
@@ -113,6 +142,7 @@ export default function LocalAgencyIntro({ slug }: { slug: string }) {
               <Link href={area.seoHref ?? `/${slug}/seo`} className="font-semibold text-[#405e6b] underline">{area.seoLabel}</Link>
               <Link href="/case-studies/the-south-east-fencer" className="font-semibold text-[#405e6b] underline">Read the South East Fencer case study</Link>
               <Link href="/marketing-packages" className="font-semibold text-[#405e6b] underline">Compare our marketing packages</Link>
+              {area.nearbyLink && <Link href={area.nearbyLink.href} className="font-semibold text-[#405e6b] underline">{area.nearbyLink.label}</Link>}
             </div>
           </div>
         </div>
