@@ -18,6 +18,10 @@ const areas: Record<string, {
   // Optional descriptive link to a neighbouring hub (added 17 Oct 2026).
   nearbyLink?: { href: string; label: string };
   faqs?: { q: string; a: string }[];
+  // Optional suburb-specific sections and process steps (added 23 Oct 2026 for the "seo cranbourne" owner page).
+  sections?: { title: string; copy: string }[];
+  processTitle?: string;
+  process?: { title: string; copy: string }[];
 }> = {
   "mount-eliza": {
     heading: "An SEO and digital marketing agency based in Mount Eliza",
@@ -87,10 +91,22 @@ const areas: Record<string, {
     seoLabel: "Explore our SEO services",
     seoHref: "/seo",
     nearbyLink: { href: "/dandenong", label: "Marketing agency in nearby Dandenong" },
+    sections: [
+      { title: "Local SEO for Cranbourne's growing suburbs", copy: "Cranbourne is really several markets: the established streets around the town centre, the newer estates in Cranbourne North, East and West, and fast-growing Clyde and Clyde North to the south-east. A plumber, cleaner or allied health clinic may serve some of these areas and not others, so we build your SEO around the suburbs you actually cover and make that clear on your website and Google Business Profile, rather than claiming all of Casey." },
+      { title: "Google Maps and your website work together", copy: "For most \"service plus Cranbourne\" searches, Google shows a Maps listing first and a short list of websites below it. Your Business Profile needs the right categories, service areas, photos and recent reviews, and your website needs a clear page for each main service that matches what the profile says. When both line up, Google has a clearer reason to show your business to Cranbourne customers." },
+    ],
+    processTitle: "How SEO in Cranbourne works with us",
+    process: [
+      { title: "1. Baseline", copy: "We review Search Console, your Google Business Profile, the pages Google can index and how enquiries reach you, then agree the services and Cranbourne areas that matter most." },
+      { title: "2. Improve", copy: "We fix crawl and page issues, make your service pages useful for Cranbourne customers, tidy your Business Profile and connect related pages, starting with the searches that already show demand." },
+      { title: "3. Review", copy: "Each month we compare the same searches and pages, report impressions and clicks separately from confirmed enquiries, and choose the next improvement from what is working." },
+    ],
     faqs: [
       { q: "Do you need to be based in Cranbourne to do SEO for my business?", a: "No. Local rankings come from your business details, your Google Business Profile and pages that answer what Cranbourne customers search for. We are based in Mount Eliza and work with businesses across the south-east, and we only target the areas you genuinely serve." },
       { q: "Should I start with SEO or Google Ads in Cranbourne?", a: "SEO builds visibility over time, while Google Ads can bring enquiries sooner with a separate ad budget. We look at your current visibility, your Business Profile and the jobs you want more of, then suggest where to start. Our Growth and Complete Growth packages combine local SEO with advertising." },
       { q: "How do you measure SEO results for a Cranbourne business?", a: "Our local search plans include five tracked terms and one prioritised website or SEO improvement each month. We report search impressions and clicks separately from confirmed enquiries, so you can see what changed and what it brought in." },
+      { q: "Can you help my business show up on Google Maps in Cranbourne?", a: "Yes. We review your Google Business Profile categories, service areas, photos and reviews, and make sure your website backs up what the profile says. Maps positions depend on where the searcher is and on competition, so we cannot guarantee a position, but we report how often your profile and pages appear for Cranbourne searches." },
+      { q: "How much does SEO in Cranbourne cost?", a: "Local SEO is part of our Growth package at $235 a week plus GST, which also includes Google Business Profile support and one ad platform. Complete Growth is $350 a week plus GST with both ad platforms. Ad spend, extra locations and larger content projects are scoped separately." },
     ],
   },
   // Added 17 Oct 2026 (seo-loop-seam): /dandenong ranked 10.7 for "dandenong marketing agency" (also the homepage).
@@ -125,6 +141,16 @@ export default function LocalAgencyIntro({ slug }: { slug: string }) {
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">{area.heading}</h2>
         <p className="text-lg text-gray-700 leading-relaxed mb-5">{area.intro}</p>
         <p className="text-lg text-gray-700 leading-relaxed mb-10">{area.detail}</p>
+        {area.sections && (
+          <div className="grid md:grid-cols-2 gap-8 mb-10">
+            {area.sections.map((section) => (
+              <div key={section.title}>
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">{section.title}</h3>
+                <p className="text-gray-700 leading-relaxed">{section.copy}</p>
+              </div>
+            ))}
+          </div>
+        )}
         <div className="grid md:grid-cols-2 gap-8 items-start">
           <div className="rounded-2xl border border-gray-200 bg-[#f4f7f8] p-8">
             <h3 className="text-xl font-bold text-gray-900 mb-4">{area.listTitle}</h3>
@@ -146,6 +172,19 @@ export default function LocalAgencyIntro({ slug }: { slug: string }) {
             </div>
           </div>
         </div>
+        {area.process && (
+          <div className="mt-12">
+            <h3 className="text-2xl font-bold text-gray-900 mb-5">{area.processTitle}</h3>
+            <div className="grid md:grid-cols-3 gap-6">
+              {area.process.map((step) => (
+                <div key={step.title} className="rounded-2xl border border-gray-200 p-6">
+                  <h4 className="text-lg font-bold text-gray-900 mb-3">{step.title}</h4>
+                  <p className="text-gray-700 leading-relaxed">{step.copy}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
         {area.faqs && (
           <div className="mt-12">
             <h3 className="text-2xl font-bold text-gray-900 mb-5">Common questions</h3>

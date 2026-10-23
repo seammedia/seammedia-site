@@ -7,8 +7,9 @@ import { locationProfiles } from "@/lib/locations";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
-  title: "SEO & Marketing Agency Cranbourne | Seam Media",
-  description: "Seam Media is an SEO and marketing agency for Cranbourne businesses: local SEO, Google Maps, Google Ads and websites that turn searches into enquiries.",
+  // 23 Oct 2026 (seo-loop-seam): title leads with "seo cranbourne" (organic 12, Maps 1.5); H1 keeps the agency wording.
+  title: "SEO Cranbourne | Local SEO & Marketing Agency | Seam Media",
+  description: "SEO in Cranbourne from a south-east marketing agency: Google Maps, service pages, technical fixes and Google Ads that turn local searches into enquiries.",
   path: "/cranbourne",
 });
 
@@ -43,7 +44,7 @@ export default function CranbournePage() {
             </span>
           </h1>
           <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed mb-8">
-            Seam Media is an SEO and marketing agency for Cranbourne businesses, helping you get found on Google and turn local searches into enquiries.
+            Seam Media provides SEO in Cranbourne as a local SEO and marketing agency, helping Cranbourne businesses get found on Google and turn local searches into enquiries.
             From local SEO and Google Maps to Google Ads, websites and social media, everything is planned around the work you want more of.
           </p>
         </div>

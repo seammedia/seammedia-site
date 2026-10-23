@@ -162,7 +162,7 @@ const localSeoExtras: Record<string, { title?: string; h1?: string; description?
     faqs: [
       { q: "Do you do SEO for Frankston businesses?", a: "Yes. Frankston is local for us, and we work with businesses across Frankston, Frankston South, Langwarrin, Seaford and Carrum Downs. We improve the website pages and Google Business Profile that answer the searches your customers use, and report website clicks separately from Maps actions and confirmed enquiries." },
     ],
-    nearby: [{ label: "SEO in nearby Mount Eliza", href: "/mount-eliza/seo" }, { label: "SEO in Mornington and the peninsula", href: "/mornington/seo" }, { label: "SEO in Dandenong South", href: "/dandenong/seo" }],
+    nearby: [{ label: "SEO in nearby Mount Eliza", href: "/mount-eliza/seo" }, { label: "SEO in Mornington and the peninsula", href: "/mornington/seo" }, { label: "SEO in Dandenong South", href: "/dandenong/seo" }, { label: "SEO in Cranbourne", href: "/cranbourne" }],
   },
   // 18 Oct 2026: "seo dandenong south" ranked 21 on this page (the /dandenong hub also ranked). Dandenong South has
   // no page of its own, so /dandenong/seo owns it; /seo, /dandenong, /frankston/seo and /construction-marketing
@@ -176,7 +176,7 @@ const localSeoExtras: Record<string, { title?: string; h1?: string; description?
       { q: "Do you do SEO for businesses in Dandenong South?", a: "Yes. Dandenong South is part of the Dandenong area we work across, along with Keysborough, Lyndhurst, Hallam and Dandenong North. We improve the pages and Business Profile that answer the searches your buyers use, rather than creating a near-identical page for every suburb." },
       { q: "How do you measure SEO for a commercial supplier?", a: "We track the searches that show your capability pages, the clicks they bring and the quote requests that come through, reported separately from general visits and phone calls. That way you can see whether the right buyers are finding you, not just whether impressions went up." },
     ],
-    nearby: [{ label: "SEO in Frankston and Carrum Downs", href: "/frankston/seo" }, { label: "SEO and marketing in Cranbourne", href: "/cranbourne" }],
+    nearby: [{ label: "SEO in Frankston and Carrum Downs", href: "/frankston/seo" }, { label: "SEO in nearby Cranbourne", href: "/cranbourne" }],
   },
 };
 
