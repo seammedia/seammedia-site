@@ -38,6 +38,24 @@ const areas: Record<string, {
     seoLabel: "SEO services in Mount Eliza",
     // 20 Oct 2026: links the "seo mornington" owner page.
     nearbyLink: { href: "/mornington/seo", label: "SEO in nearby Mornington" },
+    // 24 Oct 2026 (money search "digital marketing agency mount eliza": hub at 8.2 last 7 days vs 9.0 before).
+    // Title/H1 left alone: the hub's "seo agency / company mount eliza" searches reached 2.7 and 5.1.
+    sections: [
+      { title: "Digital marketing for Mount Eliza's village and the wider peninsula", copy: "Mount Eliza businesses range from shops, cafes and clinics around the village on Mount Eliza Way to trades and services that travel to Frankston South, Mornington, Moorooduc and Baxter. Their customers search in two ways: locals looking for something nearby, often on Google Maps, and peninsula residents comparing a few options before they call. Our digital marketing in Mount Eliza starts with which of those customers you want more of and the areas you genuinely serve, then makes that clear on your website, Google Business Profile, ads and social channels." },
+      { title: "One plan instead of separate suppliers", copy: "Many small businesses have a web designer, someone posting on social media and an ad account nobody checks, all working separately. As your digital marketing agency, we plan local SEO, Google Ads, your website and social content together, so the same services, areas and offers appear everywhere and each channel supports the others. You deal directly with the person doing the work, here in Australia, with reporting that shows what changed and what it brought in." },
+    ],
+    processTitle: "How our digital marketing in Mount Eliza works",
+    process: [
+      { title: "1. Baseline", copy: "We review your website, Google Business Profile, Search Console, any ad accounts and how enquiries reach you, then agree the services and areas that matter most." },
+      { title: "2. Plan and build", copy: "We fix what is holding you back first, such as missing service pages, an incomplete Business Profile or untracked calls, then add the SEO, ads and content that suit your goals and budget." },
+      { title: "3. Review", copy: "Each month we compare the same searches, campaigns and pages, report visibility separately from confirmed enquiries, and choose the next improvement from what is working." },
+    ],
+    faqs: [
+      { q: "Is Seam Media actually based in Mount Eliza?", a: "Yes. Seam Media is based in Mount Eliza on the Mornington Peninsula. We work with businesses in Mount Eliza and the neighbouring suburbs, across Melbourne's south-east, and with clients right across Australia." },
+      { q: "What does a digital marketing agency do for a Mount Eliza business?", a: "We help local customers find you and choose you: local SEO and Google Maps, Google Ads with call and form tracking, a website with clear service pages, and social content that keeps you visible. The mix depends on the work you want more of and your budget." },
+      { q: "Should I start with SEO, Google Ads or social media?", a: "SEO builds visibility over time, Google Ads can bring enquiries sooner with a separate ad budget, and social media keeps you in front of people who already know you. We look at your current visibility and the jobs you want more of, then suggest where to start." },
+      { q: "What do your digital marketing packages include?", a: "Foundation is $140 a week plus GST for basic website and social support. Growth is $235 a week plus GST with local SEO and one ad platform. Complete Growth is $350 a week plus GST with both ad platforms. Ad spend, filming and larger builds are scoped separately." },
+    ],
   },
   frankston: {
     // 22 Oct 2026: no "SEO" in this heading; /frankston/seo owns the Frankston SEO searches (see app/frankston/page.tsx).
