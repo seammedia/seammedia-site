@@ -8,8 +8,8 @@ import { locationProfiles } from "@/lib/locations";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
-  title: "Marketing Agency Dandenong | SEO & Google Ads | Seam Media",
-  description: "Seam Media is a marketing agency for Dandenong businesses: local SEO, Google Ads, websites and social content for local and commercial enquiries.",
+  title: "Marketing Agency Dandenong | Digital Marketing | Seam Media",
+  description: "Digital marketing agency in Dandenong: Google Ads, local search, websites and social content for local services and Dandenong South commercial buyers.",
   path: "/dandenong",
 });
 
@@ -17,7 +17,7 @@ export default function DandenongPage() {
   const services = [
     { href: "/social-media", label: "Social Media Management", description: "Grow your online presence with strategic social media campaigns tailored for Dandenong businesses." },
     { href: "/web-design", label: "Website Design", description: "Custom, responsive websites designed to convert visitors into customers." },
-    { href: "/seo", label: "SEO", description: "Rank higher in search results and attract more local Dandenong customers." },
+    { href: "/dandenong/seo", label: "SEO in Dandenong", description: "Rank higher in search results and attract more local Dandenong customers." },
     { href: "/graphic-design", label: "Graphic Design", description: "Professional design services for all your branding and marketing materials." },
     { href: "/branding", label: "Branding", description: "Build a memorable brand identity that resonates with your target audience." },
     { href: "/adwords", label: "Google Ads", description: "Drive immediate results with targeted Google Ads campaigns." },
@@ -45,7 +45,7 @@ export default function DandenongPage() {
           </h1>
           <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed mb-8">
             Seam Media is a marketing agency for Dandenong businesses, from local services in central Dandenong to commercial and industrial suppliers in Dandenong South.
-            Local SEO, Google Ads, websites and social media are planned together around the enquiries you want more of.
+            Google Ads, local search, websites and social media are planned together around the enquiries you want more of.
           </p>
         </div>
       </Section>

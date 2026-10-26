@@ -110,7 +110,7 @@ const areas: Record<string, {
     nearby: "We also work with businesses in Berwick, Lyndhurst, Hampton Park, Dandenong and across Melbourne's south-east.",
     seoLabel: "Explore our SEO services",
     seoHref: "/seo",
-    nearbyLink: { href: "/dandenong", label: "Marketing agency in nearby Dandenong" },
+    nearbyLink: { href: "/dandenong", label: "Digital marketing agency in nearby Dandenong" },
     nearbySeoLink: { href: "/dandenong/seo", label: "SEO in nearby Dandenong" },
     sections: [
       { title: "Local SEO for Cranbourne's growing suburbs", copy: "Cranbourne is really several markets: the established streets around the town centre, the newer estates in Cranbourne North, East and West, and fast-growing Clyde and Clyde North to the south-east. A plumber, cleaner or allied health clinic may serve some of these areas and not others, so we build your SEO around the suburbs you actually cover and make that clear on your website and Google Business Profile, rather than claiming all of Casey." },
@@ -131,8 +131,11 @@ const areas: Record<string, {
     ],
   },
   // Added 17 Oct 2026 (seo-loop-seam): /dandenong ranked 10.7 for "dandenong marketing agency" (also the homepage).
+  // 26 Oct 2026 (money search): hub 10.3 for "dandenong marketing agency" and 3.6 for "digital marketing agency
+  // dandenong", but also 53-56 for "seo dandenong" searches owned by /dandenong/seo. Title and hero dropped "SEO"
+  // (the Frankston lesson), and the hub gained local sections, a process and two more FAQs.
   dandenong: {
-    heading: "A marketing agency for Dandenong businesses",
+    heading: "A digital marketing agency for Dandenong businesses",
     intro: "Seam Media works with businesses across Dandenong and Melbourne's south-east from our base on the Mornington Peninsula. Dandenong covers very different buyers: a household booking a local service in central Dandenong, and a purchaser comparing commercial or industrial suppliers in Dandenong South. As your marketing agency, we start by working out which of those customers you want more of, then build your website, Google Business Profile and ads around them.",
     detail: "For local services, that means clear service pages, the areas you genuinely cover, such as Dandenong North, Doveton, Noble Park, Keysborough or Hallam, and an easy enquiry step on a phone. For commercial suppliers, it means capability pages, service boundaries and the details a buyer needs before asking for a quote. We plan SEO, Google Ads, your website and social content together, so each one supports the others.",
     listTitle: "What our marketing in Dandenong covers",
@@ -145,10 +148,22 @@ const areas: Record<string, {
     nearby: "We also work with businesses in Dandenong South, Keysborough, Lyndhurst, Cranbourne and across Melbourne's south-east.",
     seoLabel: "SEO services in Dandenong and Dandenong South",
     nearbyLink: { href: "/cranbourne", label: "SEO and marketing agency in nearby Cranbourne" },
+    sections: [
+      { title: "Marketing for central Dandenong's shops and services", copy: "Central Dandenong is one of the busiest shopping and service centres in Melbourne's south-east, and its customers come from Dandenong North, Doveton, Noble Park, Springvale and beyond. Most of them find a business on their phone: a Google search, a Maps listing, a quick look at the website or social pages, then a call or booking. As your marketing agency in Dandenong, we make each of those steps clear: accurate Business Profile details, a page for each main service, real photos of your work and an easy way to get in touch." },
+      { title: "Marketing for Dandenong South suppliers and trades", copy: "Dandenong South buyers are often other businesses comparing manufacturers, suppliers, fabricators or trade services before asking for a quote. They want to see what you make or do, the job sizes you take on, where you deliver or work, and what to send with a quote request. We build that into capability pages and Google Ads aimed at purchasers, and track quote requests separately from general visits, so you can see which channel brings the work you want." },
+    ],
+    processTitle: "How our marketing in Dandenong works",
+    process: [
+      { title: "1. Baseline", copy: "We review your website, Google Business Profile, Search Console, any ad accounts and how enquiries reach you, then agree the customers, services and areas that matter most." },
+      { title: "2. Plan and build", copy: "We fix what is holding you back first, such as missing service or capability pages, an incomplete Business Profile or untracked calls, then add the ads, search work and content that suit your goals and budget." },
+      { title: "3. Review", copy: "Each month we compare the same searches, campaigns and pages, report visibility separately from confirmed enquiries, and choose the next improvement from what is working." },
+    ],
     faqs: [
+      { q: "Do you work with businesses in Dandenong?", a: "Yes. We work with businesses across Dandenong, Dandenong South, Dandenong North, Doveton, Noble Park and Keysborough from our base on the Mornington Peninsula, and Heath does the work himself here in Australia. We only target the areas and customers you genuinely serve." },
       { q: "Can you market a commercial or industrial business in Dandenong South?", a: "Yes, where that is part of your real service. We build capability and service pages around what you can substantiate, target the searches purchasers use, and measure quote enquiries separately from general visits. We do not add a local office or customer claims your business cannot back up." },
       { q: "What do your marketing packages include?", a: "Foundation is $140 a week plus GST for basic website and social support. Growth is $235 a week plus GST with local SEO and one ad platform. Complete Growth is $350 a week plus GST with both ad platforms. Ad spend, filming and larger builds are scoped separately." },
       { q: "Should a Dandenong business start with SEO or Google Ads?", a: "SEO builds visibility over time, while Google Ads can bring enquiries sooner with a separate ad budget. We look at your current visibility, your Business Profile and the work you want more of, then suggest where to start. Our Growth and Complete Growth packages combine local SEO with advertising." },
+      { q: "How do you measure marketing results for a Dandenong business?", a: "We report search impressions, clicks, ad results and Business Profile actions separately from confirmed enquiries, so you can see what changed and what it brought in. For commercial suppliers we track quote requests on their own, because a single good quote can matter more than many general visits." },
     ],
   },
 };

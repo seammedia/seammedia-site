@@ -172,7 +172,9 @@ const localSeoExtras: Record<string, { title?: string; h1?: string; description?
   // section now leads, with a section on different Dandenong businesses and a Dandenong FAQ. Links in with
   // "SEO in Dandenong" anchors: homepage, /seo, /dandenong, /cranbourne, /frankston/seo, /construction-marketing
   // and the Melbourne SEO guide.
+  // 26 Oct 2026: links back to the hub as "Digital marketing agency in Dandenong" (the hub owns the agency searches).
   dandenong: {
+    hubLabel: "Digital marketing agency in Dandenong",
     title: "SEO Dandenong & Dandenong South | Seam Media",
     h1: "SEO services for Dandenong and Dandenong South businesses",
     description: "SEO in Dandenong and Dandenong South: service pages for local customers and commercial buyers, Google Maps, technical fixes and clear reporting.",
@@ -234,7 +236,7 @@ export const constructionPage: SearchPage = {
     {q:"What should a construction case study include?",a:"Use a real project brief, the work your business performed, relevant constraints, approved photos and the result you can substantiate. Do not claim another contractor's work or publish private client details without permission."},
     {q:"Can marketing help when I only want larger projects?",a:"Your service pages and enquiry form can explain project fit and request the information you need to qualify a lead. Campaigns can focus on the relevant service. Neither SEO nor advertising guarantees the value or volume of future contracts."},
     {q:"What is included in the weekly packages?",a:"Foundation is $140 a week plus GST for basic website and social support. Growth is $235 a week plus GST with local SEO and one ad platform. Complete Growth is $350 a week plus GST with both ad platforms. Ad spend, substantial builds and filming are scoped separately."},
-  ], relatedTitle: "Services for construction businesses", links: [{label:"Marketing for tradies",href:"/tradie-marketing"},{label:"Frankston marketing",href:"/frankston"},{label:"Marketing agency in Dandenong",href:"/dandenong"},{label:"SEO in Dandenong and Dandenong South",href:"/dandenong/seo"},{label:"Marketing packages",href:"/marketing-packages"}],
+  ], relatedTitle: "Services for construction businesses", links: [{label:"Marketing for tradies",href:"/tradie-marketing"},{label:"Frankston marketing",href:"/frankston"},{label:"Digital marketing agency in Dandenong",href:"/dandenong"},{label:"SEO in Dandenong and Dandenong South",href:"/dandenong/seo"},{label:"Marketing packages",href:"/marketing-packages"}],
 };
 
 export const frankstonWebPage: SearchPage = {
