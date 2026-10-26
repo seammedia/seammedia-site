@@ -1,6 +1,6 @@
 // Google rating badge. Figures checked against Seam Media's Google Business Profile
-// on 15 October 2026 (5.0 from 31 reviews). Update both numbers when the profile changes.
-export const GOOGLE_RATING = { rating: "5.0", count: 31 };
+// on 26 October 2026 (4.9 from 35 reviews). Update both numbers when the profile changes.
+export const GOOGLE_RATING = { rating: "4.9", count: 35 };
 const REVIEWS_URL = "https://www.google.com/search?q=Seam+Media+reviews";
 
 function GoogleG({ className = "" }: { className?: string }) {
