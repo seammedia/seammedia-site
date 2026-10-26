@@ -19,6 +19,7 @@ const routes = [
   "contact",
   "terms-and-conditions",
   "why-seam",
+  "best-digital-marketing-agencies-frankston",
   "marketing-packages",
   "social-media",
   "web-design",
