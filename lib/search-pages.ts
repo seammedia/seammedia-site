@@ -99,8 +99,8 @@ const localServiceAreas: Record<string, SearchPage["serviceArea"]> = {
   },
   mornington: {
     mapQuery: "Mornington VIC 3931",
-    suburbs: ["Mornington", "Mount Martha", "Mount Eliza", "Moorooduc", "Tuerong"],
-    copy: "Seam Media is based on the Mornington Peninsula, so Mornington is local for us. Heath does the work himself, here in Australia, and we work with businesses across Mornington and the surrounding peninsula.",
+    suburbs: ["Mornington", "Mount Martha", "Mount Eliza", "Moorooduc", "Tuerong", "Dromana", "Rosebud", "Red Hill", "Hastings"],
+    copy: "Seam Media is based on the Mornington Peninsula, so Mornington is local for us. Heath does the work himself, here in Australia, and we work with businesses across Mornington and the wider Mornington Peninsula.",
   },
 };
 
@@ -122,22 +122,27 @@ const localSeoExtras: Record<string, { title?: string; h1?: string; description?
     faqs: [
       { q: "Do you do SEO for Mount Eliza businesses?", a: "Yes. We are based in Mount Eliza, so local businesses talk with the person doing the work. We improve the website pages and Google Business Profile that answer the searches your customers use, including nearby Mornington and Frankston searches where you genuinely serve those areas, and report website clicks separately from Maps actions and confirmed enquiries." },
     ],
-    nearby: [{ label: "SEO in Mornington", href: "/mornington/seo" }, { label: "SEO in Frankston", href: "/frankston/seo" }],
+    nearby: [{ label: "SEO in Mornington and the Mornington Peninsula", href: "/mornington/seo" }, { label: "SEO in Frankston", href: "/frankston/seo" }],
   },
   // 20 Oct 2026 (money searches "seo mornington" 29.1 and "seo mornington peninsula" 39.1 organic, Maps 1.0): this
   // page owns both. The title, H1 and description lead with SEO Mornington and the peninsula, a Mornington section
   // and a peninsula section replace the shared template feel, and the homepage, /seo, /mornington, /mount-eliza,
   // /mount-eliza/seo, /frankston/seo and the SEO guides link here with "SEO in Mornington" anchors.
+  // 27 Oct 2026 (money search "seo mornington peninsula": organic 33.5 last 7 days vs 38.9 before, Maps 1.3; "seo
+  // mornington" 30.1). Title now leads with the exact peninsula search, the peninsula section is fuller, a section on
+  // different peninsula businesses is new, and the FAQ covers both. Links in with peninsula anchors: /mornington
+  // (service card), /mount-eliza (hub), /mount-eliza/seo, /mornington/web-design, /mornington/social-media, SEO guides.
   mornington: {
-    title: "SEO Mornington & Mornington Peninsula | Seam Media",
+    title: "SEO Mornington Peninsula & Mornington | Seam Media",
     h1: "SEO services in Mornington and across the Mornington Peninsula",
-    description: "SEO in Mornington and across the Mornington Peninsula: service pages that answer local searches, Google Maps, technical fixes and plain reporting.",
+    description: "SEO on the Mornington Peninsula from a team based here: service pages for Mornington and peninsula searches, Google Maps, technical fixes and reporting.",
     sections: [
       { title: "SEO for Mornington businesses, from just up the road", copy: "When someone needs a service in Mornington, they usually search for it plus Mornington on their phone, and Google shows a Maps listing and a short list of websites. Locals, holiday-home owners and visitors all search this way, so your Google Business Profile needs to match the services you offer, and your website needs a clear page for each main service that says what you do, whether customers come to you in Mornington or you travel to them, and how to get a quote or book. We start with the services you want more of in Mornington, check which of your pages Google already shows for those searches, and improve those pages first. We are based next door in Mount Eliza, and Heath does the work himself here in Australia." },
-      { title: "SEO across the Mornington Peninsula", copy: "Many Mornington businesses also serve Mount Martha, Mount Eliza, Moorooduc and further down the peninsula. Searches for the wider Mornington Peninsula only bring the right customers when your pages say where you genuinely work and any travel, delivery or booking limits. We name those areas on the pages where they apply, and only suggest a separate peninsula page when it would give customers different information, rather than building a near-identical page for every town." },
+      { title: "SEO across the Mornington Peninsula", copy: "Many Mornington businesses also serve Mount Martha, Mount Eliza, Moorooduc and further down the peninsula. When a peninsula business searches for SEO on the Mornington Peninsula, or a customer searches for a service plus a peninsula town, Google looks for pages that clearly say where the business genuinely works. We name those areas on the pages where they apply, along with any travel, delivery or booking limits, and only suggest a separate page for a town when it would give customers different information, rather than building a near-identical page for every town." },
+      { title: "What SEO looks like for different peninsula businesses", copy: "A trade or home service that travels from Mornington to Dromana, Rosebud, Red Hill or Hastings needs service pages that list the areas it covers and explain how a quote is prepared. A clinic, studio or other appointment-based practice needs pages that explain who an appointment is for and how to book. A shop, cafe or venue in Main Street or a peninsula village relies most on its Google Business Profile: accurate hours, photos, categories and recent reviews, for locals, holiday-home owners and visitors alike. Seam Media is based on the Mornington Peninsula in Mount Eliza, so we plan the work around which of these fits your business, and Heath does the work himself here in Australia." },
     ],
     faqs: [
-      { q: "Do you do SEO for Mornington businesses?", a: "Yes. Mornington is local for us, and we work with businesses across Mornington, Mount Martha, Mount Eliza and the wider Mornington Peninsula. We improve the website pages and Google Business Profile that answer the searches your customers use, and report website clicks separately from Maps actions and confirmed enquiries." },
+      { q: "Do you do SEO for Mornington and Mornington Peninsula businesses?", a: "Yes. We are based on the Mornington Peninsula, in Mount Eliza, and work with businesses in Mornington, Mount Martha, Mount Eliza and across the wider peninsula. We improve the website pages and Google Business Profile that answer the searches your customers use, and report website clicks separately from Maps actions and confirmed enquiries." },
     ],
     nearby: [{ label: "SEO in nearby Mount Eliza", href: "/mount-eliza/seo" }, { label: "SEO in Frankston", href: "/frankston/seo" }],
   },

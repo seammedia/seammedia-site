@@ -39,7 +39,7 @@ const areas: Record<string, {
     nearby: "We also work with businesses in Mornington, Mount Martha, Frankston South, Langwarrin and across the Mornington Peninsula.",
     seoLabel: "SEO services in Mount Eliza",
     // 20 Oct 2026: links the "seo mornington" owner page.
-    nearbyLink: { href: "/mornington/seo", label: "SEO in nearby Mornington" },
+    nearbyLink: { href: "/mornington/seo", label: "SEO in Mornington and across the Mornington Peninsula" },
     // 24 Oct 2026 (money search "digital marketing agency mount eliza": hub at 8.2 last 7 days vs 9.0 before).
     // Title/H1 left alone: the hub's "seo agency / company mount eliza" searches reached 2.7 and 5.1.
     sections: [

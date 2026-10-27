@@ -82,7 +82,8 @@ export default function MorningtonWebDesignPage() {
             <div className="bg-white p-8 rounded-lg shadow-sm">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">SEO Optimized</h3>
               <p className="text-gray-700 leading-relaxed">
-                Built for search engines from the ground up. Your new website will be structured and coded to help you rank higher in Google search results for Mornington-area searches.
+                Built for search engines from the ground up. Your new website will be structured and coded to help you rank higher in Google search results for Mornington-area searches. To keep improving after launch, see our{' '}
+                <Link href="/mornington/seo" className="font-semibold text-[#405e6b] underline">SEO in Mornington and across the Mornington Peninsula</Link>.
               </p>
             </div>
           </div>
@@ -124,7 +125,7 @@ export default function MorningtonWebDesignPage() {
             <div>
               <h3 className="text-2xl font-bold text-gray-900 mb-3">Local Expertise</h3>
               <p className="text-gray-700 leading-relaxed">
-                As a Mornington-based agency, we understand local businesses and their unique needs. We create websites that resonate with your target audience in the area.
+                We are based next door in Mount Eliza, on the Mornington Peninsula, so we understand local businesses and their needs. We create websites that resonate with your target audience in the area.
               </p>
             </div>
 
