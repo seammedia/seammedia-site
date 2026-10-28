@@ -38,6 +38,10 @@ export default function FrankstonSocialMediaPage() {
           <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed mb-8">
             Grow your Frankston business with strategic social media management that drives engagement, builds community, and generates real results.
           </p>
+          <p className="text-lg text-gray-700 leading-relaxed">
+            Sending followers to an old website? See our{' '}
+            <Link href="/frankston/web-design" className="font-semibold text-[#405e6b] underline">web design in Frankston</Link>.
+          </p>
         </div>
       </Section>
 
