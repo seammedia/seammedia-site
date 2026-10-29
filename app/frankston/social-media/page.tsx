@@ -40,7 +40,8 @@ export default function FrankstonSocialMediaPage() {
           </p>
           <p className="text-lg text-gray-700 leading-relaxed">
             Sending followers to an old website? See our{' '}
-            <Link href="/frankston/web-design" className="font-semibold text-[#405e6b] underline">web design in Frankston</Link>.
+            <Link href="/frankston/web-design" className="font-semibold text-[#405e6b] underline">web design in Frankston</Link>, and to be found when locals search Google, our{' '}
+            <Link href="/frankston/seo" className="font-semibold text-[#405e6b] underline">SEO services in Frankston</Link>.
           </p>
         </div>
       </Section>

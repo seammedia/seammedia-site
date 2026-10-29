@@ -83,7 +83,8 @@ export default function FrankstonGraphicDesignPage() {
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Brand Identity</h3>
               <p className="text-gray-700 leading-relaxed">
                 Develop a cohesive brand identity with consistent visual elements. We create comprehensive brand guidelines including color palettes, typography, and design standards. To carry your brand onto a new site, see our{' '}
-                <Link href="/frankston/web-design" className="font-semibold text-[#405e6b] underline">web design in Frankston</Link>.
+                <Link href="/frankston/web-design" className="font-semibold text-[#405e6b] underline">web design in Frankston</Link>, and to help that site show up in local searches, our{' '}
+                <Link href="/frankston/seo" className="font-semibold text-[#405e6b] underline">SEO in Frankston</Link>.
               </p>
             </div>
           </div>
