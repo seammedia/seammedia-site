@@ -217,6 +217,9 @@ export default function NicheLanding({ config }: { config: NicheConfig }) {
                 </article>
               ))}
             </div>
+            {config.tradeSection.guide && (
+              <Link href={config.tradeSection.guide.path} className="mt-8 inline-flex items-center gap-2 text-pink-400 hover:text-pink-300">{config.tradeSection.guide.title} <ArrowRight size={16} /></Link>
+            )}
           </div>
         </section>
       )}

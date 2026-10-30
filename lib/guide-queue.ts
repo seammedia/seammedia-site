@@ -79,17 +79,21 @@ export const guideQueue: ScheduledGuide[] = [
   {
     date: "2026-10-14",
     category: "Trades",
-    excerpt: "SEO for plumbers in plain English: the service pages, Google Business Profile details and reviews that help you show up for urgent plumbing searches.",
+    excerpt: "SEO for plumbers in plain English: the Google Business Profile details, job and suburb pages, reviews and call tracking that help you show up for urgent plumbing searches.",
     guide: {
-      title: "SEO for plumbers: the pages and profile details that bring calls",
+      title: "SEO for plumbers: how to get more calls from Google",
       path: "/blog/seo-for-plumbers",
-      description: "Plain-English SEO for plumbers: service pages for urgent jobs, Google Business Profile details, reviews and how to measure calls, not just rankings.",
-      published: "2026-10-14", modified: "2026-10-14",
+      description: "SEO for plumbers in plain English: Google Business Profile, a page for each plumbing job, real suburb pages, reviews and tracking calls, not just rankings.",
+      published: "2026-10-14", modified: "2026-10-30",
       intro: [
         "Plumbing searches are often urgent. Someone with a burst pipe or no hot water picks from the first few businesses Google shows, usually on their phone. SEO for a plumber is about making sure you are one of those businesses for the jobs and areas you want, and that your listing and website make calling you the obvious next step.",
-        "There are two places to work on: your Google Business Profile, which drives the map results, and your website, which drives the regular search results underneath.",
+        "There are two places to work on: your Google Business Profile, which drives the map results, and your website, which drives the regular search results underneath. This guide covers what SEO for plumbers involves, what to do first, how long it usually takes and when it makes sense to get help.",
       ],
       sections: [
+        { title: "What SEO for plumbers actually covers", paragraphs: [
+          "Most plumbing work comes from two kinds of search. The first is the map results, the three businesses Google shows on a map for searches like \"plumber near me\" or \"emergency plumber Frankston\". These come from your Google Business Profile. The second is the regular results underneath, which come from the pages on your website.",
+          "The searches worth the most are the ones that name a job and a place: \"blocked drains Dandenong\", \"hot water repairs Mornington\", \"gas fitter Cranbourne\". People typing those usually want someone today. Searches like \"how to unblock a toilet\" bring visitors who often fix it themselves, so they matter less for a plumbing business.",
+        ], checklist: ["List the five jobs you most want more of.", "Write down the suburbs you want them in.", "Search each job and suburb on your phone and note who shows up on the map and below it."] },
         { title: "Start with your Google Business Profile", paragraphs: [
           "Choose the primary category that best describes your business, add the services you actually offer and set your real service areas. Google says local results are based mainly on relevance, distance and prominence, so a complete, accurate profile helps with relevance, and genuine reviews help with prominence.",
           "Keep your name as it appears on your van and invoices. Adding keywords or suburbs to the business name breaks Google's guidelines and can get a profile suspended.",
@@ -101,16 +105,30 @@ export const guideQueue: ScheduledGuide[] = [
         { title: "Cover your areas without copying pages", paragraphs: [
           "If you cover several suburbs, it is tempting to create a page for each one with the suburb name swapped in. Near-identical pages give Google little reason to show them. Write a smaller number of area pages with genuinely local information, such as the jobs you do there, older housing stock or water authority requirements, and link them to your service pages.",
         ] },
+        { title: "Make the website easy to use on a phone", paragraphs: [
+          "Most urgent plumbing searches happen on a phone, so the number should be one tap away at the top of every page, and the page should load quickly on mobile data. Show your licence details, the areas you cover and when you can attend, because those are the things people check before they call.",
+          "Give each page a clear title and heading that says the job and the area, and use the same business name, phone number and address details on your website and your Google Business Profile. Google's own SEO starter guide is a good plain-English checklist for the rest.",
+        ], checklist: ["Tap-to-call number at the top of every page.", "Licence details and service areas easy to find.", "A clear title and heading on every service page."] },
         { title: "Ask for reviews the right way", paragraphs: [
           "Ask every happy customer for a Google review, ideally with a short link sent by text after the job. Do not offer discounts in exchange, and do not write reviews yourself. Reply to reviews, good and bad, in a calm and helpful way.",
         ] },
         { title: "Measure calls, not just rankings", paragraphs: [
           "Rankings move around and differ from suburb to suburb, so a single ranking report can mislead. Track calls from your profile and website, completed forms and the searches in Search Console that bring visitors. Over a few months those numbers tell you whether the work is paying off.",
-          "Seam Media's plumber marketing page explains how we combine SEO with Google Ads for plumbers, including bidding more for high-value jobs like hot water and gas than for small call-outs.",
         ], checklist: ["Record calls and forms each month.", "Check Search Console queries and pages.", "Compare the same months each year where you can."] },
+        { title: "Doing it yourself or getting help", paragraphs: [
+          "A plumber can do the basics in a few evenings: fill in the Business Profile, ask for reviews and write a proper page for the main jobs. Where it gets harder is keeping it going every week, writing pages for each job and area, and checking which searches bring calls.",
+          "Seam Media's plumber marketing combines local SEO with Google Ads, with a page, ad and bid for each type of plumbing job, so hot water and gas work get more budget than a dripping tap. Local SEO and Google Business Profile management are part of our Growth and Complete Growth packages. For an example of local search work for a trade business, our South East Fencer case study shows clicks from Google rising from about 3 a day in August 2025 to more than 20 a day by mid-2026.",
+        ], links: [{ title: "Marketing for plumbers, including SEO and Google Ads", path: "/plumber-marketing" }, { title: "SEO for tradies", path: "/tradie-seo" }, fencerLink] },
       ],
-      sources: [googleLocal, googleProfileRules, googleServiceArea, googleHelpful],
-      links: [{ title: "Marketing for plumbers", path: "/plumber-marketing" }, { title: "Marketing for tradies", path: "/tradie-marketing" }, packagesLink],
+      faqs: [
+        { q: "How long does SEO take for a plumber?", a: "Google Business Profile improvements often show within a few weeks once the profile is complete and reviews start coming in. New service and suburb pages usually take a few months to rank well, so judge the work on calls and forms over three to six months rather than week to week." },
+        { q: "Is SEO or Google Ads better for plumbers?", a: "They do different jobs. Google Ads can put you at the top for urgent searches from the day the campaign starts, and you pay for each click. SEO takes longer but keeps bringing calls without paying per click. Many plumbers run ads for urgent, high-value jobs while their profile and pages build up." },
+        { q: "Do plumbers need a page for every suburb?", a: "No. A page for each main job matters more. Add area pages only for the places you most want work, and give each one genuinely local information rather than the same text with a different suburb name." },
+        { q: "Can I put my suburb or \"plumber\" in my Google business name?", a: "Only if it is part of the name you actually trade under. Google's guidelines don't allow extra keywords or locations in the business name, and breaking them can get the profile suspended." },
+        { q: "How much does SEO for plumbers cost with Seam Media?", a: "Local SEO is included in our Growth package ($235 a week plus GST, with one ad platform) and Complete Growth package ($350 a week plus GST, with Google and Meta Ads). Foundation ($140 a week plus GST) covers a website and socials only. Prices are in AUD and billed weekly; ad spend is separate." },
+      ],
+      sources: [googleLocal, googleProfileRules, googleServiceArea, googleSeoStarter, googleReviewPolicy, googleHelpful],
+      links: [{ title: "Marketing for plumbers", path: "/plumber-marketing" }, { title: "SEO for tradies", path: "/tradie-seo" }, { title: "Google Ads for plumbers", path: "/blog/google-ads-for-plumbers" }, packagesLink],
     },
   },
   {
@@ -184,7 +202,7 @@ export const guideQueue: ScheduledGuide[] = [
         ], checklist: ["Track calls from ads with a minimum call length.", "Track completed forms.", "Work out your cost per enquiry each month."] },
       ],
       sources: [googleCalls, googleLocal],
-      links: [{ title: "Marketing for plumbers", path: "/plumber-marketing" }, { title: "Google Ads management", path: "/google-ads-management" }, packagesLink],
+      links: [{ title: "Marketing for plumbers", path: "/plumber-marketing" }, { title: "SEO for plumbers", path: "/blog/seo-for-plumbers" }, { title: "Google Ads management", path: "/google-ads-management" }, packagesLink],
     },
   },
   {
@@ -787,7 +805,7 @@ export const guideQueue: ScheduledGuide[] = [
         ] },
       ],
       sources: [googleLocal, googleSeoStarter, googleHelpful, googleProfileRules, googleReviewPolicy],
-      links: [{ title: "SEO for tradies", path: "/tradie-seo" }, { title: "Marketing for tradies", path: "/tradie-marketing" }, fencerLink],
+      links: [{ title: "SEO for tradies", path: "/tradie-seo" }, { title: "SEO for plumbers", path: "/blog/seo-for-plumbers" }, { title: "Marketing for tradies", path: "/tradie-marketing" }, fencerLink],
     },
   },
   {

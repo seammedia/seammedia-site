@@ -54,7 +54,7 @@ export type NicheConfig = {
   reviews?: Review[];
   // Optional: a section about this trade's own jobs, so each trade page says something the others don't
   // (17 Oct 2026; Google rated every page's landing page experience below average while they were near copies).
-  tradeSection?: { heading: string; intro: string; items: { title: string; copy: string }[] };
+  tradeSection?: { heading: string; intro: string; items: { title: string; copy: string }[]; guide?: { title: string; path: string } };
 };
 
 // Enquiry guarantee and month-to-month terms (approved by Heath, 9 Oct 2026). The number is set per industry:
@@ -621,6 +621,7 @@ export const plumbers: NicheConfig = tradePage({
       { title: "Burst pipes and leaks", copy: "Urgent searches on a phone, so the ads and page lead with your number. These customers call the first plumber they trust." },
       { title: "Gas fitting", copy: "Gas appliance installs and leak checks, with your gas licence shown on the page and the reasons to choose you up front." },
     ],
+    guide: { title: "Read our guide to SEO for plumbers", path: "/blog/seo-for-plumbers" },
   },
 });
 
@@ -873,6 +874,7 @@ export const tradieSeo: NicheConfig = {
         { title: "Reviews", copy: "Review requests after each job and help replying, because the number and freshness of reviews help decide who ranks on the map." },
         { title: "Weekly map-pack scans", copy: "We check where you rank on the map across your area every week, so you can see the movement." },
       ],
+      guide: { title: "SEO for plumbers: our plain-English guide", path: "/blog/seo-for-plumbers" },
     },
   }),
   featuredPlan: "Growth",
