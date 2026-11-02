@@ -73,6 +73,24 @@ const areas: Record<string, {
     ],
     nearby: "We also work across Seaford, Carrum Downs, Langwarrin, Karingal and the wider Mornington Peninsula.",
     seoLabel: "SEO agency in Frankston",
+    // 2 Nov 2026: Frankston sections, process and FAQs for the "digital marketing frankston" owner page (body only; title/H1 frozen to 5 Nov).
+    nearbyLink: { href: "/frankston/web-design", label: "Web design in Frankston" },
+    sections: [
+      { title: "Digital marketing for Frankston's shops, clinics and services", copy: "Frankston businesses around the city centre, the foreshore and Frankston South mostly win customers who search on their phone, check the Maps listing and website, then call or book. Our digital marketing in Frankston makes each step clear: an accurate Google Business Profile, a page for each main service, real photos of your work, reviews you can point to and an enquiry form that actually reaches you." },
+      { title: "Digital marketing for trades and suppliers around Frankston", copy: "Trades and suppliers working out of Seaford, Carrum Downs and Langwarrin usually cover a wider area than one suburb. We build service pages around the jobs and areas you genuinely cover, run Google Ads with call and form tracking for the work worth most to you, and show finished jobs on your website and social pages. The South East Fencer, a Frankston-area business, is our local search case study." },
+    ],
+    processTitle: "How our digital marketing in Frankston works",
+    process: [
+      { title: "1. Baseline", copy: "We review your website, Google Business Profile, Search Console, any ad accounts and how enquiries reach you, then agree the services, customers and Frankston areas that matter most." },
+      { title: "2. Plan and build", copy: "We fix what is holding you back first, such as thin service pages, an incomplete Business Profile or untracked calls, then add the ads, search work and content that suit your goals and budget." },
+      { title: "3. Review", copy: "Each month we compare the same searches, campaigns and pages, report visibility separately from confirmed enquiries, and choose the next improvement from what is working." },
+    ],
+    faqs: [
+      { q: "Do you work with businesses in Frankston?", a: "Yes. We work with businesses across Frankston, Frankston South, Seaford, Carrum Downs, Langwarrin and Karingal from just down the road in Mount Eliza, and Heath does the work himself here in Australia. We only target the areas and customers you genuinely serve." },
+      { q: "What does digital marketing for a Frankston business include?", a: "It depends on the work you want more of. Most plans combine local search and Google Maps, a website that turns visits into enquiries, and either Google Ads or social content. We agree the services and areas first, then choose the channels that suit your budget." },
+      { q: "What do your marketing packages cost?", a: "Foundation is $140 a week plus GST for basic website and social support. Growth is $235 a week plus GST with local SEO and one ad platform. Complete Growth is $350 a week plus GST with both ad platforms. Ad spend, filming and larger builds are scoped separately." },
+      { q: "How do you measure digital marketing results in Frankston?", a: "We report search impressions, clicks, ad results and Business Profile actions separately from confirmed enquiries, so you can see what changed and what it brought in. We track calls and forms where possible, because visibility alone does not pay the bills." },
+    ],
   },
   // Added 15 Oct 2026 (seo-loop-seam): /mornington ranked 24.8 for "digital marketing agency mornington".
   mornington: {
