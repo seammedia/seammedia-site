@@ -102,6 +102,17 @@ const agencies: Agency[] = [
   },
 ];
 
+// 3 Nov 2026 (seo-loop-seam): this list started ranking for "seo mornington peninsula" (20-27) and the Frankston SEO
+// searches on 28 Oct, the day /mornington/seo dropped from 31-34 to 53-56, and it linked to none of our own local pages.
+// These links point each search at the page that owns it.
+const seamLocalPages = [
+  { href: "/mornington/seo", label: "SEO on the Mornington Peninsula" },
+  { href: "/frankston/seo", label: "SEO in Frankston" },
+  { href: "/mount-eliza", label: "SEO and digital marketing agency in Mount Eliza" },
+  { href: "/mornington", label: "Digital marketing agency in Mornington" },
+  { href: "/frankston", label: "Digital marketing agency in Frankston" },
+];
+
 const questions = [
   ["Who will actually do the work?", "The person who pitches you isn't always the person running your account. Ask for their name and how you'll reach them."],
   ["Is it month to month?", "Good agencies keep clients with results, not contracts. If there's a minimum term, know the notice period before you sign."],
@@ -173,6 +184,7 @@ export default function BestAgenciesPage() {
         </dl>
         <div className="mt-6 space-y-4 leading-relaxed text-zinc-300">{a.about.map(p => <p key={p.slice(0, 24)}>{p}</p>)}</div>
         <p className="mt-6 rounded-xl border border-white/10 bg-black/40 p-4 text-sm leading-relaxed text-zinc-400"><span className="font-semibold text-zinc-200">Worth knowing: </span>{a.check}</p>
+        {a.rank === 1 && <p className="mt-6 text-sm leading-relaxed text-zinc-400"><span className="font-semibold text-zinc-200">Our local pages: </span>{seamLocalPages.map((l, i) => <span key={l.href}>{i > 0 && " · "}<Link href={l.href} className="text-pink-400 underline underline-offset-4 hover:text-pink-300">{l.label}</Link></span>)}</p>}
         {a.rank === 1
           ? <div className="mt-6 flex flex-wrap gap-4"><Link href="/marketing-packages" className="inline-flex items-center gap-2 rounded-full bg-pink-500 px-6 py-3 font-semibold hover:bg-pink-600">See Seam&apos;s packages <ArrowRight size={18} aria-hidden="true" /></Link><a href="tel:+61402642746" className="inline-flex items-center rounded-full border border-white/15 px-6 py-3 font-semibold hover:bg-white/5">Call Heath on 0402 642 746</a></div>
           : <a href={a.url} target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-pink-400 hover:text-pink-300">Visit {a.name} <ArrowUpRight size={16} aria-hidden="true" /></a>}
