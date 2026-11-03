@@ -58,8 +58,9 @@ export type NicheConfig = {
 };
 
 // Enquiry guarantee and month-to-month terms (approved by Heath, 9 Oct 2026). The number is set per industry:
-// allied health / NDIS 10, trades 15, Google Ads (any enquiry-based business) 10. Keep the wording identical
-// across pages so the terms can't drift; only the number and scope change.
+// trades 15, builders 10, Google Ads (enquiry-based businesses, not NDIS or allied health) 10. Keep the wording
+// identical across pages so the terms can't drift; only the number and scope change.
+// NDIS and allied health use sixtyDayReview() instead (Heath, 4 Nov 2026).
 function enquiryGuarantee(n: number, scope = "") {
   const conditions = `Genuine enquiry: a call from your ads lasting 30 seconds or more, or a completed enquiry form, counted in your Google Ads account. The guarantee applies to new Google Ads clients${scope} with an ad budget of at least $50 a day, conversion tracking installed in your first week, and enquiries answered within one business day. It covers our management fee only; ad spend is paid directly to Google.`;
   return {
@@ -84,6 +85,30 @@ function enquiryGuarantee(n: number, scope = "") {
   };
 }
 
+// NDIS and allied health: month to month plus a written 60-day review, no numeric guarantee (Heath, 4 Nov 2026).
+function sixtyDayReview() {
+  return {
+    guarantee: {
+      kicker: "OUR COMMITMENT",
+      heading: "No lock-in. A straight answer at 60 days.",
+      hero: {
+        title: "A written review at 60 days, and you can leave any time",
+        copy: "Month to month, no lock-in. Calls and forms from your Google Ads, counted in your own account, with a clear recommendation to keep going, change or stop.",
+      },
+      points: [
+        { title: "Month to month", copy: "No lock-in contract. Cancel any time; it takes effect at the end of the billing period you've paid for." },
+        { title: "A written 60-day review", copy: "At 60 days you get a written review: what the ads cost, which enquiries came through, what you told us they turned into, and our recommendation to keep going, change or stop." },
+        { title: "Numbers you can check", copy: "Enquiries are counted in your own Google Ads account and reported in plain English every month, so you always know what each one costs." },
+      ],
+      terms: "The 60-day review applies to new Google Ads clients. It's a review and a recommendation, not a promise of a set number of enquiries: results depend on search demand in your area, your capacity and how quickly enquiries are answered. Ad spend is paid directly to Google.",
+    },
+    faqs: [
+      { q: "Is there a lock-in contract?", a: "No. Everything is month to month and billed weekly. Cancel any time, and it takes effect at the end of the billing period you've paid for." },
+      { q: "Do you guarantee a number of enquiries?", a: "No. Enquiries depend on how many people search for your service in your area, and many participants and families choose through referrals and support coordinators rather than Google. So we check search demand before you start, and at 60 days you get a written review with our recommendation to keep going, change or stop. Everything is month to month, so you can leave if it isn't working." },
+    ],
+  };
+}
+
 const monthToMonthProof: [string, string][] = [
   ["100+", "websites built"],
   ["10+ years", "of experience"],
@@ -92,9 +117,9 @@ const monthToMonthProof: [string, string][] = [
 ];
 
 const tradieGuarantee = enquiryGuarantee(15);
-const ndisGuarantee = enquiryGuarantee(10);
-const googleAdsGuarantee = enquiryGuarantee(10, " whose business runs on enquiries (not online stores)");
-const alliedHealthGuarantee = enquiryGuarantee(10);
+const ndisGuarantee = sixtyDayReview();
+const googleAdsGuarantee = enquiryGuarantee(10, " whose business runs on enquiries (not online stores, NDIS or allied health providers)");
+const alliedHealthGuarantee = sixtyDayReview();
 
 // NicheLanding is a client component, so everything in its config is sent to the browser.
 // A case study marked hidden stays in this file but is removed here, before it reaches the page.

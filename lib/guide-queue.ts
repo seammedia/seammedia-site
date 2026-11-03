@@ -305,7 +305,7 @@ export const guideQueue: ScheduledGuide[] = [
         ] },
         { title: "Review cost per enquiry, then optimise", paragraphs: [
           "Once tracking counts real enquiries, compare the cost per enquiry for each service and area. That tells you where to bid more, where to pull back and which searches to block. Automated bidding works better when it is learning from real enquiries rather than clicks.",
-          "Seam Media's allied health page explains how we set up and audit Google Ads tracking for NDIS and allied health providers, including our enquiry guarantee terms for new Google Ads clients.",
+          "Seam Media's allied health page explains how we set up and audit Google Ads tracking for NDIS and allied health providers, including our written 60-day review for new Google Ads clients.",
         ], checklist: ["Cost per enquiry by service.", "Search terms reviewed regularly.", "Bidding based on real enquiries."] },
       ],
       sources: [googleCalls, ndisCode, ahpraAdvertising],
