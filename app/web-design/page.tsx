@@ -3,6 +3,7 @@
 import { trackLead } from "@/lib/ads";
 
 import { useEffect, useRef, useState } from "react";
+import LocalWebLinks from "@/components/LocalWebLinks";
 import { ArrowRight, ShoppingBag, FileText, Code, Briefcase, Search, PenTool, Code2, Rocket, ArrowUpRight, Send } from "lucide-react";
 
 export default function WebDesignPage() {
@@ -10,6 +11,17 @@ export default function WebDesignPage() {
     <>
       <Hero />
       <WhatWeBuild />
+      <LocalWebLinks
+        eyebrow="Local web design"
+        title="Web design around Melbourne's south east"
+        copy="We are based in Mount Eliza and build websites for businesses across the Mornington Peninsula and Melbourne's south east. These pages cover how we work in each area."
+        links={[
+          { href: "/frankston/web-design", label: "Web design in Frankston" },
+          { href: "/mount-eliza/web-design", label: "Web design in Mount Eliza" },
+          { href: "/mornington/web-design", label: "Website design in Mornington" },
+          { href: "/hampton/web-design", label: "Web design in Hampton" },
+        ]}
+      />
       <HowWeWork />
       <Testimonial />
       <ReadyToScale />

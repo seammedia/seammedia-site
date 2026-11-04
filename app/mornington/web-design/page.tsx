@@ -61,7 +61,8 @@ export default function MorningtonWebDesignPage() {
             <div className="bg-white p-8 rounded-lg shadow-sm">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Custom Design</h3>
               <p className="text-gray-700 leading-relaxed">
-                Unique, tailored designs that reflect your brand identity. No templates – every website we create is custom-built to meet your specific business needs and goals.
+                Unique, tailored designs that reflect your brand identity. No templates – every website we create is custom-built to meet your specific business needs and goals. Closer to the top of the Peninsula? See our{' '}
+                <Link href="/frankston/web-design" className="font-semibold text-[#405e6b] underline">web design in Frankston</Link>.
               </p>
             </div>
 

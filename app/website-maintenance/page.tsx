@@ -4,6 +4,7 @@ import { trackLead } from "@/lib/ads";
 
 import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
+import LocalWebLinks from "@/components/LocalWebLinks";
 import { ArrowRight, Shield, Server, Clock, Zap, RefreshCw, Lock, Database, Code, Wrench, Rocket, ArrowUpRight, Send, Check, Globe, Calendar, HeadphonesIcon } from "lucide-react";
 
 const DotScreenShader = dynamic(() => import("@/components/DotShader"), { ssr: false });
@@ -14,6 +15,16 @@ export default function WebsiteMaintenancePage() {
       <Hero />
       <Packages />
       <WhatWeOffer />
+      <LocalWebLinks
+        eyebrow="Near you"
+        title="Website management for local businesses"
+        copy="We look after websites for businesses around Mount Eliza, Frankston and the Mornington Peninsula. If you also need a new or rebuilt site, these pages explain how that works in your area."
+        links={[
+          { href: "/frankston/web-design", label: "Web design and website management in Frankston" },
+          { href: "/mount-eliza/web-design", label: "Web design in Mount Eliza" },
+          { href: "/mornington/web-design", label: "Website design in Mornington" },
+        ]}
+      />
       <WhyMaintenance />
       <HowWeWork />
       <Testimonial />
