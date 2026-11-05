@@ -11,7 +11,7 @@ import DarkSection, { SectionIntro } from "./DarkSection";
 // 28 Oct 2026: optional web link for suburbs whose web design page is a money-search owner ("web design frankston").
 const areas: { href: string; label: string; seo?: { href: string; label: string }; web?: { href: string; label: string } }[] = [
   { href: "/mount-eliza", label: "SEO and digital marketing agency in Mount Eliza", seo: { href: "/mount-eliza/seo", label: "SEO in Mount Eliza" } },
-  { href: "/frankston", label: "Digital marketing agency in Frankston", seo: { href: "/frankston/seo", label: "SEO in Frankston" }, web: { href: "/frankston/web-design", label: "Web design in Frankston" } },
+  { href: "/frankston", label: "Digital marketing agency in Frankston", seo: { href: "/frankston/seo", label: "SEO company in Frankston" }, web: { href: "/frankston/web-design", label: "Web design in Frankston" } },
   { href: "/mornington", label: "Digital marketing agency in Mornington", seo: { href: "/mornington/seo", label: "SEO in Mornington and the Mornington Peninsula" } },
   { href: "/dandenong", label: "Digital marketing agency in Dandenong", seo: { href: "/dandenong/seo", label: "SEO company in Dandenong" } },
   { href: "/cranbourne", label: "SEO and marketing agency in Cranbourne" },
