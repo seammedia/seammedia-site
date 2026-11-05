@@ -31,6 +31,10 @@ const googlePersonalisedAds = { title: "Google Ads: personalised advertising pol
 const ahpraBoards = { title: "Ahpra: who we are and the 15 National Boards", url: "https://www.ahpra.gov.au/About-Ahpra/Who-We-Are.aspx" };
 const nasrhpMembers = { title: "National Alliance of Self Regulating Health Professions: members", url: "https://nasrhp.org.au/members-of-nasrhp/" };
 const speechPathologyAustralia = { title: "Speech Pathology Australia", url: "https://www.speechpathologyaustralia.org.au/" };
+const ndisSupportCoordinators = { title: "NDIS: guide to working as a support coordinator", url: "https://www.ndis.gov.au/providers/working-participants/support-coordinators/guide-working-support-coordinator" };
+const bpcEngagingBuilder = { title: "Building and Plumbing Commission: engaging a builder", url: "https://www.bpc.vic.gov.au/home-owners/before-you-start-building/engaging-a-builder" };
+const energySafeCoes = { title: "Energy Safe Victoria: Certificates of Electrical Safety for the community", url: "https://www.energysafe.vic.gov.au/certificates-electrical-safety/certificates-electrical-safety-consumers" };
+const metaLocations = { title: "Meta Business Help Centre: how to choose locations for your ad", url: "https://www.facebook.com/business/help/365561350785642" };
 
 export const guideQueue: ScheduledGuide[] = [
   {
@@ -1248,6 +1252,306 @@ export const guideQueue: ScheduledGuide[] = [
       ],
       sources: [googleLocal, googleProfileRules, googleHelpful, googleTitleLinks, googleReviews, googleReviewPolicy],
       links: [{ title: "SEO in Dandenong", path: "/dandenong/seo" }, { title: "Marketing for electricians", path: "/electrician-marketing" }, packagesLink],
+    },
+  },
+  {
+    date: "2026-11-10",
+    category: "NDIS & allied health",
+    excerpt: "NDIS provider marketing in Frankston: what to fix first for participants and coordinators in Frankston and nearby suburbs, and the few numbers worth reporting each month.",
+    guide: {
+      title: "NDIS provider marketing in Frankston: what to fix first and what to measure",
+      path: "/blog/ndis-provider-marketing-frankston",
+      description: "NDIS provider marketing in Frankston: supports and suburbs, capacity, coordinator referrals, ethical promotion and the numbers worth reporting each month.",
+      published: "2026-11-10", modified: "2026-11-10",
+      intro: [
+        "If you are an NDIS provider around Frankston, your enquiries can come from several directions at once: a parent searching on a phone in Carrum Downs, a support coordinator looking for someone with capacity in Langwarrin, or a plan manager passing on your name. A marketing plan only helps if it makes you easy to find and easy to choose for each of them, and if you can tell which of those paths is actually working.",
+        "This guide covers what to fix first, how to promote your service within the rules, and a short monthly report that shows whether the effort is paying off.",
+      ],
+      sections: [
+        { title: "Be clear about supports and suburbs", paragraphs: [
+          "Start with the page people land on. Say which supports you provide, who they are for and where you deliver them, in plain words. Name the areas you really cover, such as Frankston, Frankston South, Seaford, Carrum Downs, Langwarrin or Skye, and say where your travel limits are. If you work in homes, schools, the community or a clinic, say so.",
+          "Give each main support its own page, explaining who it suits, how the first meeting works and what a family or coordinator needs to have ready. A single services page listing everything gives Google and visitors very little to go on.",
+        ], checklist: ["Supports listed in the words families use.", "Real service areas, with travel limits.", "One page for each main support."] },
+        { title: "Answer the capacity question", paragraphs: [
+          "Coordinators and families often want to know one thing first: can you start soon? Keep a short, dated note on your website with current availability by support and area. If you have a waitlist, say roughly how long it is. An honest answer saves everyone a phone call and sets you apart from providers whose websites say nothing.",
+          "Also say whether you are a registered NDIS provider and which plan types you can work with. That is one of the first filters a coordinator applies.",
+        ] },
+        { title: "Make referrals easy", paragraphs: [
+          "Add a referrals page with a short form, the documents you need, your response time and a named contact. Reply quickly, and with the participant's consent let the coordinator know how things are going once someone starts. Referrers remember the providers who make their job easier.",
+          "Complete your Google Business Profile as well. Google says local results depend mainly on relevance, distance and prominence, so accurate categories, services and hours matter. If you are mobile, you can hide your address and list the areas you serve, and those areas should match your website.",
+        ], checklist: ["Referrals page with a short form.", "Response time you can keep.", "Business Profile areas matching your website."] },
+        { title: "Promote within the rules", paragraphs: [
+          "The NDIS Code of Conduct applies to registered and unregistered providers and their workers, and it includes acting with integrity, honesty and transparency and respecting people's right to make their own decisions. In practice that means no pressure tactics, no inducements for choosing your service and no claims you cannot back up. Registered providers also meet the NDIS Practice Standards.",
+          "If your team includes Ahpra-registered practitioners, such as occupational therapists, physiotherapists or psychologists, Ahpra's advertising guidelines apply too, including no testimonials about clinical care.",
+        ] },
+        { title: "Keep the monthly report short", paragraphs: [
+          "Most NDIS providers do not need a long marketing report. They need a page that answers whether the marketing brought people they can help. Five numbers are usually enough: calls of a reasonable length, completed enquiry forms, referral forms, how many of those became new participants, and where each one said they found you.",
+          "Be careful with what counts as an enquiry. Taps on a phone number are often reported as leads even when no call took place. In one allied health account we audited, taps made up 97% of the reported conversions, so the numbers looked far better than they were.",
+          "Search Console and your Business Profile performance can sit underneath those numbers. Check them monthly for which searches and pages bring visitors, not to chase any single ranking, because rankings vary by suburb and from day to day.",
+        ], checklist: ["Calls of a reasonable length.", "Enquiry and referral forms.", "New participants started, by source.", "Support and suburb for each enquiry."] },
+        { title: "Decide what to do next", paragraphs: [
+          "Use the report to make one decision each month. If most enquiries ask for one support, improve that page. If a suburb brings calls you cannot service, change your service areas. If you are full, pause ads rather than paying for enquiries you cannot take.",
+          "Seam Media is based on the Mornington Peninsula and works with local businesses across Frankston. Our page for a digital marketing agency in Frankston covers how we work in the area, and our NDIS marketing page explains websites, Google Maps and Google Ads for providers, including the written 60-day review for new Google Ads clients, with the details on that page.",
+        ], links: [{ title: "Digital marketing agency in Frankston", path: "/frankston" }, { title: "Marketing for NDIS providers", path: "/ndis-marketing" }] },
+      ],
+      sources: [ndisCode, ndisPracticeStandards, ahpraGuidelines, googleLocal, googleServiceArea],
+      links: [{ title: "Digital marketing agency in Frankston", path: "/frankston" }, { title: "Marketing for NDIS providers", path: "/ndis-marketing" }, packagesLink],
+    },
+  },
+  {
+    date: "2026-11-11",
+    category: "Trades",
+    excerpt: "Google Ads for builders on the Mornington Peninsula: targeting the towns you build in, reaching homeowners planning big jobs, filtering small work and tracking real enquiries.",
+    guide: {
+      title: "Google Ads for builders on the Mornington Peninsula: reaching homeowners planning big jobs",
+      path: "/blog/google-ads-builders-mornington-peninsula",
+      description: "Google Ads for builders on the Mornington Peninsula: town targeting, job-based campaigns, negatives for small work, landing pages and real enquiry tracking.",
+      published: "2026-11-11", modified: "2026-11-11",
+      intro: [
+        "A builder's Google Ads account works differently from an emergency trade's. Nobody books a new home or a second-storey extension in a hurry. People search for months, compare builders and look closely at your past work, and one good job can be worth more than a year of small repairs. On the Mornington Peninsula, where a house in Mount Martha, a beach house in Rye and a rural build near Red Hill can all be very different jobs, the account needs to reflect the work you actually want.",
+        "This guide covers how to set up Google Ads for a peninsula builder so the budget goes towards those conversations, using Google's own guidance.",
+      ],
+      sections: [
+        { title: "Choose towns before keywords", paragraphs: [
+          "Start with where you are happy to build. Set your location targeting to those towns or a radius around your base, and use Google's presence setting, which targets people in or regularly in your locations. Be aware of what that excludes: some peninsula builds are planned by owners who live in Melbourne, so if holiday homes and investment builds are part of your work, test a separate campaign for people showing interest in the area, with its own budget.",
+        ], checklist: ["List the towns you will build in.", "Start with presence targeting.", "Test interest targeting separately for out-of-area owners."] },
+        { title: "Split campaigns by the job", paragraphs: [
+          "New homes, knockdown rebuilds, extensions, second storeys and major renovations are different searches with different budgets. Put each in its own campaign or ad group, so you can set spending by what the job is worth and write ads that match it. Someone searching for a second-storey extension in Mornington should see an ad about exactly that, not a general line about quality homes.",
+          "Avoid bidding on broad words such as builder or renovations on their own. They bring plenty of clicks from people wanting small repairs, materials or other trades.",
+        ] },
+        { title: "Filter out work you do not want", paragraphs: [
+          "Negative keywords stop your ads showing for searches that will never be your kind of job. For most builders the list starts with jobs, apprenticeships, courses, salaries, handyman, cheap, plans, kit homes and DIY. Negative keywords do not match close variants, so include plurals and similar forms.",
+          "Then read the search terms report, which shows what people actually typed. Check it weekly at first. Google says broad match reaches the widest range of related searches, so if you use it, this report matters even more, and broad match works best once your conversion tracking is reliable.",
+        ], checklist: ["Negatives for jobs, courses, DIY and small work.", "Search terms read weekly at first.", "Phrase and exact match to start with."] },
+        { title: "Send people to a page that sells the job", paragraphs: [
+          "Homeowners planning a big job want evidence. Send each campaign to a page about that job, with real projects from the peninsula where the client has given permission, the towns you work in, the way your process runs from first meeting to handover and a short enquiry form that asks about the site, the scope and the timing.",
+          "Show your registration too. In Victoria, the Building and Plumbing Commission says homeowners need a registered builder for domestic work worth more than $10,000, and it tells them to check a practitioner's ID card. Putting those details on the page answers that question early.",
+        ] },
+        { title: "Be patient, and count the right things", paragraphs: [
+          "Long decision times mean a builder's ads can look quiet for weeks and then produce a very good enquiry. Count calls of a reasonable length and completed forms as conversions, not taps on a phone number or visits to a contact page. Then ask each enquiry where it came from, what the job is and roughly what it is worth, and note which ones become site visits and quotes.",
+          "A low cost per enquiry is not the goal if those enquiries are for small jobs. A smaller number of serious conversations about the right builds is usually the better result, so judge each campaign on the jobs it brings, not on clicks.",
+          "Run ads when someone can answer. An ad schedule limits your ads to set hours, and if you are on site all day, make sure enquiries get a prompt call back, because the homeowner is likely talking to other builders too.",
+        ], checklist: ["Calls and completed forms as conversions.", "Job type and rough value noted for each enquiry.", "Site visits and quotes tracked by campaign."] },
+        { title: "Support the ads with local search", paragraphs: [
+          "People who click an ad often check your Google reviews, your Business Profile and your website before they call, so those need to look as good as the ad promises. Over time, local search can also bring enquiries you do not pay for each time.",
+          "Seam Media is based on the Mornington Peninsula. Our page on SEO on the Mornington Peninsula explains how we help local businesses show up across the towns, and our builder marketing and Google Ads management pages cover how we run ads for builders, including our enquiry guarantee for new Google Ads clients, with the full terms on those pages.",
+        ], links: [{ title: "SEO on the Mornington Peninsula", path: "/mornington/seo" }, { title: "Marketing for builders", path: "/builder-marketing" }, { title: "Google Ads management", path: "/google-ads-management" }] },
+      ],
+      sources: [googleLocationTargeting, googleMatchTypes, googleNegatives, googleSearchTerms, googleAdSchedule, googleCalls, bpcEngagingBuilder],
+      links: [{ title: "SEO on the Mornington Peninsula", path: "/mornington/seo" }, { title: "Marketing for builders", path: "/builder-marketing" }, { title: "Google Ads management", path: "/google-ads-management" }],
+    },
+  },
+  {
+    date: "2026-11-12",
+    category: "NDIS & allied health",
+    excerpt: "A website for NDIS providers on the Mornington Peninsula: plain-English service pages, honest coverage of the towns you reach, accessibility and a page that makes referrals simple.",
+    guide: {
+      title: "Website for NDIS providers on the Mornington Peninsula: writing service pages in plain English",
+      path: "/blog/website-ndis-providers-mornington-peninsula",
+      description: "A website for NDIS providers on the Mornington Peninsula: plain-English service pages, towns you cover, accessibility, referrals and what to measure.",
+      published: "2026-11-12", modified: "2026-11-12",
+      intro: [
+        "On the Mornington Peninsula, the distance between towns shapes how NDIS supports work. A family in Rosebud and a family in Mount Eliza may both find your website, but they need to know whether you can get to them, what you actually do and whether you have room. Too many provider websites answer with NDIS category names and a contact form.",
+        "This guide covers how to write service pages people can understand, what a peninsula provider's website should say about coverage, and the small details that make it easier to use and to refer to.",
+      ],
+      sections: [
+        { title: "Write for the person reading", paragraphs: [
+          "Many visitors are parents, carers, participants themselves or support coordinators. Some are new to the NDIS and do not know its terms. Lead each page with what the support is in everyday language, then include the official term once so that coordinators can match it to a plan. \"Help getting out in the community, such as shopping, appointments and activities\" says more than a category name by itself.",
+          "Use short sentences and short paragraphs, define any abbreviation the first time you use it and avoid sales language. People are making a decision about someone's care, so clear and calm writing does more than big claims.",
+        ], checklist: ["Everyday words first, official term second.", "Abbreviations explained.", "Short paragraphs with clear headings."] },
+        { title: "Give each support its own page", paragraphs: [
+          "A good service page answers the questions your team already gets on the phone. Who is this support for? What happens in a session or a shift? Where does it take place? What should someone have ready? How do they start, and how long might they wait? Answering them on the page gives participants and coordinators what they need, and gives Google a clear topic to understand.",
+          "Give the page a heading and title that says the support and the area in a natural way, and link it from your menu. Google says it aims to show content made to help people, so write the page for the family reading it rather than repeating town names.",
+        ] },
+        { title: "Be honest about the peninsula", paragraphs: [
+          "Say where you go, town by town, and where you stop. Mornington, Mount Martha, Dromana, Rosebud, Hastings and Somerville can be very different trips from the same base. If you only reach Sorrento or Portsea on certain days, say that. Accurate coverage saves families from calling for nothing and helps coordinators refer with confidence.",
+          "Keep that list consistent with your Google Business Profile. Mobile providers can hide their address and list the areas they serve. Google says local results depend mainly on relevance, distance and prominence, so listing a town helps people understand your coverage but does not guarantee you will show there.",
+        ], checklist: ["Towns listed plainly, with limits.", "Days or conditions noted for distant areas.", "Same areas on your website and Business Profile."] },
+        { title: "Make the site easy to use", paragraphs: [
+          "Your audience includes people with disability, so accessibility is part of doing the job well. The Web Content Accessibility Guidelines are the common reference. Start with readable text sizes, strong colour contrast, descriptive link text, captions on videos, descriptions on meaningful images, and forms that work with a keyboard and a screen reader.",
+          "Offer more than one way to contact you, such as phone, email and a form, and say how someone can get help with the form. Test the site on a phone, since that is how many people will find you. Ask someone outside your organisation to find a support and make an enquiry while you watch, because the places they get stuck are usually the things to fix first.",
+        ] },
+        { title: "Add the details coordinators look for", paragraphs: [
+          "A short referrals page does a lot of work: what you need to receive, who to send it to and how quickly you reply. Add your registration status, the plan types you can work with and a dated note on current capacity. Registered or not, the NDIS Code of Conduct applies, so keep everything accurate and avoid promises about outcomes. If your team includes Ahpra-registered practitioners, Ahpra's advertising guidelines also apply to the website.",
+        ], checklist: ["Referrals page with named contact.", "Registration status and plan types stated.", "Dated capacity note."] },
+        { title: "Check that it brings the right enquiries", paragraphs: [
+          "Send yourself a test enquiry every few months, and ask new participants how they found you. Check Search Console monthly to see which searches and pages bring visitors. If people keep asking the same question on the phone, add the answer to the page.",
+          "Seam Media is based on the Mornington Peninsula. Our page on SEO in Mornington explains how we help local businesses show up on the peninsula, our page on web design in Mornington covers how we build sites here, and our NDIS marketing page explains how websites, Google Maps and Google Ads fit together for providers.",
+        ], links: [{ title: "SEO in Mornington", path: "/mornington/seo" }, { title: "Web design in Mornington", path: "/mornington/web-design" }, { title: "Marketing for NDIS providers", path: "/ndis-marketing" }] },
+      ],
+      sources: [wcag, googleHelpful, googleLocal, googleServiceArea, ndisCode, ahpraGuidelines],
+      links: [{ title: "SEO in Mornington", path: "/mornington/seo" }, { title: "Marketing for NDIS providers", path: "/ndis-marketing" }, packagesLink],
+    },
+  },
+  {
+    date: "2026-11-13",
+    category: "Trades",
+    excerpt: "Facebook ads or Google Ads for tradies in Frankston: how the two platforms differ, which suits urgent and planned jobs, what to set up first and how to compare them fairly.",
+    guide: {
+      title: "Facebook ads for tradies in Frankston: do them first, or start with Google Ads?",
+      path: "/blog/facebook-ads-tradies-frankston",
+      description: "Facebook ads or Google Ads for tradies in Frankston: urgent and planned jobs, local targeting, what to set up first and how to compare them fairly.",
+      published: "2026-11-13", modified: "2026-11-13",
+      intro: [
+        "Tradies around Frankston hear conflicting advice about advertising. Some swear by Google Ads, others say Facebook is cheaper and brings plenty of leads. Both can work, because they do different jobs. Google Ads reaches people searching for your service right now. Facebook and Instagram ads, run through Meta, put your business in front of local people who were not searching at all.",
+        "This guide gives you a practical way to decide which comes first for your trade, how to set each one up for Frankston and nearby suburbs, and how to compare them on enquiries rather than opinions.",
+      ],
+      sections: [
+        { title: "Start with how customers buy your work", paragraphs: [
+          "If people need you urgently or know exactly what they want, they usually search. A burst pipe in Seaford, a power fault in Carrum Downs or a blocked drain in Frankston South starts with a phone and a search. For that kind of work, Google Ads is generally the first place to spend.",
+          "If people have not yet decided, or a good photo can spark the idea, Meta ads can suit you better. Landscaping, decks, fencing, painting, renovations and solar are often planned over weeks, and a clear before and after can get someone thinking about their own place.",
+        ], checklist: ["Urgent or specific jobs: Google Ads first.", "Planned and visual jobs: consider Meta alongside Google.", "Mixed trade: start with your highest-value urgent or quoted job."] },
+        { title: "What each platform needs from you", paragraphs: [
+          "Google Ads needs a sensible keyword list, negatives, a page for each job and someone to answer the phone. It can bring enquiries quickly, but clicks in a competitive trade can be expensive, so wasted searches matter.",
+          "Meta ads need creative: real photos or short videos of your work, a clear offer of what you do and where, and a simple way to enquire. The enquiry is often less urgent, so expect to follow up quickly and to get some people who are only curious. A fast call back makes a real difference on these leads.",
+          "Budget and time count too. Running either platform badly costs more than running one of them well, so if you have one person and limited hours, pick one, set it up properly and check it every week. Read the search terms in Google Ads and the comments and messages on your Meta ads, since people often ask questions there that turn into jobs if someone replies.",
+        ] },
+        { title: "Set them up for Frankston, not Melbourne", paragraphs: [
+          "On Google Ads, target the suburbs or radius you really service, and choose the presence option, which targets people in or regularly in your locations. Google's ad schedule then lets you run ads only when someone can answer.",
+          "On Meta, choose locations at the ad set level by city, region or radius. Meta says it may reach people who live in, recently visited or often visit a place, and that location accuracy is not guaranteed, so name your suburbs in the ad itself so people outside your area can rule themselves out.",
+        ], checklist: ["Suburbs or radius you actually work in.", "Ad schedule matching when you can answer.", "Suburbs named in the ad text."] },
+        { title: "Compare them fairly", paragraphs: [
+          "Comparing cost per lead on its own can mislead. Count calls of a reasonable length and completed forms as conversions on each platform, then record which enquiries became quotes and jobs and what those jobs were worth. A dearer enquiry that turns into a paid job often beats three cheap ones that never answer the phone.",
+          "Give any test long enough to produce real numbers, and change one thing at a time. Also ask every caller how they found you, because someone may see your Facebook ad, then search your name on Google a week later.",
+        ], checklist: ["Same definition of an enquiry on both platforms.", "Quotes and jobs recorded by source.", "Callers asked how they found you."] },
+        { title: "A sensible order for most trades", paragraphs: [
+          "For most Frankston trades, a reasonable order is: fix your Google Business Profile and website first, start Google Ads on your best job, then add Meta once you can answer the extra enquiries. That order is a starting point, not a rule. A landscaper or renovator with strong photos may do well trying Meta sooner.",
+          "On our packages, Growth at $235 a week plus GST includes management of one ad platform, Google Ads or Meta Ads, and Complete Growth at $350 a week plus GST includes both. Ad spend is separate and paid directly to the platform.",
+          "Seam Media runs both for local businesses. Our page on digital marketing in Frankston covers how we work in the area, and our tradie marketing page explains our approach for trades, including our enquiry guarantee for new Google Ads clients, with the full terms on that page.",
+        ], links: [{ title: "Digital marketing in Frankston", path: "/frankston" }, { title: "Marketing for tradies", path: "/tradie-marketing" }, packagesLink] },
+      ],
+      sources: [googleLocationTargeting, googleAdSchedule, googleCalls, metaLocations],
+      links: [{ title: "Digital marketing in Frankston", path: "/frankston" }, { title: "Marketing for tradies", path: "/tradie-marketing" }, packagesLink],
+    },
+  },
+  {
+    date: "2026-11-14",
+    category: "NDIS & allied health",
+    excerpt: "Marketing for support coordination businesses in Dandenong: being clear on levels and plan types, areas covered, capacity, ethical promotion and the local relationships that bring referrals.",
+    guide: {
+      title: "Support coordination marketing in Dandenong: how to be found and trusted locally",
+      path: "/blog/support-coordination-marketing-dandenong",
+      description: "Support coordination marketing in Dandenong: levels and plan types, areas and capacity, languages, Google Business Profile, ethical promotion and referrals.",
+      published: "2026-11-14", modified: "2026-11-14",
+      intro: [
+        "A support coordination business has an unusual marketing job. You are not selling a set service to a stranger so much as asking a participant or family to trust you with their whole plan. Around Dandenong, Noble Park, Springvale and Hallam, that trust is often built through community connections, languages spoken and word of mouth as much as through Google.",
+        "This guide covers what a local support coordination business should make clear, how to be found, and how to build referrals within the rules.",
+      ],
+      sections: [
+        { title: "Explain what you do and at which level", paragraphs: [
+          "Many participants do not know what a support coordinator does. Explain it plainly first. The NDIS describes three levels that can be included in a plan: support connection, support coordination and specialist support coordination, which is for participants with complex needs. Say which of those you provide and give an everyday example of what your help looks like.",
+          "Then be clear about plan types. NDIS guidance says unregistered support coordinators can work only with participants who self-manage or plan-manage their funding, and registered coordinators are needed for NDIA-managed participants. The NDIS website notes that its information is being updated to reflect new legislation, so check the current guidance when you write this part of your own site.",
+        ], checklist: ["Plain explanation of support coordination.", "Levels you provide.", "Registration status and plan types."] },
+        { title: "Show the people and the local knowledge", paragraphs: [
+          "Because the relationship matters so much, introduce your coordinators by name where they are comfortable with it: their background, the areas they work in and the kinds of situations they know well. If your team speaks other languages or has experience working with particular communities around Dandenong, say so clearly, and explain how you work with interpreters.",
+          "Show what you know locally. Services, community groups and mainstream supports you regularly connect people with are more convincing than a generic promise of personalised care. A short example of how you helped someone find the right supports can also explain your role well, as long as it is anonymous and shared with consent.",
+        ] },
+        { title: "Answer the practical questions", paragraphs: [
+          "Say which suburbs you cover, whether you meet face to face or remotely, and whether you have capacity now. If you are full, say when that might change. Participants changing coordinators often need to move quickly, and an out-of-date website wastes their time.",
+          "Add a simple way to get in touch, with a phone number, a short form and your response time. Tell people what the first conversation involves and what to have ready, such as their plan if they are comfortable sharing it.",
+        ], checklist: ["Areas and meeting options stated.", "Dated capacity note.", "What the first conversation involves."] },
+        { title: "Get found on Google without overclaiming", paragraphs: [
+          "Complete your Google Business Profile with accurate categories, services, hours and areas. If you see people at their homes rather than at an office, you can hide your address and list your service areas. Google says local results depend mainly on relevance, distance and prominence, so accurate details and genuine reviews both help.",
+          "Keep your name as you actually trade, without added keywords, since Google's guidelines do not allow that. When you ask for reviews, ask everyone in the same way, and remember people may prefer to keep their involvement with a support coordinator private. Never pressure anyone or offer anything in return.",
+          "If you try Google Ads, keep the campaign small and targeted, and check the search terms report often, because NDIS searches include plenty of people looking for jobs, portals and payments.",
+        ] },
+        { title: "Build referral relationships carefully", paragraphs: [
+          "Referrals are likely to remain your main source of work. Keep in regular contact with plan managers, local area coordinators, allied health practices and community organisations, and be useful to them: clear updates, quick replies and honest answers when you cannot help.",
+          "Stay within the rules while you do it. The NDIS Code of Conduct includes acting with integrity, honesty and transparency and respecting people's right to make their own decisions. Participants should choose their providers freely, so avoid arrangements that could look like steering someone towards a service because of a commercial relationship, and be open about any connection between your business and another provider.",
+        ], checklist: ["Regular contact with local referrers.", "Open about any related businesses.", "No gifts or inducements for referrals."] },
+        { title: "Measure what matters", paragraphs: [
+          "Ask every new participant and referrer how they found you and record it. Over a few months that will show whether Google, particular referrers or community connections are doing the work, and where your time is best spent.",
+          "Seam Media helps local businesses with websites, Google Maps and Google Ads. Our page for a digital marketing agency in Dandenong covers how we work in the area, and our NDIS marketing page explains our approach for providers, including a written 60-day review for new Google Ads clients, with the details on that page.",
+        ], links: [{ title: "Digital marketing agency in Dandenong", path: "/dandenong" }, { title: "Marketing for NDIS providers", path: "/ndis-marketing" }] },
+      ],
+      sources: [ndisSupportCoordinators, ndisCode, googleLocal, googleServiceArea, googleProfileRules, googleReviewPolicy, googleSearchTerms],
+      links: [{ title: "Digital marketing agency in Dandenong", path: "/dandenong" }, { title: "Marketing for NDIS providers", path: "/ndis-marketing" }, packagesLink],
+    },
+  },
+  {
+    date: "2026-11-15",
+    category: "Trades",
+    excerpt: "Electrician website design in Frankston: a checklist of what customers look for before they call, from licence details and job pages to suburbs covered, speed and tracking.",
+    guide: {
+      title: "Electrician website design in Frankston: a checklist before you pay for one",
+      path: "/blog/electrician-website-design-frankston",
+      description: "Electrician website design in Frankston: job pages, licence and REC details, suburbs covered, tap-to-call on mobile and tracking, as a checklist.",
+      published: "2026-11-15", modified: "2026-11-15",
+      intro: [
+        "When an electrician's website is working, nobody notices the design. A homeowner in Frankston South with half the house out of power finds your number in seconds, sees that you cover their street and calls. Someone planning a switchboard upgrade or an EV charger in Langwarrin looks a little longer, checks you are licensed and asks for a quote.",
+        "Before you pay for a new website, or if you want to check the one you have, use this checklist. It covers what customers look for before they call and what to ask whoever is building the site.",
+      ],
+      sections: [
+        { title: "Make the phone number impossible to miss", paragraphs: [
+          "Many electrical searches happen on a phone, some of them in a hurry. Put a tap-to-call number at the top of every page, keep it visible as people scroll and make sure the page loads quickly on mobile data. Say whether you take after-hours or emergency work, and what hours you actually answer.",
+          "If you are often on site, tell people how quickly you return missed calls, and have a short quote form for those who would rather not call. Name, phone, suburb and a line about the job is usually enough.",
+        ], checklist: ["Tap-to-call at the top of every page.", "After-hours work clearly stated.", "Short form with four or so fields."] },
+        { title: "Give every paying job its own page", paragraphs: [
+          "Power faults, switchboard upgrades, safety switches, rewires, lighting, EV chargers, smoke alarms and commercial maintenance are searched for separately. Each deserves a page that says what the job involves, what affects the cost and what the customer should have ready. A single page listing everything rarely shows up for any of them.",
+          "Start with the work you most want. If switchboards and EV chargers are worth more than changing a light, those are the pages to write first, and a good builder should ask you about that before designing anything.",
+        ] },
+        { title: "Put your licence details where people look", paragraphs: [
+          "In Victoria, an electrician must work for a Registered Electrical Contractor to do work for a customer, and Energy Safe Victoria explains that a Certificate of Electrical Safety records the details of the work done. Show your registration and licence details in the footer and on your contact page, and mention the certificate on relevant job pages. It reassures a careful customer, and it is an easy way to stand out from sites that say nothing.",
+          "Add genuine Google reviews and photos of your own work, with permission where a customer's property can be identified. Stock photos of a stranger in a hard hat do not persuade anyone.",
+        ], checklist: ["REC and licence details visible.", "Certificate mentioned on relevant pages.", "Real photos and genuine reviews."] },
+        { title: "Say which suburbs you really cover", paragraphs: [
+          "Name your main areas on the homepage and contact page, such as Frankston, Seaford, Carrum Downs, Langwarrin or Mount Eliza, and note where your range ends. Keep the list the same as your Google Business Profile service areas.",
+          "Be wary of a website proposal built on dozens of suburb pages with the name swapped. Google says it aims to show content made to help people, so a smaller number of area pages with real local detail, such as the jobs you commonly do there, is a better use of your budget. Older homes needing switchboard work and newer estates wanting EV chargers are different conversations, and a page can say so if that matches your experience.",
+        ] },
+        { title: "Questions to ask before you pay", paragraphs: [
+          "A new website should be yours to keep working with, and it should not lose whatever you have already built up on Google. Ask these before you sign anything. If a designer cannot answer them plainly, keep looking.",
+        ], checklist: ["Who owns the domain and the website?", "If this replaces an old site, will old pages be redirected?", "Will each job get its own page, with a clear title and heading?", "How will calls and forms be tracked?", "What does ongoing care cost, and who makes small changes?", "Who writes the words on the pages?"] },
+        { title: "Check it after launch", paragraphs: [
+          "Send a test enquiry and confirm it reaches the right inbox. Then check Search Console every month to see which searches and pages are bringing visitors, and record calls and forms so you can tell whether the site is bringing work. For an example of how a trade website's search visibility can grow, our South East Fencer case study shows clicks from Google rising from about 3 a day in August 2025 to more than 20 a day by mid-2026. Clicks are visits, not confirmed jobs, so judge any site on the enquiries it brings.",
+          "Seam Media builds and manages websites for local businesses. Our page on web design in Frankston covers how we work in the area, and our electrician marketing page explains how the website, Google Maps and Google Ads fit together for electrical businesses.",
+        ], links: [{ title: "Web design in Frankston", path: "/frankston/web-design" }, { title: "Marketing for electricians", path: "/electrician-marketing" }, fencerLink] },
+      ],
+      sources: [energySafeCoes, googleHelpful, googleSeoStarter, googleServiceArea, googleLocal],
+      links: [{ title: "Web design in Frankston", path: "/frankston/web-design" }, { title: "Marketing for electricians", path: "/electrician-marketing" }, packagesLink],
+    },
+  },
+  {
+    date: "2026-11-16",
+    category: "NDIS & allied health",
+    excerpt: "Allied health marketing in Mount Eliza and nearby: how the approach differs for a clinic and a mobile service, from Google Business Profile and pages to referrals and advertising rules.",
+    guide: {
+      title: "Allied health marketing in Mount Eliza: clinic or mobile, and how to market each",
+      path: "/blog/allied-health-marketing-mount-eliza",
+      description: "Allied health marketing in Mount Eliza: how a clinic and a mobile service differ on Google Business Profile, pages, referrals and advertising rules.",
+      published: "2026-11-16", modified: "2026-11-16",
+      intro: [
+        "Mount Eliza sits between Frankston and Mornington, with a village centre and both larger centres a short drive away. That makes it a practical base for allied health, whether you see people in a clinic room or travel to their homes, aged care residences and schools. The right marketing depends on which of those you are, because people find and choose the two models in different ways.",
+        "This guide compares the two, including what changes if you run both.",
+      ],
+      sections: [
+        { title: "If you run a clinic", paragraphs: [
+          "A clinic's advantage is a real place. People search nearby and judge by distance, opening hours and how easy it is to get there. Show your address on your Google Business Profile, set your hours accurately, add real photos of the rooms and entrance and say what parking and access are like. Those practical details matter a great deal to older patients and to anyone with limited mobility.",
+          "On your website, make booking easy and say which practitioners are available on which days. A patient comparing a clinic in Mount Eliza with one in Frankston or Mornington often decides on how soon they can be seen.",
+        ], checklist: ["Address, hours and accurate categories on your profile.", "Parking and access explained.", "Booking link on every page."] },
+        { title: "If you are mobile", paragraphs: [
+          "A mobile service has no shopfront, so the job is making your coverage clear. Google's guidelines let service-area businesses hide their address and list the areas they serve. Do that if patients do not come to you, and keep the same areas on your website. Say honestly where your range ends, and name the kinds of places you visit, such as homes, residential aged care, schools or kindergartens.",
+          "Setting a service area does not guarantee you will show in every suburb listed, because Google still weighs distance. Mobile services often do best by covering a sensible area well and building referrals, rather than claiming the whole peninsula.",
+        ], checklist: ["Address hidden if patients do not visit you.", "Real suburbs listed, with limits.", "Places you visit named clearly."] },
+        { title: "If you do both", paragraphs: [
+          "Keep it simple for visitors. Give clinic and mobile services separate pages, with different information about what to expect and how to book. Do not create a second Business Profile for the mobile side. Google's guidelines are about representing your business as it really operates, so check them before you change your listing or add a location.",
+          "Make the choice easy on your homepage with two clear paths: come to the clinic, or we come to you. Explain who each one suits, such as mobile visits for people who find travel difficult, and note any difference in wait times or the areas you reach. That saves your reception team from explaining it on every call.",
+        ] },
+        { title: "Referrals work differently too", paragraphs: [
+          "Most clinics get a mix of searches, repeat patients and GP referrals. A short, useful note to nearby GPs on who you treat and how to refer often does more than an advertising campaign. Mobile services tend to depend even more on referrers, such as support coordinators, aged care managers, case managers and schools, who need to know your areas, your capacity and how to refer.",
+          "For both, give referrers their own page with a form, what you need from them, your wait time and a named contact, and keep your capacity note up to date.",
+        ] },
+        { title: "Advertising rules still apply", paragraphs: [
+          "Physiotherapists, occupational therapists, psychologists and podiatrists are registered through Ahpra, so its advertising guidelines apply to their websites, social media and ads. That includes no testimonials about clinical care and no misleading claims or implied guaranteed results. Speech pathologists and exercise physiologists are not Ahpra-registered, but general consumer law still applies, and their professional bodies have their own standards.",
+          "Be careful with reviews on your own website, and check each practitioner's registration details are correct wherever they are named. If you offer NDIS services, the NDIS Code of Conduct applies as well.",
+        ], checklist: ["Website and social posts checked against Ahpra's guidelines.", "No outcome promises.", "Practitioner details accurate."] },
+        { title: "Use ads to match the model", paragraphs: [
+          "If you use Google Ads, a clinic can target a tight radius around the door. A mobile service should target the suburbs it visits, with ads naming those areas, and run them only when it has capacity. Google's personalised advertising policy restricts targeting people based on health, so search ads are usually the right starting point.",
+          "Then count calls of a reasonable length, completed bookings and referral forms rather than taps on a phone number, and ask new patients how they found you.",
+          "Seam Media is based on the Mornington Peninsula. Our page on SEO in Mount Eliza explains how we help local businesses show up here, and our allied health page covers websites, Google Maps and Google Ads for practices, including the written 60-day review for new Google Ads clients, with the details on that page.",
+        ], links: [{ title: "SEO in Mount Eliza", path: "/mount-eliza/seo" }, { title: "Allied health marketing", path: "/allied-health-marketing" }] },
+      ],
+      sources: [googleLocal, googleServiceArea, googleProfileRules, ahpraGuidelines, ahpraBoards, googlePersonalisedAds, googleLocationTargeting, ndisCode],
+      links: [{ title: "SEO in Mount Eliza", path: "/mount-eliza/seo" }, { title: "Allied health marketing", path: "/allied-health-marketing" }, packagesLink],
     },
   },
 ];
