@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Always send title, description and canonical in the <head>, including on per-request pages.
+  htmlLimitedBots: /.*/,
   images: {
     remotePatterns: [
       {
