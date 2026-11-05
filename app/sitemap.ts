@@ -22,6 +22,7 @@ const routes = [
   "best-digital-marketing-agencies-frankston",
   "marketing-packages",
   "social-media",
+  "privacy",
   "web-design",
   "seo",
   "graphic-design",

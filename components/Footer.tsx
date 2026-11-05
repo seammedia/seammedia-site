@@ -262,9 +262,14 @@ export default function Footer() {
         <div className="mx-auto max-w-7xl px-6 py-6">
           <div className="flex flex-col items-center justify-between gap-3 text-sm text-gray-500 sm:flex-row">
             <p>Copyright {new Date().getFullYear()} © All rights reserved.</p>
-            <Link href="/terms-and-conditions" className="transition-colors hover:text-white">
-              Terms and Conditions
-            </Link>
+            <div className="flex gap-5">
+              <Link href="/privacy" className="transition-colors hover:text-white">
+                Privacy Policy
+              </Link>
+              <Link href="/terms-and-conditions" className="transition-colors hover:text-white">
+                Terms and Conditions
+              </Link>
+            </div>
           </div>
         </div>
       </div>

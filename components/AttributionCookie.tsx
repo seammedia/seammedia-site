@@ -6,7 +6,7 @@ import { useEffect } from "react";
 // for 90 days, Google's offline-conversion window. /api/enquiry reads it and adds the
 // values to the enquiry email, so each lead shows which ad and keyword produced it and
 // can later be uploaded to Google Ads as a qualified lead or signed client. Added 7 Oct 2026.
-const PARAMS = ["gclid", "gbraid", "wbraid", "utm_source", "utm_medium", "utm_campaign", "utm_term"];
+const PARAMS = ["gclid", "gbraid", "wbraid", "utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "fbclid"];
 
 export default function AttributionCookie() {
   useEffect(() => {
