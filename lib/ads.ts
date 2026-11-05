@@ -10,7 +10,7 @@ export const CALL_LABEL = "MoAyCPzMuZIdELPf5_NE"; // "Contact" conversion action
 export const EMAIL_LABEL = "qvSXCNKm3J0dELPf5_NE"; // "Email click" conversion action (mailto: link), secondary. Added 15 Oct 2026.
 
 // Meta pixel ID (Events Manager > Data sources). Loaded only on the /social-media-guide pages; nothing loads while blank.
-export const META_PIXEL_ID = "";
+export const META_PIXEL_ID = "227823108605514";
 
 // Options for the "How did you hear about us?" question on the enquiry forms (sent as heardAbout).
 export const HEARD_ABOUT_OPTIONS = ["Google search", "Google ad", "Google Maps", "Facebook or Instagram", "A friend or referral", "Other"];
