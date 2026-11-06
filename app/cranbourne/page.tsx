@@ -15,7 +15,7 @@ export const metadata = createMetadata({
 
 export default function CranbournePage() {
   const services = [
-    { href: "/social-media", label: "Social Media Management", description: "Grow your online presence with strategic social media campaigns tailored for Cranbourne businesses." },
+    { href: "/social-media", label: "Social Media Marketing", description: "Social media marketing for Cranbourne businesses: regular posts and campaigns that show your work to local customers." },
     { href: "/web-design", label: "Website Design", description: "Custom, responsive websites designed to convert visitors into customers." },
     { href: "/seo", label: "SEO", description: "Rank higher in search results and attract more local Cranbourne customers." },
     { href: "/graphic-design", label: "Graphic Design", description: "Professional design services for all your branding and marketing materials." },
