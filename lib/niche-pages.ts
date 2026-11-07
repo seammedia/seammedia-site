@@ -687,6 +687,7 @@ export const builders: NicheConfig = tradePage({
       { title: "Decks, pergolas and smaller jobs", copy: "Lower bids, or left to your Google profile and SEO, so the ad budget goes to the jobs you want most." },
       { title: "Tracking every enquiry", copy: "We track which search, ad and page brought each enquiry, so you know what each one cost and where the next dollar should go." },
     ],
+    guide: { title: "Commercial or contracting work? See our construction marketing agency page", path: "/construction-marketing" },
   },
 });
 

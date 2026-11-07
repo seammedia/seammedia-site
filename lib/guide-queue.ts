@@ -366,7 +366,7 @@ export const guideQueue: ScheduledGuide[] = [
         ] },
       ],
       sources: [googleLocal, googleReviews, googleProfileRules, googleCalls],
-      links: [{ title: "Marketing for builders", path: "/builder-marketing" }, { title: "Google Ads management", path: "/google-ads-management" }, packagesLink],
+      links: [{ title: "Marketing for builders", path: "/builder-marketing" }, { title: "Construction marketing agency", path: "/construction-marketing" }, { title: "Google Ads management", path: "/google-ads-management" }, packagesLink],
     },
   },
   {
@@ -1087,7 +1087,7 @@ export const guideQueue: ScheduledGuide[] = [
         ] },
       ],
       sources: [googleHelpful, googleSeoStarter, googleLocal, googleReviews],
-      links: [{ title: "Digital marketing agency in Dandenong", path: "/dandenong" }, { title: "Marketing for builders", path: "/builder-marketing" }, { title: "Websites for tradies", path: "/tradie-websites" }],
+      links: [{ title: "Digital marketing agency in Dandenong", path: "/dandenong" }, { title: "Marketing for builders", path: "/builder-marketing" }, { title: "Construction marketing agency for contractors", path: "/construction-marketing" }, { title: "Websites for tradies", path: "/tradie-websites" }],
     },
   },
   {
