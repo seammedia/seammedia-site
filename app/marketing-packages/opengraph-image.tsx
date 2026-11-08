@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Seam Media marketing packages: Foundation $140, Growth $235 and Complete Growth $350 per week, billed weekly plus GST.";
+export const alt = "Seam Media marketing packages: Smart Website $99, Foundation $140, Growth $235 and Complete Growth $350 per week, billed weekly plus GST.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -10,9 +10,10 @@ export default function MarketingPackagesImage() {
       <div style={{ display: "flex", color: "#ec4899", fontSize: 23, letterSpacing: 7 }}>SEAM MEDIA</div>
       <div style={{ display: "flex", fontSize: 44, fontWeight: 700, marginTop: 16 }}>Start with the basics.</div>
       <div style={{ display: "flex", fontSize: 44, fontWeight: 700, color: "#ec4899" }}>Grow when you’re ready.</div>
-      <div style={{ display: "flex", gap: 20, marginTop: 24 }}>
+      <div style={{ display: "flex", gap: 16, marginTop: 24 }}>
         {[
-          ["Foundation", "$140", "Basic website + socials"],
+          ["Smart Website", "$99", "Website + enquiry texts"],
+          ["Foundation", "$140", "Social media"],
           ["Growth", "$235", "Local SEO + Google OR Meta Ads"],
           ["Complete Growth", "$350", "Website, socials, SEO + both ads"],
         ].map(([name, weekly, scope]) => (

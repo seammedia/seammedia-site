@@ -27,7 +27,8 @@ const growth = [
   "Local SEO with five tracked search terms",
   "Google Business Profile posts and management",
   "Review requests, monitoring and reply support",
-  "Website setup and ongoing care, plus one priority improvement a month",
+  "A Smart Website: missed calls texted back, instant enquiry replies and every enquiry sent to your phone",
+  "One priority website or SEO improvement a month",
   "Monthly performance reporting",
 ];
 
@@ -113,8 +114,8 @@ export default function GuideThanksPage() {
             <p className="text-sm font-bold uppercase tracking-[0.12em] text-gray-400">Not ready for ads?</p>
             <h2 className="mt-2 text-2xl font-black">Local Marketing Foundation</h2>
             <p className="mt-2 text-2xl font-black">$140<span className="ml-1 text-base font-bold">a week + GST</span></p>
-            <p className="mt-4 leading-relaxed text-gray-300">Basic website setup and care, plus branded social posts and captions scheduled on Facebook and Instagram, using your photos.</p>
-            <p className="mt-3 text-sm leading-relaxed text-gray-400">It doesn&apos;t include ads, SEO, Google Business Profile management or reporting.</p>
+            <p className="mt-4 leading-relaxed text-gray-300">Branded social posts and captions scheduled on Facebook and Instagram, using your photos.</p>
+            <p className="mt-3 text-sm leading-relaxed text-gray-400">It&apos;s social media only, so it doesn&apos;t include a website, ads, SEO, Google Business Profile management or reporting.</p>
             <Link href="/marketing-packages" className="mt-auto pt-5 font-bold text-[#f5b5b5] hover:underline">Compare every plan</Link>
           </div>
         </div>

@@ -33,27 +33,45 @@ type PackageOffer = {
   features: string[];
   exclusions: string;
   cta: string;
-  signupPlan: "foundation" | "growth" | "complete";
+  signupPlan: "smart" | "foundation" | "growth" | "complete";
   featured?: boolean;
   featuredLabel?: string;
 };
 
+// Smart Website and the social-only Foundation: Heath, 8 Nov 2026. The lead manager reads these cards
+// (name, weekly price, "per week + GST", "Billed weekly", description, features, exclusions), so keep that order.
 const offers: PackageOffer[] = [
   {
+    name: "Smart Website",
+    outcome: "A website that catches every enquiry.",
+    price: "$99 per week + GST",
+    weekly: "$99",
+    description: "A smart website for your business that texts back missed calls and sends every enquiry to your phone. No setup fee.",
+    features: [
+      "A smart website built for your business, with no cap on pages",
+      "Automatic text back when you miss a call",
+      "Instant automatic reply to form enquiries",
+      "Every enquiry (calls, texts, forms and missed calls) sent to your phone by SMS",
+      "Basic local SEO",
+    ],
+    exclusions: "Social media, full local SEO with tracked search terms, Google Business Profile management, reporting and paid advertising are not included. Ecommerce, custom functionality and complex builds are quoted separately.",
+    cta: "Start with a Smart Website",
+    signupPlan: "smart",
+  },
+  {
     name: "Local Marketing Foundation",
-    outcome: "A simple website. Active socials.",
+    outcome: "Active socials.",
     price: "$140 per week + GST",
     weekly: "$140",
-    description: "Basic website and social media support for businesses that want a simple, credible online presence.",
+    description: "Social media support for businesses that want active, credible Facebook and Instagram pages.",
     features: [
-      "Basic website setup and ongoing care",
-      "Small website text, image and contact-detail updates",
-      "Basic branded social posts and captions",
+      "Branded social posts and captions",
       "Social content scheduling on Facebook and Instagram",
+      "Reel editing, agreed in your scope",
       "Client-supplied photos, footage and business information",
     ],
-    exclusions: "SEO, Google Business Profile management, map-pack tracking, performance reporting and paid advertising are not included. Filming, complex websites and larger projects are quoted separately.",
-    cta: "Start with the foundation",
+    exclusions: "Websites (see Smart Website), SEO, Google Business Profile management, map-pack tracking, performance reporting and paid advertising are not included. On-site filming is quoted separately.",
+    cta: "Start with social",
     signupPlan: "foundation",
   },
   {
@@ -61,9 +79,10 @@ const offers: PackageOffer[] = [
     outcome: "Get found locally. Run one ad platform.",
     price: "$235 per week + GST",
     weekly: "$235",
-    description: "Website and social support, plus local search visibility and management of either Google Ads or Meta Ads.",
+    description: "Your Smart Website and social media, plus full local SEO and management of either Google Ads or Meta Ads.",
     features: [
-      "Everything in Local Marketing Foundation",
+      "Everything in Smart Website",
+      "Foundation social posts and scheduling",
       "Management of one ad platform: Google Ads OR Meta Ads",
       "Campaign setup, conversion tracking and optimisation",
       "Local SEO and five tracked search terms",
@@ -102,16 +121,18 @@ const offers: PackageOffer[] = [
 ];
 
 const comparisonRows = [
-  ["Basic website setup and care", "Included", "Included", "Included"],
-  ["Social content and scheduling", "Included", "Included", "Included"],
-  ["Google Business Profile management", "Not included", "Included", "Included"],
-  ["Local SEO and map-pack tracking", "Not included", "5 terms", "5 terms"],
-  ["Review requests and monitoring", "Not included", "Included", "Included"],
-  ["Monthly website or SEO improvement", "Basic website care", "1 priority", "1 priority"],
-  ["Ad management", "Not included", "Google OR Meta", "Google AND Meta"],
-  ["Conversion tracking", "Not included", "Selected ad platform", "Across both ad platforms"],
-  ["Performance reporting", "Not included", "Monthly", "Combined monthly report"],
-  ["Weekly price", "$140", "$235", "$350"],
+  ["Smart website, no cap on pages", "Included", "Not included", "Included", "Included"],
+  ["Missed-call text back and instant enquiry replies", "Included", "Not included", "Included", "Included"],
+  ["Every enquiry sent to your phone by SMS", "Included", "Not included", "Included", "Included"],
+  ["Social content and scheduling", "Not included", "Included", "Included", "Included"],
+  ["Local SEO", "Basic", "Not included", "5 tracked terms + map-pack scans", "5 tracked terms + map-pack scans"],
+  ["Google Business Profile management", "Not included", "Not included", "Included", "Included"],
+  ["Review requests and monitoring", "Not included", "Not included", "Included", "Included"],
+  ["Monthly website or SEO improvement", "Not included", "Not included", "1 priority", "1 priority"],
+  ["Ad management", "Not included", "Not included", "Google OR Meta", "Google AND Meta"],
+  ["Conversion tracking", "Not included", "Not included", "Selected ad platform", "Across both ad platforms"],
+  ["Performance reporting", "Not included", "Not included", "Monthly", "Combined monthly report"],
+  ["Weekly price", "$99", "$140", "$235", "$350"],
 ];
 
 const growthChannels = [
@@ -149,8 +170,9 @@ const proof = [
   ["$1M+", "ad spend managed"],
 ];
 
-const goals = ["Build my local presence", "Add one enquiry channel", "Bring all my marketing together"];
+const goals = ["Get a website that catches every enquiry", "Keep my socials active", "Add one enquiry channel", "Bring all my marketing together"];
 const investmentOptions = [
+  "$99 a week",
   "$140 a week",
   "$235 a week",
   "$350 a week",
@@ -169,7 +191,8 @@ export default function MarketingPackagesClient() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
   const recommendation = useMemo(() => {
-    if (goal === "Build my local presence") return "Local Marketing Foundation";
+    if (goal === "Get a website that catches every enquiry") return "Smart Website";
+    if (goal === "Keep my socials active") return "Local Marketing Foundation";
     if (goal === "Add one enquiry channel") return "Growth";
     if (goal === "Bring all my marketing together") return "Complete Growth";
     return "the right plan";
@@ -225,7 +248,7 @@ export default function MarketingPackagesClient() {
             <span className="bg-gradient-to-r from-zinc-400 via-white to-pink-400 bg-clip-text text-transparent">Grow when you’re ready.</span>
           </h1>
           <p className="mt-8 max-w-3xl text-lg leading-relaxed text-zinc-400 md:text-xl">
-            Start with a basic website and social media for $140 a week plus GST. Step up to local SEO and one ad platform, or bring your website, socials, SEO and both ad platforms together. All packages are billed weekly.
+            Start with a Smart Website for $99 a week plus GST, or social media for $140. Step up to full local SEO and one ad platform, or bring your website, socials, SEO and both ad platforms together. All packages are billed weekly.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <a href="#plans" className="inline-flex items-center gap-2 rounded-full bg-pink-500 px-7 py-3.5 font-semibold transition hover:bg-pink-600">Compare plans <ArrowRight size={18} /></a>
@@ -248,12 +271,12 @@ export default function MarketingPackagesClient() {
       <section id="plans" className="px-6 py-24">
         <div className="mx-auto max-w-7xl">
           <div className="mb-14 max-w-4xl">
-            <p className="font-mono text-xs tracking-[0.25em] text-pink-400">THREE CLEAR LEVELS OF SUPPORT</p>
-            <h2 className="mt-4 text-4xl font-bold md:text-6xl">The basics, local growth or the complete package.</h2>
-            <p className="mt-5 text-lg text-zinc-400">Foundation keeps your website and socials active. Growth adds local search and one ad platform. Complete Growth brings it all together with Google and Meta Ads. Choose the level your business needs.</p>
+            <p className="font-mono text-xs tracking-[0.25em] text-pink-400">FOUR CLEAR LEVELS OF SUPPORT</p>
+            <h2 className="mt-4 text-4xl font-bold md:text-6xl">A smart website, socials, local growth or the complete package.</h2>
+            <p className="mt-5 text-lg text-zinc-400">Smart Website gives you a website that catches every enquiry. Foundation keeps your socials active. Growth includes both, plus full local SEO and one ad platform. Complete Growth brings it all together with Google and Meta Ads. Choose the level your business needs.</p>
           </div>
 
-          <div className="grid gap-6 lg:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {offers.map((offer) => (
               <article key={offer.name} className={`relative flex flex-col rounded-3xl border p-7 ${offer.featured ? "border-pink-500/50 bg-gradient-to-b from-pink-500/15 to-zinc-950 shadow-2xl shadow-pink-500/10" : "border-white/10 bg-zinc-950"}`}>
                 {offer.featured && <span className="absolute -top-3 left-6 rounded-full bg-pink-500 px-4 py-1 text-xs font-bold uppercase tracking-wider">{offer.featuredLabel || "Recommended"}</span>}
@@ -309,7 +332,7 @@ export default function MarketingPackagesClient() {
             <h2 className="mt-4 text-4xl font-bold md:text-5xl">See exactly what each package includes.</h2>
           </div>
           <div className="overflow-x-auto rounded-2xl border border-white/10">
-            <table className="w-full min-w-[840px] text-left text-sm">
+            <table className="w-full min-w-[1000px] text-left text-sm">
               <thead className="bg-black">
                 <tr><th className="p-5 text-zinc-500">Capability</th>{offers.map((offer) => <th key={offer.name} className="p-5 text-white">{offer.name}</th>)}</tr>
               </thead>
@@ -328,8 +351,8 @@ export default function MarketingPackagesClient() {
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <p className="font-mono text-xs tracking-[0.25em] text-pink-400">WHERE SOCIAL CONTENT SITS NOW</p>
-            <h2 className="mt-4 text-4xl font-bold md:text-5xl">Social content is part of every plan.</h2>
-            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-zinc-400">Every package includes social content and scheduling. Foundation keeps it basic, using your supplied assets to keep Facebook and Instagram active. Growth and Complete Growth connect that social presence with local search and advertising. Our content standards are:</p>
+            <h2 className="mt-4 text-4xl font-bold md:text-5xl">Social content from Foundation upwards.</h2>
+            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-zinc-400">Foundation, Growth and Complete Growth include social content and scheduling. Foundation keeps it basic, using your supplied assets to keep Facebook and Instagram active. Growth and Complete Growth connect that social presence with local search and advertising. Our content standards are:</p>
           </div>
           <div className="rounded-3xl border border-white/10 bg-black p-7 md:p-9">
             <ul className="space-y-4">
@@ -390,7 +413,7 @@ export default function MarketingPackagesClient() {
           <div>
             <div className="flex items-center gap-2 text-pink-400"><Sparkles size={18} /><span className="font-mono text-xs tracking-[0.2em]">FIND YOUR FIT</span></div>
             <h2 className="mt-5 text-4xl font-bold md:text-5xl">Find the right starting point.</h2>
-            <p className="mt-5 max-w-lg text-zinc-500">Three quick steps help us recommend basic website and social support, Growth with one ad platform, or Complete Growth with everything working together.</p>
+            <p className="mt-5 max-w-lg text-zinc-500">Three quick steps help us recommend a Smart Website, social media support, Growth with one ad platform, or Complete Growth with everything working together.</p>
             <div className="mt-9 space-y-4 text-sm text-zinc-400">
               <div className="flex gap-3"><CheckCircle2 className="h-5 w-5 text-pink-400" />No obligation or forced advertising bundle</div>
               <div className="flex gap-3"><CircleDollarSign className="h-5 w-5 text-pink-400" />Clear scope and pricing in your proposal</div>
@@ -463,15 +486,16 @@ export default function MarketingPackagesClient() {
           <div className="text-center"><p className="font-mono text-xs tracking-[0.25em] text-pink-400">COMMON QUESTIONS</p><h2 className="mt-4 text-4xl font-bold md:text-5xl">Clear before you commit.</h2></div>
           <div className="mt-12 divide-y divide-white/10 rounded-2xl border border-white/10 bg-black px-6 md:px-8">
             {[
-              ["How much does it cost?", "Foundation is $140 a week, Growth is $235 a week, and Complete Growth is $350 a week. All prices are in AUD, plus GST, and billed weekly."],
+              ["How much does it cost?", "Smart Website is $99 a week, Foundation is $140 a week, Growth is $235 a week, and Complete Growth is $350 a week. All prices are in AUD, plus GST, and billed weekly. There's no setup fee on the Smart Website."],
               ["How often am I billed?", "You are billed weekly at the advertised package price, plus GST. Advertising spend is separate from your weekly service fee."],
-              ["What is included in Foundation?", "Basic website setup and care, small website updates, branded social posts, captions and Facebook and Instagram scheduling using assets you supply. Foundation does not include SEO, Google Business Profile management, map-pack tracking, performance reporting or paid advertising."],
-              ["What does Growth add?", "Growth adds local SEO, Google Business Profile management, map-pack tracking, review support, a prioritised monthly website or SEO improvement, performance reporting, and management of either Google Ads or Meta Ads."],
+              ["What is included in the Smart Website?", "A smart website built for your business with no cap on pages, an automatic text back when you miss a call, an instant automatic reply to form enquiries, every enquiry sent to your phone by SMS, and basic local SEO. There's no setup fee, and it's month to month."],
+              ["What is included in Foundation?", "Branded social posts, captions and Facebook and Instagram scheduling using assets you supply, with reel editing agreed in your scope. Foundation is social media only: websites sit in the Smart Website, and it doesn't include SEO, Google Business Profile management, map-pack tracking, performance reporting or paid advertising."],
+              ["What does Growth include?", "Growth includes the Smart Website and Foundation social, and adds full local SEO with five tracked search terms, Google Business Profile management, map-pack tracking, review support, a prioritised monthly website or SEO improvement, performance reporting, and management of either Google Ads or Meta Ads."],
               ["What is included in Complete Growth?", "Complete Growth includes everything in Growth, with both Google Ads and Meta Ads management, social and campaign creative, shared tracking, combined reporting and a monthly marketing review."],
-              ["Can we start with Foundation and upgrade later?", "Yes. Start with basic website and social support, then move to Growth or Complete Growth when you need local SEO or advertising management."],
+              ["Can I start small and upgrade later?", "Yes. Start with the Smart Website or Foundation, then move to Growth or Complete Growth when you need local SEO or advertising management. You keep your website when you upgrade."],
               ["Is ad spend included?", "No. Advertising spend is separate from the management fee and is paid directly to Google or Meta. Any third-party platform fees are separate too."],
-              ["What does a basic website include?", "A simple business website and ongoing care, with small text, image and contact-detail updates. The pages and setup requirements are agreed in your proposal. Ecommerce, custom functionality, complex builds and larger projects are quoted separately."],
-              ["Are SEO articles included in Foundation?", "No. SEO starts with Growth. In Growth and Complete Growth, an article may be the prioritised monthly SEO improvement where it is the best use of that allowance."],
+              ["Is there a limit on website pages?", "No. The Smart Website has no cap on pages. Ecommerce, custom functionality, complex builds and larger projects are quoted separately."],
+              ["Is SEO included in the Smart Website?", "Basic local SEO is included. Full local SEO, with tracked search terms, Google Business Profile management and map-pack scans, starts with Growth. In Growth and Complete Growth, an article may be the prioritised monthly SEO improvement where it is the best use of that allowance."],
               ["How are review requests handled?", "Review support is included in Growth and Complete Growth. We request honest feedback from genuine customers without incentives or review gating. Sensitive and negative public replies remain approval-led."],
               ["Is there a lock-in contract?", "No. Everything is month to month and billed weekly. Cancel any time, and it takes effect at the end of the billing period you've paid for."],
             ].map(([question, answer]) => <div key={question} className="py-6"><h3 className="font-semibold">{question}</h3><p className="mt-2 text-sm leading-relaxed text-zinc-500">{answer}</p></div>)}
