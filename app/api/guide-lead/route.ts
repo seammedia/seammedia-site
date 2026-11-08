@@ -34,10 +34,13 @@ export async function POST(request: NextRequest) {
   if (!/^\+?\d{8,15}$/.test(phone.replace(/[\s()-]/g, ""))) return reply(400, { error: "Please enter a valid mobile number." });
 
   // offer "smart-website" comes from /smart-website (8 Nov 2026); the lead manager sends the Smart Website reply instead of the guide
-  const smart = field("offer", 30) === "smart-website";
+  const offer = field("offer", 30);
+  const smart = offer === "smart-website";
+  const websiteGuide = offer === "website-guide"; // /website-guide opt-in (8 Nov 2026): the lead manager sends the tradie website guide
   const trade = field("trade", 120);
   const website = field("website", 200);
   const lead: Record<string, string> = { name, company: business, email, phone_number: phone };
+  if (websiteGuide) lead.offer = "website-guide";
   if (smart) {
     lead.offer = "smart-website";
     if (trade) lead.trade = trade;
@@ -78,10 +81,10 @@ export async function POST(request: NextRequest) {
       method: "POST",
       headers: { "Content-Type": "application/json", "X-Seam-Form-Secret": secret },
       body: JSON.stringify({
-        form: smart ? "Smart Website ($99/wk): REPLY BY HAND (lead manager was unavailable)" : "Social media guide: SEND THE PDF BY HAND (lead manager was unavailable)",
+        form: smart ? "Smart Website ($99/wk): REPLY BY HAND (lead manager was unavailable)" : websiteGuide ? "Tradie website guide: SEND THE PDF BY HAND (lead manager was unavailable)" : "Social media guide: SEND THE PDF BY HAND (lead manager was unavailable)",
         name, business, email, phone,
         ...(smart ? { message: [trade && `Does: ${trade}`, website && `Website: ${website}`].filter(Boolean).join(" | ") } : {}),
-        page: smart ? "https://www.seammedia.com.au/smart-website" : "https://www.seammedia.com.au/social-media-guide",
+        page: smart ? "https://www.seammedia.com.au/smart-website" : websiteGuide ? "https://www.seammedia.com.au/website-guide" : "https://www.seammedia.com.au/social-media-guide",
         submitted_at: new Date().toISOString(),
         ...(lead.utm_campaign ? { utm_campaign: lead.utm_campaign } : {}),
       }),

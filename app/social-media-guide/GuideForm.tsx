@@ -10,7 +10,17 @@ const inputClass =
 
 // Sends the lead to /api/guide-lead, remembers it for the "call me" button on the next page,
 // then moves to the thanks page, where the Meta Lead event fires.
-export default function GuideForm({ id = "get-the-guide" }: { id?: string }) {
+// Also used by /website-guide (8 Nov 2026) with its own offer, storage key and thanks page.
+type GuideFormProps = { id?: string; offer?: string; storageKey?: string; thanksPath?: string; heading?: string; button?: string };
+
+export default function GuideForm({
+  id = "get-the-guide",
+  offer,
+  storageKey = "seam_guide_lead",
+  thanksPath = "/social-media-guide/thanks",
+  heading = "Where should I send it?",
+  button = "Send me the free guide",
+}: GuideFormProps) {
   const router = useRouter();
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
@@ -25,16 +35,16 @@ export default function GuideForm({ id = "get-the-guide" }: { id?: string }) {
       const res = await fetch("/api/guide-lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(values),
+        body: JSON.stringify(offer ? { ...values, offer } : values),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(data.error || "Please try again, or call me on 0402 642 746.");
       try {
-        sessionStorage.setItem("seam_guide_lead", JSON.stringify({ name: values.name, business: values.business, email: values.email, phone: values.phone, tracked: false }));
+        sessionStorage.setItem(storageKey, JSON.stringify({ name: values.name, business: values.business, email: values.email, phone: values.phone, tracked: false }));
       } catch {
         // Storage can be blocked; the thanks page still works without it.
       }
-      router.push("/social-media-guide/thanks");
+      router.push(thanksPath);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Please try again, or call me on 0402 642 746.");
       setBusy(false);
@@ -43,7 +53,7 @@ export default function GuideForm({ id = "get-the-guide" }: { id?: string }) {
 
   return (
     <form id={id} onSubmit={submit} className="space-y-3 rounded-2xl border border-white/10 bg-[#141417] p-6 sm:p-7">
-      <p className="text-xl font-bold text-white">Where should I send it?</p>
+      <p className="text-xl font-bold text-white">{heading}</p>
       <input className={inputClass} name="name" autoComplete="name" placeholder="Your name" required aria-label="Your name" />
       <input className={inputClass} name="business" autoComplete="organization" placeholder="Business name" required aria-label="Business name" />
       <input className={inputClass} name="email" type="email" autoComplete="email" placeholder="Email" required aria-label="Email" />
@@ -51,7 +61,7 @@ export default function GuideForm({ id = "get-the-guide" }: { id?: string }) {
       <input className="hidden" name="fax_number" tabIndex={-1} autoComplete="off" aria-hidden="true" />
       {error && <p role="alert" className="text-sm text-red-300">{error}</p>}
       <button type="submit" disabled={busy} className="flex w-full items-center justify-center gap-2 rounded-lg bg-[#f5b5b5] px-5 py-4 text-lg font-bold text-black transition-opacity hover:opacity-90 disabled:opacity-60">
-        {busy ? "Sending..." : "Send me the free guide"}
+        {busy ? "Sending..." : button}
         {!busy && <ArrowRight className="h-5 w-5" />}
       </button>
       <p className="text-xs leading-relaxed text-gray-400">
