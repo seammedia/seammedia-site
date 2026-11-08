@@ -8,7 +8,8 @@ const reply = (status: number, body: object) => NextResponse.json(body, { status
 const LEAD_MANAGER_URL = "https://seam-media-lead-manager.vercel.app/api/leads/guide";
 const RELAY_URL = "https://thesoutheastplumber.com.au/api/seam-lead";
 
-// Social media guide opt-in. The lead manager saves the lead, emails the guide and alerts Heath.
+// Social media guide opt-in, and the Smart Website enquiry form. The lead manager saves the lead, emails the guide
+// (or the Smart Website reply) and alerts Heath.
 // If it can't be reached, the lead still reaches contact@ through the normal enquiry relay.
 export async function POST(request: NextRequest) {
   const dev = process.env.NODE_ENV !== "production";
@@ -32,7 +33,16 @@ export async function POST(request: NextRequest) {
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return reply(400, { error: "Please enter a valid email address." });
   if (!/^\+?\d{8,15}$/.test(phone.replace(/[\s()-]/g, ""))) return reply(400, { error: "Please enter a valid mobile number." });
 
+  // offer "smart-website" comes from /smart-website (8 Nov 2026); the lead manager sends the Smart Website reply instead of the guide
+  const smart = field("offer", 30) === "smart-website";
+  const trade = field("trade", 120);
+  const website = field("website", 200);
   const lead: Record<string, string> = { name, company: business, email, phone_number: phone };
+  if (smart) {
+    lead.offer = "smart-website";
+    if (trade) lead.trade = trade;
+    if (website) lead.website = website;
+  }
   try {
     const attr = JSON.parse(decodeURIComponent(request.cookies.get("seam_attr")?.value || "{}")) as Record<string, unknown>;
     for (const key of ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "fbclid"]) {
@@ -68,9 +78,10 @@ export async function POST(request: NextRequest) {
       method: "POST",
       headers: { "Content-Type": "application/json", "X-Seam-Form-Secret": secret },
       body: JSON.stringify({
-        form: "Social media guide: SEND THE PDF BY HAND (lead manager was unavailable)",
+        form: smart ? "Smart Website ($99/wk): REPLY BY HAND (lead manager was unavailable)" : "Social media guide: SEND THE PDF BY HAND (lead manager was unavailable)",
         name, business, email, phone,
-        page: "https://www.seammedia.com.au/social-media-guide",
+        ...(smart ? { message: [trade && `Does: ${trade}`, website && `Website: ${website}`].filter(Boolean).join(" | ") } : {}),
+        page: smart ? "https://www.seammedia.com.au/smart-website" : "https://www.seammedia.com.au/social-media-guide",
         submitted_at: new Date().toISOString(),
         ...(lead.utm_campaign ? { utm_campaign: lead.utm_campaign } : {}),
       }),
