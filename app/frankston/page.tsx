@@ -87,6 +87,14 @@ export default function FrankstonPage() {
               </Link>
             ))}
           </div>
+          {/* 8 Nov 2026 (Heath): link the local agencies page from this hub. Plain descriptive anchor, one page only. */}
+          <p className="mt-10 text-center text-gray-700">
+            Comparing local options? See the{' '}
+            <Link href="/best-digital-marketing-agencies-frankston" className="font-semibold text-[#405e6b] underline underline-offset-4">
+              best digital marketing agencies in Frankston
+            </Link>
+            .
+          </p>
         </div>
       </Section>
 
