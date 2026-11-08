@@ -216,7 +216,7 @@ export const tradies: NicheConfig = {
     },
     {
       q: "How much does it cost?",
-      a: "Packages start at $140 a week plus GST for a basic website and socials. Growth, which adds your Google profile, local SEO, review requests and one ad platform, is $235 a week plus GST. Everything is billed weekly, and ad spend is paid directly to Google or Meta.",
+      a: "Websites start at $99 a week plus GST with the Smart Website: a website built for you that texts back missed calls and sends every enquiry to your phone, with no setup fee. Growth, which adds social media, your Google profile, full local SEO, review requests and one ad platform, is $235 a week plus GST. Everything is billed weekly, and ad spend is paid directly to Google or Meta.",
     },
     {
       q: "Do I need to run Google Ads?",
@@ -224,7 +224,7 @@ export const tradies: NicheConfig = {
     },
     {
       q: "I don't have a website. Is that a problem?",
-      a: "Not at all. We set up and look after a simple, fast website as part of every package.",
+      a: "Not at all. The Smart Website ($99 a week plus GST) builds one for you, and Growth and Complete Growth include it too.",
     },
     {
       q: "Do you work with tradies outside Melbourne?",
@@ -307,7 +307,7 @@ export const ndis: NicheConfig = {
     },
     {
       q: "How much does it cost?",
-      a: "Packages start at $140 a week plus GST for a basic website and socials. Growth, which adds your Google profile, local SEO, review requests and one ad platform, is $235 a week plus GST. Everything is billed weekly, and ad spend is paid directly to Google or Meta.",
+      a: "Websites start at $99 a week plus GST with the Smart Website: a website built for you that texts back missed calls and sends every enquiry to your phone, with no setup fee. Growth, which adds social media, your Google profile, full local SEO, review requests and one ad platform, is $235 a week plus GST. Everything is billed weekly, and ad spend is paid directly to Google or Meta.",
     },
     {
       q: "Do I need to run Google Ads?",
@@ -315,7 +315,7 @@ export const ndis: NicheConfig = {
     },
     {
       q: "We don't have a website yet. Is that a problem?",
-      a: "Not at all. We set up and look after a simple, fast website as part of every package.",
+      a: "Not at all. The Smart Website ($99 a week plus GST) builds one for you, and Growth and Complete Growth include it too.",
     },
     {
       q: "Do you work with providers outside Melbourne?",
@@ -822,7 +822,7 @@ export const tradieWebsites: NicheConfig = {
     eyebrow: "WEBSITES FOR TRADIES",
     title: "Websites for Tradies | Fast Tradie Web Design | Seam Media",
     description:
-      "Websites for tradies that get calls: fast on a phone, a page for every service and suburb, set up and looked after for you. Packages from $140 a week plus GST, billed weekly. Free Google Maps check-up.",
+      "Websites for tradies that get calls: fast on a phone, a page for every service and suburb, and missed calls texted back. Smart websites from $99 a week plus GST, no setup fee. Free Google Maps check-up.",
     keywords: ["tradie websites", "websites for tradies", "website for tradies", "web design for tradies", "tradie website design", "tradie web design"],
     headline: "A website that wins the job,",
     headlineAccent: "not just a business card.",
@@ -850,7 +850,7 @@ export const tradieWebsites: NicheConfig = {
         { title: "Your number one tap away", copy: "A call button at the top of every page on a phone, tracked, so you know which pages bring calls." },
         { title: "Service and suburb pages", copy: "A page for each job and area you want work in, written so Google can rank each one." },
         { title: "Photos and reviews", copy: "Your real job photos and Google reviews on the pages people look at before they call." },
-        { title: "Looked after for you", copy: "Set up and looked after as part of your weekly package, with no big upfront cost." },
+        { title: "Missed calls texted back", copy: "Part of the Smart Website, $99 a week plus GST with no setup fee: missed callers get a text straight back, and every enquiry lands on your phone." },
       ],
     },
   }),
@@ -860,7 +860,7 @@ export const tradieWebsites: NicheConfig = {
 
 // Matched to the "Tradie SEO" ad group (17 Oct 2026). SEO searches had been landing on the general tradie page
 // through an ad about Google Maps and ads. Local SEO is part of Growth ($235) and Complete Growth ($350), checked
-// against /marketing-packages on 17 Oct; Foundation ($140) is a website and socials only.
+// against /marketing-packages on 17 Oct. From 8 Nov Foundation ($140) is social only and the Smart Website ($99) has basic local SEO.
 export const tradieSeo: NicheConfig = {
   ...tradePage({
     slug: "tradie-seo",
@@ -889,7 +889,7 @@ export const tradieSeo: NicheConfig = {
     guarantee: tradieGuarantee,
     extraFaqs: [
       { q: "How long does SEO take for a tradie?", a: "Google profile improvements often show within a few weeks once it's complete and reviews start coming in. New service and suburb pages usually take a few months to rank well. The weekly map-pack scans show you the movement as it happens." },
-      { q: "Which package includes SEO?", a: "Local SEO is part of Growth ($235 a week plus GST) and Complete Growth ($350 a week plus GST). Foundation ($140 a week plus GST) covers a website and socials only." },
+      { q: "Which package includes SEO?", a: "The Smart Website ($99 a week plus GST) includes basic local SEO. Full local SEO, with tracked search terms, Google Business Profile management and weekly map-pack scans, is part of Growth ($235 a week plus GST) and Complete Growth ($350 a week plus GST)." },
     ],
     tradeSection: {
       heading: "What our SEO for tradies covers.",

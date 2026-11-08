@@ -20,19 +20,23 @@ const proof: [string, string][] = [
   ["Weekly", "billing, no big upfront cost"],
 ];
 
+// Smart Website replaced Foundation here on 8 Nov 2026 (Foundation is social only now; Growth includes the
+// Smart Website). Google Ads for these pages say "Websites from $99/wk + GST", so the page must show both.
 const plans = [
   {
-    name: "Local Marketing Foundation",
-    weekly: "$140",
-    blurb: "A simple website and active socials.",
-    features: ["Website setup and ongoing care", "Branded social posts and scheduling"],
+    name: "Smart Website",
+    weekly: "$99",
+    blurb: "A website that catches every enquiry. No setup fee.",
+    features: ["A smart website with no cap on pages, plus basic local SEO", "Missed calls texted back, and every enquiry sent to your phone"],
+    href: "/smart-website",
   },
   {
     name: "Growth",
     weekly: "$235",
     blurb: "Get found locally and add one ad platform.",
     features: [
-      "Everything in Foundation",
+      "Everything in Smart Website",
+      "Branded social posts and scheduling",
       "Google Business Profile posts and management",
       "Local SEO and weekly map-pack scans",
       "Review requests and reply support",
@@ -110,7 +114,7 @@ export default function NicheLanding({ config }: { config: NicheConfig }) {
             <div className="mt-9 flex flex-wrap items-center gap-4">
               <a href="#check-up" className="inline-flex items-center gap-2 rounded-full bg-pink-500 px-6 py-3 font-semibold transition hover:bg-pink-600">{cta} <ArrowRight size={18} /></a>
               <a href="tel:+61402642746" className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 font-semibold transition hover:bg-white/10"><Phone size={18} /> 0402 642 746</a>
-              <span className="w-full text-sm text-zinc-500">Packages from $140 a week + GST · billed weekly</span>
+              <span className="w-full text-sm text-zinc-500"><Link href="/smart-website" className="underline underline-offset-2 hover:text-zinc-300">Websites from $99 a week + GST</Link> · billed weekly, no setup fee</span>
             </div>
             <GoogleRating className="mt-8" />
             {config.reviews?.[0] && (
@@ -346,6 +350,7 @@ export default function NicheLanding({ config }: { config: NicheConfig }) {
                 <ul className="flex-grow space-y-3">
                   {p.features.map((f) => <li key={f} className="flex gap-2.5 text-sm text-zinc-300"><Check className="mt-0.5 h-4 w-4 shrink-0 text-pink-400" />{f}</li>)}
                 </ul>
+                {"href" in p && p.href && <Link href={p.href} className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-pink-400 hover:text-pink-300">How the Smart Website works <ArrowRight size={16} /></Link>}
               </article>
             ))}
           </div>
