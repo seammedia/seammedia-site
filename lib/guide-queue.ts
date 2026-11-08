@@ -1087,7 +1087,7 @@ export const guideQueue: ScheduledGuide[] = [
         ] },
       ],
       sources: [googleHelpful, googleSeoStarter, googleLocal, googleReviews],
-      links: [{ title: "Digital marketing agency in Dandenong", path: "/dandenong" }, { title: "Marketing for builders", path: "/builder-marketing" }, { title: "Construction marketing agency for contractors", path: "/construction-marketing" }, { title: "Websites for tradies", path: "/tradie-websites" }],
+      links: [{ title: "Digital marketing agency in Dandenong", path: "/dandenong" }, { title: "SEO in Dandenong", path: "/dandenong/seo" }, { title: "Marketing for builders", path: "/builder-marketing" }, { title: "Construction marketing agency for contractors", path: "/construction-marketing" }, { title: "Websites for tradies", path: "/tradie-websites" }],
     },
   },
   {

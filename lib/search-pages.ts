@@ -196,11 +196,17 @@ const localSeoExtras: Record<string, { title?: string; h1?: string; description?
   // dandenong" (117 impressions) and "seo agency dandenong" (59) split between this page (36-54) and the hub (35-52),
   // so, as with Frankston, this page owns every Dandenong SEO search: the title and description name an SEO company,
   // a new FAQ covers choosing one, and the hub's services card and the homepage link here with "SEO company in Dandenong".
+  // 8 Nov 2026 (money search "seo dandenong": organic 29.8 last 7 days vs 30.6 before, hub 32.3, /seo 40.2). Title
+  // kept (changed 1 Nov). As with Frankston on 5 Nov, the first screen now leads with SEO in Dandenong instead of the
+  // shared intro, and the Dandenong sections come before the shared cards. New links in from the local SEO cost guide
+  // and the Dandenong builders website guide; the hub's in-text anchor is now "SEO services in Dandenong".
   dandenong: {
     hubLabel: "Digital marketing agency in Dandenong",
     title: "SEO Dandenong | Local SEO Company & Agency | Seam Media",
     h1: "SEO services for Dandenong and Dandenong South businesses",
     description: "SEO company in Dandenong for local services and Dandenong South suppliers: service pages, Google Maps, technical fixes and clear monthly reporting.",
+    intro: "SEO in Dandenong from an SEO company that works across Melbourne's south-east from our base on the Mornington Peninsula. Heath does the work himself: we find the Dandenong and Dandenong South searches worth winning, improve your website pages and Google Business Profile for them, then report website clicks, Maps actions and enquiries separately.",
+    localFirst: true,
     sections: [
       { title: "SEO for Dandenong businesses", copy: "When someone needs a service in Dandenong, they usually search for it plus Dandenong on their phone, and Google shows a Maps listing and a short list of websites. Dandenong is one of the busiest centres in Melbourne's south-east, so a business there competes with providers from Noble Park, Springvale, Keysborough and Hallam for those same searches. To show up, your Google Business Profile needs to match the services you offer, and your website needs a clear page for each main service that says what you do, whether customers come to you in central Dandenong or you travel to them across Dandenong North, Doveton and the surrounding suburbs, and how to get a quote or book. We start with the services you want more of in Dandenong, check which of your pages Google already shows for those searches, and improve those pages first." },
       { title: "What SEO looks like for different Dandenong businesses", copy: "A shop, restaurant or venue in central Dandenong relies most on its Business Profile: accurate hours, photos, categories and recent reviews, backed by a website page that matches them. A home-service business needs pages that show the work offered, the suburbs it travels to and how a quote is prepared. An appointment-based practice needs pages that explain who an appointment is for, what happens at the first visit and how to book. We plan the work around which of these fits your business, rather than applying the same checklist to every page." },

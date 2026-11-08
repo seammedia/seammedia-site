@@ -167,7 +167,7 @@ const areas: Record<string, {
       "Websites and social content that show your real work and make it easy to get in touch",
     ],
     nearby: "We also work with businesses in Dandenong South, Keysborough, Lyndhurst, Cranbourne and across Melbourne's south-east.",
-    seoLabel: "SEO services in Dandenong and Dandenong South",
+    seoLabel: "SEO services in Dandenong",
     nearbyLink: { href: "/cranbourne", label: "SEO and marketing agency in nearby Cranbourne" },
     sections: [
       { title: "Marketing for central Dandenong's shops and services", copy: "Central Dandenong is one of the busiest shopping and service centres in Melbourne's south-east, and its customers come from Dandenong North, Doveton, Noble Park, Springvale and beyond. Most of them find a business on their phone: a Google search, a Maps listing, a quick look at the website or social pages, then a call or booking. As your marketing agency in Dandenong, we make each of those steps clear: accurate Business Profile details, a page for each main service, real photos of your work and an easy way to get in touch." },
