@@ -7,7 +7,7 @@ export const localSeoCostGuide: Guide = {
     "This guide gives you a way to compare scope, ask for evidence and decide what should come first. The prices below are Seam Media's current weekly packages, checked on 6 October 2026. They are not a claim about an Australian industry average, and local SEO is one part of the broader Growth packages.",
   ],
   table: { title: "Where local SEO sits in Seam Media's packages", headers: ["Package", "Weekly price", "Search scope", "What to check"], rows: [
-    ["Local Marketing Foundation", "$140 plus GST", "Basic website and social support. Ongoing SEO and Business Profile management are excluded.", "Use this when you need a basic presence and care, rather than an ongoing search programme."],
+    ["Smart Website", "$99 plus GST", "A website with basic local SEO, missed calls texted back and every enquiry sent to your phone. Ongoing SEO and Business Profile management are excluded.", "Use this when you need a website and a basic presence, rather than an ongoing search programme."],
     ["Growth", "$235 plus GST", "Local SEO, five tracked terms, Business Profile support and one prioritised website or SEO improvement monthly. One ad platform is also included.", "Agree the tracked services, first priority and reporting. Advertising spend and larger content projects are separate."],
     ["Complete Growth", "$350 plus GST", "Growth inclusions, with Google Ads and Meta Ads management and combined reporting.", "Running both ad platforms does not mean unlimited SEO content or website development."],
   ] },

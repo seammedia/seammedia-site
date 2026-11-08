@@ -30,7 +30,7 @@ const areas: Record<string, {
       { href: "/marketing-packages", label: "Compare our marketing packages" },
     ],
     faqs: [
-      { q: "How much does a website cost for a Hampton business?", a: "Our Foundation package is $140 a week plus GST and includes basic website setup and ongoing care, plus active social media. Growth and Complete Growth add local SEO and advertising. Complex websites and larger projects are quoted separately, so we agree the scope before any work starts." },
+      { q: "How much does a website cost for a Hampton business?", a: "The Smart Website is $99 a week plus GST with no setup fee: a website built for your business that texts back missed calls and sends every enquiry to your phone. Growth and Complete Growth add social media, full local SEO and advertising. Complex websites and larger projects are quoted separately, so we agree the scope before any work starts." },
       { q: "Do you need to be based in Hampton to design my website?", a: "No. We are based in Mount Eliza and work with businesses across Melbourne's bayside and south-east. Most of the work happens online, and we talk with you directly about your services, customers and the pages your website needs." },
       { q: "Will my new website help me show up on Google in Hampton?", a: "We build each site with the search basics in place, so Google can read and index your pages. Ranking for local searches also depends on your Google Business Profile, reviews and competition, which is why our Growth package adds local SEO. We cannot guarantee positions." },
     ],

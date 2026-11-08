@@ -1,8 +1,9 @@
 export const salaryOptions = [70000, 75000, 80000] as const;
 export const superRate = 0.12;
 export const marketingPlans = [
-  { name: "Local Marketing Foundation", weekly: 140, summary: "A simple website. Active socials.", features: ["Basic website setup and care", "Small website updates", "Branded posts, captions and scheduling", "Facebook and Instagram support"], note: "Uses your photos and footage. SEO, reporting and advertising are not included." },
-  { name: "Growth", weekly: 235, summary: "Local visibility. One ad platform.", features: ["Everything in Foundation", "Local SEO and Google Business Profile", "Five tracked terms and map-pack scans", "Google Ads OR Meta Ads management", "Conversion tracking and monthly reporting"], note: "One prioritised website or SEO improvement per month. Ad spend is separate." },
+  { name: "Smart Website", weekly: 99, summary: "A website that catches every enquiry.", features: ["A smart website, no cap on pages", "Missed calls texted back", "Instant replies to form enquiries", "Every enquiry sent to your phone by SMS", "Basic local SEO"], note: "No setup fee. Social media, full local SEO, reporting and advertising are not included." },
+  { name: "Local Marketing Foundation", weekly: 140, summary: "Active socials.", features: ["Branded posts and captions", "Facebook and Instagram scheduling", "Reel editing, agreed in your scope"], note: "Social media only. Uses your photos and footage. Websites, SEO, reporting and advertising are not included." },
+  { name: "Growth", weekly: 235, summary: "Local visibility. One ad platform.", features: ["Everything in Smart Website", "Foundation social posts and scheduling", "Local SEO and Google Business Profile", "Five tracked terms and map-pack scans", "Google Ads OR Meta Ads management", "Conversion tracking and monthly reporting"], note: "One prioritised website or SEO improvement per month. Ad spend is separate." },
   { name: "Complete Growth", weekly: 350, summary: "Website, socials, SEO and both ad platforms.", features: ["Everything in Growth", "Google Ads AND Meta Ads management", "Social content and campaign creative", "Combined performance reporting", "Monthly marketing review"], note: "Ad spend and third-party platform fees are separate. Larger projects and filming are quoted separately." },
 ] as const;
 
