@@ -110,7 +110,7 @@ const seamLocalPages = [
   { href: "/frankston/seo", label: "SEO in Frankston" },
   { href: "/mount-eliza", label: "SEO and digital marketing agency in Mount Eliza" },
   { href: "/mornington", label: "Digital marketing agency in Mornington" },
-  { href: "/frankston", label: "Digital marketing agency in Frankston" },
+  { href: "/frankston", label: "Digital marketing in Frankston" },
 ];
 
 const questions = [

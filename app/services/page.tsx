@@ -94,7 +94,7 @@ export default function ServicesPage() {
         </div>
       </Section>
 
-      <Section background="gray"><h2 className="text-3xl font-bold text-gray-900 mb-6">Marketing for your business</h2><div className="flex flex-wrap gap-6"><Link href="/construction-marketing" className="text-[#405e6b] underline font-semibold">Construction marketing agency in Melbourne</Link><Link href="/accountant-marketing" className="text-[#405e6b] underline font-semibold">Marketing for accountants</Link><Link href="/tradie-marketing" className="text-[#405e6b] underline font-semibold">Marketing for tradies</Link></div></Section>
+      <Section background="gray"><h2 className="text-3xl font-bold text-gray-900 mb-6">Marketing for your business</h2><div className="flex flex-wrap gap-6"><Link href="/construction-marketing" className="text-[#405e6b] underline font-semibold">Construction marketing agency in Melbourne</Link><Link href="/accountant-marketing" className="text-[#405e6b] underline font-semibold">Marketing for accountants</Link><Link href="/tradie-marketing" className="text-[#405e6b] underline font-semibold">Marketing for tradies</Link><Link href="/frankston" className="text-[#405e6b] underline font-semibold">Digital marketing in Frankston</Link></div></Section>
 
       {/* Services Grid */}
       <Section background="white">

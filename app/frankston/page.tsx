@@ -11,9 +11,10 @@ import { createMetadata } from "@/lib/seo";
 // retitle, Google split the Frankston SEO searches between this hub and /frankston/seo, and /frankston/seo fell
 // (e.g. "frankston seo" 33 to 47-65). /frankston/seo now owns every "seo ... frankston" search; this hub owns
 // "digital marketing (agency) frankston" and links to the SEO page with "SEO agency in Frankston".
+// 9 Nov 2026: title/H1 kept (5-6 for "digital marketing agency frankston"); description and intro lead with "digital marketing in Frankston".
 export const metadata = createMetadata({
   title: "Digital Marketing Agency Frankston | Seam Media",
-  description: "Digital marketing agency for Frankston businesses: Google Ads, websites, social content and Google Maps from Seam Media, just down the road in Mount Eliza.",
+  description: "Digital marketing in Frankston from a local agency: Google Ads, websites, social content and Google Maps from Seam Media, just down the road in Mount Eliza.",
   path: "/frankston",
 });
 
@@ -48,7 +49,7 @@ export default function FrankstonPage() {
             </span>
           </h1>
           <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed mb-8">
-            Seam Media is a digital marketing agency working with Frankston businesses from nearby Mount Eliza.
+            Seam Media does digital marketing in Frankston for local trades, clinics, shops and service businesses, from nearby Mount Eliza.
             We help you get found on Google, win more calls and enquiries, and turn your website into your best salesperson.
           </p>
         </div>

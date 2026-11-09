@@ -8,8 +8,8 @@ import { locationProfiles } from "@/lib/locations";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
-  title: "Digital Marketing Agency Mornington | Seam Media",
-  description: "Digital marketing for Mornington and peninsula businesses. Local SEO, website design, social content and Google Ads with clear packages and scope.",
+  title: "Digital Marketing Agency Mornington Peninsula | Seam Media",
+  description: "Digital marketing agency in Mornington and across the Mornington Peninsula: local SEO, website design, social content and Google Ads with clear packages.",
   path: "/mornington",
 });
 
