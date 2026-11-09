@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { Phone } from "lucide-react";
 
-type Lead = { name?: string; business?: string; email?: string; phone?: string; tracked?: boolean };
+type Lead = { name?: string; business?: string; email?: string; phone?: string; qualified?: boolean; tracked?: boolean };
 type Fbq = (...args: unknown[]) => void;
 const fbq = (): Fbq | undefined => (typeof window !== "undefined" ? (window as unknown as { fbq?: Fbq }).fbq : undefined);
 const gtag = (): Fbq | undefined => (typeof window !== "undefined" ? (window as unknown as { gtag?: Fbq }).gtag : undefined);
@@ -20,6 +20,8 @@ function readLead(key = GUIDE_KEY): Lead | null {
 
 // Counts the Lead once, for someone who has just filled in the form. Reloads and direct visits don't count.
 // Also used by /smart-website (its own storage key and event name).
+// From 10 Nov 2026 the Meta "Lead" event only fires for qualified guide leads (budget $250+ a month), so the ads
+// optimise towards them. Unqualified ones send a custom "GuideLeadUnqualified" event instead.
 export function LeadTracker({ storageKey = GUIDE_KEY, contentName = "Social media guide", gaForm = "social-media-guide" }: { storageKey?: string; contentName?: string; gaForm?: string } = {}) {
   useEffect(() => {
     const lead = readLead(storageKey);
@@ -28,8 +30,9 @@ export function LeadTracker({ storageKey = GUIDE_KEY, contentName = "Social medi
     const fire = () => {
       const f = fbq();
       if (f || tries++ > 20) {
-        f?.("track", "Lead", { content_name: contentName });
-        gtag()?.("event", "generate_lead", { form: gaForm });
+        if (lead.qualified === false) f?.("trackCustom", "GuideLeadUnqualified", { content_name: contentName });
+        else f?.("track", "Lead", { content_name: contentName });
+        gtag()?.("event", "generate_lead", { form: gaForm, qualified: lead.qualified === false ? "no" : "yes" });
         try {
           sessionStorage.setItem(storageKey, JSON.stringify({ ...lead, tracked: true }));
         } catch {

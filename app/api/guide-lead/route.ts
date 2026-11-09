@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { BUDGETS, INDUSTRIES, isQualifiedBudget, phoneProblem } from "@/lib/lead-qualify";
 
 export const runtime = "nodejs";
 export const maxDuration = 30;
@@ -32,6 +33,8 @@ export async function POST(request: NextRequest) {
   if (!name || !business) return reply(400, { error: "Please add your name and business." });
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return reply(400, { error: "Please enter a valid email address." });
   if (!/^\+?\d{8,15}$/.test(phone.replace(/[\s()-]/g, ""))) return reply(400, { error: "Please enter a valid mobile number." });
+  const badPhone = phoneProblem(phone);
+  if (badPhone) return reply(400, { error: badPhone });
 
   // offer "smart-website" comes from /smart-website (8 Nov 2026); the lead manager sends the Smart Website reply instead of the guide
   const offer = field("offer", 30);
@@ -40,6 +43,16 @@ export async function POST(request: NextRequest) {
   const trade = field("trade", 120);
   const website = field("website", 200);
   const lead: Record<string, string> = { name, company: business, email, phone_number: phone };
+  // Guide forms (not /smart-website) ask industry and monthly budget (10 Nov 2026)
+  const industry = field("industry", 60);
+  const budget = field("budget", 60);
+  if (!smart) {
+    if (!(INDUSTRIES as readonly string[]).includes(industry)) return reply(400, { error: "Please choose your industry." });
+    if (!(BUDGETS as readonly string[]).includes(budget)) return reply(400, { error: "Please choose a monthly marketing budget." });
+    lead.industry = industry;
+    lead.budget = budget;
+    lead.qualified = isQualifiedBudget(budget) ? "yes" : "no";
+  }
   if (websiteGuide) lead.offer = "website-guide";
   if (smart) {
     lead.offer = "smart-website";
@@ -83,6 +96,7 @@ export async function POST(request: NextRequest) {
       body: JSON.stringify({
         form: smart ? "Smart Website ($99/wk): REPLY BY HAND (lead manager was unavailable)" : websiteGuide ? "Tradie website guide: SEND THE PDF BY HAND (lead manager was unavailable)" : "Social media guide: SEND THE PDF BY HAND (lead manager was unavailable)",
         name, business, email, phone,
+        ...(industry ? { industry, budget, qualified: lead.qualified } : {}),
         ...(smart ? { message: [trade && `Does: ${trade}`, website && `Website: ${website}`].filter(Boolean).join(" | ") } : {}),
         page: smart ? "https://www.seammedia.com.au/smart-website" : websiteGuide ? "https://www.seammedia.com.au/website-guide" : "https://www.seammedia.com.au/social-media-guide",
         submitted_at: new Date().toISOString(),

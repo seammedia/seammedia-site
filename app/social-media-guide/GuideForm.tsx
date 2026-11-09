@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { FormEvent, useState } from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
+import { BUDGETS, INDUSTRIES, isQualifiedBudget, phoneProblem } from "@/lib/lead-qualify";
 
 const inputClass =
   "w-full rounded-lg border border-white/15 bg-white/5 px-4 py-3 text-white placeholder:text-gray-500 focus:border-[#f5b5b5] focus:outline-none";
@@ -31,6 +32,13 @@ export default function GuideForm({
     setBusy(true);
     setError("");
     const values = Object.fromEntries(new FormData(e.currentTarget).entries()) as Record<string, string>;
+    const badPhone = phoneProblem(values.phone || "");
+    if (badPhone) {
+      setError(badPhone);
+      setBusy(false);
+      return;
+    }
+    const qualified = isQualifiedBudget(values.budget || "");
     try {
       const res = await fetch("/api/guide-lead", {
         method: "POST",
@@ -40,7 +48,7 @@ export default function GuideForm({
       const data = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(data.error || "Please try again, or call me on 0402 642 746.");
       try {
-        sessionStorage.setItem(storageKey, JSON.stringify({ name: values.name, business: values.business, email: values.email, phone: values.phone, tracked: false }));
+        sessionStorage.setItem(storageKey, JSON.stringify({ name: values.name, business: values.business, email: values.email, phone: values.phone, qualified, tracked: false }));
       } catch {
         // Storage can be blocked; the thanks page still works without it.
       }
@@ -58,6 +66,20 @@ export default function GuideForm({
       <input className={inputClass} name="business" autoComplete="organization" placeholder="Business name" required aria-label="Business name" />
       <input className={inputClass} name="email" type="email" autoComplete="email" placeholder="Email" required aria-label="Email" />
       <input className={inputClass} name="phone" type="tel" autoComplete="tel" placeholder="Mobile" required aria-label="Mobile" />
+      <div className="relative">
+        <select className={`${inputClass} appearance-none pr-10`} name="industry" required defaultValue="" aria-label="Your industry">
+          <option value="" disabled>Your industry</option>
+          {INDUSTRIES.map((o) => <option key={o} value={o} className="text-black">{o}</option>)}
+        </select>
+        <ChevronDown className="pointer-events-none absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400" aria-hidden="true" />
+      </div>
+      <div className="relative">
+        <select className={`${inputClass} appearance-none pr-10`} name="budget" required defaultValue="" aria-label="Monthly marketing budget">
+          <option value="" disabled>Monthly marketing budget</option>
+          {BUDGETS.map((o) => <option key={o} value={o} className="text-black">{o}</option>)}
+        </select>
+        <ChevronDown className="pointer-events-none absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400" aria-hidden="true" />
+      </div>
       <input className="hidden" name="fax_number" tabIndex={-1} autoComplete="off" aria-hidden="true" />
       {error && <p role="alert" className="text-sm text-red-300">{error}</p>}
       <button type="submit" disabled={busy} className="flex w-full items-center justify-center gap-2 rounded-lg bg-[#f5b5b5] px-5 py-4 text-lg font-bold text-black transition-opacity hover:opacity-90 disabled:opacity-60">
