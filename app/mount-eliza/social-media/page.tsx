@@ -126,7 +126,8 @@ export default function MountElizaSocialMediaPage() {
               <h3 className="text-2xl font-bold text-gray-900 mb-3">Full-Service Management</h3>
               <p className="text-gray-700 leading-relaxed">
                 From strategy to content creation to community management, we handle every aspect of your social media presence so you can focus on running your business. For customers who search Google rather than scroll, pair it with{' '}
-                <Link href="/mount-eliza/seo" className="font-semibold text-[#405e6b] underline">SEO in Mount Eliza</Link>.
+                <Link href="/mount-eliza/seo" className="font-semibold text-[#405e6b] underline">SEO in Mount Eliza</Link>, or for customers further down the peninsula,{' '}
+                <Link href="/mornington/seo" className="font-semibold text-[#405e6b] underline">SEO on the Mornington Peninsula</Link>.
               </p>
             </div>
 

@@ -84,7 +84,8 @@ export default function MountElizaWebDesignPage() {
               <p className="text-gray-700 leading-relaxed">
                 Built for search engines from the ground up. Your new website will be structured and coded to help you rank higher in Google search results for Mount Eliza-area searches. To keep improving after launch, see our{' '}
                 <Link href="/mount-eliza/seo" className="font-semibold text-[#405e6b] underline">SEO services in Mount Eliza</Link>. Working with customers up the road? See our{' '}
-                <Link href="/frankston/web-design" className="font-semibold text-[#405e6b] underline">web design in nearby Frankston</Link>.
+                <Link href="/frankston/web-design" className="font-semibold text-[#405e6b] underline">web design in nearby Frankston</Link>, or, for customers across the peninsula,{' '}
+                <Link href="/mornington/seo" className="font-semibold text-[#405e6b] underline">SEO on the Mornington Peninsula</Link>.
               </p>
             </div>
           </div>
