@@ -155,6 +155,16 @@ export default function LeasingWebsiteBenefitsPage() {
             </Link>{" "}
             to learn more about how website leasing can work for you.
           </p>
+          <p className="text-gray-700 leading-relaxed mb-8">
+            Running a business around Frankston? Our page on{" "}
+            <Link
+              href="/frankston/web-design"
+              className="text-[#f5b5b5] hover:text-[#e8a5a5] font-medium transition-colors"
+            >
+              web design in Frankston
+            </Link> covers
+            how we plan, build and look after websites for local businesses.
+          </p>
         </div>
       </Section>
     </>

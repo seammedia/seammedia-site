@@ -146,6 +146,16 @@ export default function WebsiteDesignTipsPage() {
             </Link>{" "}
             to discuss your project.
           </p>
+          <p className="text-gray-700 leading-relaxed mb-8">
+            Based in the Frankston area? See how we approach{" "}
+            <Link
+              href="/frankston/web-design"
+              className="text-[#f5b5b5] hover:text-[#e8a5a5] font-medium transition-colors"
+            >
+              website design in Frankston
+            </Link> for
+            local trades, clinics and shops.
+          </p>
         </div>
       </Section>
     </>
