@@ -113,6 +113,15 @@ const allCaseStudies = [
     focus: ["Organic search", "Local visibility", "Website enquiries"],
     intro: "The South East Fencer’s Google Search Console report shows organic search visibility building from a lower baseline in August 2025 to stronger daily clicks and impressions during 2026. The supplied chart shows the upward trend alongside normal day-to-day fluctuations.",
     website: "https://www.thesoutheastfencer.com.au/",
+    // 12 Nov 2026 (seo-loop-seam, money search "seo frankston"): a Frankston-area business, so this page links the
+    // Frankston SEO owner page and the tradie niche page. Optional on every study; rendered under "The story".
+    related: {
+      lead: "The South East Fencer is a Frankston-area business. If you want the same kind of search growth for your own business, see our",
+      links: [
+        { label: "SEO company in Frankston", href: "/frankston/seo" },
+        { label: "marketing for tradies", href: "/tradie-marketing" },
+      ],
+    },
     cover: "/images/case-studies/fencing-cover.jpg",
     coverAlt: "Horizontal timber slat fence beside a native garden in late-afternoon light.",
     theme: "fencer",

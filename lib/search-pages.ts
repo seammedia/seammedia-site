@@ -173,6 +173,8 @@ const localSeoExtras: Record<string, { title?: string; h1?: string; description?
   // 57; Maps 1.0). Title and H1 kept so that recovery can be read. Description and first screen now lead with SEO in
   // Frankston and an SEO company, and the Frankston sections come before the shared cards. Homepage anchor now
   // "SEO company in Frankston"; /frankston/web-design's description no longer mentions SEO.
+  // 12 Nov 2026: moving (seo frankston 59-63 to 41, seo company frankston 48 to 31 on 11 Nov), so page untouched;
+  // new links in from the Mount Eliza and Mornington hubs and The South East Fencer case study.
   frankston: {
     title: "SEO Frankston | Local SEO Agency & Google Maps | Seam Media",
     hubLabel: "Digital marketing agency in Frankston",

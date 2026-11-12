@@ -51,7 +51,7 @@ export default async function CaseStudyPage({ params }: Props) {
       <section className="px-6 py-16 lg:px-12 lg:py-20">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_2fr]">
           <h2 className="text-3xl font-bold sm:text-4xl">The story</h2>
-          <div><p className="text-lg leading-relaxed text-gray-700 sm:text-xl">{study.intro}</p>{"website" in study && <a href={study.website} target="_blank" rel="noopener noreferrer" className="mt-7 inline-flex items-center gap-1 font-semibold underline underline-offset-4">Visit The South East Fencer <ArrowUpRight size={16} aria-hidden="true" /></a>}</div>
+          <div><p className="text-lg leading-relaxed text-gray-700 sm:text-xl">{study.intro}</p>{"website" in study && <a href={study.website} target="_blank" rel="noopener noreferrer" className="mt-7 inline-flex items-center gap-1 font-semibold underline underline-offset-4">Visit The South East Fencer <ArrowUpRight size={16} aria-hidden="true" /></a>}{"related" in study && <p className="mt-6 text-lg leading-relaxed text-gray-700">{study.related.lead}{" "}{study.related.links.map((link, i) => <span key={link.href}>{i > 0 && (i === study.related.links.length - 1 ? " and " : ", ")}<Link href={link.href} className="font-semibold underline underline-offset-4">{link.label}</Link></span>)}.</p>}</div>
         </div>
       </section>
 

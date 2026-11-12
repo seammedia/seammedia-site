@@ -40,6 +40,8 @@ const areas: Record<string, {
     seoLabel: "SEO services in Mount Eliza",
     // 20 Oct 2026: links the "seo mornington" owner page.
     nearbyLink: { href: "/mornington/seo", label: "SEO in Mornington and across the Mornington Peninsula" },
+    // 12 Nov 2026 (money search "seo frankston"): links the Frankston SEO owner page.
+    nearbySeoLink: { href: "/frankston/seo", label: "SEO company in nearby Frankston" },
     // 24 Oct 2026 (money search "digital marketing agency mount eliza": hub at 8.2 last 7 days vs 9.0 before).
     // Title/H1 left alone: the hub's "seo agency / company mount eliza" searches reached 2.7 and 5.1.
     sections: [
@@ -110,6 +112,8 @@ const areas: Record<string, {
     seoLabel: "SEO in Mornington and the Mornington Peninsula",
     // 22 Oct 2026: links the "seo mount eliza" owner page.
     nearbyLink: { href: "/mount-eliza/seo", label: "SEO in nearby Mount Eliza" },
+    // 12 Nov 2026 (money search "seo frankston"): links the Frankston SEO owner page.
+    nearbySeoLink: { href: "/frankston/seo", label: "SEO services in nearby Frankston" },
     faqs: [
       { q: "Do you only work with businesses in Mornington township?", a: "No. We work across the Mornington Peninsula and Melbourne's south-east. Your marketing should reflect the areas you genuinely serve, including any travel, delivery or booking limits, rather than claiming every suburb." },
       { q: "What do your digital marketing packages include?", a: "The Smart Website is $99 a week plus GST for a website that texts back missed calls and sends every enquiry to your phone. Foundation is $140 a week plus GST for social media. Growth is $235 a week plus GST with the Smart Website, social media, full local SEO and one ad platform. Complete Growth is $350 a week plus GST with both ad platforms. Ad spend, filming and larger builds are scoped separately." },
