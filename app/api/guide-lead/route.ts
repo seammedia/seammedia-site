@@ -68,6 +68,11 @@ export async function POST(request: NextRequest) {
   } catch {
     // A malformed cookie must never block a lead.
   }
+  // Backup: ad tags the form read from the page URL, used when the cookie didn't carry them (12 Nov 2026)
+  for (const key of ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "fbclid"]) {
+    const value = field(key, 200);
+    if (value && !lead[key]) lead[key] = value;
+  }
 
   if (dev) return reply(200, { ok: true, dev: true });
 

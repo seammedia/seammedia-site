@@ -39,6 +39,17 @@ export default function GuideForm({
       return;
     }
     const qualified = isQualifiedBudget(values.budget || "");
+    // Ad tags straight from the page URL, as a backup for the seam_attr cookie (12 Nov 2026: a third of
+    // guide leads arrived with no ad tag)
+    try {
+      const params = new URL(window.location.href).searchParams;
+      for (const k of ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "fbclid"]) {
+        const v = params.get(k);
+        if (v) values[k] = v.slice(0, 200);
+      }
+    } catch {
+      // Attribution is optional; never block the form.
+    }
     try {
       const res = await fetch("/api/guide-lead", {
         method: "POST",
