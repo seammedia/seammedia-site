@@ -78,6 +78,13 @@ export default function GoogleBusinessBenefitsPage() {
             complete, optimized profiles.
           </p>
           <p className="text-gray-700 leading-relaxed mb-6">
+            For trades, the profile and the website work together. Our guide to{" "}
+            <Link href="/blog/seo-for-plumbers" className="text-[#405e6b] underline">
+              local SEO for plumbers
+            </Link>{" "}
+            shows how a plumbing business can use both to get more calls.
+          </p>
+          <p className="text-gray-700 leading-relaxed mb-6">
             Without a profile, you're essentially invisible to a huge portion of
             potential customers who rely on Google to find local businesses.
             With a well-maintained profile, you can appear in search results,

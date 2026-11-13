@@ -852,6 +852,7 @@ export const tradieWebsites: NicheConfig = {
         { title: "Photos and reviews", copy: "Your real job photos and Google reviews on the pages people look at before they call." },
         { title: "Missed calls texted back", copy: "Part of the Smart Website, $99 a week plus GST with no setup fee: missed callers get a text straight back, and every enquiry lands on your phone." },
       ],
+      guide: { title: "SEO for plumbers: why each job needs its own page", path: "/blog/seo-for-plumbers" },
     },
   }),
   problemsHeading: "Why most tradie websites don't get calls",

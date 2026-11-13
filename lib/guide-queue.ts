@@ -54,7 +54,7 @@ export const guideQueue: ScheduledGuide[] = [
         { title: "Lead with the jobs you want more of", paragraphs: [
           "Start the homepage with the work you do, in the words customers search for. \"Blocked drains, burst pipes and hot water repairs\" tells a visitor and Google far more than \"Quality plumbing solutions\". If some jobs are worth more to you, give them their own page so you can explain them properly.",
           "A separate page for each main service lets you answer the questions that matter for that job: what is included, what affects the price, how quickly you can attend and what the customer should have ready. That is also what makes a page useful enough for Google to show.",
-        ], checklist: ["List your three to five most valuable services.", "Give each one a page with its own heading and description.", "Use the words customers use, not internal trade terms only."] },
+        ], checklist: ["List your three to five most valuable services.", "Give each one a page with its own heading and description.", "Use the words customers use, not internal trade terms only."], links: [{ title: "SEO for plumbers: a page for each plumbing job", path: "/blog/seo-for-plumbers" }] },
         { title: "Be clear about where you work", paragraphs: [
           "Say which suburbs and regions you cover, and be honest about the edges. A short list of real service areas, with a line on travel limits, builds more trust than a page claiming every suburb in the state.",
           "If you work from home or a yard rather than a shopfront, Google lets service-area businesses hide their address on their Business Profile and list the areas they serve instead. Keep the areas on your website and your profile consistent.",
@@ -434,7 +434,7 @@ export const guideQueue: ScheduledGuide[] = [
         { title: "Choose categories and services carefully", paragraphs: [
           "Your primary category has a big effect on which searches you appear for, so choose the one that best describes your main trade, such as Plumber or Electrician. Add secondary categories only for work you genuinely do. Then add your services, with short descriptions in the words customers use.",
           "Write the business description in plain language: what you do, the areas you cover and what makes you a sensible choice, such as how long you have been operating or the jobs you specialise in. Leave out links, prices and promotional claims you cannot back up. The description will not win you calls on its own, but a clear one helps customers who have already tapped your listing.",
-        ] },
+        ], links: [{ title: "Local SEO for plumbers: profile, pages and reviews", path: "/blog/seo-for-plumbers" }] },
         { title: "Keep the name honest", paragraphs: [
           "Your business name on Google should match the name on your van, invoices and signage. Google's guidelines do not allow extra keywords, suburbs or slogans in the business name, and profiles that add them can be suspended. If your registered business name already includes your trade, that is fine; adding \"Best Emergency Plumber Frankston\" to it is not.",
           "Use a local phone number or mobile that someone answers, and a website link that goes to a relevant page. If you have more than one profile for the same business, sort it out, as duplicates can confuse customers and Google.",
