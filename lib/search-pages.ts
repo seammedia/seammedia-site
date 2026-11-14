@@ -124,7 +124,7 @@ const localSeoExtras: Record<string, { title?: string; h1?: string; description?
     faqs: [
       { q: "Do you do SEO for Mount Eliza businesses?", a: "Yes. We are based in Mount Eliza, so local businesses talk with the person doing the work. We improve the website pages and Google Business Profile that answer the searches your customers use, including nearby Mornington and Frankston searches where you genuinely serve those areas, and report website clicks separately from Maps actions and confirmed enquiries." },
     ],
-    nearby: [{ label: "SEO in Mornington and the Mornington Peninsula", href: "/mornington/seo" }, { label: "SEO in Frankston", href: "/frankston/seo" }],
+    nearby: [{ label: "SEO in Mornington and the Mornington Peninsula", href: "/mornington/seo" }, { label: "SEO in Frankston", href: "/frankston/seo" }, { label: "SEO in Cranbourne", href: "/cranbourne" }],
   },
   // 20 Oct 2026 (money searches "seo mornington" 29.1 and "seo mornington peninsula" 39.1 organic, Maps 1.0): this
   // page owns both. The title, H1 and description lead with SEO Mornington and the peninsula, a Mornington section
@@ -154,7 +154,7 @@ const localSeoExtras: Record<string, { title?: string; h1?: string; description?
       { q: "How do I choose an SEO company on the Mornington Peninsula?", a: "Ask who will actually do the work, what they will change in the first 90 days, how they report website clicks separately from Maps actions and enquiries, and whether you can leave without a long contract. Our packages are published on our marketing packages page and run month to month, and Heath does the work himself from Mount Eliza. Be wary of anyone who guarantees first place on Google." },
       { q: "Do you do SEO for Mornington and Mornington Peninsula businesses?", a: "Yes. We are based on the Mornington Peninsula, in Mount Eliza, and work with businesses in Mornington, Mount Martha, Mount Eliza and across the wider peninsula. We improve the website pages and Google Business Profile that answer the searches your customers use, and report website clicks separately from Maps actions and confirmed enquiries." },
     ],
-    nearby: [{ label: "SEO in nearby Mount Eliza", href: "/mount-eliza/seo" }, { label: "SEO in Frankston", href: "/frankston/seo" }],
+    nearby: [{ label: "SEO in nearby Mount Eliza", href: "/mount-eliza/seo" }, { label: "SEO in Frankston", href: "/frankston/seo" }, { label: "SEO in Cranbourne", href: "/cranbourne" }],
   },
   // 16 Oct 2026: "seo carrum downs" ranked 19.7 on /seo (also the homepage and this page). Carrum Downs is in this
   // page's service area and has no page of its own, so /frankston/seo owns it as a secondary area.
