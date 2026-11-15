@@ -26,3 +26,25 @@ export default function LocalWebLinks({ eyebrow, title, copy, links }: {
     </section>
   );
 }
+
+// Local SEO strip for the trade niche pages (added 15 Nov 2026, seo-loop-seam, money search "seo dandenong").
+// /tradie-seo, /plumber-marketing and /electrician-marketing linked no suburb SEO page, so the owners of the
+// "seo <suburb>" searches got nothing from them. Dandenong leads because it was the search worked that day.
+export const localSeoLinks = [
+  { href: "/dandenong/seo", label: "SEO in Dandenong" },
+  { href: "/frankston/seo", label: "SEO in Frankston" },
+  { href: "/mornington/seo", label: "SEO in Mornington and the peninsula" },
+  { href: "/cranbourne", label: "SEO in Cranbourne" },
+  { href: "/case-studies/the-south-east-fencer", label: "The South East Fencer case study" },
+];
+
+export function LocalSeoLinks({ title = "Local SEO for trades near us" }: { title?: string }) {
+  return (
+    <LocalWebLinks
+      eyebrow="Local SEO"
+      title={title}
+      copy="We are based in Mount Eliza and do local SEO for businesses across Dandenong, Frankston, Cranbourne, the Mornington Peninsula and Melbourne's south east, including The South East Fencer in the Frankston area."
+      links={localSeoLinks}
+    />
+  );
+}
