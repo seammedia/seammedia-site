@@ -4,6 +4,8 @@ export type LocationProfile = {
   intro: string;
   opportunities: [string, string, string];
   question: string;
+  // nearby (added 16 Nov 2026): optional descriptive links to neighbouring suburb hubs, shown under the local-page check.
+  nearby?: { href: string; label: string }[];
 };
 
 export const locationProfiles: Record<string, LocationProfile> = {
@@ -32,6 +34,7 @@ export const locationProfiles: Record<string, LocationProfile> = {
     ],
     question:
       "What would a Chelsea customer need to know before they feel confident requesting a quote or consultation?",
+    nearby: [{ href: "/frankston", label: "Digital marketing in nearby Frankston" }],
   },
   cranbourne: {
     name: "Cranbourne",
@@ -45,6 +48,7 @@ export const locationProfiles: Record<string, LocationProfile> = {
     ],
     question:
       "Can a first-time visitor tell within a few seconds whether your service is right for their Cranbourne project?",
+    nearby: [{ href: "/frankston", label: "Digital marketing in Frankston" }],
   },
   dandenong: {
     name: "Dandenong",

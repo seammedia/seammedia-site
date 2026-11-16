@@ -46,6 +46,20 @@ export default function LocationInsights({ profile }: { profile: LocationProfile
               Plan your next step
             </Link>
           </div>
+
+          {profile.nearby?.length ? (
+            <p className="mt-8 text-gray-700">
+              Also serving nearby:{" "}
+              {profile.nearby.map((area, index) => (
+                <span key={area.href}>
+                  {index > 0 ? ", " : null}
+                  <Link href={area.href} className="font-semibold text-[#405e6b] underline">
+                    {area.label}
+                  </Link>
+                </span>
+              ))}
+            </p>
+          ) : null}
         </div>
       </Section>
     </>
