@@ -6,14 +6,14 @@ import { OFFER_BUDGETS } from "@/lib/lead-qualify";
 import { createMetadata } from "@/lib/seo";
 import GuideForm from "../social-media-guide/GuideForm";
 import { INCLUDES } from "../smart-website/offer";
-import { FAQS, FOR_WHO, OFFER_LINE, OFFER_SHORT, PRICE_LINE, STEPS, TERMS } from "./offer";
+import { FAQS, FOR_WHO, HEADLINE_END, HEADLINE_START, LIMIT, OFFER_LINE, PRICE_LINE, STEPS, TERMS } from "./offer";
 
 // Meta Ads landing page for the website offer (NB ads, 17 Nov 2026). Not for search, not linked.
 // Same lead route and qualifying questions as the guides, so the Meta Lead event only fires for $250+ budgets.
 export const metadata: Metadata = {
   ...createMetadata({
-    title: "A website that earns its keep | Seam Media",
-    description: "A website built for your business that texts back missed calls, replies to enquiries instantly and sends every enquiry to your phone.",
+    title: "Your new website, free until it works | Seam Media",
+    description: "I build your website in 7 days at no cost. You only start paying once it's brought you 3 real enquiries.",
     path: "/website-offer",
   }),
   robots: { index: false, follow: false },
@@ -26,11 +26,12 @@ function OfferForm({ id }: { id?: string }) {
       offer="website-offer"
       storageKey="seam_offer_lead"
       thanksPath="/website-offer/thanks"
-      heading={OFFER_SHORT}
+      heading="Check if your business qualifies"
       button="Get started"
       budgets={OFFER_BUDGETS}
       budgetLabel="Monthly budget once it works"
       extraFields
+      reviews
       accent="green"
       note={<>I&apos;ll email you the details straight away, and call if it looks like a fit. I may also text you about it.</>}
     />
@@ -44,13 +45,12 @@ export default function WebsiteOfferPage() {
         {/* On phones the form follows the headline, so it's on the first screen. */}
         <div className="mx-auto grid max-w-6xl items-start gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-x-14">
           <div className="lg:col-start-1">
-            <p className="text-sm font-bold uppercase tracking-[0.14em] text-[#4ade80]">Websites for trades and small businesses</p>
+            <p className="text-sm font-bold uppercase tracking-[0.14em] text-[#4ade80]">For trades and local service businesses</p>
             <h1 className="mt-4 text-4xl font-black leading-[1.05] tracking-tight sm:text-6xl">
-              A new website. <span className="text-[#4ade80]">{OFFER_LINE}</span>
+              {HEADLINE_START} <span className="text-[#4ade80]">{HEADLINE_END}</span>
             </h1>
-            <p className="mt-5 max-w-xl text-lg leading-relaxed text-gray-300 sm:text-xl">
-              Built for your business, set up for Google and connected to your phone, so every enquiry reaches you. {PRICE_LINE} {TERMS}
-            </p>
+            <p className="mt-5 max-w-xl text-lg leading-relaxed text-gray-200 sm:text-xl">{OFFER_LINE}</p>
+            <p className="mt-3 max-w-xl leading-relaxed text-gray-400">{PRICE_LINE} {LIMIT}</p>
           </div>
           <div className="lg:col-start-2 lg:row-span-2 lg:row-start-1">
             <OfferForm id="get-started" />
@@ -101,6 +101,7 @@ export default function WebsiteOfferPage() {
       <section className="border-t border-white/10 px-6 py-16">
         <div className="mx-auto max-w-5xl">
           <h2 className="text-center text-3xl font-black tracking-tight sm:text-4xl">What you get</h2>
+          <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-gray-300">The same smart website I build for $99 a week. You just don&apos;t pay until it&apos;s working.</p>
           <div className="mt-9 grid gap-4 sm:grid-cols-2">
             {INCLUDES.map(([title, copy]) => (
               <div key={title} className="rounded-2xl border border-white/10 bg-[#141417] p-6">
@@ -109,6 +110,20 @@ export default function WebsiteOfferPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="border-t border-white/10 px-6 py-16">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-center text-3xl font-black tracking-tight sm:text-4xl">The fine print, in plain words</h2>
+          <ul className="mt-8 space-y-3">
+            {TERMS.map((t) => (
+              <li key={t} className="flex gap-3 leading-relaxed text-gray-300">
+                <Check className="mt-1 h-5 w-5 flex-none text-[#4ade80]" />
+                <span>{t}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
@@ -128,7 +143,7 @@ export default function WebsiteOfferPage() {
               I&apos;m Heath from Seam Media. I&apos;ve worked in digital marketing for more than 10 years, and I build and look after every website myself, here in Australia.
             </p>
             <a href="#get-started" className="mt-8 inline-block rounded-lg bg-[#4ade80] px-7 py-4 text-lg font-bold text-black transition-opacity hover:opacity-90">
-              Get started
+              Check if you qualify
             </a>
           </div>
         </div>

@@ -32,6 +32,13 @@ export const ALL_BUDGETS: readonly string[] = [...BUDGETS, OFFER_BUDGETS[0]];
 const UNQUALIFIED_BUDGETS = new Set<string>([BUDGETS[0], BUDGETS[1], OFFER_BUDGETS[0]]);
 export const isQualifiedBudget = (budget: string) => !!budget && !UNQUALIFIED_BUDGETS.has(budget);
 
+// Website offer ("free until it works", 17 Nov 2026, Heath via the Chief of Staff): only for businesses with a Google
+// Business Profile with 10+ reviews, and not for e-commerce stores. Everyone else gets the email but no call, and
+// doesn't count as a Meta Lead.
+export const REVIEW_OPTIONS = ["No Google Business Profile", "Under 10 Google reviews", "10 or more Google reviews"] as const;
+export const isOfferQualified = (v: { budget?: string; reviews?: string; industry?: string }) =>
+  isQualifiedBudget(v.budget || "") && v.reviews === REVIEW_OPTIONS[2] && v.industry !== "Ecommerce and retail";
+
 // Australian numbers only (mobile 04, landline 02/03/07/08, or +61). Rejects obvious fakes such as
 // 0400 000 000, 0412 345 678 or a run of one repeated digit.
 export function phoneProblem(raw: string): string | null {

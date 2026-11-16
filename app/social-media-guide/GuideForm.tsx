@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { FormEvent, ReactNode, useState } from "react";
 import { ArrowRight, ChevronDown } from "lucide-react";
-import { BUDGETS, INDUSTRIES, isQualifiedBudget, phoneProblem } from "@/lib/lead-qualify";
+import { BUDGETS, INDUSTRIES, REVIEW_OPTIONS, isOfferQualified, isQualifiedBudget, phoneProblem } from "@/lib/lead-qualify";
 
 const ACCENTS = {
   pink: { input: "focus:border-[#f5b5b5]", button: "bg-[#f5b5b5]" },
@@ -19,6 +19,7 @@ const baseInput = "w-full rounded-lg border border-white/15 bg-white/5 px-4 py-3
 type GuideFormProps = {
   id?: string; offer?: string; storageKey?: string; thanksPath?: string; heading?: string; button?: string;
   budgets?: readonly string[]; budgetLabel?: string; extraFields?: boolean; note?: ReactNode; accent?: keyof typeof ACCENTS;
+  reviews?: boolean; // website offer: asks Google reviews, and qualifies on reviews and industry as well as budget
 };
 
 export default function GuideForm({
@@ -33,6 +34,7 @@ export default function GuideForm({
   extraFields = false,
   note,
   accent = "pink",
+  reviews = false,
 }: GuideFormProps) {
   const inputClass = `${baseInput} ${ACCENTS[accent].input}`;
   const router = useRouter();
@@ -51,7 +53,7 @@ export default function GuideForm({
       setBusy(false);
       return;
     }
-    const qualified = isQualifiedBudget(values.budget || "");
+    const qualified = reviews ? isOfferQualified(values) : isQualifiedBudget(values.budget || "");
     // Ad tags straight from the page URL, as a backup for the seam_attr cookie (12 Nov 2026: a third of
     // guide leads arrived with no ad tag)
     try {
@@ -102,6 +104,15 @@ export default function GuideForm({
           <input className={inputClass} name="trade" placeholder="Your trade or service, and suburb" required aria-label="Your trade or service, and suburb" />
           <input className={inputClass} name="website" autoComplete="url" placeholder="Current website, if you have one" aria-label="Current website, if you have one" />
         </>
+      )}
+      {reviews && (
+        <div className="relative">
+          <select className={`${inputClass} appearance-none pr-10`} name="reviews" required defaultValue="" aria-label="Your Google reviews">
+            <option value="" disabled>Your Google reviews</option>
+            {REVIEW_OPTIONS.map((o) => <option key={o} value={o} className="text-black">{o}</option>)}
+          </select>
+          <ChevronDown className="pointer-events-none absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400" aria-hidden="true" />
+        </div>
       )}
       <div className="relative">
         <select className={`${inputClass} appearance-none pr-10`} name="budget" required defaultValue="" aria-label={budgetLabel}>

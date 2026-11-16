@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { ALL_BUDGETS, INDUSTRIES, isQualifiedBudget, phoneProblem } from "@/lib/lead-qualify";
+import { ALL_BUDGETS, INDUSTRIES, REVIEW_OPTIONS, isOfferQualified, isQualifiedBudget, phoneProblem } from "@/lib/lead-qualify";
 
 export const runtime = "nodejs";
 export const maxDuration = 30;
@@ -54,6 +54,13 @@ export async function POST(request: NextRequest) {
     lead.budget = budget;
     lead.qualified = isQualifiedBudget(budget) ? "yes" : "no";
   }
+  // Website offer: Google reviews too, and only 10+ reviews (and not e-commerce) qualifies (17 Nov 2026)
+  const reviews = field("reviews", 60);
+  if (websiteOffer) {
+    if (!(REVIEW_OPTIONS as readonly string[]).includes(reviews)) return reply(400, { error: "Please choose your Google reviews." });
+    lead.reviews = reviews;
+    lead.qualified = isOfferQualified({ budget, reviews, industry }) ? "yes" : "no";
+  }
   if (websiteGuide) lead.offer = "website-guide";
   if (smart || websiteOffer) {
     lead.offer = offer;
@@ -103,6 +110,7 @@ export async function POST(request: NextRequest) {
         form: smart ? "Smart Website ($99/wk): REPLY BY HAND (lead manager was unavailable)" : websiteOffer ? "Website offer: REPLY BY HAND (lead manager was unavailable)" : websiteGuide ? "Tradie website guide: SEND THE PDF BY HAND (lead manager was unavailable)" : "Social media guide: SEND THE PDF BY HAND (lead manager was unavailable)",
         name, business, email, phone,
         ...(industry ? { industry, budget, qualified: lead.qualified } : {}),
+        ...(reviews ? { reviews } : {}),
         ...(smart || websiteOffer ? { message: [trade && `Does: ${trade}`, website && `Website: ${website}`].filter(Boolean).join(" | ") } : {}),
         page: smart ? "https://www.seammedia.com.au/smart-website" : websiteOffer ? "https://www.seammedia.com.au/website-offer" : websiteGuide ? "https://www.seammedia.com.au/website-guide" : "https://www.seammedia.com.au/social-media-guide",
         submitted_at: new Date().toISOString(),
