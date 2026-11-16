@@ -23,9 +23,13 @@ export const BUDGETS = [
   "$2,500+ a month",
 ] as const;
 
-// $250+ a month covers the cheapest plan (Smart Website, $99 a week + GST). Below that, or "just the guide",
-// the lead gets the guide and the follow-up email, but no call.
-const UNQUALIFIED_BUDGETS = new Set<string>([BUDGETS[0], BUDGETS[1]]);
+// The website offer form (/website-offer, 17 Nov 2026) has no guide, so its first option is "Just looking for now".
+export const OFFER_BUDGETS = ["Just looking for now", ...BUDGETS.slice(1)] as const;
+export const ALL_BUDGETS: readonly string[] = [...BUDGETS, OFFER_BUDGETS[0]];
+
+// $250+ a month covers the cheapest plan (Smart Website, $99 a week + GST). Below that, "just the guide" or
+// "just looking", the lead gets the emails but no call.
+const UNQUALIFIED_BUDGETS = new Set<string>([BUDGETS[0], BUDGETS[1], OFFER_BUDGETS[0]]);
 export const isQualifiedBudget = (budget: string) => !!budget && !UNQUALIFIED_BUDGETS.has(budget);
 
 // Australian numbers only (mobile 04, landline 02/03/07/08, or +61). Rejects obvious fakes such as

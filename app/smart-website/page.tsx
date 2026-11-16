@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { Check, MessageSquare, PhoneMissed, Send } from "lucide-react";
+import { Check } from "lucide-react";
 import GoogleRating from "@/components/GoogleRating";
+import MissedCallPhone from "@/components/MissedCallPhone";
 import { createMetadata } from "@/lib/seo";
 import SmartWebsiteForm from "./SmartWebsiteForm";
 import { INCLUDES, PRICE, PRICE_NOTE, STEP_UPS, TERMS } from "./offer";
@@ -24,12 +25,6 @@ const faqs = [
   ["How many pages do I get?", "There's no cap on pages. Ecommerce, custom functionality and complex builds are quoted separately."],
   ["What SEO is included?", "Basic local SEO. Full local SEO, with tracked search terms, Google Business Profile management and map-pack scans, comes with Growth, and you keep your website when you step up."],
   ["Can you guarantee leads?", "No, and I'd be careful of anyone who does. What I can promise is that the enquiries you do get won't slip through the cracks."],
-];
-
-const flow = [
-  { icon: PhoneMissed, colour: "bg-red-500", title: "Missed call", time: "10:14 am", body: "0412 *** 318 called while you were up a ladder." },
-  { icon: Send, colour: "bg-blue-500", title: "Text sent to the caller", time: "10:14 am", body: "\"Sorry I missed you, I'm on a job. What do you need a hand with? I'll call you back shortly. Dan, Banksia Bay Plumbing\"" },
-  { icon: MessageSquare, colour: "bg-green-500", title: "New enquiry on your phone", time: "10:16 am", body: "\"Hot water system's leaking, I'm in Mornington. Can you come today?\"" },
 ];
 
 export default function SmartWebsitePage() {
@@ -73,26 +68,7 @@ export default function SmartWebsitePage() {
             </p>
             <p className="mt-3 text-sm text-gray-500">Example only, with a made-up business.</p>
           </div>
-          <div className="mx-auto w-full max-w-sm rounded-[2.5rem] border-[10px] border-[#2a2f3a] bg-gradient-to-br from-[#1e3a8a] via-[#4c1d95] to-[#0f766e] p-4 shadow-2xl">
-            <p className="pt-3 text-center text-6xl font-light tracking-tight">10:16</p>
-            <p className="mb-5 mt-1 text-center text-sm font-semibold text-white/80">Tuesday</p>
-            <div className="space-y-2.5">
-              {flow.map(({ icon: Icon, colour, title, time, body }) => (
-                <div key={title} className="flex gap-3 rounded-2xl bg-white/90 p-3.5 text-black">
-                  <div className={`flex h-9 w-9 flex-none items-center justify-center rounded-lg ${colour}`}>
-                    <Icon className="h-5 w-5 text-white" />
-                  </div>
-                  <div className="min-w-0">
-                    <div className="flex justify-between gap-2 text-sm font-bold">
-                      {title}
-                      <span className="whitespace-nowrap font-medium text-gray-500">{time}</span>
-                    </div>
-                    <p className="mt-0.5 text-sm leading-snug text-gray-700">{body}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+          <MissedCallPhone />
         </div>
       </section>
 

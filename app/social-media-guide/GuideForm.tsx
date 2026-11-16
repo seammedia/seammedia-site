@@ -2,17 +2,24 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { FormEvent, useState } from "react";
+import { FormEvent, ReactNode, useState } from "react";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { BUDGETS, INDUSTRIES, isQualifiedBudget, phoneProblem } from "@/lib/lead-qualify";
 
-const inputClass =
-  "w-full rounded-lg border border-white/15 bg-white/5 px-4 py-3 text-white placeholder:text-gray-500 focus:border-[#f5b5b5] focus:outline-none";
+const ACCENTS = {
+  pink: { input: "focus:border-[#f5b5b5]", button: "bg-[#f5b5b5]" },
+  green: { input: "focus:border-[#4ade80]", button: "bg-[#4ade80]" },
+};
+const baseInput = "w-full rounded-lg border border-white/15 bg-white/5 px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none";
 
 // Sends the lead to /api/guide-lead, remembers it for the "call me" button on the next page,
 // then moves to the thanks page, where the Meta Lead event fires.
-// Also used by /website-guide (8 Nov 2026) with its own offer, storage key and thanks page.
-type GuideFormProps = { id?: string; offer?: string; storageKey?: string; thanksPath?: string; heading?: string; button?: string };
+// Also used by /website-guide (8 Nov 2026) with its own offer, storage key and thanks page, and by /website-offer
+// (17 Nov 2026), which adds trade, suburb and current website, its own budget options, note and colour.
+type GuideFormProps = {
+  id?: string; offer?: string; storageKey?: string; thanksPath?: string; heading?: string; button?: string;
+  budgets?: readonly string[]; budgetLabel?: string; extraFields?: boolean; note?: ReactNode; accent?: keyof typeof ACCENTS;
+};
 
 export default function GuideForm({
   id = "get-the-guide",
@@ -21,7 +28,13 @@ export default function GuideForm({
   thanksPath = "/social-media-guide/thanks",
   heading = "Where should I send it?",
   button = "Send me the free guide",
+  budgets = BUDGETS,
+  budgetLabel = "Monthly marketing budget",
+  extraFields = false,
+  note,
+  accent = "pink",
 }: GuideFormProps) {
+  const inputClass = `${baseInput} ${ACCENTS[accent].input}`;
   const router = useRouter();
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
@@ -84,21 +97,27 @@ export default function GuideForm({
         </select>
         <ChevronDown className="pointer-events-none absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400" aria-hidden="true" />
       </div>
+      {extraFields && (
+        <>
+          <input className={inputClass} name="trade" placeholder="Your trade or service, and suburb" required aria-label="Your trade or service, and suburb" />
+          <input className={inputClass} name="website" autoComplete="url" placeholder="Current website, if you have one" aria-label="Current website, if you have one" />
+        </>
+      )}
       <div className="relative">
-        <select className={`${inputClass} appearance-none pr-10`} name="budget" required defaultValue="" aria-label="Monthly marketing budget">
-          <option value="" disabled>Monthly marketing budget</option>
-          {BUDGETS.map((o) => <option key={o} value={o} className="text-black">{o}</option>)}
+        <select className={`${inputClass} appearance-none pr-10`} name="budget" required defaultValue="" aria-label={budgetLabel}>
+          <option value="" disabled>{budgetLabel}</option>
+          {budgets.map((o) => <option key={o} value={o} className="text-black">{o}</option>)}
         </select>
         <ChevronDown className="pointer-events-none absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400" aria-hidden="true" />
       </div>
       <input className="hidden" name="fax_number" tabIndex={-1} autoComplete="off" aria-hidden="true" />
       {error && <p role="alert" className="text-sm text-red-300">{error}</p>}
-      <button type="submit" disabled={busy} className="flex w-full items-center justify-center gap-2 rounded-lg bg-[#f5b5b5] px-5 py-4 text-lg font-bold text-black transition-opacity hover:opacity-90 disabled:opacity-60">
+      <button type="submit" disabled={busy} className={`flex w-full items-center justify-center gap-2 rounded-lg ${ACCENTS[accent].button} px-5 py-4 text-lg font-bold text-black transition-opacity hover:opacity-90 disabled:opacity-60`}>
         {busy ? "Sending..." : button}
         {!busy && <ArrowRight className="h-5 w-5" />}
       </button>
       <p className="text-xs leading-relaxed text-gray-400">
-        You&apos;ll get the guide straight away. I may also email, text or call you about it and how I can help. You can opt out any time. See my{" "}
+        {note ?? <>You&apos;ll get the guide straight away. I may also email, text or call you about it and how I can help.</>} You can opt out any time. See my{" "}
         <Link href="/privacy" className="underline hover:text-white">privacy policy</Link>.
       </p>
     </form>
