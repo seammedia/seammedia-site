@@ -79,6 +79,8 @@ const areas: Record<string, {
     seoLabel: "SEO agency in Frankston",
     // 2 Nov 2026: Frankston sections, process and FAQs for the "digital marketing frankston" owner page (body only; title/H1 frozen to 5 Nov).
     nearbyLink: { href: "/frankston/web-design", label: "Web design in Frankston" },
+    // 17 Nov 2026 (money search "seo mornington peninsula"): links the peninsula SEO owner page.
+    nearbySeoLink: { href: "/mornington/seo", label: "SEO on the Mornington Peninsula" },
     sections: [
       { title: "Digital marketing for Frankston's shops, clinics and services", copy: "Frankston businesses around the city centre, the foreshore and Frankston South mostly win customers who search on their phone, check the Maps listing and website, then call or book. Our digital marketing in Frankston makes each step clear: an accurate Google Business Profile, a page for each main service, real photos of your work, reviews you can point to and an enquiry form that actually reaches you." },
       { title: "Digital marketing for trades and suppliers around Frankston", copy: "Trades and suppliers working out of Seaford, Carrum Downs and Langwarrin usually cover a wider area than one suburb. We build service pages around the jobs and areas you genuinely cover, run Google Ads with call and form tracking for the work worth most to you, and show finished jobs on your website and social pages. The South East Fencer, a Frankston-area business, is our local search case study." },

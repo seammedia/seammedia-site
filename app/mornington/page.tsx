@@ -45,7 +45,9 @@ export default function MorningtonPage() {
           </h1>
           <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed mb-8">
             Seam Media provides comprehensive digital marketing services to businesses in Mornington and surrounding areas.
-            From social media management to web design and SEO, we help local businesses grow their online presence and achieve measurable results.
+            From social media management to web design and{' '}
+            {/* 17 Nov 2026 (money search "seo mornington peninsula"): first-screen link to the SEO owner page. */}
+            <Link href="/mornington/seo" className="font-semibold text-[#405e6b] underline">SEO on the Mornington Peninsula</Link>, we help local businesses grow their online presence and achieve measurable results.
           </p>
         </div>
       </Section>
