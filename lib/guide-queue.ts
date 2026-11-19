@@ -35,6 +35,8 @@ const ndisSupportCoordinators = { title: "NDIS: guide to working as a support co
 const bpcEngagingBuilder = { title: "Building and Plumbing Commission: engaging a builder", url: "https://www.bpc.vic.gov.au/home-owners/before-you-start-building/engaging-a-builder" };
 const energySafeCoes = { title: "Energy Safe Victoria: Certificates of Electrical Safety for the community", url: "https://www.energysafe.vic.gov.au/certificates-electrical-safety/certificates-electrical-safety-consumers" };
 const metaLocations = { title: "Meta Business Help Centre: how to choose locations for your ad", url: "https://www.facebook.com/business/help/365561350785642" };
+const psychologyBoard = { title: "Psychology Board of Australia: guidelines and policies", url: "https://www.psychologyboard.gov.au/Standards-and-Guidelines/Codes-Guidelines-Policies.aspx" };
+const podiatryBoard = { title: "Podiatry Board of Australia", url: "https://www.podiatryboard.gov.au/" };
 
 export const guideQueue: ScheduledGuide[] = [
   {
@@ -1864,6 +1866,323 @@ export const guideQueue: ScheduledGuide[] = [
       ],
       sources: [googleLocationTargeting, googleNegatives, googleSearchTerms, googleMatchTypes, googleAdSchedule, googleCalls],
       links: [{ title: "Digital marketing agency in Dandenong", path: "/dandenong" }, { title: "Marketing for plumbers", path: "/plumber-marketing" }, { title: "Google Ads management", path: "/google-ads-management" }, packagesLink],
+    },
+  },
+  {
+    date: "2026-11-24",
+    category: "NDIS & allied health",
+    excerpt: "Marketing for psychologists in Dandenong: clear pages for what you help with, a complete Google profile, Ahpra and Psychology Board rules, referrers, careful ads and tracking.",
+    guide: {
+      title: "Marketing for psychologists in Dandenong: being easy to find and choose",
+      path: "/blog/marketing-psychologists-dandenong",
+      description: "Marketing for psychologists in Dandenong: clear service pages, a complete Google profile, Ahpra rules, GP referrals, careful ads and tracking.",
+      published: "2026-11-24", modified: "2026-11-24",
+      intro: [
+        "People looking for a psychologist in Dandenong, Noble Park, Springvale or Keysborough are often searching at a hard moment, sometimes after a GP has suggested it and sometimes after putting it off for months. They want to know quickly whether you help with what they are going through, whether they can get in soon, what it costs and how to start. A practice that answers those questions plainly is easier to choose.",
+        "This guide covers how a psychology practice in the Dandenong area can be easy to find and choose, within the rules that apply to advertising a regulated health service.",
+      ],
+      sections: [
+        { title: "Say who you help, in plain words", paragraphs: [
+          "Describe what you help with in the words people use, not only clinical terms: \"feeling anxious all the time\", \"low mood\", \"grief\", \"relationship problems\", \"stress at work\", \"teenager struggling at school\". Give the main areas their own page, explaining who on your team works with that concern and what the first session involves.",
+          "Add a short profile for each psychologist with their areas of interest, the ages they see, session types (in person, telehealth or both) and any languages other than English they work in. Many people choose a person, not a practice, so this is often the most-read part of the site.",
+        ], checklist: ["A page for each main area you help with.", "A profile for each psychologist, with languages and session types.", "Plain words first, clinical terms second."] },
+        { title: "Answer the practical questions up front", paragraphs: [
+          "Put fees, any rebate or funding options you work with, what referral is needed and how to book on one easy-to-find page. Add a dated note on current wait times, so people don't call a practice that can't see them for months.",
+          "Be clear that your practice is not a crisis service, and give the numbers to call instead: 000 in an emergency and Lifeline on 13 11 14. Someone in distress who lands on your site should never have to search for that.",
+        ], checklist: ["Fees, funding options and referral needs on one page.", "Dated wait time.", "Crisis numbers on every contact page."] },
+        { title: "Make your Google Business Profile do the first job", paragraphs: [
+          "Many people find a practice on Google Maps before they see a website. Choose the right primary category, list your services, add accurate hours and show the address, parking and accessibility details for your rooms. Photos of the waiting room and entrance help people feel prepared, especially for a first visit. Never use photos of clients.",
+          "Reviews need care. Ahpra's guidance says practitioners are not expected to remove unsolicited reviews on sites they don't control, but you must not quote reviews about clinical care in your own advertising. When you reply to a review, never confirm that the reviewer is or was a client: keep replies short, polite and general.",
+        ] },
+        { title: "Know the advertising rules", paragraphs: [
+          "Psychologists are registered through Ahpra and the Psychology Board of Australia, so the guidelines for advertising a regulated health service apply to your website, social media, Google profile and ads. They prohibit misleading claims, testimonials about clinical care and anything that creates unreasonable expectations of benefit, such as promising that therapy will fix a problem within a set number of sessions.",
+          "Be precise with titles. Only describe someone as a clinical psychologist, or with another area of practice endorsement, if they hold that endorsement, which anyone can check on the public register. Keep qualifications and memberships accurate and current on every profile.",
+        ], checklist: ["No outcome promises or clinical testimonials.", "Endorsed titles only where the register shows them.", "Profiles checked whenever someone joins or leaves."] },
+        { title: "Make referring easy for GPs and others", paragraphs: [
+          "GPs, paediatricians, school wellbeing staff, employers and NDIS support coordinators all send people to psychologists. Give them a referral page that says what you need, how to send it securely, who sees which concerns and your current wait time, with a named contact.",
+          "Acknowledge each referral promptly and, with the client's consent, let the referrer know they have been seen. A referrer who hears back is far more likely to send the next person.",
+        ] },
+        { title: "Use ads carefully and track enquiries", paragraphs: [
+          "If you advertise on Google, use search ads for the services you have capacity for, in the suburbs you serve. Google's personalised advertising policy restricts targeting people based on health conditions, so match what people type rather than trying to reach a health audience. Check the search terms report for students, job seekers and searches you don't help with, and pause ads when your waitlist is full.",
+          "Ask every new client how they found you and record referrals by source. After a few months you'll know whether search, GPs or other referrers bring the people you can help. Seam Media works with businesses across the south-east: our page for a digital marketing agency in Dandenong explains how we help local businesses get found, and our allied health marketing page covers websites, Google Maps and Google Ads for practices, including a written 60-day review for new Google Ads clients, with the details on that page.",
+        ], links: [{ title: "Digital marketing agency in Dandenong", path: "/dandenong" }, { title: "Allied health marketing", path: "/allied-health-marketing" }] },
+      ],
+      sources: [ahpraGuidelines, psychologyBoard, ahpraAdvertising, googlePersonalisedAds, googleHealthAds, googleSearchTerms],
+      links: [{ title: "Digital marketing agency in Dandenong", path: "/dandenong" }, { title: "Allied health marketing", path: "/allied-health-marketing" }, packagesLink],
+    },
+  },
+  {
+    date: "2026-11-25",
+    category: "Trades",
+    excerpt: "SEO for roofers in Frankston: a Google profile set up for leak calls, a page for each roofing job, honest area pages, project photos, reviews and tracking real calls.",
+    guide: {
+      title: "SEO for roofers in Frankston: showing up for leaks and re-roofs",
+      path: "/blog/seo-roofers-frankston",
+      description: "SEO for roofers in Frankston: Google profile, a page for each roofing job, real area pages, project photos, reviews and tracking calls, not rankings.",
+      published: "2026-11-25", modified: "2026-11-25",
+      intro: [
+        "Roofing work comes from two very different searches. One is the homeowner in Seaford or Carrum Downs with water coming through the ceiling after a storm, phone in hand, calling the first roofer that looks local and reliable. The other is the homeowner in Frankston South or Mount Eliza planning a re-roof or restoration, who will compare several roofers over weeks before asking for quotes.",
+        "SEO for a roofer in Frankston means showing up well for both. This guide covers the Google Business Profile, website pages, photos, reviews and tracking that matter most.",
+      ],
+      sections: [
+        { title: "Set up your Google profile for leak calls", paragraphs: [
+          "Urgent roofing searches like \"roof leak repair Frankston\" or \"roofer near me\" show the map results first, and those come from your Google Business Profile. Choose the primary category that best fits your business, list every service you offer and set real service areas, such as Frankston, Seaford, Carrum Downs, Langwarrin, Skye and Frankston South.",
+          "Keep your business name exactly as you trade. Adding suburbs or keywords to the name breaks Google's guidelines and can get the profile suspended. Add your hours honestly, and if you take storm calls out of hours, make sure someone actually answers.",
+        ], checklist: ["Correct primary category and full service list.", "Real service areas that match your website.", "Business name exactly as you trade."] },
+        { title: "Give each roofing job its own page", paragraphs: [
+          "Leak repairs, storm damage, re-roofing, roof restoration, Colorbond roofing, and gutters and downpipes are different searches with different customers. A page for each lets you explain what the job involves, signs that it is needed, what affects the cost and how quickly you can attend.",
+          "Write each page for the person in that situation. Someone with a leak wants to know you can come soon and stop the water getting in. Someone planning a re-roof wants to see finished roofs, materials you work with and how you manage the job from quote to clean-up.",
+        ], checklist: ["One page for each high-value roofing job.", "Answer the questions customers ask on the phone.", "Phone number at the top of the urgent pages."] },
+        { title: "Cover your areas without copying pages", paragraphs: [
+          "It is tempting to make a page for every suburb with the name swapped in. Near-identical pages give Google little reason to show them. Write fewer area pages with real local detail: jobs you have done there, the kinds of homes and roofs common in that area, and how quickly you can usually get there.",
+          "Link each area page to your service pages, and keep the areas consistent with your Google profile.",
+          "If you travel further afield, such as Mornington or Cranbourne, but only for bigger jobs, say that on the page: \"re-roofs and restorations across the Mornington Peninsula, leak repairs in Frankston and nearby suburbs\". It tells customers what to expect and keeps urgent calls within reach.",
+        ] },
+        { title: "Show finished roofs and your credentials", paragraphs: [
+          "Roofing sells on proof. Add before and after photos of your own jobs, with the suburb and what was done, to your website and your Google profile. Ask the homeowner's permission first and avoid showing house numbers. A few short project write-ups do more than a long list of claims.",
+          "Show your registration or licence details where they apply, and your insurance, near the top of your service pages. Homeowners check those before letting someone on their roof.",
+          "Short videos work well too. A quick walk around a finished roof, filmed safely, gives homeowners a better sense of your work than a single photo, and it suits both your website and your Google profile.",
+        ] },
+        { title: "Ask for reviews the right way", paragraphs: [
+          "Ask every happy customer for a Google review, ideally with a short link sent by text once the job is finished. Google's policies don't allow offering discounts or gifts for reviews, or asking only happy customers in a way that filters out the rest. Reply to every review calmly, including the occasional negative one.",
+          "Read your reviews for patterns. If several customers mention how tidy you left the site or how quickly you came out after a storm, lead with those points on your pages, because they are what your next customer cares about.",
+        ] },
+        { title: "Track calls, not rankings", paragraphs: [
+          "Rankings change from suburb to suburb and day to day, so a single ranking report can mislead. Track calls and quote requests from your profile and website, and check Search Console each month to see which searches and pages bring visitors. Over three to six months those numbers show whether the work is paying off.",
+          "Seam Media does local SEO for trades across the Mornington Peninsula and south-east. Our page on SEO in Frankston explains how we help local businesses show up on Google, and our roofer marketing page covers websites, Google Maps and Google Ads for roofers, including an enquiry guarantee for new Google Ads clients, with the terms on that page.",
+        ], links: [{ title: "SEO in Frankston", path: "/frankston/seo" }, { title: "Marketing for roofers", path: "/roofer-marketing" }] },
+      ],
+      sources: [googleLocal, googleServiceArea, googleProfileRules, googleReviews, googleReviewPolicy, googleSeoStarter],
+      links: [{ title: "SEO in Frankston", path: "/frankston/seo" }, { title: "Marketing for roofers", path: "/roofer-marketing" }, fencerLink, packagesLink],
+    },
+  },
+  {
+    date: "2026-11-26",
+    category: "NDIS & allied health",
+    excerpt: "What a website for an NDIS provider in Cranbourne needs: clear supports and service areas, dated capacity, registration details, accessibility and a referral path for coordinators.",
+    guide: {
+      title: "Website for NDIS providers in Cranbourne: what Casey families and coordinators look for",
+      path: "/blog/website-ndis-providers-cranbourne",
+      description: "A website for NDIS providers in Cranbourne: clear supports, service areas, dated capacity, registration details, accessibility and easy referrals.",
+      published: "2026-11-26", modified: "2026-11-26",
+      intro: [
+        "An NDIS provider's website in Cranbourne has several audiences at once. Participants and families want to know whether you can help and when. Support coordinators and plan managers want to know what you offer, whether you have capacity and how to refer. Many will look at your site on a phone, and some will use a screen reader or need larger text.",
+        "This guide covers what a website for an NDIS provider in the City of Casey needs, so the right people can find you, trust you and get in touch.",
+      ],
+      sections: [
+        { title: "Say exactly what you offer and where", paragraphs: [
+          "List the supports you provide in plain language, with a short page for each main one, such as daily living support, community access, therapy supports or support coordination. Say who each support suits and what the first step is.",
+          "Lead with what the support looks like day to day, such as help with shopping and cooking or getting to a weekly class, and put the formal NDIS name underneath. Participants and families don't always know the official terms.",
+          "Name the suburbs you cover, such as Cranbourne, Cranbourne East, Clyde North, Botanic Ridge, Lynbrook and Narre Warren South, and be honest about where your range ends. If you work from an office, give the address, parking and access details. If you visit people at home, say so and set matching service areas on your Google Business Profile.",
+        ], checklist: ["A page for each main support.", "Suburbs covered, and where your range ends.", "The same areas on your website and Google profile."] },
+        { title: "Show current capacity, with a date", paragraphs: [
+          "Support coordinators spend a lot of time calling providers who turn out to be full. A short, dated capacity note, such as \"Taking new participants for community access in Cranbourne and Clyde North, updated 26 November\", saves everyone time and makes you the provider they call first next time.",
+          "If you are full for a support, say so and offer a waitlist or another way to stay in touch, rather than leaving the page silent.",
+          "Coordinators also value knowing what you can't do. A line saying which supports or locations you don't cover helps them refer elsewhere quickly, and they will remember you for being straight with them.",
+        ] },
+        { title: "Be clear about registration and how people can use you", paragraphs: [
+          "Say whether you are a registered NDIS provider and, if so, which supports you are registered to deliver. This matters because participants whose plans are managed by the NDIA can only use registered providers, while self-managed and plan-managed participants can choose. A clear line on your site answers that question before anyone has to ask.",
+          "Registered providers must meet the NDIS Practice Standards, and every provider and worker must follow the NDIS Code of Conduct, which includes acting with integrity, honesty and transparency. Your website is part of that: describe your supports accurately and never pressure or offer incentives to sign up.",
+        ], checklist: ["Registration status stated plainly.", "Registered supports listed if registered.", "No pressure, incentives or overstated claims."] },
+        { title: "Make the site accessible", paragraphs: [
+          "Build to the Web Content Accessibility Guidelines (WCAG): good colour contrast, text that can be enlarged, headings in order, descriptive link text, images with alt text, captions on videos and forms that work with a keyboard and screen reader. Test it on a phone, because that is how most people will see it.",
+          "Write in plain language and keep pages short. If you can, offer an Easy Read version of key information, such as your services and how to make a complaint, and list other ways to contact you, such as phone, text or email.",
+        ], checklist: ["WCAG basics checked on every template.", "Plain-language pages, with Easy Read where you can.", "Several ways to get in touch."] },
+        { title: "Give coordinators a referral path", paragraphs: [
+          "Make a referral page for support coordinators, plan managers and allied health professionals. Include a short form, the information you need, how quickly you respond and a named contact. Then acknowledge every referral promptly, even when the answer is that you are full.",
+          "Use photos and stories only with written consent, and never share details that could identify a participant without it.",
+        ] },
+        { title: "Help Google find you, and track enquiries", paragraphs: [
+          "Give each page a clear title and heading that names the support and the area, keep your Google Business Profile complete, and link your support pages from the homepage. Then record where each enquiry came from, whether a coordinator, Google or word of mouth, so you know what is working.",
+          "Keep the site current. Old staff lists, an out-of-date capacity note or a broken form tell visitors nobody is minding the business. A monthly reminder to update the capacity note and test the form takes ten minutes.",
+          "Seam Media builds websites and runs local search for providers across the south-east. Our page on SEO in Cranbourne explains how we help Casey businesses show up on Google, and our NDIS marketing page covers websites, Google Maps and Google Ads for providers, including a written 60-day review for new Google Ads clients, with the details on that page.",
+        ], links: [{ title: "SEO in Cranbourne", path: "/cranbourne" }, { title: "NDIS provider marketing", path: "/ndis-marketing" }] },
+      ],
+      sources: [ndisPracticeStandards, ndisCode, wcag, googleServiceArea, googleTitleLinks],
+      links: [{ title: "SEO in Cranbourne", path: "/cranbourne" }, { title: "NDIS provider marketing", path: "/ndis-marketing" }, packagesLink],
+    },
+  },
+  {
+    date: "2026-11-27",
+    category: "Trades",
+    excerpt: "Google Ads for landscapers in Frankston: target the suburbs you work in, put budget on makeovers and hardscaping, land on photo-rich pages, block wasted searches and track quotes.",
+    guide: {
+      title: "Google Ads for landscapers in Frankston: planned jobs and local targeting",
+      path: "/blog/google-ads-landscapers-frankston",
+      description: "Google Ads for landscapers in Frankston: local targeting, budget on bigger jobs, photo-rich landing pages, negative keywords and tracking quotes.",
+      published: "2026-11-27", modified: "2026-11-27",
+      intro: [
+        "Landscaping is mostly planned work. A homeowner in Frankston South or Langwarrin thinking about a backyard makeover, new paving or a retaining wall will usually look at several landscapers, scroll through their photos and ask two or three for quotes. Google Ads can put you in front of them at the moment they start searching, but only if the ads, pages and settings are built around the jobs you actually want.",
+        "This guide covers the settings that matter most for a landscaping business around Frankston: where your ads show, which jobs get the budget, where the clicks land and how you count results.",
+      ],
+      sections: [
+        { title: "Target the suburbs you want to work in", paragraphs: [
+          "Set your location targeting to the suburbs or radius you are happy to travel to, such as Frankston, Frankston South, Langwarrin, Carrum Downs, Seaford, Skye and Mount Eliza, rather than all of Melbourne. A landscaping job runs for days or weeks, so travel time matters.",
+          "Check the location option as well. Google Ads can show ads to people in your area or to people who show interest in it. For a local landscaper, people who are actually in, or regularly in, your area are usually the better choice. Google's help page explains the difference.",
+        ], checklist: ["Targeting limited to the suburbs you want.", "Location option set to presence, not just interest.", "Ad text that names your area."] },
+        { title: "Put the budget on the bigger jobs", paragraphs: [
+          "A full backyard makeover or a run of retaining walls is worth far more than mowing or a one-off tidy-up. Split your campaigns or ad groups by job type, such as garden design and makeovers, paving and retaining walls, decking, and turf, so each gets its own ads, budget and bids.",
+          "Give the most budget to the jobs that pay best and that you have the crew for. Small maintenance work can usually be left to your Google Business Profile and word of mouth.",
+          "Write ads that match each job. A paving ad can mention the materials you lay and link to your paving gallery, while a makeover ad can talk about design and managing the whole project. Ads that match the search usually attract more of the right clicks.",
+        ] },
+        { title: "Send clicks to pages full of your work", paragraphs: [
+          "Landscaping sells on photos. Send each ad to the matching page on your website, not the homepage: a paving ad to a page of paving jobs, a makeover ad to finished backyards. Show the suburb, what was done and, where you can, before and after photos taken with the owner's permission.",
+          "Keep a short quote form near the top, asking for name, phone, suburb, the type of job and a rough timeframe, with an option to upload a photo of the yard. Make the phone number tap-to-call on mobile.",
+        ], checklist: ["One landing page per job type.", "Recent project photos on every page.", "Short quote form with photo upload."] },
+        { title: "Block searches that waste money", paragraphs: [
+          "Add negative keywords before you launch for searches that will never become work: jobs, apprenticeships, courses, DIY, \"how to\", landscape supplies, plants, soil, mulch and services you don't offer. Then check the search terms report every week for the first couple of months and add new negatives as they appear.",
+          "Use match types deliberately. Broad match can find useful searches you hadn't thought of, but it needs watching closely on a small budget. Phrase and exact match give more control while you learn which searches turn into quotes.",
+        ], checklist: ["Starter negative list in place before launch.", "Search terms checked weekly.", "Match types chosen deliberately."] },
+        { title: "Plan around the season and your capacity", paragraphs: [
+          "Demand for outdoor work tends to rise as people plan for the warmer months, and your crew's calendar fills accordingly. When you are booked out for weeks, lower your budget or say so in your ads, rather than paying for enquiries you can't take on. When the calendar has gaps, lift it again.",
+          "Ad scheduling can also help. Show ads mainly when someone can answer the phone or reply to quote requests quickly, because an enquiry answered the same day is far more likely to become a job than one answered next week.",
+        ] },
+        { title: "Count quote requests, not clicks", paragraphs: [
+          "Set up conversion tracking for completed quote forms and for calls from your ads and website, counting only calls above a minimum length. Then note which enquiries became jobs. After a few months you will know which job types and suburbs pay for themselves.",
+          "Give it time. Landscaping enquiries often take weeks to turn into a signed job, so judge the campaign on quote requests and jobs won over two or three months, not on the first fortnight.",
+          "Seam Media manages Google Ads for local trades. Our page on digital marketing in Frankston explains how we work with local businesses, and our landscaper marketing page covers websites, Google Maps and Google Ads for landscapers, including an enquiry guarantee for new Google Ads clients, with the terms on that page.",
+        ], links: [{ title: "Digital marketing in Frankston", path: "/frankston" }, { title: "Marketing for landscapers", path: "/landscaper-marketing" }] },
+      ],
+      sources: [googleLocationTargeting, googleNegatives, googleSearchTerms, googleMatchTypes, googleAdSchedule, googleCalls],
+      links: [{ title: "Digital marketing in Frankston", path: "/frankston" }, { title: "Marketing for landscapers", path: "/landscaper-marketing" }, { title: "Google Ads management", path: "/google-ads-management" }, packagesLink],
+    },
+  },
+  {
+    date: "2026-11-28",
+    category: "NDIS & allied health",
+    excerpt: "Podiatry marketing on the Mornington Peninsula: pages for the problems people search, clinics and home visits across the peninsula, funding info, Ahpra rules, referrers and tracking.",
+    guide: {
+      title: "Podiatry marketing on the Mornington Peninsula: clinics, home visits and referrals",
+      path: "/blog/podiatry-marketing-mornington-peninsula",
+      description: "Podiatry marketing on the Mornington Peninsula: pages for common problems, clinic and home visits, funding info, Ahpra rules, referrers and tracking.",
+      published: "2026-11-28", modified: "2026-11-28",
+      intro: [
+        "People find a podiatrist on the Mornington Peninsula in a few different ways. A runner in Mount Martha searches for heel pain treatment. A parent in Mornington looks for someone to check a child's feet. A family member in Rosebud looks for a podiatrist who visits an older parent at home. A GP or home care provider refers a client with diabetes for regular foot checks.",
+        "Each of them needs different information, across a long region where travel time matters. This guide covers how a podiatry practice on the peninsula can be easy to find and choose, within the rules for health advertising.",
+      ],
+      sections: [
+        { title: "Write pages for the problems people search", paragraphs: [
+          "People search for the problem, not the profession: \"heel pain\", \"ingrown toenail\", \"orthotics\", \"diabetic foot check\", \"sports injury\", \"kids' feet\". Give the main ones their own page, explaining who on your team helps with it, what the first appointment involves and how to book.",
+          "Keep the explanations factual and calm. A page that clearly explains what happens at an assessment is more reassuring than one full of promises.",
+          "Add a short profile for each podiatrist with their areas of interest, such as sports, children's feet or diabetes care, and which clinics or areas they cover. People often choose a practitioner they feel suits them, and referrers like to know who they are sending a client to.",
+        ], checklist: ["A page for each main problem or service.", "What the first appointment involves.", "Booking options on every page."] },
+        { title: "Be clear about clinics and home visits", paragraphs: [
+          "The peninsula is long, and people want someone close. If you have clinics, give each real location its own Google Business Profile with accurate hours, parking and access details. If you visit people at home or in aged care, list the areas you cover, such as Mornington, Mount Martha, Dromana, Rosebud, Hastings and Somerville, and say where your range ends.",
+          "Google lets businesses that only visit clients hide their address and set service areas instead. If you do both, keep one profile per clinic and explain home visits on your website.",
+          "For home visits, explain how booking works, how far ahead you are booked and what the client needs to have ready, such as a chair, good light and any referral paperwork. Families arranging care for a parent value knowing this before they call.",
+        ] },
+        { title: "Explain how people can pay", paragraphs: [
+          "Many podiatry clients are funded through more than one source. If you see clients under GP-referred Medicare plans, the Department of Veterans' Affairs, the NDIS, home care packages or private health cover, say which ones you accept and what the client needs to bring or arrange first. Keep the details current, and link to the official source rather than rewording the rules yourself.",
+          "List your standard fees or price ranges where you can. Clear pricing saves phone calls and builds trust.",
+        ], checklist: ["Funding options you accept, listed plainly.", "What clients need to bring.", "Fees or price ranges where possible."] },
+        { title: "Know the advertising rules", paragraphs: [
+          "Podiatrists are registered through Ahpra and the Podiatry Board of Australia, so the guidelines for advertising a regulated health service apply to your website, Google profile, social media and ads. They prohibit misleading claims, testimonials about clinical care and anything that creates unreasonable expectations, such as \"pain gone in one visit\".",
+          "Use before and after photos with care and written consent, and make sure they are genuine and not misleading. Google reviews you don't control can stay, but don't quote clinical reviews in your own advertising.",
+        ], checklist: ["No outcome promises or clinical testimonials.", "Written consent for any photo.", "Accurate qualifications on every profile."] },
+        { title: "Build referrals from the people who send clients", paragraphs: [
+          "GPs, diabetes educators, aged care and home care providers, physios and local sports clubs all send people to podiatrists. Give them a referral page with a short form, what you need, how quickly you can see new clients and which areas you visit, with a named contact. Acknowledge every referral promptly.",
+          "Many referrers prefer a phone call or secure email to a web form, so list those options too. Where the client agrees, a short note back after the first appointment helps the referrer trust you with the next person.",
+        ] },
+        { title: "Use ads carefully and track where clients come from", paragraphs: [
+          "If you run Google Ads, use search ads for the services you have capacity for, in the areas you cover. Google's personalised advertising policy restricts targeting people based on health conditions, so match what people type instead. Ask every new client how they found you and record referrals by source.",
+          "Seam Media works with businesses across the Mornington Peninsula. Our page on SEO on the Mornington Peninsula explains how we help local businesses show up on Google, and our allied health marketing page covers websites, Google Maps and Google Ads for practices, including a written 60-day review for new Google Ads clients, with the details on that page.",
+        ], links: [{ title: "SEO on the Mornington Peninsula", path: "/mornington/seo" }, { title: "Allied health marketing", path: "/allied-health-marketing" }] },
+      ],
+      sources: [ahpraGuidelines, podiatryBoard, ahpraAdvertising, googleServiceArea, googlePersonalisedAds, googleHealthAds],
+      links: [{ title: "SEO on the Mornington Peninsula", path: "/mornington/seo" }, { title: "Allied health marketing", path: "/allied-health-marketing" }, packagesLink],
+    },
+  },
+  {
+    date: "2026-11-29",
+    category: "Trades",
+    excerpt: "What a builder's website in Mount Eliza needs: real project pages, registration details, a clear process, an enquiry form that qualifies leads and tracking where enquiries come from.",
+    guide: {
+      title: "Website for builders in Mount Eliza: showing peninsula homeowners your work",
+      path: "/blog/website-builders-mount-eliza",
+      description: "A website for builders in Mount Eliza: real project pages, registration details, a clear process, a qualifying enquiry form and tracking.",
+      published: "2026-11-29", modified: "2026-11-29",
+      intro: [
+        "Homeowners in Mount Eliza planning an extension, renovation or new home rarely call the first builder they find. They look at websites and Google profiles for weeks, compare finished projects, check registration and reviews, and then contact two or three builders. Your website is where most of that comparison happens.",
+        "This guide covers what a builder's website needs to win that comparison on the Mornington Peninsula, and how to tell whether it is bringing the right enquiries.",
+      ],
+      sections: [
+        { title: "Lead with the work you want more of", paragraphs: [
+          "Start the homepage with the types of project you want, such as extensions, renovations, new homes or knockdown rebuilds, and the areas you build in, such as Mount Eliza, Mornington, Mount Martha and Frankston South. Give each project type its own page, explaining what you do, how you work and what homeowners should think about first.",
+          "If you don't take small jobs, say so politely. It saves you time and helps the right homeowners recognise you as a fit.",
+          "Answer the questions homeowners ask while planning: how long an extension usually takes, whether they can stay in the house, which approvals are likely and how you handle variations. Those answers are what people search for, and they show you know the work.",
+        ] },
+        { title: "Make project pages your best pages", paragraphs: [
+          "A builder's website has one main job: prove you have done this before. Give each finished project a page with good photos, the suburb, the brief, what made it tricky, such as a sloping block, a coastal site or living in the house during the works, and how you handled it.",
+          "Ask clients' permission before publishing, avoid showing house numbers, and add a short quote from the owner only with their consent. Ten honest project pages do more than a gallery of unlabelled photos.",
+        ], checklist: ["A page for each finished project.", "Suburb, brief and challenge described.", "Permission from each owner."] },
+        { title: "Show registration and insurance clearly", paragraphs: [
+          "The Building and Plumbing Commission says homeowners need a registered builder for domestic building work worth more than $10,000, and that registered practitioners carry a photo ID card showing their category of registration. Homeowners who know this will look for it.",
+          "Show your registration details and insurance near the top of your project and contact pages, and explain in plain language what happens at contract stage. It answers questions before they're asked and sets you apart from anyone who hides those details.",
+        ] },
+        { title: "Explain your process", paragraphs: [
+          "Most homeowners have never built before and worry about the unknowns. A clear process page, from first meeting and site visit through design, permits, contract, building and handover, helps them picture working with you. Give honest timeframe ranges and explain what can change them.",
+          "Say who they will deal with at each stage, how often you will update them and how changes are handled once building starts. Communication is one of the things homeowners worry about most, and a clear answer helps them choose.",
+          "Avoid fixed prices or timeframes you can't promise for every job. Explain instead what affects cost, such as size, site conditions, finishes and approvals.",
+        ], checklist: ["Step-by-step process page.", "Honest timeframe ranges.", "What affects cost, without fixed promises."] },
+        { title: "Ask the right questions in the enquiry form", paragraphs: [
+          "A builder's enquiry form can do some early qualifying. Ask for name, phone, suburb, project type, rough budget range, when they hope to start and whether they have plans or permits yet. Keep it to one short page, and say when you will be in touch.",
+          "Put your phone number and the form on every project page as well as the contact page, because that is where homeowners decide to get in touch.",
+          "Reply quickly, even if only to book a call. A homeowner who has contacted three builders often goes with the first one who gets back with a clear next step.",
+        ] },
+        { title: "Get the basics right for Google, and track enquiries", paragraphs: [
+          "Give each page a clear title and heading that names the project type and area, make sure the site loads quickly on a phone, and link your project and service pages from the menu. Keep your Google Business Profile complete, with project photos and genuine reviews. Then record where each enquiry came from and which became jobs.",
+          "Search Console, which is free, shows which searches bring people to each page. Check it monthly, and when a project page starts appearing for searches in a suburb you want more work in, add another project from that area.",
+          "Seam Media builds websites and runs local search for builders across the peninsula. Our page for a digital marketing agency in Mount Eliza explains how we work with local businesses, and our builder marketing page covers websites, Google Maps and Google Ads for builders, including an enquiry guarantee for new Google Ads clients, with the terms on that page.",
+        ], links: [{ title: "Digital marketing agency in Mount Eliza", path: "/mount-eliza" }, { title: "Marketing for builders", path: "/builder-marketing" }] },
+      ],
+      sources: [bpcEngagingBuilder, googleHelpful, googleTitleLinks, googleSeoStarter],
+      links: [{ title: "Digital marketing agency in Mount Eliza", path: "/mount-eliza" }, { title: "Marketing for builders", path: "/builder-marketing" }, { title: "Web design in Mount Eliza", path: "/mount-eliza/web-design" }, packagesLink],
+    },
+  },
+  {
+    date: "2026-11-30",
+    category: "NDIS & allied health",
+    excerpt: "Speech pathology marketing in Dandenong: pages in families' words, clinic, school and telehealth options, the right professional rules, referrers, careful ads and tracking.",
+    guide: {
+      title: "Speech pathology marketing in Dandenong: reaching families and schools",
+      path: "/blog/speech-pathology-marketing-dandenong",
+      description: "Speech pathology marketing in Dandenong: pages in families' words, where you see clients, the right professional rules, referrers, ads and tracking.",
+      published: "2026-11-30", modified: "2026-11-30",
+      intro: [
+        "Families in Dandenong, Noble Park, Springvale and Keysborough often look for a speech pathologist after a kinder teacher, maternal and child health nurse or GP raises a concern. Adults and their families search too, after a stroke or for help with voice or swallowing. Most start on Google, on a phone, and want to know quickly whether you can help, where and when.",
+        "This guide covers how a speech pathology practice in the Dandenong area can reach families, schools and referrers, and which professional rules apply.",
+      ],
+      sections: [
+        { title: "Describe what you help with in families' words", paragraphs: [
+          "Parents rarely search for clinical terms. They type \"toddler not talking\", \"child stutters\", \"can't say some sounds\" or \"struggling with reading\". Give the main areas their own page, explaining who you help, what the first appointment involves and what parents can expect.",
+          "If you see adults, give that work its own pages too, such as speech and language after a stroke, voice and swallowing, so those searches don't land on a children's page.",
+          "Short, practical explanations help too, such as what happens at an assessment, how families can practise at home between sessions and how therapy is usually scheduled at your practice. Keep them general and avoid promising results.",
+        ], checklist: ["A page for each main area, in everyday words.", "Separate pages for adult services.", "What the first appointment involves."] },
+        { title: "Say where and how you see people", paragraphs: [
+          "Explain whether you see clients in a clinic, at kinder or school, at home or by telepractice, and list the suburbs you reach, such as Dandenong, Noble Park, Springvale, Keysborough, Doveton and Endeavour Hills. If you have a clinic, keep its Google Business Profile complete with hours, parking and access details.",
+          "If you offer telepractice, explain what families need, such as a laptop or tablet and a quiet space, and which services suit it.",
+          "If any of your speech pathologists work in languages other than English, or you regularly work with interpreters, say so on the relevant pages. For many local families, that is the deciding detail.",
+        ] },
+        { title: "Answer the practical questions", paragraphs: [
+          "Put fees, the funding options you work with, whether a referral is needed and how to book on one easy-to-find page. Add a dated note on current wait times for each service. Families often contact several practices at once and choose the one that can see their child soonest.",
+          "Explain how you keep families informed, such as written goals after the assessment and regular progress updates, so parents know what they are signing up for.",
+        ], checklist: ["Fees and funding options on one page.", "Referral requirements stated.", "Dated wait times."] },
+        { title: "Know which rules apply", paragraphs: [
+          "Speech pathologists are not registered through Ahpra, so the Ahpra advertising guidelines don't apply to speech pathology in the way they do to physios or OTs. Speech pathology is self-regulated: Speech Pathology Australia sets standards and a code of ethics for its members, and it is a member of the National Alliance of Self Regulating Health Professions. Consumer law still applies to every claim you make.",
+          "If your practice also includes Ahpra-registered professions, such as occupational therapists or psychologists, their advertising rules apply to their pages. If you provide NDIS supports, the NDIS Code of Conduct applies too. Avoid outcome promises, and get written consent from parents before using any photo or story about a child.",
+        ], checklist: ["Rules checked for each profession in the practice.", "No outcome promises.", "Written parental consent for photos and stories."] },
+        { title: "Build referrals from kinders, schools and GPs", paragraphs: [
+          "Maternal and child health nurses, kinder and school staff, GPs, paediatricians and support coordinators send many families to speech pathologists. Give them a referral page with a short form, what you need, your current wait times and a named contact.",
+          "Acknowledge every referral promptly and, with the parent's consent, let the referrer know the child has been seen. A short, practical note to local kinders about who you see and how to refer can bring more of the right families than advertising.",
+          "Keep a simple record of referrals by source each month. If one kinder or GP clinic sends many families, a thank-you and an update on your wait times keeps that relationship strong.",
+        ] },
+        { title: "Use ads carefully and track where families come from", paragraphs: [
+          "If you run Google Ads, use search ads for services you have capacity for, in the suburbs you serve. Google's personalised advertising policy restricts targeting people based on health, so match what parents type instead. Check the search terms report for students and job seekers, and pause ads when your waitlist is long. Ask every new family how they found you.",
+          "Seam Media works with businesses across the south-east. Our page on SEO in Dandenong explains how we help local businesses show up on Google, and our allied health marketing page covers websites, Google Maps and Google Ads for practices, including a written 60-day review for new Google Ads clients, with the details on that page.",
+        ], links: [{ title: "SEO in Dandenong", path: "/dandenong/seo" }, { title: "Allied health marketing", path: "/allied-health-marketing" }] },
+      ],
+      sources: [speechPathologyAustralia, nasrhpMembers, ahpraBoards, ndisCode, googlePersonalisedAds, googleSearchTerms],
+      links: [{ title: "SEO in Dandenong", path: "/dandenong/seo" }, { title: "Allied health marketing", path: "/allied-health-marketing" }, packagesLink],
     },
   },
 ];
