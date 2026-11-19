@@ -69,8 +69,9 @@ const offers: PackageOffer[] = [
       "Social content scheduling on Facebook and Instagram",
       "Reel editing, agreed in your scope",
       "Posts made from your website, Google reviews and past jobs, phone snaps optional",
+      "A Monday email with your social reach and engagement",
     ],
-    exclusions: "Websites (see Smart Website), SEO, Google Business Profile management, map-pack tracking, performance reporting and paid advertising are not included. On-site filming is quoted separately.",
+    exclusions: "Websites (see Smart Website), SEO, Google Business Profile management, map-pack tracking, monthly performance reports and paid advertising are not included. On-site filming is quoted separately.",
     cta: "Start with social",
     signupPlan: "foundation",
   },
@@ -131,7 +132,7 @@ const comparisonRows = [
   ["Monthly website or SEO improvement", "Not included", "Not included", "1 priority", "1 priority"],
   ["Ad management", "Not included", "Not included", "Google OR Meta", "Google AND Meta"],
   ["Conversion tracking", "Not included", "Not included", "Selected ad platform", "Across both ad platforms"],
-  ["Performance reporting", "Not included", "Not included", "Monthly", "Combined monthly report"],
+  ["Performance reporting", "Not included", "Monday social stats email", "Monthly", "Combined monthly report"],
   ["Weekly price", "$99", "$140", "$235", "$350"],
 ];
 
@@ -489,7 +490,7 @@ export default function MarketingPackagesClient() {
               ["How much does it cost?", "Smart Website is $99 a week, Foundation is $140 a week, Growth is $235 a week, and Complete Growth is $350 a week. All prices are in AUD, plus GST, and billed weekly. There's no setup fee on the Smart Website."],
               ["How often am I billed?", "You are billed weekly at the advertised package price, plus GST. Advertising spend is separate from your weekly service fee."],
               ["What is included in the Smart Website?", "A smart website built for your business with no cap on pages, an automatic text back when you miss a call, an instant automatic reply to form enquiries, every enquiry sent to your phone by SMS, and basic local SEO. There's no setup fee, and it's month to month."],
-              ["What is included in Foundation?", "Branded social posts, captions and Facebook and Instagram scheduling using assets you supply, with reel editing agreed in your scope. Foundation is social media only: websites sit in the Smart Website, and it doesn't include SEO, Google Business Profile management, map-pack tracking, performance reporting or paid advertising."],
+              ["What is included in Foundation?", "Branded social posts, captions and Facebook and Instagram scheduling, with posts made from your website, Google reviews and past jobs (phone snaps optional), reel editing agreed in your scope and a Monday email with your social reach and engagement. Foundation is social media only: websites sit in the Smart Website, and it doesn't include SEO, Google Business Profile management, map-pack tracking, monthly performance reports or paid advertising."],
               ["What does Growth include?", "Growth includes the Smart Website and Foundation social, and adds full local SEO with five tracked search terms, Google Business Profile management, map-pack tracking, review support, a prioritised monthly website or SEO improvement, performance reporting, and management of either Google Ads or Meta Ads."],
               ["What is included in Complete Growth?", "Complete Growth includes everything in Growth, with both Google Ads and Meta Ads management, social and campaign creative, shared tracking, combined reporting and a monthly marketing review."],
               ["Can I start small and upgrade later?", "Yes. Start with the Smart Website or Foundation, then move to Growth or Complete Growth when you need local SEO or advertising management. You keep your website when you upgrade."],
