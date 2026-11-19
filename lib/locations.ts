@@ -34,7 +34,11 @@ export const locationProfiles: Record<string, LocationProfile> = {
     ],
     question:
       "What would a Chelsea customer need to know before they feel confident requesting a quote or consultation?",
-    nearby: [{ href: "/frankston", label: "Digital marketing in nearby Frankston" }],
+    nearby: [
+      { href: "/frankston", label: "Digital marketing in nearby Frankston" },
+      // 19 Nov 2026 (seo-loop-seam, money search "seo frankston"): link the Frankston SEO owner page.
+      { href: "/frankston/seo", label: "SEO company in nearby Frankston" },
+    ],
   },
   cranbourne: {
     name: "Cranbourne",
@@ -48,7 +52,10 @@ export const locationProfiles: Record<string, LocationProfile> = {
     ],
     question:
       "Can a first-time visitor tell within a few seconds whether your service is right for their Cranbourne project?",
-    nearby: [{ href: "/frankston", label: "Digital marketing in Frankston" }],
+    nearby: [
+      { href: "/frankston", label: "Digital marketing in Frankston" },
+      { href: "/frankston/seo", label: "SEO services in Frankston" },
+    ],
   },
   dandenong: {
     name: "Dandenong",

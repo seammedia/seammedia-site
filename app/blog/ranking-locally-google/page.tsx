@@ -299,8 +299,23 @@ export default function RankingLocallyGooglePage() {
           </h2>
           <p className="text-gray-700 leading-relaxed mb-8">
             Improving your local Google rankings requires ongoing effort and
-            expertise. At Seam Media, we specialize in helping local businesses
-            dominate their local search results and attract more customers.{" "}
+            expertise. At Seam Media, we specialise in helping local businesses
+            dominate their local search results and attract more customers.
+            For businesses in the south east of Melbourne, read about our{" "}
+            <Link
+              href="/frankston/seo"
+              className="text-[#f5b5b5] hover:text-[#e8a5a5] font-medium transition-colors"
+            >
+              SEO company in Frankston
+            </Link>{" "}
+            or{" "}
+            <Link
+              href="/mornington/seo"
+              className="text-[#f5b5b5] hover:text-[#e8a5a5] font-medium transition-colors"
+            >
+              SEO on the Mornington Peninsula
+            </Link>
+            .{" "}
             <Link
               href="/contact"
               className="text-[#f5b5b5] hover:text-[#e8a5a5] font-medium transition-colors"

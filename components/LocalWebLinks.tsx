@@ -30,6 +30,7 @@ export default function LocalWebLinks({ eyebrow, title, copy, links }: {
 // Local SEO strip for the trade niche pages (added 15 Nov 2026, seo-loop-seam, money search "seo dandenong").
 // /tradie-seo, /plumber-marketing and /electrician-marketing linked no suburb SEO page, so the owners of the
 // "seo <suburb>" searches got nothing from them. Dandenong leads because it was the search worked that day.
+// 19 Nov 2026 (money search "seo frankston"): also on /tradie-marketing and /builder-marketing.
 export const localSeoLinks = [
   { href: "/dandenong/seo", label: "SEO in Dandenong" },
   { href: "/frankston/seo", label: "SEO in Frankston" },

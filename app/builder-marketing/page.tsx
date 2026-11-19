@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import NicheLanding from "@/components/NicheLanding";
+import { LocalSeoLinks } from "@/components/LocalWebLinks";
 import { createMetadata } from "@/lib/seo";
 import { builders } from "@/lib/niche-pages";
 
@@ -11,5 +12,10 @@ export const metadata: Metadata = createMetadata({
 });
 
 export default function BuilderMarketingPage() {
-  return <NicheLanding config={builders} />;
+  return (
+    <>
+      <NicheLanding config={builders} />
+      <LocalSeoLinks title="Local SEO for builders near us" />
+    </>
+  );
 }
