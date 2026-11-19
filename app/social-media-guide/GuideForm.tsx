@@ -9,17 +9,20 @@ import { BUDGETS, INDUSTRIES, REVIEW_OPTIONS, isOfferQualified, isQualifiedBudge
 const ACCENTS = {
   pink: { input: "focus:border-[#f5b5b5]", button: "bg-[#f5b5b5]" },
   green: { input: "focus:border-[#4ade80]", button: "bg-[#4ade80]" },
+  coral: { input: "focus:border-[#ff8a65]", button: "bg-[#ff8a65]" },
 };
 const baseInput = "w-full rounded-lg border border-white/15 bg-white/5 px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none";
 
 // Sends the lead to /api/guide-lead, remembers it for the "call me" button on the next page,
 // then moves to the thanks page, where the Meta Lead event fires.
 // Also used by /website-guide (8 Nov 2026) with its own offer, storage key and thanks page, and by /website-offer
-// (17 Nov 2026), which adds trade, suburb and current website, its own budget options, note and colour.
+// (17 Nov 2026), which adds trade, suburb and current website, its own budget options, note and colour, and by
+// /social-media-manager (19 Nov 2026), which also asks for their Instagram or Facebook page.
 type GuideFormProps = {
   id?: string; offer?: string; storageKey?: string; thanksPath?: string; heading?: string; button?: string;
   budgets?: readonly string[]; budgetLabel?: string; extraFields?: boolean; note?: ReactNode; accent?: keyof typeof ACCENTS;
   reviews?: boolean; // website offer: asks Google reviews, and qualifies on reviews and industry as well as budget
+  social?: boolean; // social media manager (19 Nov 2026): asks for their Instagram or Facebook page, for the free post redesign
 };
 
 export default function GuideForm({
@@ -35,6 +38,7 @@ export default function GuideForm({
   note,
   accent = "pink",
   reviews = false,
+  social = false,
 }: GuideFormProps) {
   const inputClass = `${baseInput} ${ACCENTS[accent].input}`;
   const router = useRouter();
@@ -104,6 +108,9 @@ export default function GuideForm({
           <input className={inputClass} name="trade" placeholder="Your trade or service, and suburb" required aria-label="Your trade or service, and suburb" />
           <input className={inputClass} name="website" autoComplete="url" placeholder="Current website, if you have one" aria-label="Current website, if you have one" />
         </>
+      )}
+      {social && (
+        <input className={inputClass} name="social" placeholder="Your Instagram or Facebook page, if you have one" aria-label="Your Instagram or Facebook page, if you have one" />
       )}
       {reviews && (
         <div className="relative">

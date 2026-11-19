@@ -68,7 +68,7 @@ const offers: PackageOffer[] = [
       "Branded social posts and captions",
       "Social content scheduling on Facebook and Instagram",
       "Reel editing, agreed in your scope",
-      "Client-supplied photos, footage and business information",
+      "Posts made from your website, Google reviews and past jobs, phone snaps optional",
     ],
     exclusions: "Websites (see Smart Website), SEO, Google Business Profile management, map-pack tracking, performance reporting and paid advertising are not included. On-site filming is quoted separately.",
     cta: "Start with social",

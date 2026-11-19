@@ -9,7 +9,7 @@ const reply = (status: number, body: object) => NextResponse.json(body, { status
 const LEAD_MANAGER_URL = "https://seam-media-lead-manager.vercel.app/api/leads/guide";
 const RELAY_URL = "https://thesoutheastplumber.com.au/api/seam-lead";
 
-// Social media guide opt-in, the Smart Website enquiry form and the website offer form. The lead manager saves the lead, emails the guide
+// Social media guide opt-in, the Smart Website enquiry form, the website offer form and the social media manager form. The lead manager saves the lead, emails the guide
 // (or the Smart Website reply) and alerts Heath.
 // If it can't be reached, the lead still reaches contact@ through the normal enquiry relay.
 export async function POST(request: NextRequest) {
@@ -41,6 +41,8 @@ export async function POST(request: NextRequest) {
   const smart = offer === "smart-website";
   const websiteGuide = offer === "website-guide"; // /website-guide opt-in (8 Nov 2026): the lead manager sends the tradie website guide
   const websiteOffer = offer === "website-offer"; // /website-offer (17 Nov 2026): the NB ads' pay-on-results website offer
+  const socialManager = offer === "social-manager"; // /social-media-manager (19 Nov 2026): the SM ads, Foundation social media
+  const social = field("social", 200);
   const trade = field("trade", 120);
   const website = field("website", 200);
   const lead: Record<string, string> = { name, company: business, email, phone_number: phone };
@@ -62,11 +64,12 @@ export async function POST(request: NextRequest) {
     lead.qualified = isOfferQualified({ budget, reviews, industry }) ? "yes" : "no";
   }
   if (websiteGuide) lead.offer = "website-guide";
-  if (smart || websiteOffer) {
+  if (smart || websiteOffer || socialManager) {
     lead.offer = offer;
     if (trade) lead.trade = trade;
     if (website) lead.website = website;
   }
+  if (socialManager && social) lead.social = social;
   try {
     const attr = JSON.parse(decodeURIComponent(request.cookies.get("seam_attr")?.value || "{}")) as Record<string, unknown>;
     for (const key of ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "fbclid"]) {
@@ -107,12 +110,12 @@ export async function POST(request: NextRequest) {
       method: "POST",
       headers: { "Content-Type": "application/json", "X-Seam-Form-Secret": secret },
       body: JSON.stringify({
-        form: smart ? "Smart Website ($99/wk): REPLY BY HAND (lead manager was unavailable)" : websiteOffer ? "Website offer: REPLY BY HAND (lead manager was unavailable)" : websiteGuide ? "Tradie website guide: SEND THE PDF BY HAND (lead manager was unavailable)" : "Social media guide: SEND THE PDF BY HAND (lead manager was unavailable)",
+        form: smart ? "Smart Website ($99/wk): REPLY BY HAND (lead manager was unavailable)" : socialManager ? "Social media manager: REPLY BY HAND (lead manager was unavailable)" : websiteOffer ? "Website offer: REPLY BY HAND (lead manager was unavailable)" : websiteGuide ? "Tradie website guide: SEND THE PDF BY HAND (lead manager was unavailable)" : "Social media guide: SEND THE PDF BY HAND (lead manager was unavailable)",
         name, business, email, phone,
         ...(industry ? { industry, budget, qualified: lead.qualified } : {}),
         ...(reviews ? { reviews } : {}),
-        ...(smart || websiteOffer ? { message: [trade && `Does: ${trade}`, website && `Website: ${website}`].filter(Boolean).join(" | ") } : {}),
-        page: smart ? "https://www.seammedia.com.au/smart-website" : websiteOffer ? "https://www.seammedia.com.au/website-offer" : websiteGuide ? "https://www.seammedia.com.au/website-guide" : "https://www.seammedia.com.au/social-media-guide",
+        ...(smart || websiteOffer || socialManager ? { message: [trade && `Does: ${trade}`, website && `Website: ${website}`, social && `Social: ${social}`].filter(Boolean).join(" | ") } : {}),
+        page: smart ? "https://www.seammedia.com.au/smart-website" : socialManager ? "https://www.seammedia.com.au/social-media-manager" : websiteOffer ? "https://www.seammedia.com.au/website-offer" : websiteGuide ? "https://www.seammedia.com.au/website-guide" : "https://www.seammedia.com.au/social-media-guide",
         submitted_at: new Date().toISOString(),
         ...(lead.utm_campaign ? { utm_campaign: lead.utm_campaign } : {}),
       }),
