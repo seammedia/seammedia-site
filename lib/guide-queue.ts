@@ -36,6 +36,7 @@ const bpcEngagingBuilder = { title: "Building and Plumbing Commission: engaging 
 const energySafeCoes = { title: "Energy Safe Victoria: Certificates of Electrical Safety for the community", url: "https://www.energysafe.vic.gov.au/certificates-electrical-safety/certificates-electrical-safety-consumers" };
 const metaLocations = { title: "Meta Business Help Centre: how to choose locations for your ad", url: "https://www.facebook.com/business/help/365561350785642" };
 const psychologyBoard = { title: "Psychology Board of Australia: guidelines and policies", url: "https://www.psychologyboard.gov.au/Standards-and-Guidelines/Codes-Guidelines-Policies.aspx" };
+const googleSpam = { title: "Google: spam policies for web search", url: "https://developers.google.com/search/docs/essentials/spam-policies" };
 const podiatryBoard = { title: "Podiatry Board of Australia", url: "https://www.podiatryboard.gov.au/" };
 
 export const guideQueue: ScheduledGuide[] = [
@@ -90,7 +91,7 @@ export const guideQueue: ScheduledGuide[] = [
       title: "SEO for plumbers: how to get more calls from Google",
       path: "/blog/seo-for-plumbers",
       description: "SEO for plumbers in plain English: Google Business Profile, a page for each plumbing job, real suburb pages, reviews and tracking calls, not just rankings.",
-      published: "2026-10-14", modified: "2026-11-06",
+      published: "2026-10-14", modified: "2026-11-20",
       intro: [
         "SEO for plumbers is the work that gets a plumbing business found on Google for the jobs and suburbs it wants, in the map results and the regular results below them. Plumbing searches are often urgent. Someone with a burst pipe or no hot water picks from the first few businesses Google shows, usually on their phone. SEO for a plumber is about making sure you are one of those businesses for the jobs and areas you want, and that your listing and website make calling you the obvious next step.",
         "There are two places to work on: your Google Business Profile, which drives the map results, and your website, which drives the regular search results underneath. This guide covers what SEO for plumbers involves, what to do first, how long it usually takes and when it makes sense to get help.",
@@ -122,6 +123,10 @@ export const guideQueue: ScheduledGuide[] = [
         { title: "Ask for reviews the right way", paragraphs: [
           "Ask every happy customer for a Google review, ideally with a short link sent by text after the job. Do not offer discounts in exchange, and do not write reviews yourself. Reply to reviews, good and bad, in a calm and helpful way.",
         ] },
+        { title: "Directories, links and local mentions", paragraphs: [
+          "Google looks at more than your own website. Listings on trade directories such as hipages, Oneflare and Yellow Pages, membership of an industry association, and mentions from local suppliers, builders and community groups all give Google more places that confirm who you are and where you work. Some of those listings send enquiries of their own too.",
+          "Keep your business name, phone number and address exactly the same on every listing, so they all point to the same business. Skip paid link schemes and bulk directory submissions: Google's spam policies treat buying links to rank as spam, and a handful of genuine local mentions does more than hundreds of low-quality ones.",
+        ], checklist: ["List your business on the directories your customers actually use.", "Use the same name, number and address everywhere.", "Ask suppliers and builders you work with to link to your website."] },
         { title: "Measure calls, not just rankings", paragraphs: [
           "Rankings move around and differ from suburb to suburb, so a single ranking report can mislead. Track calls from your profile and website, completed forms and the searches in Search Console that bring visitors. Over a few months those numbers tell you whether the work is paying off.",
         ], checklist: ["Record calls and forms each month.", "Check Search Console queries and pages.", "Compare the same months each year where you can."] },
@@ -136,6 +141,7 @@ export const guideQueue: ScheduledGuide[] = [
       ],
       faqs: [
         { q: "What is local SEO for plumbers?", a: "It is the work that helps a plumber show up when people nearby search for a plumbing job: a complete Google Business Profile, website pages for each job and area, and genuine reviews. Because plumbing customers want someone close, it is usually the first and biggest part of SEO for a plumbing business." },
+        { q: "What keywords should a plumber target?", a: "Start with the job and the place, such as \"blocked drains Frankston\", \"hot water repairs Dandenong\" or \"emergency plumber Mornington\". People typing those usually want someone soon. A broad search like \"plumber\" is harder to win, and how-to searches mostly bring people who plan to fix it themselves." },
         { q: "How long does SEO take for a plumber?", a: "Google Business Profile improvements often show within a few weeks once the profile is complete and reviews start coming in. New service and suburb pages usually take a few months to rank well, so judge the work on calls and forms over three to six months rather than week to week." },
         { q: "Is SEO or Google Ads better for plumbers?", a: "They do different jobs. Google Ads can put you at the top for urgent searches from the day the campaign starts, and you pay for each click. SEO takes longer but keeps bringing calls without paying per click. Many plumbers run ads for urgent, high-value jobs while their profile and pages build up." },
         { q: "Do plumbers need a page for every suburb?", a: "No. A page for each main job matters more. Add area pages only for the places you most want work, and give each one genuinely local information rather than the same text with a different suburb name." },
@@ -143,7 +149,7 @@ export const guideQueue: ScheduledGuide[] = [
         { q: "Can I put my suburb or \"plumber\" in my Google business name?", a: "Only if it is part of the name you actually trade under. Google's guidelines don't allow extra keywords or locations in the business name, and breaking them can get the profile suspended." },
         { q: "How much does SEO for plumbers cost with Seam Media?", a: "Local SEO is included in our Growth package ($235 a week plus GST, with one ad platform) and Complete Growth package ($350 a week plus GST, with Google and Meta Ads). The Smart Website ($99 a week plus GST) includes basic local SEO, and Foundation ($140 a week plus GST) is social media only. Prices are in AUD and billed weekly; ad spend is separate." },
       ],
-      sources: [googleLocal, googleProfileRules, googleServiceArea, googleSeoStarter, googleReviewPolicy, googleHelpful],
+      sources: [googleLocal, googleProfileRules, googleServiceArea, googleSeoStarter, googleReviewPolicy, googleSpam, googleHelpful],
       links: [{ title: "Marketing for plumbers", path: "/plumber-marketing" }, { title: "SEO for tradies", path: "/tradie-seo" }, { title: "Google Ads for plumbers", path: "/blog/google-ads-for-plumbers" }, packagesLink],
     },
   },
@@ -619,7 +625,7 @@ export const guideQueue: ScheduledGuide[] = [
         { title: "Service pages: one job per page", paragraphs: [
           "Each main service needs its own page, because Google ranks pages, not businesses. A good service page explains what the job involves, common problems you fix, what affects the price, how quickly you can attend and what happens after someone calls. Add photos of that type of job and a contact button after every few paragraphs.",
           "Give each page a descriptive title that says what the page is about. Google's guidance on title links recommends titles that are descriptive and concise, unique to each page and free of keyword stuffing.",
-        ], checklist: ["One page per high-value service.", "A unique, descriptive page title.", "Contact options repeated down the page."] },
+        ], checklist: ["One page per high-value service.", "A unique, descriptive page title.", "Contact options repeated down the page."], links: [{ title: "Local SEO for plumbers: a page for each job", path: "/blog/seo-for-plumbers" }] },
         { title: "Area pages: local detail, not copies", paragraphs: [
           "Pages for the suburbs or regions you cover can help you show up for searches in those places, but only if each one says something genuinely useful. Mention the jobs you commonly do there, local conditions that affect the work and projects you have completed nearby. A dozen near-identical pages with the suburb name swapped will do little and can look like spam.",
           "Keep the areas you target consistent with your Google Business Profile service areas, so customers and Google see the same picture.",
@@ -1245,7 +1251,7 @@ export const guideQueue: ScheduledGuide[] = [
           "Emergency call-outs, switchboard upgrades, rewires, lighting, EV chargers, smoke alarms and commercial maintenance are different searches. A page each lets you explain what the job involves, what affects the cost and how quickly you can attend. One page listing everything rarely ranks for any of it.",
           "Show your electrical licence number and that you provide the required compliance certificate for the work. That detail reassures people comparing electricians.",
           "Link every job page from your menu or homepage, and link related pages to each other, such as switchboard upgrades to safety switches. Pages that are hard to reach from the rest of the site are harder for Google to find and for visitors to use. Keep each page fast on a phone, with your number at the top.",
-        ] },
+        ], links: [{ title: "SEO for plumbers: the same job-page approach for plumbing", path: "/blog/seo-for-plumbers" }] },
         { title: "Treat commercial work separately", paragraphs: [
           "If you want commercial and industrial work in Dandenong South, Keysborough or Braeside, give it its own pages. Business buyers look for different things: after-hours availability so work does not stop production, maintenance contracts, test and tag, three-phase and fit-out experience, and insurance details. Project examples with the type of site and scope, shared with the client's permission, help a lot.",
         ], checklist: ["Separate commercial service pages.", "After-hours and maintenance options explained.", "Commercial project examples, with permission."] },
