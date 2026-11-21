@@ -307,13 +307,20 @@ export default function RankingLocallyGooglePage() {
               className="text-[#f5b5b5] hover:text-[#e8a5a5] font-medium transition-colors"
             >
               SEO company in Frankston
-            </Link>{" "}
-            or{" "}
+            </Link>
+            ,{" "}
             <Link
               href="/mornington/seo"
               className="text-[#f5b5b5] hover:text-[#e8a5a5] font-medium transition-colors"
             >
               SEO on the Mornington Peninsula
+            </Link>
+            , or{" "}
+            <Link
+              href="/cranbourne"
+              className="text-[#f5b5b5] hover:text-[#e8a5a5] font-medium transition-colors"
+            >
+              SEO in Cranbourne
             </Link>
             .{" "}
             <Link

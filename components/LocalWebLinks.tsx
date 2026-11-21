@@ -31,6 +31,7 @@ export default function LocalWebLinks({ eyebrow, title, copy, links }: {
 // /tradie-seo, /plumber-marketing and /electrician-marketing linked no suburb SEO page, so the owners of the
 // "seo <suburb>" searches got nothing from them. Dandenong leads because it was the search worked that day.
 // 19 Nov 2026 (money search "seo frankston"): also on /tradie-marketing and /builder-marketing.
+// 21 Nov 2026 (money search "seo cranbourne"): also on /landscaper-marketing and /roofer-marketing.
 export const localSeoLinks = [
   { href: "/dandenong/seo", label: "SEO in Dandenong" },
   { href: "/frankston/seo", label: "SEO in Frankston" },

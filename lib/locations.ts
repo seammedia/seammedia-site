@@ -82,6 +82,8 @@ export const locationProfiles: Record<string, LocationProfile> = {
     ],
     question:
       "What type of customer or project should this Frankston page make feel immediately understood?",
+    // 21 Nov 2026 (seo-loop-seam, money search "seo cranbourne"): link the Cranbourne owner page.
+    nearby: [{ href: "/cranbourne", label: "SEO in nearby Cranbourne" }],
   },
   hampton: {
     name: "Hampton",

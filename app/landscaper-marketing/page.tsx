@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import NicheLanding from "@/components/NicheLanding";
+import { LocalSeoLinks } from "@/components/LocalWebLinks";
 import { createMetadata } from "@/lib/seo";
 import { landscapers } from "@/lib/niche-pages";
 
@@ -11,5 +12,10 @@ export const metadata: Metadata = createMetadata({
 });
 
 export default function LandscaperMarketingPage() {
-  return <NicheLanding config={landscapers} />;
+  return (
+    <>
+      <NicheLanding config={landscapers} />
+      <LocalSeoLinks title="Local SEO for landscapers near us" />
+    </>
+  );
 }
