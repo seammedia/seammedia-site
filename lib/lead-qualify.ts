@@ -35,9 +35,15 @@ export const isQualifiedBudget = (budget: string) => !!budget && !UNQUALIFIED_BU
 // Website offer ("free until it works", 17 Nov 2026, Heath via the Chief of Staff): only for businesses with a Google
 // Business Profile with 10+ reviews, and not for e-commerce stores. Everyone else gets the email but no call, and
 // doesn't count as a Meta Lead.
+// 23 Nov 2026 (Heath): the top budget band ("$2,500+ a month") always qualifies, whatever the Google profile, review
+// count or industry answer, so the Meta Lead event fires and the ads learn from these leads. The lead manager holds
+// these replies as a draft flagged "HIGH BUDGET - check by hand" instead of declining them.
 export const REVIEW_OPTIONS = ["No Google Business Profile", "Under 10 Google reviews", "10 or more Google reviews"] as const;
+export const HIGH_BUDGET = BUDGETS[BUDGETS.length - 1];
+export const isHighBudget = (budget: string | undefined) => budget === HIGH_BUDGET;
 export const isOfferQualified = (v: { budget?: string; reviews?: string; industry?: string }) =>
-  isQualifiedBudget(v.budget || "") && v.reviews === REVIEW_OPTIONS[2] && v.industry !== "Ecommerce and retail";
+  isHighBudget(v.budget) ||
+  (isQualifiedBudget(v.budget || "") && v.reviews === REVIEW_OPTIONS[2] && v.industry !== "Ecommerce and retail");
 
 // Australian numbers only (mobile 04, landline 02/03/07/08, or +61). Rejects obvious fakes such as
 // 0400 000 000, 0412 345 678 or a run of one repeated digit.
