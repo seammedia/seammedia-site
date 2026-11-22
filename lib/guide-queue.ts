@@ -1479,11 +1479,11 @@ export const guideQueue: ScheduledGuide[] = [
         ], checklist: ["Regular contact with local referrers.", "Open about any related businesses.", "No gifts or inducements for referrals."] },
         { title: "Measure what matters", paragraphs: [
           "Ask every new participant and referrer how they found you and record it. Over a few months that will show whether Google, particular referrers or community connections are doing the work, and where your time is best spent.",
-          "Seam Media helps local businesses with websites, Google Maps and Google Ads. Our page for a digital marketing agency in Dandenong covers how we work in the area, and our NDIS marketing page explains our approach for providers, including a written 60-day review for new Google Ads clients, with the details on that page.",
-        ], links: [{ title: "Digital marketing agency in Dandenong", path: "/dandenong" }, { title: "Marketing for NDIS providers", path: "/ndis-marketing" }] },
+          "Seam Media helps local businesses with websites, Google Maps and Google Ads. Our page for a digital marketing agency in Dandenong covers how we work in the area, our page on SEO in Dandenong explains how we help local businesses show up in Google searches, and our NDIS marketing page explains our approach for providers, including a written 60-day review for new Google Ads clients, with the details on that page.",
+        ], links: [{ title: "Digital marketing agency in Dandenong", path: "/dandenong" }, { title: "SEO in Dandenong", path: "/dandenong/seo" }, { title: "Marketing for NDIS providers", path: "/ndis-marketing" }] },
       ],
       sources: [ndisSupportCoordinators, ndisCode, googleLocal, googleServiceArea, googleProfileRules, googleReviewPolicy, googleSearchTerms],
-      links: [{ title: "Digital marketing agency in Dandenong", path: "/dandenong" }, { title: "Marketing for NDIS providers", path: "/ndis-marketing" }, packagesLink],
+      links: [{ title: "Digital marketing agency in Dandenong", path: "/dandenong" }, { title: "SEO in Dandenong", path: "/dandenong/seo" }, { title: "Marketing for NDIS providers", path: "/ndis-marketing" }, packagesLink],
     },
   },
   {
@@ -1650,11 +1650,11 @@ export const guideQueue: ScheduledGuide[] = [
         ], checklist: ["Referral page with form and named contact.", "Every referral acknowledged quickly.", "No inducements, and related businesses disclosed."] },
         { title: "Advertise carefully and measure", paragraphs: [
           "If you use Google Ads, keep the campaign small, target the suburbs you serve and check the search terms report often, since NDIS searches include many people looking for jobs, the portal or payment information. Google's personalised advertising policy restricts targeting people based on health conditions, so search ads that match what people type are usually the right place to start.",
-          "Ask every new participant and referrer how they found you, and record it. Seam Media helps local businesses with websites, Google Maps and Google Ads. Our page for a digital marketing agency in Dandenong explains how we work in the area, and our NDIS marketing page covers our approach for providers, including a written 60-day review for new Google Ads clients, with the details on that page.",
-        ], links: [{ title: "Digital marketing agency in Dandenong", path: "/dandenong" }, { title: "Marketing for NDIS providers", path: "/ndis-marketing" }] },
+          "Ask every new participant and referrer how they found you, and record it. Seam Media helps local businesses with websites, Google Maps and Google Ads. Our page for a digital marketing agency in Dandenong explains how we work in the area, our page on SEO in Dandenong covers how we help local businesses show up in Google searches, and our NDIS marketing page covers our approach for providers, including a written 60-day review for new Google Ads clients, with the details on that page.",
+        ], links: [{ title: "Digital marketing agency in Dandenong", path: "/dandenong" }, { title: "SEO in Dandenong", path: "/dandenong/seo" }, { title: "Marketing for NDIS providers", path: "/ndis-marketing" }] },
       ],
       sources: [ndisCode, ndisPracticeStandards, googleLocal, googleServiceArea, googleProfileRules, googleReviewPolicy, googleSearchTerms, googlePersonalisedAds],
-      links: [{ title: "Digital marketing agency in Dandenong", path: "/dandenong" }, { title: "Marketing for NDIS providers", path: "/ndis-marketing" }, packagesLink],
+      links: [{ title: "Digital marketing agency in Dandenong", path: "/dandenong" }, { title: "SEO in Dandenong", path: "/dandenong/seo" }, { title: "Marketing for NDIS providers", path: "/ndis-marketing" }, packagesLink],
     },
   },
   {
