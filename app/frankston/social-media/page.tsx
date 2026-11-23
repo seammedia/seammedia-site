@@ -44,6 +44,10 @@ export default function FrankstonSocialMediaPage() {
             <Link href="/frankston/seo" className="font-semibold text-[#405e6b] underline">SEO services in Frankston</Link>. Further down the peninsula? See our{' '}
             <Link href="/mornington/seo" className="font-semibold text-[#405e6b] underline">SEO on the Mornington Peninsula</Link>.
           </p>
+          <p className="text-lg text-gray-700 leading-relaxed mt-4">
+            Social media works best alongside your website, Google Maps listing and ads. See how it fits into our{' '}
+            <Link href="/frankston" className="font-semibold text-[#405e6b] underline">digital marketing in Frankston</Link>.
+          </p>
         </div>
       </Section>
 

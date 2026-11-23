@@ -37,6 +37,10 @@ export default function FrankstonGraphicDesignPage() {
           <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed mb-8">
             Stand out from the competition with professional graphic design that captures attention and communicates your brand message effectively.
           </p>
+          <p className="text-lg text-gray-700 leading-relaxed">
+            Need your designs working across your website, social posts and ads? See our{' '}
+            <Link href="/frankston" className="font-semibold text-[#405e6b] underline">digital marketing in Frankston</Link>.
+          </p>
         </div>
       </Section>
 

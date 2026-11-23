@@ -110,6 +110,8 @@ export const locationProfiles: Record<string, LocationProfile> = {
     ],
     question:
       "What local question can you answer better than a generic service page for a Mornington customer?",
+    // 23 Nov 2026 (money search "digital marketing frankston", owner /frankston): link in from a neighbouring hub.
+    nearby: [{ href: "/frankston", label: "Digital marketing in nearby Frankston" }],
   },
   "mount-eliza": {
     name: "Mount Eliza",
@@ -123,5 +125,7 @@ export const locationProfiles: Record<string, LocationProfile> = {
     ],
     question:
       "What would make a Mount Eliza visitor recognise that your business is the right fit for their needs?",
+    // 23 Nov 2026 (money search "digital marketing frankston", owner /frankston): link in from a neighbouring hub.
+    nearby: [{ href: "/frankston", label: "Digital marketing in Frankston, just up the road" }],
   },
 };
