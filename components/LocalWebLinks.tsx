@@ -32,6 +32,7 @@ export default function LocalWebLinks({ eyebrow, title, copy, links }: {
 // "seo <suburb>" searches got nothing from them. Dandenong leads because it was the search worked that day.
 // 19 Nov 2026 (money search "seo frankston"): also on /tradie-marketing and /builder-marketing.
 // 21 Nov 2026 (money search "seo cranbourne"): also on /landscaper-marketing and /roofer-marketing.
+// 24 Nov 2026 (money search "seo mornington peninsula"): AlliedLocalSeoLinks on /ndis-marketing and /allied-health-marketing.
 export const localSeoLinks = [
   { href: "/dandenong/seo", label: "SEO in Dandenong" },
   { href: "/frankston/seo", label: "SEO in Frankston" },
@@ -47,6 +48,20 @@ export function LocalSeoLinks({ title = "Local SEO for trades near us" }: { titl
       title={title}
       copy="We are based in Mount Eliza and do local SEO for businesses across Dandenong, Frankston, Cranbourne, the Mornington Peninsula and Melbourne's south east, including The South East Fencer in the Frankston area."
       links={localSeoLinks}
+    />
+  );
+}
+
+export function AlliedLocalSeoLinks({ title }: { title: string }) {
+  return (
+    <LocalWebLinks
+      eyebrow="Local SEO"
+      title={title}
+      copy="We are based in Mount Eliza and do local SEO for businesses across the Mornington Peninsula, Frankston, Cranbourne, Dandenong and Melbourne's south east."
+      links={[
+        { href: "/mornington/seo", label: "SEO on the Mornington Peninsula" },
+        ...localSeoLinks.filter(link => link.href !== "/mornington/seo" && !link.href.startsWith("/case-studies")),
+      ]}
     />
   );
 }

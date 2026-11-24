@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import NicheLanding from "@/components/NicheLanding";
+import { AlliedLocalSeoLinks } from "@/components/LocalWebLinks";
 import { createMetadata } from "@/lib/seo";
 import { ndis } from "@/lib/niche-pages";
 
@@ -11,5 +12,10 @@ export const metadata: Metadata = createMetadata({
 });
 
 export default function NdisMarketingPage() {
-  return <NicheLanding config={ndis} />;
+  return (
+    <>
+      <NicheLanding config={ndis} />
+      <AlliedLocalSeoLinks title="Local SEO for NDIS providers near us" />
+    </>
+  );
 }

@@ -37,6 +37,10 @@ export default function MountElizaGraphicDesignPage() {
           <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed mb-8">
             Stand out from the competition with professional graphic design that captures attention and communicates your brand message effectively.
           </p>
+          <p className="text-lg text-gray-700 leading-relaxed">
+            Want more people to find your business on Google as well? See our{' '}
+            <Link href="/mornington/seo" className="font-semibold text-[#405e6b] underline">SEO on the Mornington Peninsula</Link>.
+          </p>
         </div>
       </Section>
 
