@@ -1,5 +1,6 @@
 import Section from "@/components/ui/Section";
 import Link from "next/link";
+import LocalAgencyIntro from "@/components/LocalAgencyIntro";
 import ContactForm from "@/components/ContactForm";
 import LocationInsights from "@/components/LocationInsights";
 import { locationProfiles } from "@/lib/locations";
@@ -7,7 +8,7 @@ import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
   title: "Digital Marketing Agency Hampton | Seam Media",
-  description: "Professional digital marketing services in Hampton. We offer social media management, web design, SEO, Google Ads, and more to help your business grow.",
+  description: "Web design and digital marketing in Hampton from Seam Media: clear websites, local SEO, Google Ads and social media for bayside businesses. Get in touch.",
   path: "/hampton",
 });
 
@@ -49,6 +50,8 @@ export default function HamptonPage() {
           </p>
         </div>
       </Section>
+
+      <LocalAgencyIntro slug="hampton" />
 
       <LocationInsights profile={locationProfiles.hampton} />
 

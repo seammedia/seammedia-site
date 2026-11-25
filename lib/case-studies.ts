@@ -121,6 +121,8 @@ const allCaseStudies = [
         { label: "SEO company in Frankston", href: "/frankston/seo" },
         // 17 Nov 2026 (money search "seo mornington peninsula").
         { label: "SEO on the Mornington Peninsula", href: "/mornington/seo" },
+        // 25 Nov 2026 (money search "web design frankston").
+        { label: "web design in Frankston", href: "/frankston/web-design" },
         { label: "marketing for tradies", href: "/tradie-marketing" },
       ],
     },

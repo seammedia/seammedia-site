@@ -21,6 +21,7 @@ export const locationProfiles: Record<string, LocationProfile> = {
     ],
     question:
       "Which service do you most want to be found for in Brighton, and what proof would help someone choose you?",
+    nearby: [{ href: "/hampton", label: "Web design and digital marketing in Hampton" }],
   },
   chelsea: {
     name: "Chelsea",
@@ -38,6 +39,9 @@ export const locationProfiles: Record<string, LocationProfile> = {
       { href: "/frankston", label: "Digital marketing in nearby Frankston" },
       // 19 Nov 2026 (seo-loop-seam, money search "seo frankston"): link the Frankston SEO owner page.
       { href: "/frankston/seo", label: "SEO company in nearby Frankston" },
+      // 25 Nov 2026 (money search "web design frankston"), and the Hampton hub ("web design hampton").
+      { href: "/frankston/web-design", label: "Web design in nearby Frankston" },
+      { href: "/hampton", label: "Web design and digital marketing in Hampton" },
     ],
   },
   cranbourne: {
@@ -55,6 +59,7 @@ export const locationProfiles: Record<string, LocationProfile> = {
     nearby: [
       { href: "/frankston", label: "Digital marketing in Frankston" },
       { href: "/frankston/seo", label: "SEO services in Frankston" },
+      { href: "/frankston/web-design", label: "Web design in Frankston" },
     ],
   },
   dandenong: {
@@ -111,7 +116,10 @@ export const locationProfiles: Record<string, LocationProfile> = {
     question:
       "What local question can you answer better than a generic service page for a Mornington customer?",
     // 23 Nov 2026 (money search "digital marketing frankston", owner /frankston): link in from a neighbouring hub.
-    nearby: [{ href: "/frankston", label: "Digital marketing in nearby Frankston" }],
+    nearby: [
+      { href: "/frankston", label: "Digital marketing in nearby Frankston" },
+      { href: "/frankston/web-design", label: "Web design in Frankston" },
+    ],
   },
   "mount-eliza": {
     name: "Mount Eliza",

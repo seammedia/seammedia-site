@@ -163,6 +163,32 @@ const areas: Record<string, {
   // 26 Oct 2026 (money search): hub 10.3 for "dandenong marketing agency" and 3.6 for "digital marketing agency
   // dandenong", but also 53-56 for "seo dandenong" searches owned by /dandenong/seo. Title and hero dropped "SEO"
   // (the Frankston lesson), and the hub gained local sections, a process and two more FAQs.
+  // 25 Nov 2026 (sweep): /hampton ranks 9-12 for "web design hampton" (19.8 on 16 Oct) and /hampton/web-design does not
+  // rank, so the hub answers the search itself and still links to the service page. Title and H1 kept.
+  hampton: {
+    heading: "Web design and digital marketing for Hampton businesses",
+    intro: "Seam Media designs websites and runs local marketing for Hampton businesses from our base in Mount Eliza. We have built more than 100 websites, and we start each one with the services you want more of and the customers you want to reach in Hampton, Hampton East, Sandringham, Brighton and Highett.",
+    detail: "A website works best when the rest of your marketing points to it. We plan your web design, local SEO, Google Ads and social content together, so the same services and areas appear everywhere and every enquiry reaches you.",
+    sections: [
+      { title: "Web design in Hampton, built around enquiries", copy: "A shop or cafe near Hampton Street needs opening hours, directions and photos that load quickly on a phone. A clinic needs clear services and a booking step, and a trade needs real job photos, service areas and a quote form. We agree the pages with you first, then build the site so each visitor can see what you do and contact you in a tap." },
+      { title: "Being found after the website is live", copy: "We set the search basics up from day one: page titles, descriptions, headings and links between your important pages. Local SEO then builds on them with your Google Business Profile, reviews and service pages. We cannot guarantee positions, so we report visibility separately from the enquiries you receive." },
+    ],
+    listTitle: "What we can help with in Hampton",
+    list: [
+      "Website design, redesigns and ongoing website care",
+      "Local SEO and Google Maps: your Business Profile, categories, service areas and reviews",
+      "Google Ads with call and form tracking, plus Meta ads",
+      "Social media content that keeps you visible to local customers",
+    ],
+    nearby: "We also work with businesses in Brighton, Sandringham, Chelsea, Frankston and across Melbourne's bayside and south-east.",
+    seoLabel: "SEO services in Hampton",
+    nearbyLink: { href: "/hampton/web-design", label: "Web design for Hampton businesses" },
+    faqs: [
+      { q: "Do you build websites for small businesses in Hampton?", a: "Yes. We design and build websites for Hampton shops, clinics, trades and service businesses. Most of the work happens online, and you talk with us directly about your services, customers and pages." },
+      { q: "Can you redesign my existing website?", a: "Yes. We first check which pages already bring visits from Google, keep useful pages and addresses where practical, and plan redirects for anything that has to move." },
+      { q: "What does web design cost for a Hampton business?", a: "The Smart Website is $99 a week plus GST with no setup fee. Growth and Complete Growth add social media, full local SEO and advertising. Complex websites and larger projects are quoted separately, so we agree the scope before any work starts." },
+    ],
+  },
   dandenong: {
     heading: "A digital marketing agency for Dandenong businesses",
     intro: "Seam Media works with businesses across Dandenong and Melbourne's south-east from our base on the Mornington Peninsula. Dandenong covers very different buyers: a household booking a local service in central Dandenong, and a purchaser comparing commercial or industrial suppliers in Dandenong South. As your marketing agency, we start by working out which of those customers you want more of, then build your website, Google Business Profile and ads around them.",
