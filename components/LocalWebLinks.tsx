@@ -33,6 +33,7 @@ export default function LocalWebLinks({ eyebrow, title, copy, links }: {
 // 19 Nov 2026 (money search "seo frankston"): also on /tradie-marketing and /builder-marketing.
 // 21 Nov 2026 (money search "seo cranbourne"): also on /landscaper-marketing and /roofer-marketing.
 // 24 Nov 2026 (money search "seo mornington peninsula"): AlliedLocalSeoLinks on /ndis-marketing and /allied-health-marketing.
+// 26 Nov 2026 (money search "seo frankston"): also on /google-ads-management and /tradie-websites.
 export const localSeoLinks = [
   { href: "/dandenong/seo", label: "SEO in Dandenong" },
   { href: "/frankston/seo", label: "SEO in Frankston" },

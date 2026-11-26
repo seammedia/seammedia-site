@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import NicheLanding from "@/components/NicheLanding";
-import LocalWebLinks from "@/components/LocalWebLinks";
+import LocalWebLinks, { LocalSeoLinks } from "@/components/LocalWebLinks";
 import { createMetadata } from "@/lib/seo";
 import { tradieWebsites } from "@/lib/niche-pages";
 
@@ -26,6 +26,7 @@ export default function TradieWebsitesPage() {
           { href: "/case-studies/the-south-east-fencer", label: "The South East Fencer case study" },
         ]}
       />
+      <LocalSeoLinks title="Local SEO for tradies near us" />
     </>
   );
 }

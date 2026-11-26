@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import NicheLanding from "@/components/NicheLanding";
+import { LocalSeoLinks } from "@/components/LocalWebLinks";
 import { createMetadata } from "@/lib/seo";
 import { googleAds } from "@/lib/niche-pages";
 
@@ -11,5 +12,10 @@ export const metadata: Metadata = createMetadata({
 });
 
 export default function GoogleAdsManagementPage() {
-  return <NicheLanding config={googleAds} />;
+  return (
+    <>
+      <NicheLanding config={googleAds} />
+      <LocalSeoLinks title="Local SEO alongside your Google Ads" />
+    </>
+  );
 }
