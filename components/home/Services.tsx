@@ -13,6 +13,16 @@ const services = [
   { title: "Videography", icon: Video, link: "/videography", description: "Eye-catching video, from behind-the-scenes content to event coverage, made to stand out in the feed." },
 ];
 
+// Industry pages and the trade guides people search for, linked from the homepage (added 27 Nov 2026).
+const industries = [
+  { label: "Marketing for tradies", link: "/tradie-marketing" },
+  { label: "SEO for plumbers", link: "/blog/seo-for-plumbers" },
+  { label: "Marketing for electricians", link: "/electrician-marketing" },
+  { label: "Marketing for builders", link: "/builder-marketing" },
+  { label: "NDIS provider marketing", link: "/ndis-marketing" },
+  { label: "Allied health marketing", link: "/allied-health-marketing" },
+];
+
 export default function Services() {
   return (
     <DarkSection glow="right" className="border-t border-white/5">
@@ -30,6 +40,12 @@ export default function Services() {
             <p className="mt-3 flex-1 text-sm leading-relaxed text-gray-400">{description}</p>
             <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-white">Learn more <ArrowRight size={16} aria-hidden="true" className="transition-transform group-hover:translate-x-1" /></span>
           </Link>
+        ))}
+      </div>
+      <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm">
+        <span className="font-semibold text-white">Who we work with:</span>
+        {industries.map(({ label, link }) => (
+          <Link key={link} href={link} className="text-gray-400 underline underline-offset-4 hover:text-[#7ff5ff]">{label}</Link>
         ))}
       </div>
     </DarkSection>
