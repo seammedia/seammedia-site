@@ -9,7 +9,8 @@ import { createMetadata } from "@/lib/seo";
 export const metadata = createMetadata({
   // 23 Oct 2026 (seo-loop-seam): title leads with "seo cranbourne" (organic 12, Maps 1.5); H1 keeps the agency wording.
   title: "SEO Cranbourne | Local SEO & Marketing Agency | Seam Media",
-  description: "SEO in Cranbourne from a south-east marketing agency: Google Maps, service pages, technical fixes and Google Ads that turn local searches into enquiries.",
+  // 28 Nov 2026: description leads with "SEO services in Cranbourne" (11-17 for that search); title and H1 kept.
+  description: "SEO services in Cranbourne from a south-east agency: Google Maps, service pages, tracked search terms and site fixes that turn searches into enquiries.",
   path: "/cranbourne",
 });
 

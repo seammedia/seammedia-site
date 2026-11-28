@@ -123,6 +123,8 @@ const allCaseStudies = [
         { label: "SEO on the Mornington Peninsula", href: "/mornington/seo" },
         // 25 Nov 2026 (money search "web design frankston").
         { label: "web design in Frankston", href: "/frankston/web-design" },
+        // 28 Nov 2026 (money search "seo cranbourne").
+        { label: "SEO services in Cranbourne", href: "/cranbourne" },
         { label: "marketing for tradies", href: "/tradie-marketing" },
       ],
     },

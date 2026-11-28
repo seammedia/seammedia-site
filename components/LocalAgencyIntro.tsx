@@ -21,7 +21,8 @@ const areas: Record<string, {
   nearbySeoLink?: { href: string; label: string };
   faqs?: { q: string; a: string }[];
   // Optional suburb-specific sections and process steps (added 23 Oct 2026 for the "seo cranbourne" owner page).
-  sections?: { title: string; copy: string }[];
+  // href/linkLabel (28 Nov 2026): an optional descriptive link under a section.
+  sections?: { title: string; copy: string; href?: string; linkLabel?: string }[];
   processTitle?: string;
   process?: { title: string; copy: string }[];
 }> = {
@@ -138,7 +139,11 @@ const areas: Record<string, {
     seoHref: "/seo",
     nearbyLink: { href: "/dandenong", label: "Digital marketing agency in nearby Dandenong" },
     nearbySeoLink: { href: "/dandenong/seo", label: "SEO in nearby Dandenong" },
+    // 28 Nov 2026 (money search "seo cranbourne": organic 7-10 every day since 14 Nov, 9.2 last 7 days vs 7.3 before,
+    // Maps 1.4; "seo services cranbourne" 11-17). Links-only on 21 Nov did not move it, so an answer-first section on what
+    // SEO in Cranbourne includes and costs (live packages page figures) now leads the sections, as on /frankston/seo.
     sections: [
+      { title: "What SEO services in Cranbourne include, and what they cost", copy: "Our SEO for Cranbourne businesses is part of the Growth package, from $235 a week plus GST, billed weekly and month to month. It covers local SEO with five tracked search terms (such as the service you want more of plus Cranbourne or Clyde North), weekly map-pack visibility scans, Google Business Profile posts and management, review requests and reply support, one prioritised website or SEO improvement each month, and monthly performance reporting. Growth also includes your Smart Website, social media posts and management of either Google Ads or Meta Ads, with ad spend paid directly to Google or Meta. Complete Growth, from $350 a week plus GST, manages both ad platforms. The $99 Smart Website includes basic local SEO only, without tracked search terms or Business Profile management.", href: "/marketing-packages", linkLabel: "Compare our marketing packages" },
       { title: "Local SEO for Cranbourne's growing suburbs", copy: "Cranbourne is really several markets: the established streets around the town centre, the newer estates in Cranbourne North, East and West, and fast-growing Clyde and Clyde North to the south-east. A plumber, cleaner or allied health clinic may serve some of these areas and not others, so we build your SEO around the suburbs you actually cover and make that clear on your website and Google Business Profile, rather than claiming all of Casey." },
       { title: "Google Maps and your website work together", copy: "For most \"service plus Cranbourne\" searches, Google shows a Maps listing first and a short list of websites below it. Your Business Profile needs the right categories, service areas, photos and recent reviews, and your website needs a clear page for each main service that matches what the profile says. When both line up, Google has a clearer reason to show your business to Cranbourne customers." },
       { title: "Social media marketing in Cranbourne", copy: "Many Cranbourne customers check a business on Facebook or Instagram after finding it on Google, especially in the newer estates where people are still choosing local providers. Regular posts showing real jobs, your team and the areas you cover help them feel confident to get in touch, and social media marketing works best when it is planned with your website and Google presence rather than run on its own." },
@@ -238,6 +243,7 @@ export default function LocalAgencyIntro({ slug }: { slug: string }) {
               <div key={section.title}>
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">{section.title}</h3>
                 <p className="text-gray-700 leading-relaxed">{section.copy}</p>
+                {section.href && section.linkLabel && <Link href={section.href} className="inline-block mt-3 font-semibold text-[#405e6b] underline">{section.linkLabel}</Link>}
               </div>
             ))}
           </div>
